@@ -1,0 +1,87 @@
+*{
+    width: 100wv;
+    height: 100wh;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fafafa;
+}
+/* ---main start------ */
+main{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Kanit';
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+.right{
+    background-color: #ffffff;
+    width: 350px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    text-align: center;
+    
+}
+form button{
+    background-color: #fa8907;
+    border: none;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    color: #f5f5f5;
+    cursor: pointer;
+
+}
+
+input{
+    width: 300px;
+    height: 40px;
+    margin: 15px;
+}
+/* --------main end------- */
+/* --------footerstrat----- */
+footer{
+    text-align: center;
+}
+footer p{
+    font-size: 20px;
+    font-family: 'Lobster';
+    padding: 10px;
+}
+i{
+    font-size:30px !important;
+    color: #ff6600;
+    padding: 10px;
+}
+footer div:nth-of-type(2){
+    font-size: 16px;
+    font-weight: bold;
+}
+footer div:nth-of-type(2) a{
+    padding: 5px 7px;
+}
+footer div a{
+    text-decoration: none;
+    color: #000000;
+}
+footer div a:hover{
+    text-decoration: none;
+    color: #fa8907;
+}
+hr{
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+/* --------footer end------ */
+
