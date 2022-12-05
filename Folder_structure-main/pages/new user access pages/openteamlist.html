@@ -13,50 +13,90 @@
 		href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Lobster&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@200;300;400;500;600&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
 		rel="stylesheet">
 	<link rel="stylesheet" href="../../assets/css/openteamlist.css">
+	<link rel="stylesheet" href="../../assets/css/header.css">
+	<link rel="stylesheet" href="../../assets/css/footerhome.css">
 </head>
 
 <body>
 	<!-- Header start -->
 	<div class="back">
-	<header>
-		<div class="avatar">
-			<a href="#"><img class="avatarimg" src="../../assets/images/Avatar.png" alt="profile">
-			<P>Profile</P>
-			</a>	
-		</div>
-		<div class="logo">
-			<a href="#"><img class="logoimg" src="../../assets/images/logo1.svg" alt="Sportshub logo"></a> 
-			<p>SPORTS<b>HUB</b></p>
-		</div>
-		<div class="msg">
-			<a href="#"><i class="fa-brands fa-rocketchat"></i></a>
-			<button>Log out</button>
-		</div>
-	</header>
+		<header>
+			<div class="avatar">
+				<a href="../profile/profile1.html"><img class="avatarimg" src="../../assets/images/Avatar.png" alt="profile">
+				</a>	
+			</div>
+			<div class="logo">
+				<a href="#"><img class="logoimg" src="../../assets/images/logo1.svg" alt="Sportshub logo"></a> 
+				<a href="#"><p>SPORTS<b>HUB</b></p></a>
+			</div>
+			<div class="msg">
+				<a href="../calender/calender.html"><img class="calender" src="../../assets/images/calendar-outline.svg" alt="Calenders"></a>
+				<a href="../../index.html"><button type="button">Log out</button></a>
+			</div>
+		</header>
 	<!-- header ends -->
 	<main>
 		<div class="content">
-		<div><h1>OPEN TEAM LIST</h1></div>
+		<div class="createhead"><h1>TEAMS</h1><a href="./createteam.html"><button type="button" class="backbtn">Create your team</button></a></div>
 		<form>
 			<div class="top">
 			<div class="mainleft">
 				<div class="head">
 					<div><a><img class="icons" src="../../assets/images/arrow-back-outline.svg"></a></div>
-					<div><input type="text" placeholder="Search.." name="search">
-						<button type="submit"><i class="fa fa-search"></i></button></div>
-						<div><button>Request</button></div>
-						<div><a><img class="icons" src="../../assets/images/alert-circle-outline.svg"></a></div>
+					<div class="fullsearch"><input class="search" type="text" placeholder="Search.." name="search">
+						<button type="submit" class="searchicon"><i class="fa fa-search"></i></button></div>
+						<div><button class="request">Request</button></div>
+						<div><a href="./openteamlistprofile.html"><img class="icons" src="../../assets/images/alert-circle-outline.svg"></a></div>
+				</div>
+				<div class="previousmatch">
+					<table class="table">
+						<tbody>
+						  <tr>
+							<td><img class="avatarprofile" src="../../assets/images/team1profile.jpg" alt="team1Profile"></td>
+							<td>Teamname1</td>
+							<td><button class="sent">Sent Request</button></td>
+						  </tr>
+						  <tr>
+							<td><img class="avatarprofile" src="../../assets/images/team1profile.jpg" alt="team1Profile"></td>
+							<td>Teamname1</td>
+							<td><button class="sent">Sent Request</button></td>
+						  </tr>
+						  <tr>
+							<td><img class="avatarprofile" src="../../assets/images/team1profile.jpg" alt="team1Profile"></td>
+							<td>Teamname1</td>
+							<td><button class="sent">Sent Request</button></td>
+						  </tr>
+						  <tr>
+							<td><img class="avatarprofile" src="../../assets/images/team1profile.jpg" alt="team1Profile"></td>
+							<td>Teamname1</td>
+							<td><button class="sent">Sent Request</button></td>
+						  </tr>
+						  <tr>
+							<td><img class="avatarprofile" src="../../assets/images/team1profile.jpg" alt="team1Profile"></td>
+							<td>Teamname1</td>
+							<td><button class="sent">Sent Request</button></td>
+						  </tr>
+						  <tr>
+							<td><img class="avatarprofile" src="../../assets/images/team1profile.jpg" alt="team1Profile"></td>
+							<td>Teamname1</td>
+							<td><button class="sent">Sent Request</button></td>
+						  </tr>
+						  <tr>
+							<td><img class="avatarprofile" src="../../assets/images/team1profile.jpg" alt="team1Profile"></td>
+							<td>Teamname1</td>
+							<td><button class="sent">Sent Request</button></td>
+						  </tr>
+						  <tr>
+							<td><img class="avatarprofile" src="../../assets/images/team1profile.jpg" alt="team1Profile"></td>
+							<td>Teamname1</td>
+							<td><button class="sent">Sent Request</button></td>
+						  </tr>
+						</tbody>
+					  </table>
 				</div>
 			</div>
-			<div class="mainright">
-				<div><img src="../../assets/images/team2profile.jpg"></div>
-				<div class="details"><b>Teamname1</b></div>
-		<div class="details"><b>Age:</b><p>16 to 20 </p></div>
-		<div class="details"><b>Area:</b><p>Annanagar</p></div>
-		<div><p class="about"><b>About:</b>Premium designed icons for use in web, iOS, Android, and desktop apps. Support for SVG and web font. Completely open source, MIT licensed and built by </p></div>
-		</div>
+		
 	</div>
-		<div class="button"><button>DONE</button><button>Go back</button></div>
 		</form>
 	</div>
 	</main>
@@ -70,8 +110,8 @@
 			<a href="#"><i class="fa-brands fa-twitter"></i></a>
 		</div>
 		<div>
-			<a href="#">About</a>
-			<a href="#">Contact</a>
+			<a href="../../index.html">About</a>
+			<a href="https://wa.link/2dqeou">Contact</a>
 		</div>
 		<div class="rights"><p>Copyright © 2019 - 2022 Sportshub - Website Designed By Alagappan</p></div>
 	</footer>

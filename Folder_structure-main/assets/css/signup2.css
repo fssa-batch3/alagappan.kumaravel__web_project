@@ -8,6 +8,8 @@ body{
     background-color: #fafafa;
 }
 /* ---main start------ */
+
+
 main{
     position: relative;
     width: 100vw;
@@ -27,8 +29,15 @@ main{
     margin: auto;
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
-    text-align: center;
-    
+}
+.border{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 2px solid #f5f5f5;
+    margin: 10px;
 }
 input[type=submit]{
     background-color: #fa8907;
@@ -47,10 +56,9 @@ input[type=submit]{
     padding: 10px;
     border-bottom: 2px solid #f5f5f5;
 }
-input{
-    width: 300px;
+input, select{
+    width: 310px;
     height: 40px;
-    margin: 15px;
 }
 div.login a{
     text-decoration: none;
@@ -59,41 +67,43 @@ div.login a{
 
 div.login{
     padding-top: 20px;
-}
-/* --------main end------- */
-/* --------footerstrat----- */
-footer{
     text-align: center;
 }
-footer p{
-    font-size: 20px;
-    font-family: 'Lobster';
-    padding: 10px;
+
+form div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items:initial;
+    margin-top: 20px;
 }
-i{
-    font-size:30px !important;
-    color: #ff6600;
-    padding: 10px;
+.logo{
+    width: 80%;
+    height: 90%;
 }
-footer div:nth-of-type(2){
+a{
+    text-decoration: none;
+}
+
+.nextbtn{
+    background-color: #fa8907;
+    border: none;
+    border-radius: 5px;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    color: #f5f5f5;
+    cursor: pointer;
+    width: 310px;
+    height: 40px;
+    margin: 30px 0px 20px 0px;
 }
-footer div:nth-of-type(2) a{
-    padding: 5px 7px;
-}
-footer div a{
-    text-decoration: none;
-    color: #000000;
-}
-footer div a:hover{
-    text-decoration: none;
+.back a{
     color: #fa8907;
 }
-hr{
-    display: block;
-    width: 90%;
-    margin: auto;
+.back{
+    padding-bottom: 10px;
 }
-/* --------footer end------ */
+/* --------main end------- */
 

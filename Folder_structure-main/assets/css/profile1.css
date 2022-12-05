@@ -1,7 +1,18 @@
 body{
     background-color: #cbd4dc;
+    background-image: url(../images/blur2.jpg);
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
 }
-
+*{
+    margin: 0;
+    padding: 0;
+}
+* p, * td{
+    font-size: 20px;
+    color: #222222;
+    font-weight: 500;
+}
 /* headerstart */
 
 header{
@@ -10,11 +21,20 @@ header{
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+    height: 60px;
+    background-color: #2b353e;
 }
 .head{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    margin: 0px 30px;
 }
+header div h1 {
+    font-size: 32px;
+    color: #f4f4f4;
+}
+
+
 /* header ends */
 main{
     display: flex;
@@ -23,43 +43,37 @@ main{
     justify-content: center;
     align-items: center;
 }
-/* pervious match */
-.previousmatch{
-    margin: 10px;
-    width: 90%;
-    border: 2px solid #cbd4dc;
-    background-color: #f4f4f4;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.8);
+.main div:nth-child(1){
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
-.avatarprofile{
+.main div:nth-child(1) a img:nth-child(2){
+    padding-right: 10px;
     width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    border: 2px solid yellow;
 }
-.profilepic{
-    position:absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 90%;
-    height: 90%;
+
+h3{
+    text-align: left;
+    padding: 15px 0px 15px 10px;
+    text-transform: uppercase;
+    background-color: #2b353e;
+    color: #fefefe;
 }
-/* previous ends */
 /* main start */
 .main{
-    margin: 10px;
-    width: 80%;
-    height: 1000px;
-    background-color: #0b191d;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.8);
+    margin: 50px 0px;
+    width: 50%;
+    height: 120vh;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: start;
+    align-items: initial;
+    box-shadow: 0px 5px 15px rgba(0,0,0,1);
 }
 .top{
     display: flex;
@@ -67,50 +81,139 @@ main{
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 35%;
 }
 .mainleft, .mainright{
     background-color: #f4f4f4;
-    height: 500px;
     margin: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
 }
 .mainleft{
     position: relative;
-    width: 40%;
+    width: 42%;
+    height: 90%;
     
 }
 .mainright{
-    width: 60%;
-    margin: 20px;
+    width: 45%;
+    margin: 10px;
+    height: 90%;
     font-size: 20px;
 }
-.main h1{
-    font-size: 40px;
-    color: #f4f4f4;
-}
 .edit button{
-    background-color: #0b191d;
-    color: #cbd4dc;
+    background-color: #cbd4dc;
+    color: #000000;
+    font-size: 16px;
     font-weight: bold;
     letter-spacing: 2px;
     padding: 5px 20px;
-    border-radius: 5px;
-    margin: 50px;
+    cursor: pointer;
+    width: 60%;
+    height: 40px;
 }
+
+.edit{
+    height: 15%;
+    margin: 0;
+    text-align: center;
+    padding-top: 15px;
+}
+.data{
+    width: 100%;
+    height: 100%;
+}
+.data tbody tr td{
+    padding-left: 10px;
+}
+.data tbody tr td:nth-child(1){
+    font-weight: bold;
+}
+
+.main h1{
+    font-size: 40px;
+    color: #222222;
+    margin: 50px 0px 0px 30px;
+}
+
 .details{
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-evenly;
         align-items: center;
-        margin-top: 10px;
+        height: 40px;
 }
-.about b{
-    padding-right: 10px;
+.about1{
+    width: 90%;
+    padding: 5px 0px;
+    background-color: #f4f4f4;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
 }
+
 .about{
-    margin: 20px;
+    margin: 3px;
+    padding: 2px 0px 2px 20px;
 }
-.edit{
+
+.profilepic{
+    position:absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    /* border-radius: 10px; */
+}
+/* pervious match */
+
+
+.previousmatch{
+    margin-top: 10px;
+    width: 90%;
+    border-top: 20px solid #22A39F;
+    background-color: #cbd4dc;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+
+}
+.avatarprofile{
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    border: 2px solid #22A39F;
+}
+
+.table tbody tr td{
     text-align: center;
+    width: fit-content;
+    padding: 5px 0px;
 }
+
+.table{
+    width: 100%;
+    font: 20px;
+    align-items: center;
+}
+.table tbody tr:nth-child(even){
+    background-color: #f4f4f4;
+}
+.table tbody tr:nth-child(odd){
+    background-color: #f4f4f4;
+}
+.table tbody tr td button{
+    padding: 5px 10px;
+    font-weight: bold;
+    background-color: #22A39F;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+/* previous ends */
 /* main ends */

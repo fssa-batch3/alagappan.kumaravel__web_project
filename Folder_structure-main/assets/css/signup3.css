@@ -17,8 +17,8 @@ main{
 }
 .content{
     background-color: #ffffff;
-    width: 400px;
-    height: 600px;
+    width: 450px;
+    height: 700px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -27,33 +27,41 @@ main{
     margin: auto;
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
     text-align: center;
+
     
 }
 .submit{
     background-color: #fa8907;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bolder;
     letter-spacing: 2px;
     color: #f5f5f5;
     cursor: pointer;
     padding: 5px 10px;
-
+    width: 400px;
+    height: 40px;
 }
 
+textarea{
+    width: 400px;
+    height: 150px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
 .signup{
     margin: 10px;
     padding: 10px;
     border-bottom: 2px solid #f5f5f5;
 }
-input{
-    width: 300px;
-    height: 40px;
-    margin: 15px;
-}
-div.login a{
+
+div.login a, a{
     text-decoration: none;
     color: #fa8907;
 }
@@ -61,40 +69,12 @@ div.login a{
 div.login{
     padding-top: 20px;
 }
-/* --------main end------- */
-/* --------footerstrat----- */
-footer{
-    text-align: center;
-}
-footer p{
-    font-size: 20px;
-    font-family: 'Lobster';
-    padding: 10px;
-}
-i{
-    font-size:30px !important;
-    color: #ff6600;
-    padding: 10px;
-}
-footer div:nth-of-type(2){
-    font-size: 16px;
-    font-weight: bold;
-}
-footer div:nth-of-type(2) a{
-    padding: 5px 7px;
-}
-footer div a{
-    text-decoration: none;
-    color: #000000;
-}
-footer div a:hover{
-    text-decoration: none;
-    color: #fa8907;
-}
-hr{
-    display: block;
-    width: 90%;
-    margin: auto;
-}
-/* --------footer end------ */
 
+.image{
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+}
+
+/* --------main end------- */

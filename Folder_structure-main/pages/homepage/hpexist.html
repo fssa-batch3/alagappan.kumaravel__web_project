@@ -7,57 +7,47 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Home page for newmember</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Lobster&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@200;300;400;500;600&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
-		rel="stylesheet">
 	<link rel="stylesheet" href="../../assets/css/hpexist.css">
+	<link rel="stylesheet" href="../../assets/css/header.css">
+	<link rel="stylesheet" href="../../assets/css/footerhome.css">
 </head>
 
 <body>
 	<!-- Header start -->
 	<div class="back">
-	<header>
-		<div class="avatar">
-			<a href="#"><img class="avatarimg" src="../../assets/images/Avatar.png" alt="profile">
-			<P>Profile</P>
-			</a>	
-		</div>
-		<div class="logo">
-			<a href="#"><img class="logoimg" src="../../assets/images/logo1.svg" alt="Sportshub logo"></a> 
-			<p>SPORTS<b>HUB</b></p>
-		</div>
-		<div class="msg">
-			<a href="#"><i class="fa-brands fa-rocketchat"></i></a>
-			<button>Log out</button>
-		</div>
-	</header>
+		<header>
+			<div class="avatar">
+				<a href="../profile/profile1.html"><img class="avatarimg" src="../../assets/images/Avatar.png" alt="profile">
+				</a>	
+			</div>
+			<div class="logo">
+				<a href="./hpexist.html"><img class="logoimg" src="../../assets/images/logo1.svg" alt="Sportshub logo"></a> 
+				<a href="./hpexist.html"><p>SPORTS<b>HUB</b></p></a>
+			</div>
+			<div class="msg">
+				<a href="../calender/calender.html"><img class="calender" src="../../assets/images/calendar-outline.svg" alt="Calenders"></a>
+				<a href="../../index.html"><button type="button">Log out</button></a>
+			</div>
+		</header>
 	<!-- header ends -->
 	<main>
-		<div class="arrowside"><a href="#"><img class="arrow" src="../../assets/images/leftarrow.svg"><p>Create a match</p></a></div>
+		<div class="arrowside"><a href="../exist user access pages/matchrequest.html"><img class="arrow" src="../../assets/images/leftarrow.svg"><p>Create a match</p></a></div>
 		<div class="center">
 		<div class="myteam">
-			<div><img class="avatarprofile" src="../../assets/images/team1profile.jpg" alt="team profile"></div>
-			<div>
-				<h1>Team name</h1>
-				<p>my team is my strength</p>
-			</div>
-			<div>
-				<a href="#"><i class="fa-brands fa-rocketchat"></i></a>
-			</div>
+			<a href="../exist user access pages/myteam.html"><div class="picture"><img class="avatarprofile1" src="../../assets/images/team1profile.jpg" alt="team profile"></div></a>
+			<a href="../exist user access pages/myteam.html"><div class="about">
+				<h1>Indians</h1>
+				<p><b>About:</b>my team is my strength</p>
+			</div></a>
 		</div>
 		<div class="previousmatch">
+			<h3>Previous match</h3>
 			<table class="table">
-				<thead>
-				  <tr>
-					Previous match
-				  </tr>
-				</thead>
 				<tbody>
 				  <tr>
 					<td><img class="avatarprofile" src="../../assets/images/team1profile.jpg" alt="team1Profile"></td>
 					<td>Teamname1</td>
+					<td>20-11-2022 (2.00pm)</td>
 					<td><img src="../../assets/images/icon-plus.svg" alt="plus"></td>
 				  </tr>
 				  <tr>
@@ -77,18 +67,20 @@
 				  </tr>
 					<td><img class="avatarprofile" src="../../assets/images/team2profile.jpg" alt="team2Profile"></td>
 					<td>Teamname2</td>
+					<td>20-11-2022 (2.00pm)</td>
 					<td><img src="../../assets/images/icon-minus.svg" alt="minus"></td>
 				  </tr>
 				  <tr>
 					<td><img class="avatarprofile" src="../../assets/images/team3profile.png" alt="team3Profile"></td>
 					<td>Teamname3</td>
+					<td>20-11-2022 (2.00pm)</td>
 					<td><img src="../../assets/images/icon-minus.svg" alt="minus"></td>
 				  </tr>
 				</tbody>
 			  </table>
 		</div>
 	</div>
-	<div class="arrowside"><a href="#"><img class="arrow" src="../../assets/images/rightarrow.svg"><p>Requests</p></a></div>
+	<div class="arrowside"><a href="../Requests/invitations.html"><img class="arrow" src="../../assets/images/rightarrow.svg"><p>Requests</p></a></div>
 	</main>
 </div>
 	<!-- footer starts -->
@@ -100,8 +92,8 @@
 			<a href="#"><i class="fa-brands fa-twitter"></i></a>
 		</div>
 		<div>
-			<a href="#">About</a>
-			<a href="#">Contact</a>
+			<a href="../../index.html">About</a>
+			<a href="https://wa.link/2dqeou">Contact</a>
 		</div>
 		<div class="rights"><p>Copyright © 2019 - 2022 Sportshub - Website Designed By Alagappan</p></div>
 	</footer>

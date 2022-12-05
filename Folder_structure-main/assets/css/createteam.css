@@ -10,64 +10,7 @@
     background-size: 100% 100%;
     
 }
-/* ------Header start------- */
-a{
-    text-decoration: none;
-}
-header{
-    margin: 0px 30px;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid #cbd4dc;
-}
-.avatarimg{
-    width: 80px;
-    height: 80px;
-    border-radius: 40px;
-}
-.avatar p{
-    color: #cbd4dc;
-    padding: 0px 18px;
-}
-.logo p{
-    font-size: 26px;
-    color: #cbd4dc;
-    padding-top: 50px;
-}
-.logoimg{
-    width: 80px;
-    height: 90px;
-}
-.msg button {
-    padding: 5px 10px;
-    font-weight: bold;
-    background-color: #cbd4dc;
-    border-radius: 5px;
-}
 
-.avatar{
-    text-align: left;
-    flex-grow: 1;
-}
-.logo{
-    flex-grow: 7;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-
-}
-.msg{
-    flex-grow: 2;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    align-items: center;
-}
-/* ------Header end-------- */
 /* ---main start------ */
 
 main{
@@ -131,62 +74,21 @@ input[type="text"]{
 textarea{
     width: 80%;
 }
-.button button:nth-child(2), .button button:nth-child(1){
+.backbtn, .createbtn{
     border-radius: 5px;
     border: none;
     cursor: pointer;
     padding: 5px 10px;
     font-weight: bold;
 }
-.button button:nth-child(1){
+.createbtn{
     margin-right: 10px;
     background-color: #fa8907;
 }
-.button button:nth-child(2){
+.backbtn{
     margin-left: 10px;
     background-color: #254251;
+    color: #cbd4dc;
 }
 
 /* --------main end------- */
-/* --------footerstrat----- */
-footer{
-    text-align: center;
-    border-top: 1px solid #cbd4dc;
-    background-color: #254251;
-}
-footer p{
-    font-size: 20px;
-    font-family: 'Lobster';
-    padding: 10px;
-}
-i{
-    font-size:30px !important;
-    color: #fa8907;
-    padding: 10px;
-}
-footer div:nth-of-type(2){
-    font-size: 16px;
-    font-weight: bold;
-}
-footer div:nth-of-type(2) a{
-    padding: 5px 7px;
-}
-footer div a{
-    text-decoration: none;
-    color: #000000;
-}
-footer div a:hover{
-    text-decoration: none;
-    color: #fa8907;
-}
-hr{
-    display: block;
-    width: 90%;
-    margin: auto;
-}
-.rights p{
-    color: #ffffff;
-    font-size: 16px;
-}
-/* --------footer end------ */
-
