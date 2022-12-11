@@ -1,0 +1,510 @@
+*{
+    width: 100wv;
+    height: 100wh;
+    margin: 0;
+    padding: 0;
+}
+.back{
+    background-image: url(../images/background3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+}
+
+/* ---main start------ */
+
+main{
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    font-family: 'Kanit';
+    
+}
+.content{
+    background-color: #ffffff;
+    width: 65%;
+    height: 75%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(141, 172, 186, 0.8);
+    text-align: center;
+}
+.content div h1{
+    font-size: 26px;
+    margin: 10px 0px;
+}
+.top{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items:initial;
+    height: 80%;
+}
+.createhead{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.createhead button{
+    flex-grow: 1;
+    margin-right: 30px;
+}
+.createhead h1{
+    flex-grow: 9;
+}
+
+.mainleft, .mainright{
+    background-color: #f4f4f4;
+    margin: 10px;
+    height: 100%;
+}
+.mainright{
+    width: 30%;
+    overflow-y: scroll;
+}
+
+.mainleft{
+    position: relative;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:initial; 
+}
+.mainleft input{
+    width: 20%;
+    height: 90%;
+}
+.mainright .name{
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.mainright h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+.mainright h2{
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+.profileimage{
+    width: 150px;
+    height: 150px;
+    border: 2px solid #254251;
+    border-radius: 150px;
+    margin-top: 20px;
+}
+
+.mainright div>h2{
+    font-size: 20px;
+    margin:0px 0px 10px 0px;
+}
+
+.mainright div p{
+    font-size: 16px;
+}
+
+.tableright1{
+    width: 70%;
+    height: 70px;
+    margin-left:auto ;
+    margin-top: 15px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.tableright1 tbody tr td:nth-child(1){
+    font-weight: bold;
+}
+.member{
+    font-size: 18px !important;
+    color: #096292;
+}
+.tableright2{
+    width: 100%;
+    border: 2px solid #cbd4dc;
+}
+
+.tableright2 tbody tr:nth-child(even){
+    background-color: #f4f4f4;
+}
+.tableright2 tbody tr:nth-child(odd){
+    background-color: #cbd4dc;
+}
+.tableright2 tbody tr td{
+    text-align: center;
+    width: fit-content;
+    font-size: 18px;
+}
+.tableright2 thead tr th{
+    text-align: center;
+    width: fit-content;
+    font-size: 18px;
+}
+.tableright1 tbody tr td{
+    text-align: left;
+    width: fit-content;
+}
+
+input[type="text"]{
+    width: 300px;
+    height: 30px;
+    border: none;
+}
+
+.searchicon{
+    background-color: #ffffff;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+.fullsearch{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 340px;
+    height: 30px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+textarea{
+    width: 80%;
+}
+.backbtn, .request, .sent, .createbtn{
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+.createbtn, .sent{
+    margin-right: 10px;
+    background-color: #fa8907c2;
+}
+.backbtn, .request{
+    margin-left: 10px;
+    background-color: #096292;
+    color: #f4f4f4;
+}
+.backbtn:hover, .request:hover, .sent:hover, .createbtn:hover{
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 8.5px;
+    font-weight: bold;
+    background-color: transparent;
+}
+.createbtn:hover, .sent:hover{
+    margin-right: 10px;
+    border: 1.5px solid #fa8907c2;
+    color: #fa8907;
+}
+.backbtn:hover, .request:hover{
+    margin-left: 10px;
+    border: 1.5px solid #096292;
+    color: #096292;
+}
+
+
+.icons{
+    width: 40px;
+    height: 40px;
+}
+.head{
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.previousmatch{
+    margin-top: 10px;
+    width: 100%;
+    height: 50vh;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    overflow-y: scroll;
+}
+.avatarprofile{
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1.5px solid #096292;
+}
+.profilepic{
+    position:absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90%;
+    height: 90%;
+}
+.table tbody tr td{
+    text-align: center;
+    width: fit-content;
+}
+
+.table{
+    width: 100%;
+    font: 20px;
+    align-items: center;
+}
+.table tbody tr:nth-child(even){
+    background-color: #f4f4f4;
+}
+.table tbody tr:nth-child(odd){
+    background-color: #cbd4dc;
+}
+
+
+/* main{
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    font-family: 'Kanit';
+    
+}
+.content{
+    background-color: #ffffff;
+    width: 70%;
+    height: 75%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(141, 172, 186, 0.8);
+    text-align: center;
+    
+}
+.top{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.mainleft, .mainright{
+    background-color: #f4f4f4;
+    height: 600px;
+    margin: 10px;
+}
+.mainleft{
+    position: relative;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:initial;
+    
+}
+.mainleft input{
+    width: 20%;
+    height: 90%;
+}
+.mainright{
+    width: 30%;
+    margin: 20px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: initial;
+}
+.mainright div{
+    padding-top: 30px;
+}
+.mainright div h2{
+    font-size: 20px;
+}
+.mainright div h1{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.mainright div p{
+    font-size: 16px;
+}
+.tableright1{
+    width: 70%;
+    height: 70px;
+    margin-left:auto ;
+}
+.tableright2{
+    width: 100%;
+    border: 2px solid #cbd4dc;
+}
+.tableright2 tbody tr:nth-child(even){
+    background-color: #f4f4f4;
+}
+.tableright2 tbody tr:nth-child(odd){
+    background-color: #cbd4dc;
+}
+.tableright2 tbody tr td{
+    text-align: center;
+    width: fit-content;
+}
+.tableright1 tbody tr td{
+    text-align: left;
+    width: fit-content;
+}
+
+input[type="text"]{
+    width: 300px;
+    height: 30px;
+    border: none;
+}
+
+.searchicon{
+    background-color: #ffffff;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+.fullsearch{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 340px;
+    height: 30px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+textarea{
+    width: 80%;
+}
+
+.icons{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.head{
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.previousmatch{
+    margin-top: 10px;
+    width: 100%;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+}
+.avatarprofile{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid yellow;
+}
+.profilepic{
+    position:absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90%;
+    height: 90%;
+}
+.table tbody tr td{
+    text-align: center;
+    width: fit-content;
+}
+
+.table{
+    width: 100%;
+    height: 100%;
+    font: 20px;
+    align-items: center;
+}
+.table tbody tr:nth-child(even){
+    background-color: #f4f4f4;
+}
+.table tbody tr:nth-child(odd){
+    background-color: #cbd4dc;
+}
+.profileimage{
+    width: 150px;
+    height: 150px;
+    border: 2px solid #254251;
+    border-radius: 5px;
+} */
+
+.reject, .accept{
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+.reject{
+    color: #f4f4f4;
+    background-color: #fa5007;
+}
+.accept{
+    background-color: #2e6e41;
+    color: #f4f4f4;
+}
+.reject:hover{
+    color: #fa5007;
+    background-color: transparent;
+    border: 1.5px solid #fa5007;
+    padding: 3.5px 8.5px;
+}
+.accept:hover{
+    background-color: transparent;
+    color: #2e6e41;
+    border: 1.5px solid #2e6e41;
+    padding: 3.5px 8.5px;
+}
+
+.message{
+    padding: 5px 10px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #096292;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.message:hover{
+    padding: 5px 10px;
+    font-weight: bolder;
+    color: #096292;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #096292;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* --------main end------- */

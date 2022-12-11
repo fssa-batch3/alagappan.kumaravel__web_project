@@ -1,0 +1,14 @@
+
+.content{
+    animation-name: example;
+    animation-duration: .2s;
+    
+}
+
+@keyframes example {
+    0%   {transform: scale(.2,.2);}
+    20%  {transform: scale(.4,.4);}
+    25%  {transform: scale(.6,.6);}
+    75%  {transform: scale(.8,.8);}
+    100% {transform: scale(1,1);}
+}
