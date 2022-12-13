@@ -262,15 +262,16 @@ h3{
 }
 /* previous ends */
 /* whatsapp icons start */
-.fa-square-whatsapp{
+.fa-whatsapp{
     font-size: 35px;
     color: #222222;
     margin: 60px 35px 0px 0px;
 }
-.fa-square-whatsapp:hover{
+.fa-whatsapp:hover{
     font-size: 45px;
     color: #28D146;
     margin: 50px 35px 0px 0px;
+    transition: 0.2s;
    
 }
 

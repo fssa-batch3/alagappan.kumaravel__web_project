@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *{
-    width: 100wv;
-    height: 100wh;
     margin: 0;
     padding: 0;
 }
@@ -12,7 +13,6 @@ main{
     position: relative;
     width: 100vw;
     height: 100vh;
-    font-family: 'Kanit';
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -33,7 +33,7 @@ form button {
     width: 300px;
     height: 40px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bolder;
     letter-spacing: 1px;
     color: #f5f5f5;
@@ -45,12 +45,6 @@ form button {
 
 form button:hover{
     border: 1.5px solid #ff8e3c;
-    width: 300px;
-    height: 40px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bolder;
-    letter-spacing: 1px;
     color: #ff8e3c;
     cursor: pointer;
     background-color: transparent;
@@ -61,36 +55,24 @@ form button:hover{
     width: 300px;
     height: 40px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bolder;
-    color: #096292;
+    color: green;
     cursor: pointer;
-    text-decoration: underline;
     text-underline-offset: 5px;
     background-color: transparent;
 
 }
-
 .create:hover{
-    border: none;
-    width: 300px;
-    height: 40px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bolder;
-    letter-spacing: 1px;
-    color: #f5f5f5;
-    cursor: pointer;
-    text-decoration: none;
-    background-color: #096292;
+    text-decoration: underline;
 }
-
 
 input{
     width: 300px;
     height: 40px;
     margin: 15px;
 }
+
 .left{
     padding: 30px;
 }

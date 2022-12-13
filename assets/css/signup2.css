@@ -1,6 +1,4 @@
 *{
-    width: 100wv;
-    height: 100wh;
     margin: 0;
     padding: 0;
 }
@@ -8,9 +6,6 @@ body{
     background-color: #f0f2f5;
 }
 /* ---main start------ */
-#content *{
-    font-size: 16px !important;
-}
 
 main{
     position: relative;
@@ -22,7 +17,7 @@ main{
 #content{
     background-color: #ffffff;
     width: 400px;
-    height: 700px;
+    height: 750px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -42,8 +37,7 @@ main{
     margin: 10px;
 }
 label{
-    /* font-size: 16px; */
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .signup{
@@ -54,6 +48,10 @@ label{
 input, select{
     width: 310px;
     height: 40px;
+    opacity: .7;
+}
+select:focus, input:focus{
+    opacity: 1;
 }
 div.login a{
     text-decoration: none;
@@ -74,8 +72,8 @@ form div{
     margin-top: 20px;
 }
 .logo{
-    width: 80%;
-    height: 90%;
+    width: 150px;
+    height: 120px;
 }
 a{
     text-decoration: none;
@@ -119,14 +117,10 @@ div.login p{
 div.login a, .back a{
     text-decoration: none;
     color: #fa8907;
-    font-weight: 900;
+    font-weight: 600;
     font-size: 18px;
 }
 div.login a:hover, .back a:hover{
-    text-decoration: none;
-    color: #fa8907;
-    font-weight: 900;
-    font-size: 18px;
     border-bottom: 1px solid #fa8907;
 }
 /* --------main end------- */

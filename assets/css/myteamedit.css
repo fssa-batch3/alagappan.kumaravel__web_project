@@ -1,5 +1,4 @@
 
-
 .top{
     height: 100%;
     width: 100%;
@@ -26,6 +25,10 @@
     width: 80%;
     height: 90%;
 }
+.mainleft input:focus, .mainright input:focus{
+    outline: none;
+}
+
 .mainright{
     width: 80%;
     margin: 20px;
@@ -47,6 +50,10 @@
 
 .mainright textarea{
     width: 70%;
+    overflow-y: hidden;
+}
+.mainright textarea:focus{
+    outline: none;
 }
 .subheader div:nth-child(3) button, .subheader div:nth-child(1) button{
     border: none;

@@ -2,17 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * h1, * h2, * p{
-    font-family: 'PT Serif';
+    font-family: 'PT+Serif';
 }
 * header p{
     font-family: 'Poppins';
 }
 
 body{
+    font-size: 16px;
     padding: 0;
     margin: 0;
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 /* header start */
@@ -231,13 +233,15 @@ header{
     height: 45%;
 }
 .box h2{
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     font-family: 'Poppins';
 }
 .box p{
     font-size: 18px;
     font-weight: 400;
+    text-align: justify;
+    text-justify: inter-word;
     letter-spacing: .5px;
     font-family: 'Poppins';
 }
@@ -264,12 +268,20 @@ header{
     height: 80vh;
 }
 .second1 h1{
-    font-size: 30px;
+    font-size: 1.875em;
+    text-align: center;
+    color: #b68835;
+    margin: 0px 0px 50px 0px;
+    /* padding-top: 30px; */
+}
+.second1>h1{
+    font-size: 1.875em;
     text-align: center;
     color: #b68835;
     margin: 0px 0px 50px 0px;
     padding-top: 30px;
 }
+
 .second1 h1 b{
     color: #ffffff;
     letter-spacing: 1px;
@@ -299,12 +311,13 @@ header{
 .float{
     width: 90%;
     height: 20%;
+    padding: 0.625em 0.625em 1.25em 0.625em;
     background-color: #cbd4dc;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: initial;
     margin-top: 15px;
     border-radius: 10px;
     cursor: pointer;
@@ -312,16 +325,9 @@ header{
 .float:hover{
     height: 20%;
     background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 15px;
-    border-radius: 10px;
-    cursor: pointer;
+
     border: 2px solid #ffffff;
-    box-shadow: 0px 5px 15px rgba(255, 255, 255, .7);
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, .5);
 }
 .float:hover h1,.float:hover div p{
     color: #ffffff;
@@ -332,7 +338,7 @@ header{
 }
 
 .float h1{
-    font-size: 30px;
+    font-size: 1.825em;
     opacity: 0.5;
     width: 15%;
 }
@@ -347,7 +353,10 @@ header{
 .float div p{
     padding: 5px 0px;
     margin: 0;
+    text-align: justify;
+    text-justify: inter-word;
     font-size: 16px;
+    font-family: 'Poppins';
 }
 .third{
     width: 100vw;
@@ -441,26 +450,28 @@ footer{
 footer p{
     font-size: 20px;
     font-style: italic;
+    margin-bottom: 10px;
 }
-footer div i:hover{
-    font-size:34px !important;
+footer div i{
+    font-size:30px ;
     color: #f4f4f4;
+    padding: 10px;
+   
+}
+.fa-facebook:hover{
+    font-size:34px ;
+    color: #4267b2;
     padding: 6px 10px 6px 10px;
 }
-.fa-facebook{
-    font-size:30px ;
-    color: #4267b2;
-    padding: 10px;
-}
-.fa-instagram{
-    font-size:30px ;
+.fa-instagram:hover{
+    font-size:34px ;
     color: #c13584;
-    padding: 10px;
+    padding: 6px 10px 6px 10px;
 }
-.fa-twitter{
-    font-size:30px ;
+.fa-twitter:hover{
+    font-size:34px ;
     color: #00acee;
-    padding: 10px;
+    padding: 6px 10px 6px 10px;
 }
 footer div:nth-of-type(2){
     font-size: 16px;
@@ -494,3 +505,11 @@ hr{
     background-color: #b68835;
     border: none;
 }
+<caption></caption>
+				<thead>
+					<th>
+						<td></td>
+						<td></td>
+						<td></td>
+					</th>
+				</thead>
