@@ -1,6 +1,4 @@
 *{
-    width: 100wv;
-    height: 100wh;
     margin: 0;
     padding: 0;
 }
@@ -63,7 +61,6 @@ main{
     margin-top: 20px;
     width: 95%;
     height: 80%;
-    border: 2px solid #ffffff;
     background-color: #ffffff;
     border: 1px solid #203a46;
     overflow-y: scroll;

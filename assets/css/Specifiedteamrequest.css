@@ -285,15 +285,9 @@ textarea{
 .button button:nth-child(1):hover{
     margin-top: 8.5px;
     margin-bottom: 8.5px;
-    border: none;
     background-color: transparent;
     color: #2e6e41;
     border: 1.5px solid #2e6e41;
-    padding: 10px 30px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
 }
 .button{
     background-color: #ffffff;

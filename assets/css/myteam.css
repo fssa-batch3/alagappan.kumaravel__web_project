@@ -94,7 +94,7 @@ main{
     height: 60%;
     border: 2px solid #ffffff;
     background-color: #ffffff;
-    border: 1px solid #203a46;
+
     overflow-y: scroll;
 }
 .previousmatch h2{
