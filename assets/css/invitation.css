@@ -56,12 +56,11 @@ main{
     cursor: pointer;
 }
 
+
 .mainleft{
     background-color: #f4f4f4;
     height: 100%;
     margin: 10px;
-}
-.mainleft{
     position: relative;
     width: 90%;
     display: flex;

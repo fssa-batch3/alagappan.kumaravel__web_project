@@ -4,10 +4,10 @@
 
 
 *{
-    font-family: 'Poppins';
+    font-family: 'Jost', sans-serif;
 }
 * h1{
-    font-family: 'PTSerif';
+    font-family: 'PT Serif', serif;
 }
 .content div h1 {
     font-size: 26px;

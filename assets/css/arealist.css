@@ -47,8 +47,6 @@ main{
 .mainleft{
     background-color: #f4f4f4;
     margin: 10px;
-}
-.mainleft{
     position: relative;
     width: 100%;
     height: 100%;
