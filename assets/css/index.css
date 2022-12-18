@@ -22,6 +22,8 @@ body{
     font-size: 26px;
     color: #cbd4dc;
     padding-top: 30px;
+    color: #ffffff;
+    font-weight: 300;
 }
 .logoimg{
     width: 80px;
@@ -35,10 +37,7 @@ body{
     margin-left: 3%;
     flex-grow: 2;
 }
-.logo p{
-    color: #ffffff;
-    font-weight: 300;
-}
+
 a{ 
     text-decoration: none;
 }
@@ -165,7 +164,7 @@ header{
 
 .logoname{
     display: inline;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     color: #f4f4f4;
     font-weight: 300;
 }
@@ -202,7 +201,7 @@ header{
 .box h2{
     font-size: 1.25rem;
     font-weight: bold;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
 }
 .box p{
     font-size: 20px;
@@ -210,7 +209,7 @@ header{
     text-align: justify;
     text-justify: inter-word;
     letter-spacing: .5px;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
 }
 
 /* why us end */
@@ -343,7 +342,7 @@ header{
     text-align: justify;
     text-justify: inter-word;
     font-size: 16px;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
 }
 .third{
     width: 100vw;
