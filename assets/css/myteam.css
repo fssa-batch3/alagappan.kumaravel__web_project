@@ -36,7 +36,15 @@ main{
 }
 .content h1{
     margin-bottom: 10px;
-    font-size: 26px;
+    font-size: 22px !important;
+}
+.teamname h2{
+    display: inline;
+    font-size: 32px; 
+}
+.teamname{
+    padding: 0px 0px 10px 0px;
+    width: 95%;
 }
 .myteam{
     display: flex;
@@ -44,9 +52,24 @@ main{
     flex-wrap: nowrap;
     margin-bottom: 10px;
     width: 95%;
-    height: 150px;
     background-color: #cbd4dc;
     align-items: center;
+}
+.heightpro{
+    height: 150px;
+}
+.tableright1{
+    font-size: 18px;
+    margin: 10px 0px;
+}
+.tableright1 tbody tr td:nth-child(1){
+    font-weight: bold;
+}
+.tableright1 tbody tr td{
+    padding: 10px 0px 5px 10px;
+}
+.heightedit{
+    height: 250px;
 }
 .picture{
     flex-grow: 1;

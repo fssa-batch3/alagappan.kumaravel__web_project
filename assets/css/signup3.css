@@ -72,7 +72,8 @@ textarea{
     height: 150px;
     border-radius: 5px;
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 16px;
+    padding: 10px;
 }
 .signup{
     margin: 10px;
@@ -92,11 +93,29 @@ div.login{
 }
 
 .image{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     border: 5px double #000000;
     border-radius: 100px;
-    padding: 50px;
+}
+
+.edit{
+    background-color: #096292;
+    color: #f4f4f4;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-weight: bold;
+    margin: 10px 0px 25px 0px;
+}
+.edit:hover{
+    background-color: transparent;
+    color: #096292;
+    border: 1.5px solid #096292;
+    padding: 3.5px 10px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 /* --------main end------- */

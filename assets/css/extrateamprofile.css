@@ -91,7 +91,7 @@ main{
     flex-wrap: nowrap;
     margin-bottom: 10px;
     width: 95%;
-    height: 25%;
+    height: 30%;
     background-color: #cbd4dc;
     align-items: center;
 }
@@ -138,7 +138,7 @@ main{
 .previousmatch{
     margin-top: 10px;
     width: 95%;
-    height: 55%;
+    height: 50%;
     border: 2px solid #ffffff;
     background-color: #ffffff;
     overflow-y: scroll;
@@ -174,15 +174,6 @@ main{
 .table tbody tr:nth-child(odd){
     background-color: #cbd4dc;
 }
-/* .sent{
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    padding: 5px 10px;
-    font-weight: bold;
-    margin-right: 10px;
-    background-color: #fa8907;
-} */
 
 h2{
     text-align: center;

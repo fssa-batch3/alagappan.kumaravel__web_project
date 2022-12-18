@@ -180,7 +180,24 @@ input, select {
     border: 1px solid #2b353e;
 }
 
-
+.edit{
+    background-color: #096292;
+    color: #f4f4f4;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.edit:hover{
+    background-color: transparent;
+    color: #096292;
+    border: 1.5px solid #096292;
+    padding: 3.5px 10px;
+    font-weight: bold;
+    margin-top: 10px;
+}
 
 
 
