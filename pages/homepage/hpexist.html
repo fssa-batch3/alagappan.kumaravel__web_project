@@ -7,103 +7,380 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Home page for newmember</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="../../assets/css/hpexist.css">
-	<link rel="stylesheet" href="../../assets/css/header.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="../../assets/css/overall.css">
 	<link rel="stylesheet" href="../../assets/css/footerhome.css">
 </head>
 
 <body>
-	<!-- Header start -->
-	<div class="back">
-		<header>
-			<div class="avatar">
-				<a href="../profile/profile1.html"><img class="avatarimg" src="../../assets/images/Avatar.png" alt="profile">
-				</a>	
+	<!-- sidebar start -->
+	<input type="checkbox" id="check">
+			<label for="check">
+				<i class="fa-solid fa-bars" id="btn"></i>
+				<i class="fa-solid fa-xmark" id="cancel"></i>
+			</label>
+	<div class="sandwich">
+		<a href="../profile/myprofile.html"><div class="sidebar-profile">
+			<div class="playerimagediv">
+				<img src="../../assets/images/playerface.jpg" alt="playerprofile">
 			</div>
-			<div class="logo">
-				<a href="./hpexist.html"><img class="logoimg" src="../../assets/images/logo1.svg" alt="Sportshub logo"></a> 
-				<a href="./hpexist.html"><p>SPORTS<b>HUB</b></p></a>
+			<div class="playerdetailsdiv">
+				<h1>MSD</h1>
+				<p>9344655211</p>
+				<input type="range" value="30"> <label>30%</label>
 			</div>
-			<div class="msg">
-				<a href="../calender/calender.html"><img class="calender" src="../../assets/images/calendar-outline.svg" alt="Calenders"></a>
-				<a href="./logout.html"><button type="button">Log out</button></a>
-			</div>
-		</header>
-	<!-- header ends -->
-	<main>
-		<div class="arrowside"><a href="../exist user access pages/matchrequest.html"><img class="arrow" src="../../assets/images/leftarrow.svg" alt="create match"><p>Create a match</p></a></div>
-		<div class="center">
-		<div class="myteam">
-			<a href="../exist user access pages/myteam.html"><div class="picture"><img class="avatarprofile1" src="../../assets/images/team1profile.jpg" alt="team profile"></div></a>
-			<a href="../exist user access pages/myteam.html"><div class="about">
-				<h1>Indians</h1>
-				<p>We play Cricket regularly saturday and sunday at annanagar</p>
-			</div></a>
-		</div>
-		<h3>Previous match</h3>
-		<div class="previousmatch">
-			<table class="table">
+		</div></a>
+		<div class="sidebar-nav">
+			<table class="sidebar-navtable">
 				<caption></caption>
-				<thead>
-					<th>
-						<td></td>
-						<td></td>
-						<td></td>
-					</th>
-				</thead>
+				<thead></thead>
 				<tbody>
 					<tr>
-						<td><a href="../extrateamprofiles/1avengers11.html"><img class="avatarprofile" src="../../assets/images/team profile image/team2profile.jpg" alt="team1Profile"></a></td>
-						<td>Avengers11</td>
-						<td>20-11-2022 (2.00pm)</td>
-						<td><img src="../../assets/images/icon-plus.svg" alt="plus"></td>
-					  </tr>
-					  <tr>
-						<td><a href="../extraplayersprofile/1jedaja.html"><img class="avatarprofile" src="../../assets/images/Player profile image/playerno1.jfif" alt="playerprofile"></a></td>
-						<td>Jedaja <b>C</b></td>
-						<td><a href="https://wa.me/9344655211" target="_blank"><button type="button">Message</button></a></td>
-					  </tr>
-					  <tr>
-						<td><a href="../extraplayersprofile/2anderson.html"><img class="avatarprofile" src="../../assets/images/Player profile image/playerno2.jpg" alt="playerprofile"></a></td>
-						<td>Anderson</td>
-						<td><a href="https://wa.me/9344655211" target="_blank"><button type="button">Message</button></a></td>
-					  </tr>
-					  <tr>
-						<td><a href="../extraplayersprofile/3brettlee.html"><img class="avatarprofile" src="../../assets/images/Player profile image/playerno3.jpg" alt="playerprofile"></a></td>
-						<td>Brett lee</td>
-						<td><a href="https://wa.me/9344655211" target="_blank"><button type="button">Message</button></a></td>
-					  </tr>
-					  <tr>
-						<td><a href="../extrateamprofiles/2warriors.html"><img class="avatarprofile" src="../../assets/images/team profile image/team3profile.jpg" alt="team3Profile"></a></td>
-						<td>Warriors</td>
-						<td>20-11-2022 (2.00pm)</td>
-						<td><img src="../../assets/images/icon-minus.svg" alt="minus"></td>
-					  </tr>
-					  <tr>
-						<td><a href="../extrateamprofiles/3madmax11.html"><img class="avatarprofile" src="../../assets/images/team profile image/team4profile.jpg" alt="team3Profile"></a></td>
-						<td>madmax11</td>
-						<td>20-11-2022 (2.00pm)</td>
-						<td><img src="../../assets/images/icon-minus.svg" alt="minus"></td>
-					  </tr>
-					  <tr>
-						<td><a href="../extrateamprofiles/4wonder11.html"><img class="avatarprofile" src="../../assets/images/team profile image/team5profile.jpg" alt="team3Profile"></a></td>
-						<td>Wonder11</td>
-						<td>20-11-2022 (2.00pm)</td>
-						<td><img src="../../assets/images/icon-minus.svg" alt="minus"></td>
-					  </tr>
-					  <tr>
-						<td><a href="../extrateamprofiles/5asgard.html"><img class="avatarprofile" src="../../assets/images/team profile image/team6profile.png" alt="team3Profile"></a></td>
-						<td>Asgard</td>
-						<td>20-11-2022 (2.00pm)</td>
-						<td><img src="../../assets/images/icon-minus.svg" alt="minus"></td>
-					  </tr>
+						<td><a href="../my team/teammember.html"><i class="fa-solid fa-people-group"></i></a></td>
+						<td><a href="../my team/teammember.html"><p>My Team</p></a></td>
+					</tr>
+
+					<tr>
+						<td><a href="../teamplayer captain/team response.html"><i class="fa-regular fa-envelope"></i></a></td>
+						<td><a href="../teamplayer captain/team response.html"><p>Response</p></a></td>
+					</tr>
+					
+					<tr>
+						<td><a href="../teamplayer captain/creatematch.html"><i class="fa-solid fa-circle-plus"></i></a></td>
+						<td><a href="../teamplayer captain/creatematch.html"><p>Create Match</p></a></td>
+					</tr>
+
+					<tr>
+						<td><a href="../teamplayer captain/playerrequests.html"><i class="fa-solid fa-user-plus"></i></a></td>
+						<td><a href="../teamplayer captain/playerrequests.html"><p>Player Requests</p></a></td>
+					</tr>
+
+					<tr>
+						<td><a href="../teamplayer captain/match invitation.html"><i class="fa-regular fa-envelope"></i></a></td>
+						<td><a href="../teamplayer captain/match invitation.html"><p>Invitation</p></a></td>
+					</tr>
+
+					<tr>
+						<td><a href="../nonteamplayer/jointeam.html"><i class="fa-regular fa-handshake"></i></a></td>
+						<td><a href="../nonteamplayer/jointeam.html"><p>Open for players</p></a></td>
+					</tr>
+
+					<tr>
+						<td><a href="../search and notification/calendar.html"><i class="fa-regular fa-calendar-days"></i></a></td>
+						<td><a href="../search and notification/calendar.html"><p>calendar</p></a></td>
+					</tr>
 				</tbody>
-			  </table>
+			</table>
+			<table class="sidebar-navtable">
+				<caption></caption>
+				<thead></thead>
+				<tbody>
+					<tr>
+						<td><i class="fa-regular fa-face-smile-beam"></i></td>
+						<td><p>About</p></td>
+					</tr>
+					<tr>
+						<td><i class="fa-regular fa-face-rolling-eyes"></i></td>
+						<td><p>Why us</p></td>
+					</tr>
+					<tr>
+						<td><i class="fa-sharp fa-solid fa-question"></i></td>
+						<td><p>How to use</p></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
-	<div class="arrowside"><a href="../Requests/invitations.html"><img class="arrow" src="../../assets/images/rightarrow.svg" alt="response"><p>Requests</p></a></div>
+	<!-- sidebar end -->
+	<section class="laptop-header">
+		<div></div>
+		<div class="logodiv">
+			<img class="logo" src="../../assets/images/logo1.svg" alt="Sportshub logo">
+			<p>SPORTS<b>HUB</b></p>
+		</div>
+		<div class="header-list">
+			<div class="header-sub-list">
+				<div><p>Matches</p></div>
+				<div>
+					<a href="#">Create Match</a>
+					<a href="#">Others Response</a>
+				</div>
+			</div>
+			<div class="header-sub-list">
+				<div><p>Requests</p></div>
+				<div>
+					<a href="#">Invitations</a>
+					<a href="#">Players Requests</a>
+				</div>
+			</div>
+			<div class="header-sub-list">
+				<div><p>Profile</p></div>
+				<div>
+					<a href="#">My Profile</a>
+					<a href="#">My team</a>
+				</div>
+			</div>
+			<div class="header-sub-list">
+				<div><p>More</p></div>
+				<div>
+					<a href="#">Calender</a>
+					<a href="#">Open For players</a>
+				</div>
+			</div>
+
+		</div>
+		<a href="../search and notification/searchbar.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+		<a href="../search and notification/notification.html"><i class="fa-regular fa-bell"></i></a>
+	</section>
+	<!-- header start -->
+	<header class="headerdiv">
+		<div></div>
+		<div class="logodiv">
+			<img class="logo" src="../../assets/images/logo1.svg" alt="Sportshub logo">
+			<p>SPORTS<b>HUB</b></p>
+		</div>
+		<a href="../search and notification/searchbar.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+		<a href="../search and notification/calendar.html"><i class="fa-regular fa-calendar-days"></i></a>
+		<a href="../search and notification/notification.html"><i class="fa-regular fa-bell"></i></a>
+	</header>
+	<!-- header end -->
+
+	<main>
+
+		<div class="invitation-content">
+			<div class="content-subheader">
+				<h1>Add some more games in your calender!</h1>
+			</div>
+			<div class="invitation">
+				<div class="invitation-one">
+					<div class="teamimgdiv">
+						<img src="../../assets/images/team profile image/team2profile.jpg" alt="teamprofile">
+					</div>
+					<div class="teamnamediv">
+						<div>
+							<div><h2>Avengers11</h2></div>
+							<div>
+								<p class="frnd">Friend</p></div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="invitation-two">
+					<div>
+						<p>Type</p>
+						<p>Betting Match</p>
+					</div>
+					<div>
+						<p>Time</p>
+						<p>22-Nov-2022 | 15:00</p>
+					</div>
+				</div>
+				<div class="invitation-three">
+					
+					<div>
+						<i class="fa-regular fa-copyright"></i>
+						<p>MSD</p>
+					</div>
+					<div>
+						<i class="fa-solid fa-people-group"></i>
+						<p>10 Members  (Age : 19 to 22)</p>
+					</div>
+					<div>
+						<i class="fa-solid fa-location-dot"></i>
+						<p>Chennai, Annanagar, Cresent ground</p>
+					</div>
+					<div>
+						<i class="fa-solid fa-circle-info"></i>	
+						<p>Rubber ball match, betting amount per match 100rs</p>
+					</div>
+				</div>
+				<div class="invitation-four">
+					<div class="timetaken">
+						<i class="fa-regular fa-clock"></i>
+						<p>1 hour ago</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="invitation">
+				<div class="invitation-one">
+					<div class="teamimgdiv">
+						<img src="../../assets/images/team profile image/team5profile.jpg" alt="teamprofile">
+					</div>
+					<div class="teamnamediv">
+						<div>
+							<div><h2>Asgard</h2></div>
+							<div>
+								<p class="public">Public</p></div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="invitation-two">
+					<div>
+						<p>Type</p>
+						<p>Betting Match</p>
+					</div>
+					<div>
+						<p>Time</p>
+						<p>21-Nov-2022 | 16:00</p>
+					</div>
+				</div>
+				<div class="invitation-three">
+					
+					<div>
+						<i class="fa-regular fa-copyright"></i>
+						<p>Jedaja</p>
+					</div>
+					<div>
+						<i class="fa-solid fa-people-group"></i>
+						<p>10 Members  (Age : 19 to 22)</p>
+					</div>
+					<div>
+						<i class="fa-solid fa-location-dot"></i>
+						<p>Chennai, Methanagar, Methanagar park ground</p>
+					</div>
+					<div>
+						<i class="fa-solid fa-circle-info"></i>	
+						<p>Rubber ball match, betting amount per match 100rs</p>
+					</div>
+				</div>
+				<div class="invitation-four">
+					<div class="timetaken">
+						<i class="fa-regular fa-clock"></i>
+						<p>4 hour ago</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="invitation">
+				<div class="invitation-one">
+					<div class="teamimgdiv">
+						<img src="../../assets/images/team profile image/team2profile.jpg" alt="teamprofile">
+					</div>
+					<div class="teamnamediv">
+						<div>
+							<div><h2>Avengers11</h2></div>
+							<div>
+								<p class="frnd">Friend</p></div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="invitation-two">
+					<div>
+						<p>Type</p>
+						<p>Betting Match</p>
+					</div>
+					<div>
+						<p>Time</p>
+						<p>22-Nov-2022 | 15:00</p>
+					</div>
+				</div>
+				<div class="invitation-three">
+					
+					<div>
+						<i class="fa-regular fa-copyright"></i>
+						<p>MSD</p>
+					</div>
+					<div>
+						<i class="fa-solid fa-people-group"></i>
+						<p>10 Members  (Age : 19 to 22)</p>
+					</div>
+					<div>
+						<i class="fa-solid fa-location-dot"></i>
+						<p>Chennai, Annanagar, Cresent ground</p>
+					</div>
+					<div>
+						<i class="fa-solid fa-circle-info"></i>	
+						<p>Rubber ball match, betting amount per match 100rs</p>
+					</div>
+				</div>
+				<div class="invitation-four">
+					<div class="timetaken">
+						<i class="fa-regular fa-clock"></i>
+						<p>1 hour ago</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="invitation">
+				<div class="invitation-one">
+					<div class="teamimgdiv">
+						<img src="../../assets/images/team profile image/team5profile.jpg" alt="teamprofile">
+					</div>
+					<div class="teamnamediv">
+						<div>
+							<div><h2>Asgard</h2></div>
+							<div>
+								<p class="public">Public</p></div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="invitation-two">
+					<div>
+						<p>Type</p>
+						<p>Betting Match</p>
+					</div>
+					<div>
+						<p>Time</p>
+						<p>21-Nov-2022 | 16:00</p>
+					</div>
+				</div>
+				<div class="invitation-three">
+					
+					<div>
+						<i class="fa-regular fa-copyright"></i>
+						<p>Jedaja</p>
+					</div>
+					<div>
+						<i class="fa-solid fa-people-group"></i>
+						<p>10 Members  (Age : 19 to 22)</p>
+					</div>
+					<div>
+						<i class="fa-solid fa-location-dot"></i>
+						<p>Chennai, Methanagar, Methanagar park ground</p>
+					</div>
+					<div>
+						<i class="fa-solid fa-circle-info"></i>	
+						<p>Rubber ball match, betting amount per match 100rs</p>
+					</div>
+				</div>
+				<div class="invitation-four">
+					<div class="timetaken">
+						<i class="fa-regular fa-clock"></i>
+						<p>4 hour ago</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+		</div>
+		<!-- main bottom footer start -->
+		<div class="bottom-main">
+			<a href="../teamplayer captain/creatematch.html">
+			<div class="bottom-one">
+				<i class="fa-solid fa-circle-plus"></i>
+				<p>Create Match</p>
+			</div></a>
+			<a href="../teamplayer captain/team response.html">
+				<div class="bottom-one">
+					<i class="fa-solid fa-reply"></i>
+					<p>Response</p>
+				</div></a>
+			<a href="../teamplayer captain/playerrequests.html"><div class="bottom-two">
+				<i class="fa-solid fa-user-plus"></i>
+				<p>Requests</p>	
+			</div></a>
+			<a href="../my team/teammember.html"><div class="bottom-two">
+				<i class="fa-solid fa-people-group"></i>
+				<p>My Team</p>	
+			</div></a>
+		</div>
+		<!-- main bottom footer end -->
 	</main>
-</div>
 	<!-- footer starts -->
 	<footer>
 		<p>Follow us on</p>
@@ -120,6 +397,7 @@
 		<div class="rights"><p>Copyright © 2019 - 2022 Sportshub - Website Designed By Alagappan</p></div>
 	</footer>
 <!--  footer ends -->
+
 </body>
 
 </html>

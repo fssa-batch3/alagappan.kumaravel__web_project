@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home page for newmember</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="../../assets/css/overall.css">
+	<link rel="stylesheet" href="../../assets/css/popup-team-profile.css">
+	<link rel="stylesheet" href="../../assets/css/commonheader.css">
+</head>
+
+<body>
+<!-- header start -->
+<header>
+	<i class="fa-solid fa-arrow-left"></i>
+	 <h1>Join with team</h1>
+</header>
+<!-- header end -->
+<!-- main start -->
+<section class="jointeammain"> 
+	<div class="dummy-div"></div>
+	<div class="content join-team-content">
+		<div class="content-subheader searchbardiv">
+			<div class="searchbar"><input type="search"><i class="fa-solid fa-magnifying-glass"></i></div>
+		</div>
+		<div class="teams">
+			<div class="teamimagediv">
+				<button type="button" onclick="OpenPopup()"><img class="teamprofile" src="../../assets/images/team profile image/team2profile.jpg" alt="teamprofile"></button>
+			</div>
+			<div class="teamdetaildiv">
+				<div>
+					<button type="button" onclick="OpenPopup()"><div><h2>Avengers11</h2></div>
+					<div>
+						<i class="fa-solid fa-location-dot"></i>
+						<p>Annanagar</p></div>
+				</div></button>
+				<div>
+					<i class="fa-regular fa-handshake"></i>
+					<p>We need one good allrounder and....</p>
+					
+				</div>
+			</div>
+			<a class="select-link" href="#">SELECT</a>
+		</div>
+		<div class="teams">
+			<div class="teamimagediv">
+				<img class="teamprofile" src="../../assets/images/team profile image/team3profile.jpg" alt="teamprofile">
+			</div>
+			<div class="teamdetaildiv">
+				<div>
+					<div><h2>Warriors</h2></div>
+					<div>
+						<i class="fa-solid fa-location-dot"></i>
+						<p>Annanagar</p></div>
+				</div>
+				<div><i class="fa-regular fa-handshake"></i><p>We need one good allrounder and....</p></div>
+			</div>
+			<a class="select-link" href="#">SELECT</a>
+		</div>
+		<div class="teams">
+			<div class="teamimagediv">
+				<img class="teamprofile" src="../../assets/images/team profile image/team4profile.jpg" alt="teamprofile">
+			</div>
+			<div class="teamdetaildiv">
+				<div>
+					<div><h2>Madmax11</h2></div>
+					<div>
+						<i class="fa-solid fa-location-dot"></i>
+						<p>Annanagar</p></div>
+				</div>
+				<div><i class="fa-regular fa-handshake"></i><p>We need one good allrounder and....</p></div>
+			</div>
+			<a class="select-link" href="#">SELECT</a>
+		</div>
+		<div class="teams">
+			<div class="teamimagediv">
+				<img class="teamprofile" src="../../assets/images/team profile image/team5profile.jpg" alt="teamprofile">
+			</div>
+			<div class="teamdetaildiv">
+				<div>
+					<div><h2>Wonder11</h2></div>
+					<div>
+						<i class="fa-solid fa-location-dot"></i>
+						<p>Annanagar</p></div>
+				</div>
+				<div><i class="fa-regular fa-handshake"></i><p>We need one good allrounder and....</p></div>
+			</div>
+			<a class="select-link" href="#">SELECT</a>
+		</div>
+		<div class="teams">
+			<div class="teamimagediv">
+				<img class="teamprofile" src="../../assets/images/team profile image/team6profile.png" alt="teamprofile">
+			</div>
+			<div class="teamdetaildiv">
+				<div>
+					<div><h2>Asgard</h2></div>
+					<div>
+						<i class="fa-solid fa-location-dot"></i>
+						<p>Annanagar</p></div>
+				</div>
+				<div><i class="fa-regular fa-handshake"></i><p>We need one good allrounder and....</p></div>
+			</div>
+			<a class="select-link" href="#">SELECT</a>
+		</div>
+		<div class="teams">
+			<div class="teamimagediv">
+				<img class="teamprofile" src="../../assets/images/team profile image/team2profile.jpg" alt="teamprofile">
+			</div>
+			<div class="teamdetaildiv">
+				<div>
+					<div><h2>Avengers11</h2></div>
+					<div>
+						<i class="fa-solid fa-location-dot"></i>
+						<p>Annanagar</p></div>
+				</div>
+				<div><i class="fa-regular fa-handshake"></i><p>We need one good allrounder and....</p></div>
+			</div>
+			<a class="select-link" href="#">SELECT</a>
+		</div>
+		
+	</div>
+</section>
+<!-- main end -->
+	<!-- popup content start -->
+	<div class="popup" id="popup">
+		
+		<div class="popup-team-content">
+			<button class="backbtn" type="button" onclick="ClosePopup()"><i class="fa-regular fa-circle-xmark"></i></button>
+			<h2>Avengers11</h2>
+			<div class="popup-team-area">
+				<div>
+					<i class="fa-solid fa-location-dot"></i>
+					<p>Chennai, Anna nagar</p>
+				</div>
+				<div>
+					<i class="fa-regular fa-clock"></i>
+					<p>Since 26-Nov-2021</p>
+				</div>
+			</div>
+			<div class="players-list">
+				<h3>Members  (10)</h3>
+				<div>
+					<img class="players-list-image" src="../../assets/images/Player profile image/playerno1.jfif" alt="players image">
+					<p>Jedaja <i class="fa-regular fa-copyright"></i>
+				</div>
+				<div>
+					<img class="players-list-image" src="../../assets/images/Player profile image/playerno2.jpg" alt="players image">
+					<p>Anderson</p>
+				</div>
+				<div>
+					<img class="players-list-image" src="../../assets/images/Player profile image/playerno3.jpg" alt="players image">
+					<p>Breet lee</p>
+				</div>
+				<div>
+					<img class="players-list-image" src="../../assets/images/Player profile image/playerno4.png" alt="players image">
+					<p>VK-18</p>
+				</div>
+				<div>
+					<img class="players-list-image" src="../../assets/images/Player profile image/playerno5.png" alt="players image">
+					<p>Hit man</p>
+				</div>
+				<div>
+					<img class="players-list-image" src="../../assets/images/Player profile image/playerno6.jpg" alt="players image">
+					<p>ABD</p>
+				</div>
+				<div>
+					<img class="players-list-image" src="../../assets/images/Player profile image/playerno3.jpg" alt="players image">
+					<p>Breet lee</p>
+				</div>
+				<div>
+					<img class="players-list-image" src="../../assets/images/Player profile image/playerno4.png" alt="players image">
+					<p>VK-18</p>
+				</div>
+				<div>
+					<img class="players-list-image" src="../../assets/images/Player profile image/playerno5.png" alt="players image">
+					<p>Hit man</p>
+				</div>
+				<div>
+					<img class="players-list-image" src="../../assets/images/Player profile image/playerno6.jpg" alt="players image">
+					<p>ABD</p>
+				</div>
+			</div>
+
+			<a href="../profile/teammember.html"><button class="profile-view-btn">VIEW PROFILE</button></a>
+		</div>
+	</div>
+
+<!-- popup content end -->
+<!--script for popup start-->
+
+<script>
+let popup = document.getElementById("popup");
+
+function OpenPopup(){
+popup.classList.add("open-popup")
+
+}
+function ClosePopup(){
+popup.classList.remove("open-popup");
+}
+</script>
+
+
+
+</body>
+</html>

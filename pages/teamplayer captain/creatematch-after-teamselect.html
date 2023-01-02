@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home page for newmember</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="../../assets/css/creatematch.css">
+</head>
+
+<body>
+<!-- header start -->
+<header>
+	<div class="header-top">
+		<i class="fa-solid fa-arrow-left"></i>
+	 <h1>Create Match</h1>
+	</div>
+	<div class="select-team-option">
+		
+		<div class="line"></div>
+		<div class="select-team-button">
+			<a href="./creatematch.html"><button class="darkbtn" type="button">Friend</button></a>
+			<a href="./creatematch-stranger.html"><button class="lightbtn" type="button">Stranger</button></a>
+		</div>
+		<p>Select opponent type</p>
+	</div>
+	<div class="battle-team-div">
+		<div>
+			<img class="teamimage" src="../../assets/images/team1profile.jpg" alt="teamprofile">
+			<div>
+				<h2>Indians</h2>
+			<div>
+				<i class="fa-regular fa-copyright"></i>
+				<p>MSD</p>
+			</div>
+			</div>
+		</div>
+		<p class="vs">vs</p>
+		<div>
+			<img class="teamimage" src="../../assets/images/team profile image/team2profile.jpg" alt="teamprofile">
+			<div>
+				<h2>Avengers11</h2>
+		<div>
+			<i class="fa-regular fa-copyright"></i>
+			<p>Jedaja</p>
+		</div>
+			</div>
+		</div>
+	</div>
+
+</header>
+<!-- header end -->
+<!-- main start -->
+<main>
+	<form>
+	<label>Members</label>
+	<input type="number">
+	
+	<label>Type of match</label>
+	<select id="country" name="country">
+		  <option value="australia">Betting match</option>
+		  <option value="canada">Friendly match</option>
+	</select>
+
+	<label>Players Age</label>
+		<div class="age">
+		<label >From</label><input class="age1" type="number">
+		<label>To</label><input class="age1" type="number">
+			</div>
+		<label>Time</label>
+		<input type="datetime-local">
+	
+		<label>Address</label>
+		<textarea></textarea>
+	
+		<label>Additional Details</label>
+		<textarea></textarea>
+
+	</form>
+	<div class="updatediv">
+		<button>CREATE</button>
+	</div>
+</main>
+
+<!-- main end -->
+
+</body>
+</html>

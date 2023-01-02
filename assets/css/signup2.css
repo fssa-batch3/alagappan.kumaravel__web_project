@@ -2,6 +2,19 @@
     margin: 0;
     padding: 0;
 }
+
+:root {
+    --offwhite: #f0f0f0;
+    --white: #ffffff;
+    --red: #96352c;
+    --ltgreen: #14b393;
+    --fntwight: #f7f7f7;
+    --icncolor: #72787f;
+    --drakgray: #2a373f;
+    --logoorange: #ff8908;
+
+  }
+
 body{
     background-color: #f0f2f5;
 }
@@ -10,8 +23,7 @@ body{
 main{
     position: relative;
     width: 100vw;
-    height: 100vh;
-
+    height: 900px;
     
 }
 #content{
@@ -91,6 +103,7 @@ a{
     width: 310px;
     height: 40px;
     margin: 30px 0px 20px 0px;
+    text-transform: uppercase;
 }
 .nextbtn:hover{
     background-color: #ffffff;
@@ -125,3 +138,17 @@ div.login a:hover, .back a:hover{
 }
 /* --------main end------- */
 
+@media only screen and (max-width: 400px){
+    #content{
+        width: 100%;
+        border-radius: 0;
+        margin-top: 0;
+        box-shadow: none;
+    }
+    main{
+        height: 750px;
+    }
+    footer{
+        background-color: #fff;
+    }
+}

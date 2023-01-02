@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home page for newmember</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="../../assets/css/overall.css">
+	<link rel="stylesheet" href="../../assets/css/commonheader.css">
+</head>
+
+<body>
+<!-- header start -->
+<header>
+	<i class="fa-solid fa-arrow-left"></i>
+	 <h1>Players Request</h1>
+</header>
+<!-- header end -->
+<!-- main start -->
+<section class="players-request-main"> 
+	<div class="searchbardiv content-subheader">
+		<div class="searchbar">
+			<input type="search">
+			<i class="fa-solid fa-magnifying-glass"></i>
+		</div>
+	</div>
+	<div class="players-request-content">
+		<div class="player-request-div">
+			<button type="button" onclick="OpenPopup()"><img src="../../assets/images/Player profile image/playerno1.jfif" alt="player image"></button>
+			<button type="button" onclick="OpenPopup()">
+					<h2>Jedaja</h2>
+					<div><i class="fa-solid fa-location-dot"></i>
+						<p>Annanagar</p>
+				</div>
+			</button>
+			<div>
+				<i class="fa-regular fa-circle-check"></i>
+				<p>Accept</p>
+			</div>
+			<div>
+				<i class="fa-regular fa-circle-xmark"></i>
+				<p>Reject</p>
+			</div>
+		</div>
+
+		<div class="player-request-div">
+			<button><img src="../../assets/images/Player profile image/playerno2.jpg" alt="player image"></button>
+			<button>
+				<h2>Anderson</h2>
+				<div><i class="fa-solid fa-location-dot"></i>
+					<p>Annanagar</p>
+				</div>
+			</button>
+			<div>
+				<i class="fa-regular fa-circle-check"></i>
+				<p>Accept</p>
+			</div>
+			<div>
+				<i class="fa-regular fa-circle-xmark"></i>
+				<p>Reject</p>
+			</div>
+		</div>
+
+		<div class="player-request-div">
+			<button><img src="../../assets/images/Player profile image/playerno3.jpg" alt="player image"></button>
+			<button>
+				<h2>Breet lee</h2>
+				<div><i class="fa-solid fa-location-dot"></i>
+					<p>Annanagar</p>
+				</div>
+			</button>
+			<div>
+				<i class="fa-regular fa-circle-check"></i>
+				<p>Accept</p>
+			</div>
+			<div>
+				<i class="fa-regular fa-circle-xmark"></i>
+				<p>Reject</p>
+			</div>
+		</div>
+
+		<div class="player-request-div">
+			<button><img src="../../assets/images/Player profile image/playerno4.png" alt="player image"></button>
+			<button>
+				<h2>VK-18</h2>
+				<div><i class="fa-solid fa-location-dot"></i>
+					<p>Annanagar</p>
+				</div>
+			</button>
+			<div>
+				<i class="fa-regular fa-circle-check"></i>
+				<p>Accept</p>
+			</div>
+			<div>
+				<i class="fa-regular fa-circle-xmark"></i>
+				<p>Reject</p>
+			</div>
+		</div>
+
+		<div class="player-request-div">
+			<button><img src="../../assets/images/Player profile image/playerno5.png" alt="player image"></button>
+			<button>
+				<h2>Hitman</h2>
+				<div><i class="fa-solid fa-location-dot"></i>
+					<p>Annanagar</p>
+				</div>
+			</button>
+			<div>
+				<i class="fa-regular fa-circle-check"></i>
+				<p>Accept</p>
+			</div>
+			<div>
+				<i class="fa-regular fa-circle-xmark"></i>
+				<p>Reject</p>
+			</div>
+		</div>
+	</div>
+	
+</section>
+<!-- main end -->
+	<!-- popup content start -->
+	<div class="popup" id="popup">
+		
+		<div class="popup-content">
+			<button class="backbtn" type="button" onclick="ClosePopup()"><i class="fa-regular fa-circle-xmark"></i></button>
+			<img src="../../assets/images/Player profile image/playerno1.jfif">
+			<div class="player-name">
+				<h3>Jedaja</h3>
+				<p>( Ravindra Jedaja )</p>
+			</div>
+			<div class="player-address">
+				
+				<div>
+					<i class="fa-solid fa-cake-candles"></i>
+					<p>19</p>
+				</div>
+
+				<div>
+					<i class="fa-solid fa-location-dot"></i>
+					<p>Chennai, Annanagar</p>
+				</div>
+				<div>
+					<i class="fa-solid fa-circle-info"></i>
+					<p>Leftharm allrounder, played in ippa...</p>
+				</div>
+			</div>
+
+			<button class="profilebtn">VIEW PROFILE</button>
+		</div>
+	</div>
+
+<!-- popup content end -->
+<!--script for popup start-->
+
+<script>
+let popup = document.getElementById("popup");
+
+function OpenPopup(){
+popup.classList.add("open-popup")
+
+}
+function ClosePopup(){
+popup.classList.remove("open-popup");
+}
+</script>
+
+
+
+<!--script for popup start-->
+</body>
+</html>

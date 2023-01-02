@@ -3,13 +3,14 @@
 footer{
     text-align: center;
     border-top: 1px solid #cbd4dc;
-    background-color: #121d22;
+    background-color: #14212a;
 }
 footer p{
     font-size: 20px;
     font-style: italic;
     padding: 10px;
     color: #f4f4f4;
+    margin: 0;
 }
 footer div i:hover{
     font-size:34px !important;
