@@ -32,10 +32,10 @@
 				<img src="../../assets/images/playerface.jpg" alt="playerface">
 			</div>
 			<div class="profiledetailsdiv">
-				<h1>MSD</h1>
+				<h1 id="user_username">MSD</h1>
 				<div>
 					<i class="fa-solid fa-location-dot"></i>
-					<p>Annanagar</p>
+					<p id="user_area_header">Annanagar</p>
 				</div>
 				<div>
 					<i class="fa-regular fa-calendar"></i>
@@ -50,31 +50,31 @@
 			<div class="myprofiledetails">
 				<div>
 					<p>MOBILE NUMBER</p>
-					<P>9344655211</P>
+					<P id="user_phone_number">9344655211</P>
 				</div>
 				<div>
 					<p>Gender</p>
-					<P>Male</P>
+					<P id="user_gender">Male</P>
 				</div>
 				<div>
 					<p>Area</p>
-					<P>Annanagar</P>
+					<P id="user_area">Annanagar</P>
 				</div>
 				<div>
 					<p>Date of birth</p>
-					<P>26-Oct-2001</P>
+					<P id="user_date_of_birth">26-Oct-2001</P>
 				</div>
 				<div>
 					<p>Email</p>
-					<P>Msd@gmail.com</P>
+					<P id="user_email">Msd@gmail.com</P>
 				</div>
 				<div>
 					<p>Pin</p>
-					<P>******</P>
+					<P id="user_password"></P>
 				</div>
 				<div>
 					<p>ABOUT</p>
-					<P>I am a Rightarm batsman and good wicket keeper</P>
+					<P id="user_about">I am a Rightarm batsman and good wicket keeper</P>
 				</div>
 
 			</div>
@@ -105,6 +105,28 @@
 	</footer>
 <!--  footer ends -->
 	
+<script>
+
+const user_email = localStorage.getItem("user_email");
+const user_username = localStorage.getItem("user_username");
+const user_password = localStorage.getItem("user_password");
+const user_date_of_birth = localStorage.getItem("user_date_of_birth");
+const user_gender = localStorage.getItem("user_gender");
+const user_area = localStorage.getItem("user_area");
+const user_phone_number = localStorage.getItem("user_phone_number");
+const user_about = localStorage.getItem("user_about");
+
+document.getElementById("user_username").innerText = user_username;
+document.getElementById("user_password").innerText = user_password;
+document.getElementById("user_email").innerText = user_email ;
+document.getElementById("user_date_of_birth").innerText = user_date_of_birth;
+document.getElementById("user_gender").innerText = user_gender;
+document.getElementById("user_area").innerText = user_area ;
+document.getElementById("user_area_header").innerText = user_area ;
+document.getElementById("user_phone_number").innerText = user_phone_number ;
+document.getElementById("user_about").innerText = user_about ;
+
+</script>
 
 </body>
 

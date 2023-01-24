@@ -25,13 +25,13 @@ body{
 /* header start */
 header{
     width: 100%;
-    height: 30vh;
+    height: auto;
     background-color: var(--drakgray);
     overflow-x: hidden;
 }
 .header-top{
     width: 100%;
-    height: 30%;
+    padding: 10px 0;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -50,12 +50,12 @@ header .header-top i{
 }
 .battle-team-div{
     width: 100%;
-    height: 40%;
-    margin-top: 15px;
+    margin: 15px 0;
     padding-top: 10px;
     display: grid;
     grid-template-columns: 45% 10% 45%;
     border-top: .5px solid var(--fntwight);
+
 }
 .vs{
     font-size: 18px;
@@ -70,8 +70,12 @@ header .header-top i{
     grid-template-columns: 25% 75%;
 } 
 
+
+
+
 .teamimage{
     width: 80%;
+    /* max-width: 60px; */
     border-radius: 100%;
     border: 1px solid var(--fntwight);
 
@@ -118,6 +122,7 @@ header .header-top i{
 .select-team-option{
     width: 100%;
     height: 30%;
+    margin: 10px 0px 5px 0px;
     text-align: center;
     position: relative;
 }
@@ -133,7 +138,11 @@ header .header-top i{
     position: absolute;
     top: -5%;
     left: 25%;
+    right: 25%;
     width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
     border-radius: 30px;
     background-color: var(--icncolor);
 }
@@ -164,7 +173,7 @@ header .header-top i{
 #blank{
     background-color: #e3e3e3;
     width: 50%;
-    height: 45%;
+    height: 70%;
     border-radius: 30px;
     border: 1px solid var(--fntwight);
 }
@@ -226,7 +235,6 @@ div.age input.age1{
 /* form end */
 .updatediv{
     width: 100%;
-    height: 7%;
     margin-top: 20px;
 }
 .updatediv button{
@@ -284,6 +292,7 @@ section.area-select-main{
 }
 .area-content{
     width: 100%;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     display: grid;
@@ -409,6 +418,29 @@ section.area-select-main{
 }
 
 /* team profile popup start */
+.popup-teamselect{
+    font-family: 'Source Sans Pro', sans-serif;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 111;
+    transform: scale(.1); 
+    visibility: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s; 
+    
+}
+.open-popup-teamselect{
+    visibility: visible;
+    transform: scale(1); 
+}
+
 
 .popup-team-content{
     position: relative;
@@ -463,3 +495,95 @@ img.players-list-image {
 
 /* team profile popup end */
 /* Select team for opponent end */
+
+
+@media only screen and (min-width: 900px){
+    header{
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 0px 10px 0px rgba(0,0,0,0.4);
+    }
+
+    main{
+        width: 900px;
+        height: 85vh;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 0px 10px 0px rgba(0,0,0,0.4);
+
+        
+    }
+    form{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .updatediv {
+        width: 82%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #blank{
+        background-color: #e3e3e3;
+        width: 70%;
+        height: 100%;
+        border-radius: 50px;
+        border: 1px solid var(--fntwight);
+    }
+    .select-team-option{
+        transform: scaleY(1.1);
+    }
+    .darkbtn{
+        margin: 6px 0;
+    }
+    .select-team-option p{
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+    .vs{
+        font-size: 24px;
+    }
+    .battle-team-div div h2{
+        font-size: 20px;
+    }
+    .battle-team-div div div i, .battle-team-div div div p{
+        font-size: 18px;
+    }
+    .battle-team-div div:nth-child(1) div:nth-child(2), .battle-team-div div:nth-child(3) div:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    } 
+    .select{
+        margin: auto 0;
+    }
+    .area-header{
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 0px 10px 0px rgba(0,0,0,0.4);
+    }
+    section.area-select-main{
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 0px 10px 0px rgba(0,0,0,0.4);
+    }
+    .area-content{
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    .area-background-color{
+        margin-top: 20px;
+    }
+    .area-background-color>div:nth-child(odd){
+        box-shadow: none;
+    }
+}
+
+
+
+

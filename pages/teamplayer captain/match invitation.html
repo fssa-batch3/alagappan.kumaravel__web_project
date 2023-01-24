@@ -14,14 +14,14 @@
 
 <body>
 <!-- header start -->
-<header>
+<header class="match-invitation-header">
 	<i class="fa-solid fa-arrow-left"></i>
 	 <h1>Match Invitation</h1>
 </header>
 <!-- header end -->
 <!-- main start -->
 <section class="match-invitation-main">
-		<div class="invitation">
+		<!-- <div class="invitation">
 			<div class="invitation-one">
 				<div class="teamimgdiv">
 					<img src="../../assets/images/team profile image/team2profile.jpg" alt="teamprofile">
@@ -74,9 +74,9 @@
 					<p>1 hour ago</p>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
-		<div class="invitation">
+		<!-- <div class="invitation">
 			<div class="invitation-one">
 				<div class="teamimgdiv">
 					<img src="../../assets/images/team profile image/team5profile.jpg" alt="teamprofile">
@@ -129,11 +129,210 @@
 					<p>4 hour ago</p>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		
 		
 
 </section>
+
+<script>
+let matchInvitaton = [
+
+{
+  teamImage : "../../assets/images/team profile image/team2profile.jpg",
+  teamName : "Avengers11",
+  typeOfMatch : "Betting match",
+  typeOfFriend : "Friend",
+  time : "22-Nov-2022 | 15:00",
+  captainUserName : "MSD",
+  teamMemberCount : "10",
+  teamMembersAgeFrom : "19",
+  teamMembersAgeTo : "22",
+  matchLocation : "Chennai, Methanagar, Methanagar park ground",
+  additionalInformation : "Rubber ball match, betting amount per match 100rs",
+  timestatus : "1 hours ago",
+
+},
+{
+  teamImage : "../../assets/images/team profile image/team5profile.jpg",
+  teamName : "Asgard",
+  typeOfMatch : "Betting match",
+  typeOfFriend : "Public",
+  time : "22-Nov-2022 | 15:00",
+  captainUserName : "Jedaja",
+  teamMemberCount : "10",
+  teamMembersAgeFrom : "19",
+  teamMembersAgeTo : "21",
+  matchLocation : "Chennai, Methanagar, Methanagar park ground",
+  additionalInformation : "Rubber ball match, betting amount per match 100rs",
+  timestatus : "1:30 hours ago",
+
+}
+
+]
+
+for(i=0;i<=1;i++){
+
+
+const div_class_invitation = document.createElement("div");
+div_class_invitation.setAttribute("class", "invitation");
+
+
+// div one
+
+const div_class_invitation_one = document.createElement("div");
+div_class_invitation_one.setAttribute("class", "invitation-one");
+div_class_invitation.prepend(div_class_invitation_one);
+
+const team_img_div = document.createElement("div");
+team_img_div.setAttribute("class", "teamimgdiv");
+div_class_invitation_one.prepend(team_img_div);
+
+const team_image = document.createElement("img");
+team_image.setAttribute("src", matchInvitaton[i]["teamImage"]);
+team_image.setAttribute("alt", "teamprofile");
+team_img_div.prepend(team_image);
+
+const team_name_div = document.createElement("div");
+team_name_div.setAttribute("class", "teamnamediv");
+div_class_invitation_one.append(team_name_div);
+
+const team_name_subdiv = document.createElement("div");
+team_name_div.append(team_name_subdiv);
+
+const team_name_subdivnthchild1 = document.createElement("div");
+team_name_subdiv.prepend(team_name_subdivnthchild1);
+
+const team_name_subdiv_header = document.createElement("h2");
+team_name_subdiv_header.innerText = matchInvitaton[i]["teamName"]
+team_name_subdivnthchild1.append(team_name_subdiv_header);
+
+const team_name_subdivnthchild2 = document.createElement("div");
+team_name_subdiv.append(team_name_subdivnthchild2);
+
+const team_name_subdiv_para = document.createElement("p");
+team_name_subdiv_para.setAttribute("class", "frnd");
+team_name_subdiv_para.innerText = matchInvitaton[i]["typeOfFriend"]
+team_name_subdivnthchild2.append(team_name_subdiv_para);
+
+// div two
+
+const div_class_invitation_two = document.createElement("div");
+div_class_invitation_two.setAttribute("class", "invitation-two");
+div_class_invitation.append(div_class_invitation_two);
+
+
+const div_class_invitation_two_subdiv1 = document.createElement("div");
+div_class_invitation_two.prepend(div_class_invitation_two_subdiv1);
+
+const team_name_subdiv_typeheader = document.createElement("p");
+team_name_subdiv_typeheader.innerText = "Type"
+div_class_invitation_two_subdiv1.append(team_name_subdiv_typeheader);
+
+const team_name_subdiv_typevalue = document.createElement("p");
+team_name_subdiv_typevalue.innerText = matchInvitaton[i]["typeOfMatch"]
+div_class_invitation_two_subdiv1.append(team_name_subdiv_typevalue);
+
+const div_class_invitation_two_subdiv2 = document.createElement("div");
+div_class_invitation_two.append(div_class_invitation_two_subdiv2);
+
+const team_name_subdiv_timeheader = document.createElement("p");
+team_name_subdiv_timeheader.innerText = "Time"
+div_class_invitation_two_subdiv2.append(team_name_subdiv_timeheader);
+
+const team_name_subdiv_timevalue = document.createElement("p");
+team_name_subdiv_timevalue.innerText = matchInvitaton[i]["time"]
+div_class_invitation_two_subdiv2.append(team_name_subdiv_timevalue);
+
+// div three
+
+const div_class_invitation_three = document.createElement("div");
+div_class_invitation_three.setAttribute("class", "invitation-three");
+div_class_invitation.append(div_class_invitation_three);
+
+const div_class_invitation_three_subdiv1 = document.createElement("div");
+div_class_invitation_three.append(div_class_invitation_three_subdiv1);
+
+const div_class_invitation_three_icon1 = document.createElement("i");
+div_class_invitation_three_icon1.setAttribute("class", "fa-regular fa-copyright");
+div_class_invitation_three_subdiv1.append(div_class_invitation_three_icon1);
+
+const div_class_invitation_three_para1 = document.createElement("p");
+div_class_invitation_three_para1.innerText = matchInvitaton[i]["captainUserName"]
+div_class_invitation_three_subdiv1.append(div_class_invitation_three_para1);
+
+const div_class_invitation_three_subdiv2 = document.createElement("div");
+div_class_invitation_three.append(div_class_invitation_three_subdiv2);
+
+const div_class_invitation_three_icon2 = document.createElement("i");
+div_class_invitation_three_icon2.setAttribute("class", "fa-solid fa-people-group");
+div_class_invitation_three_subdiv2.append(div_class_invitation_three_icon2);
+
+const div_class_invitation_three_para2 = document.createElement("p");
+div_class_invitation_three_para2.innerText = matchInvitaton[i]["teamMemberCount"] + "  Members" + " (Age :" + matchInvitaton[i]["teamMembersAgeFrom"] + " to " + matchInvitaton[i]["teamMembersAgeTo"] + ")"
+div_class_invitation_three_subdiv2.append(div_class_invitation_three_para2);
+
+const div_class_invitation_three_subdiv3 = document.createElement("div");
+div_class_invitation_three.append(div_class_invitation_three_subdiv3);
+
+const div_class_invitation_three_icon3 = document.createElement("i");
+div_class_invitation_three_icon3.setAttribute("class", "fa-solid fa-location-dot");
+div_class_invitation_three_subdiv3.append(div_class_invitation_three_icon3);
+
+const div_class_invitation_three_para3 = document.createElement("p");
+div_class_invitation_three_para3.innerText = matchInvitaton[i]["matchLocation"]
+div_class_invitation_three_subdiv3.append(div_class_invitation_three_para3);
+
+const div_class_invitation_three_subdiv4 = document.createElement("div");
+div_class_invitation_three.append(div_class_invitation_three_subdiv4);
+
+const div_class_invitation_three_icon4 = document.createElement("i");
+div_class_invitation_three_icon4.setAttribute("class", "fa-solid fa-circle-info");
+div_class_invitation_three_subdiv4.append(div_class_invitation_three_icon4);
+
+const div_class_invitation_three_para4 = document.createElement("p");
+div_class_invitation_three_para4.innerText = matchInvitaton[i]["additionalInformation"]
+div_class_invitation_three_subdiv4.append(div_class_invitation_three_para4);
+
+// accept reject btn
+
+const div_accept_reject = document.createElement("div");
+div_accept_reject.setAttribute("class", "accept-reject");
+div_class_invitation.append(div_accept_reject);
+
+const div_reject_button = document.createElement("button");
+div_reject_button.innerText = "Reject"
+div_accept_reject.append(div_reject_button);
+
+const div_accept_button = document.createElement("button");
+div_accept_button.innerText = "Accept"
+div_accept_reject.append(div_accept_button);
+
+// div four
+
+const div_class_invitation_four = document.createElement("div");
+div_class_invitation_four.setAttribute("class", "invitation-four");
+div_class_invitation.append(div_class_invitation_four);
+
+const div_class_invitation_four_subdiv = document.createElement("div");
+div_class_invitation_four_subdiv.setAttribute("class", "timetaken");
+div_class_invitation_four.append(div_class_invitation_four_subdiv);
+
+const div_class_invitation_four_i = document.createElement("i");
+div_class_invitation_four_i.setAttribute("class", "fa-regular fa-clock");
+div_class_invitation_four_subdiv.append(div_class_invitation_four_i);
+
+const div_class_invitation_four_p = document.createElement("p");
+div_class_invitation_four_p.innerText = matchInvitaton[i]["timestatus"]
+div_class_invitation_four_subdiv.append(div_class_invitation_four_p);
+
+
+
+document.querySelector(".match-invitation-main").append(div_class_invitation)
+
+}
+</script>
+
 <!-- main end -->
 </body>
 </html>

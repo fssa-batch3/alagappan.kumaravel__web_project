@@ -12,7 +12,7 @@
 
 <body>
 	<!-- Header start -->
-	<header id="homepage">
+	<header id="homepage" data-hveid="1">
 		
 		<div class="logo">
 			<img class="logoimg" src="./assets/images/logo1.svg" alt="Sportshub logo">
@@ -48,12 +48,12 @@
 					<div>
 					<form>
 						<div>
-							<input type="email" type="tel" placeholder="Email address or Phone number" />
+							<input id="email" type="email" type="tel" placeholder="Email address or Phone number" />
 						</div>
 						<div>
-							<input type="password" placeholder="Password" />
+							<input id="password" type="password" placeholder="Password"  />
 						</div>
-						<a href="./pages/homepage/hpexist.html"><button type="button">Log in</button></a>
+						<button type="button" onclick="login()">Log in</button>
 					</form>
 				</div>
 				<div class="or"><hr><p><b>(or)</b></p><hr></div>
@@ -130,5 +130,19 @@
 		<div class="rights"><p>Copyright © 2019 - 2022 Sportshub - Website Designed By Alagappan</p></div>
 	</footer>
 <!--  footer ends -->
+
+<script>
+function login(){
+	const email = document.getElementById("email").value 	
+	const password = document.getElementById("password").value 
+	
+	console.log(email)
+	console.log(password)
+
+	window.location.href = "./pages/homepage/hpexist.html"
+}
+
+
+	</script>
 </body>
 </html>

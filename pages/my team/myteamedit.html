@@ -32,10 +32,10 @@
 	</div>
 	<form>
 		<label>Team name</label>
-		<input type="text"> 
+		<input id="teamname" type="text" value="Indians"> 
 		   
 		<label>Area</label> 
-		<input type="text" > 
+		<input id="area" type="text" value="Annanagar"> 
 
 		<label>About</label>
 		<textarea></textarea>
@@ -43,7 +43,7 @@
 		<div>
 			<label class="onoffdiv">Open for players (On/Off)</label>
 			<label class="switch">
-				<input type="checkbox" checked>
+				<input type="checkbox" id="open_for_players" value="false">
 				<span class="slider round"></span>
 			  </label>
 			</div>
@@ -57,5 +57,11 @@
 	</div>  
 </main>
 <!-- main end -->
+
+<script>
+	const area = document.getElementById("area").value
+	const open_for_players = document.getElementById("open_for_players").value
+	const teamname = document.getElementById("teamname").value
+		</script>
 </body>
 </html>

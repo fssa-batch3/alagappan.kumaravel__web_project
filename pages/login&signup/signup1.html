@@ -29,19 +29,19 @@
 				<p>Sportshub helps you connect and play with people</p>
 				<form>
 					<div>
-						<input type="email" type="tel" placeholder="Email address or Phone number" />
+						<input id="email" type="email" placeholder="Email address or Phone number"  />
 					</div>
 					<div>
-						<input type="text" placeholder="Fullname" />
+						<input id="fullname" type="text" placeholder="Fullname"  />
 					</div>
 					<div>
-						<input type="text" placeholder="Username" />
+						<input id="username" type="text" placeholder="Username" />
 					</div>
 					<div>
-						<input type="password" placeholder="Password" />
+						<input id="password" type="password" placeholder="Password" />
 					</div>
 					<div>
-						<a href="./signup2.html"><button type="button" class="signupbtn">Sign up</button></a>
+						<button type="button" onclick="signin()" class="signupbtn">Sign up</button>
 					</div>
 				</form>
 			</div>
@@ -57,11 +57,32 @@
 		<div>
 			<a href="#"><i class="fa-brands fa-facebook"></i></a>
 			<a href="#"><i class="fa-brands fa-instagram"></i></a>
-			<a href="#"><i class="fa-brands fa-twitter"></i></a>
+			<a href=""><i class="fa-brands fa-twitter"></i></a>
 		</div>
 		<div class="rights"><p>Copyright © 2019 - 2022 Sportshub - Website Designed By Alagappan</p></div>
 	</footer>
 
+
+
+<script>
+function signin(){
+	const email = document.getElementById("email").value 	
+const fullname = document.getElementById("fullname").value 	
+const username = document.getElementById("username").value 
+const password = document.getElementById("password").value 
+
+console.log(email)
+
+localStorage.setItem("user_email", email)
+localStorage.setItem("user_fullname", fullname)
+localStorage.setItem("user_username", username)
+localStorage.setItem("user_password", password)
+
+window.location.href = "./signup2.html"
+
+}	
+	
+	</script>
 </body>
 
 </html>

@@ -28,17 +28,17 @@
 	</div>
 	<form>
 		<label>Fullname </label>
-					<input type="text" placeholder="Eg:Mahendra singh dhoni" value="Mahendra singh dhoni"> 
+					<input id="fullname" type="text"  > 
 					
 					<label>Username </label>
-					<input type="text" placeholder="Eg:MSD" value="MSD">
+					<input id="username" type="text"  >
 
 					 <label>DOB </label>
-					<input type="date"> 
+					<input id="date_of_birth" type="date" > 
 				   
 				   
 					<label>Gender</label> 
-					<select>
+					<select id="gender" >
 						<option>Male</option>
 						<option>Female</option>
 						<option>Prefer not to say</option>
@@ -47,7 +47,7 @@
 				   
 				   
 					<label>Game</label> 
-					<select>
+					<select id="game" >
 						<option>Cricket</option>
 						<option>Football</option>
 						<option>Kabadi</option>
@@ -58,24 +58,54 @@
 				</select> 
 				   
 					<label>Area</label> 
-					<input type="text" placeholder="Eg:Annanagar" value="Annanagar"> 
+					<input id="area" type="text" placeholder="Eg:Annanagar" > 
 				   
 					<label>Phone number</label> 
-					<input type="tel" placeholder="Eg:91+987654321" value="9344655211">  
+					<input id="phone_number" type="tel" placeholder="Eg:91+987654321" >  
 				 
 					<label>Email address</label> 
-					<input type="email" placeholder="Eg:abcd@gmail.com" value="Msd@gmail.com"> 
+					<input id="email" type="email" > 
 
 					<label>Pin</label> 
-					<input type="password" value="******" > 
+					<input id="password" type="password" > 
 
 					<label>About</label>
-					<textarea></textarea>
+					<textarea id="about"></textarea>
 	</form>		 
 	<div class="updatediv">
-		<button>UPDATE</button>
-	</div>  
+		<button type="button" onclick="update()">UPDATE</button>
+	</div>
 </main>
 <!-- main end -->
+
+
+<script>
+function update(){
+	const email = document.getElementById("email").value 	
+const fullname = document.getElementById("fullname").value 	
+const username = document.getElementById("username").value 
+const password = document.getElementById("password").value 
+const date_of_birth = document.getElementById("date_of_birth").value 	
+const gender = document.getElementById("gender").value 	
+const game = document.getElementById("game").value 
+const area = document.getElementById("area").value
+const phone_number = document.getElementById("phone_number").value
+const about = document.getElementById("about").value
+
+localStorage.setItem("user_email", email)
+localStorage.setItem("user_fullname", fullname)
+localStorage.setItem("user_username", username)
+localStorage.setItem("user_password", password)
+localStorage.setItem("user_date_of_birth", date_of_birth)
+localStorage.setItem("user_gender", gender)
+localStorage.setItem("user_game", game)
+localStorage.setItem("user_area", area)
+localStorage.setItem("user_phone_number", phone_number)
+localStorage.setItem("user_about", about)
+
+window.location.href = "./myprofile.html"
+}
+
+	</script>
 </body>
 </html>

@@ -23,7 +23,7 @@
 		<div class="line"></div>
 		<div class="select-team-button">
 			<a href="./creatematch.html"><button class="darkbtn" type="button">Friend</button></a>
-			<a href="./creatematch-stranger.html"><button class="lightbtn" type="button">Stranger</button></a>
+			<a href="./creatematch-stranger.html"><button class="lightbtn" type="button">Public</button></a>
 		</div>
 		<p>Select opponent type</p>
 	</div>
@@ -42,14 +42,6 @@
 		<div>
 			<a href="./area-select.html"><div id="blank"></div></a>
 			<a class="select" href="./team-select.html">SELECT</a>
-			<!-- <img class="teamimage" src="../../assets/images/team profile image/team2profile.jpg" alt="teamprofile">
-			<div>
-				<h2>Avengers11</h2>
-		<div>
-			<i class="fa-regular fa-copyright"></i>
-			<p>Jedaja</p>
-		</div>
-			</div> -->
 		</div>
 	</div>
 
@@ -59,21 +51,21 @@
 <main>
 	<form>
 	<label>Members</label>
-	<input type="number">
+	<input id="members" type="number" >
 	
 	<label>Type of match</label>
-	<select id="country" name="country">
-		  <option value="australia">Betting match</option>
-		  <option value="canada">Friendly match</option>
+	<select id="type_of_match">
+		  <option>Betting match</option>
+		  <option>Friendly match</option>
 	</select>
 
 	<label>Players Age</label>
 		<div class="age">
-		<label >From</label><input class="age1" type="number">
-		<label>To</label><input class="age1" type="number">
+		<label >From</label><input id="players_from_age" class="age1" type="number" >
+		<label>To</label><input id="players_to_age" class="age1" type="number" >
 			</div>
 		<label>Time</label>
-		<input type="datetime-local">
+		<input id="date_and_time" type="datetime-local" >
 	
 		<label>Address</label>
 		<textarea></textarea>
@@ -83,11 +75,26 @@
 
 	</form>
 	<div class="updatediv">
-		<button>CREATE</button>
+		<button type="button" onclick="submit()">CREATE</button>
 	</div>
 </main>
 
 <!-- main end -->
+<script>
+
+function submit(){
+	const members = document.getElementById("members").value 	
+	const type_of_match = document.getElementById("type_of_match").value 	
+	const players_from_age = document.getElementById("players_from_age").value 
+	const players_to_age = document.getElementById("players_to_age").value
+	const date_and_time = document.getElementById("date_and_time").value
+
+	console.log(members)
+	window.location.href = "./team response.html"
+
+}
+
+</script>
 
 </body>
 </html>
