@@ -1,0 +1,24 @@
+{
+    "teamName" : "string",
+    "teamImage" : {
+      "source" : "string",
+      "alt" : "string"
+      },
+    "typeOfMatch" : "string",
+    "typeOfFriend" : "string",
+    "time" : "string",
+    "captainUserName" : "string",
+    "teamMember" : {
+      "count" : "number" ,
+        "Age" : {
+        "From" : "number" ,
+          "To" : "number" 
+      }
+      },
+    "additionalInformation" : "string",
+    "timeStatus" : {
+      "duriation" : "number",
+      "type" : "string"
+      }
+  
+  }

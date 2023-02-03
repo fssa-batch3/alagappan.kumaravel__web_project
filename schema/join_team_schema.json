@@ -1,0 +1,10 @@
+{
+  "teamImage" : {
+	"source" : "string",
+	"alt" : "string"
+  },
+  "teamName" : "string",
+  "area" : "string",
+  "openForPlayers" : "string"
+
+}

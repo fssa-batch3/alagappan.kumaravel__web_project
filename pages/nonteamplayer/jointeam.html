@@ -27,17 +27,18 @@
 		<div class="content-subheader searchbardiv">
 			<div class="searchbar"><input type="search"><i class="fa-solid fa-magnifying-glass"></i></div>
 		</div>
-		<div class="teams">
+		<!-- <div class="teams">
 			<div class="teamimagediv">
 				<button type="button" onclick="OpenPopup()"><img class="teamprofile" src="../../assets/images/team profile image/team2profile.jpg" alt="teamprofile"></button>
 			</div>
 			<div class="teamdetaildiv">
 				<div>
-					<button type="button" onclick="OpenPopup()"><div><h2>Avengers11</h2></div>
+					<button type="button" onclick="OpenPopup()">
+						<div><h2>Avengers11</h2></div>
 					<div>
 						<i class="fa-solid fa-location-dot"></i>
-						<p>Annanagar</p></div>
-				</div></button>
+						<p>Annanagar</p></div></button>
+				</div>
 				<div>
 					<i class="fa-regular fa-handshake"></i>
 					<p>We need one good allrounder and....</p>
@@ -45,8 +46,8 @@
 				</div>
 			</div>
 			<a class="select-link" href="#">SELECT</a>
-		</div>
-		<div class="teams">
+		</div> -->
+		<!-- <div class="teams">
 			<div class="teamimagediv">
 				<img class="teamprofile" src="../../assets/images/team profile image/team3profile.jpg" alt="teamprofile">
 			</div>
@@ -120,7 +121,7 @@
 				<div><i class="fa-regular fa-handshake"></i><p>We need one good allrounder and....</p></div>
 			</div>
 			<a class="select-link" href="#">SELECT</a>
-		</div>
+		</div> -->
 		
 	</div>
 </section>
@@ -142,6 +143,7 @@
 				</div>
 			</div>
 			<div class="players-list">
+
 				<h3>Members  (10)</h3>
 				<div>
 					<img class="players-list-image" src="../../assets/images/Player profile image/playerno1.jfif" alt="players image">
@@ -201,6 +203,167 @@ popup.classList.add("open-popup")
 }
 function ClosePopup(){
 popup.classList.remove("open-popup");
+}
+
+let jointeam = [
+
+{
+  "teamImage" : {
+	"source" : "../../assets/images/team profile image/team2profile.jpg",
+	"alt" : "logo of Avengers 11"
+  },
+  "teamName" : "Avengers11",
+  "area" : "Annanagar",
+  "openForPlayers" : "We need one good allrounder and...."
+  
+
+},
+{
+  "teamImage" : {
+	"source" : "../../assets/images/team profile image/team5profile.jpg",
+	"alt" : "logo of Asgard"},
+
+  "teamName" : "Asgard",
+
+  "address" : {
+	"area": "Annanagar",
+	"distric" : "Chennai"},
+
+  "dateOfJoin" : "Thu Dec 01 2021 00:00:00",
+
+  "teamMembers" : [
+  	{
+	"playerImage" : {
+	"source" : "../../assets/images/Player profile image/playerno1.jfif",
+	"alt" : "image of Jedaja"
+     },
+	 "userName" : "Jedaja",
+	 "dateOfBirth": "Thu Dec 11 2001 00:00:00",
+	 "captainStatus" : true 
+	},
+	{
+	"playerImage" : {
+	"source" : "../../assets/images/Player profile image/playerno2.jpg",
+	"alt" : "image of Anderson"
+     },
+	 "userName" : "Anderson",
+	 "dateOfBirth": "Thu Dec 01 2000 00:00:00",
+	 "captainStatus" : false 
+	},
+	{
+	"playerImage" : {
+	"source" : "../../assets/images/Player profile image/playerno3.jpg",
+	"alt" : "image of Breet lee"
+     },
+	 "userName" : "Breet lee",
+	 "dateOfBirth": "Thu Dec 22 2002 00:00:00",
+	 "captainStatus" : false 
+	},
+	{
+	"playerImage" : {
+	"source" : "../../assets/images/Player profile image/playerno4.png",
+	"alt" : "logo of viratkolhi"
+     },
+	 "userName" : "VK-18",
+	 "dateOfBirth": "Thu Dec 01 2001 00:00:00",
+	 "captainStatus" : false 
+	},
+	{
+	"playerImage" : {
+	"source" : "../../assets/images/Player profile image/playerno5.png",
+	"alt" : "image of Rohit sharma"
+     },
+	 "userName" : "Hit man",
+	 "dateOfBirth": "Thu Dec 01 2000 00:00:00",
+	 "captainStatus" : false 
+	}
+  ],
+
+  "openForPlayers" : "We need one good allrounder and...."
+
+},
+{
+  "teamImage" : {
+	"source" : "../../assets/images/team profile image/team5profile.jpg",
+	"alt" : "logo of Asgard"
+  },
+  "teamName" : "Asgard",
+  "area" : "Annanagar",
+  "openForPlayers" : "We need one good allrounder and...."
+
+}
+]
+
+for(i=0;i<=jointeam.length;i++){
+
+const div_teams = document.createElement("div");
+div_teams.setAttribute("class", "teams");
+
+const team_image_div = document.createElement("div");
+team_image_div.setAttribute("class", "teamimagediv");
+div_teams.append(team_image_div);
+
+const team_image_button = document.createElement("button");
+team_image_button.setAttribute("type", "button");
+team_image_button.setAttribute("onclick", "OpenPopup()");
+team_image_div.append(team_image_button);
+
+const team_image = document.createElement("img");
+team_image.setAttribute("class", "teamprofile");
+team_image.setAttribute("src", jointeam[i]["teamImage"]["source"]);
+team_image.setAttribute("alt", jointeam[i]["teamImage"]["alt"]);
+team_image_button.append(team_image);
+
+const team_details_div = document.createElement("div");
+team_details_div.setAttribute("class", "teamdetaildiv");
+div_teams.append(team_details_div);
+
+const team_details_subdiv1 = document.createElement("div");
+team_details_div.append(team_details_subdiv1);
+
+const team_name_button = document.createElement("button");
+team_name_button.setAttribute("type", "button");
+team_name_button.setAttribute("onclick", "OpenPopup()");
+team_details_subdiv1.append(team_name_button);
+
+const team_name_button_div1 = document.createElement("div");
+team_name_button.append(team_name_button_div1);
+
+const team_name_header = document.createElement("h2");
+team_name_header.innerText = jointeam[i]["teamName"];
+team_name_button_div1.append(team_name_header);
+
+const team_name_button_div2 = document.createElement("div");
+team_name_button.append(team_name_button_div2);
+
+const icon_location = document.createElement("i");
+icon_location.setAttribute("class", "fa-solid fa-location-dot");
+team_name_button_div2.append(icon_location);
+
+const area_name_para = document.createElement("p");
+area_name_para.innerText = jointeam[i]["area"];
+team_name_button_div2.append(area_name_para);
+
+const team_details_subdiv2 = document.createElement("div");
+team_details_div.append(team_details_subdiv2);
+
+const icon_handshake = document.createElement("i");
+icon_handshake.setAttribute("class", "fa-regular fa-handshake");
+team_details_subdiv2.append(icon_handshake);
+
+const open_for_players_details_para = document.createElement("p");
+open_for_players_details_para.innerText = jointeam[i]["openForPlayers"];
+team_details_subdiv2.append(open_for_players_details_para);
+
+const select_link = document.createElement("i");
+select_link.setAttribute("class", "select-link");
+select_link.setAttribute("href", "#");
+select_link.innerText = "SELECT";
+div_teams.append(select_link);
+
+
+document.querySelector(".join-team-content").append(div_teams)
+
 }
 </script>
 

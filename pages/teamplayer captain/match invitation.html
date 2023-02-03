@@ -139,39 +139,64 @@
 let matchInvitaton = [
 
 {
-  teamImage : "../../assets/images/team profile image/team2profile.jpg",
-  teamName : "Avengers11",
-  typeOfMatch : "Betting match",
-  typeOfFriend : "Friend",
-  time : "22-Nov-2022 | 15:00",
-  captainUserName : "MSD",
-  teamMemberCount : "10",
-  teamMembersAgeFrom : "19",
-  teamMembersAgeTo : "22",
-  matchLocation : "Chennai, Methanagar, Methanagar park ground",
-  additionalInformation : "Rubber ball match, betting amount per match 100rs",
-  timestatus : "1 hours ago",
+  "teamName" : "Avengers11",
+  "teamImage" : {
+	"source" : "../../assets/images/team profile image/team2profile.jpg",
+	"alt" : "logo of Avengers 11",
+  },
+  
+  "typeOfMatch" : "Betting match",
+  "typeOfFriend" : "Friend",
+  "matchTime" : "Thu Dec 31 2022 15:30:00",
+  "captainUserName" : "MSD",
+  "teamMember" : {
+	"count" : 10 ,
+    "age" : {
+		"from" : 19 ,
+    	"to" : 22 ,
+	}
+  },
+  "matchLocation" : "Chennai, Methanagar, Methanagar park ground",
+  "additionalInformation" : "Rubber ball match, betting amount per match 100rs",
+  "timeStatus" : {
+	"duriation" : 1,
+	"type" : "hours",
+  },
+  "responseStatus" : {
+	"time" : "Thu Jan 01 2022 15:30:00",
+	"result" : "ACCEPTED"
+  }
 
 },
 {
-  teamImage : "../../assets/images/team profile image/team5profile.jpg",
   teamName : "Asgard",
+  teamImage : {
+	source : "../../assets/images/team profile image/team5profile.jpg",
+	alt : "logo of Asgard"
+  },
   typeOfMatch : "Betting match",
   typeOfFriend : "Public",
-  time : "22-Nov-2022 | 15:00",
+  matchTime : "Thu Dec 31 2022 15:30:00",
   captainUserName : "Jedaja",
-  teamMemberCount : "10",
-  teamMembersAgeFrom : "19",
-  teamMembersAgeTo : "21",
+  teamMember : {
+	count : 10 ,
+    age : {
+		from : 19 ,
+    	to : 22 ,
+	}
+  },
   matchLocation : "Chennai, Methanagar, Methanagar park ground",
   additionalInformation : "Rubber ball match, betting amount per match 100rs",
-  timestatus : "1:30 hours ago",
+  timeStatus : {
+	duriation : 1,
+	type : "hours",
+  }
 
 }
 
 ]
 
-for(i=0;i<=1;i++){
+for(i=0;i< matchInvitaton.length ;i++){
 
 
 const div_class_invitation = document.createElement("div");
@@ -189,8 +214,8 @@ team_img_div.setAttribute("class", "teamimgdiv");
 div_class_invitation_one.prepend(team_img_div);
 
 const team_image = document.createElement("img");
-team_image.setAttribute("src", matchInvitaton[i]["teamImage"]);
-team_image.setAttribute("alt", "teamprofile");
+team_image.setAttribute("src", matchInvitaton[i]["teamImage"]["source"]);
+team_image.setAttribute("alt", matchInvitaton[i]["teamImage"]["alt"]);
 team_img_div.prepend(team_image);
 
 const team_name_div = document.createElement("div");
@@ -241,7 +266,7 @@ team_name_subdiv_timeheader.innerText = "Time"
 div_class_invitation_two_subdiv2.append(team_name_subdiv_timeheader);
 
 const team_name_subdiv_timevalue = document.createElement("p");
-team_name_subdiv_timevalue.innerText = matchInvitaton[i]["time"]
+team_name_subdiv_timevalue.innerText = matchInvitaton[i]["matchTime"]
 div_class_invitation_two_subdiv2.append(team_name_subdiv_timevalue);
 
 // div three
@@ -269,7 +294,7 @@ div_class_invitation_three_icon2.setAttribute("class", "fa-solid fa-people-group
 div_class_invitation_three_subdiv2.append(div_class_invitation_three_icon2);
 
 const div_class_invitation_three_para2 = document.createElement("p");
-div_class_invitation_three_para2.innerText = matchInvitaton[i]["teamMemberCount"] + "  Members" + " (Age :" + matchInvitaton[i]["teamMembersAgeFrom"] + " to " + matchInvitaton[i]["teamMembersAgeTo"] + ")"
+div_class_invitation_three_para2.innerText = matchInvitaton[i]["teamMember"]["count"] + "  Members" + " (Age :" + matchInvitaton[i]["teamMember"]["age"]["from"] + " to " + matchInvitaton[i]["teamMember"]["age"]["to"] + ")";
 div_class_invitation_three_subdiv2.append(div_class_invitation_three_para2);
 
 const div_class_invitation_three_subdiv3 = document.createElement("div");
@@ -323,7 +348,7 @@ div_class_invitation_four_i.setAttribute("class", "fa-regular fa-clock");
 div_class_invitation_four_subdiv.append(div_class_invitation_four_i);
 
 const div_class_invitation_four_p = document.createElement("p");
-div_class_invitation_four_p.innerText = matchInvitaton[i]["timestatus"]
+div_class_invitation_four_p.innerText = matchInvitaton[i]["timeStatus"]["duriation"]+ " " + matchInvitaton[i]["timeStatus"]["type"] + " ago";
 div_class_invitation_four_subdiv.append(div_class_invitation_four_p);
 
 
