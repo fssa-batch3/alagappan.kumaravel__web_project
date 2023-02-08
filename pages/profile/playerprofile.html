@@ -15,7 +15,6 @@
 
 	<!-- header start -->
 	<header>
-		<img class="bgimg" src="../../assets/images/playerface.jpg" alt="backgroundimage">
 		<div class="color"></div>
 		<div class="top">
 			<i class="fa-solid fa-arrow-left"></i>
@@ -26,17 +25,16 @@
 		</div>
 		<div class="sidebar-profile">
 				<div class="playerimagediv">
-					<img src="../../assets/images/playerface.jpg" alt="playerprofile">
 				</div>
 				<div class="profiledetailsdiv">
-					<h1>MSD</h1>
-					<div>
+					<h1></h1>
+					<div class="">
 						<i class="fa-solid fa-location-dot"></i>
-						<p>Annanagar</p>
+						<p></p>
 					</div>
 					<div>
 						<i class="fa-regular fa-calendar"></i>
-						<p>Since 30-Nov-2022</p>
+						<p></p>
 					</div>
 				</div>
 			</div>
@@ -62,30 +60,30 @@
 			<tbody>
 				<tr>
 					<td>Full name</td>
-					<td>Mahendra Shigh Dhoni</td>
+					<td class="player_full_name"></td>
 				  </tr>
 				  <tr>
 					<td>Age</td>
-					<td>22</td>
+					<td class="player_age"></td>
 				  </tr>
 				  <tr>
 					<td>Gender</td>
-					<td>Male</td>
+					<td class="player_gender"></td>
 				  </tr>
 				  <tr>
 					<td>Game</td>
-					<td>Cricket</td>
+					<td class="player_game"></td>
 				  </tr>
 					<td>Teamname</td>
-					<td>India 11</td>
+					<td class="player_team_name"></td>
 				  </tr>
 				  <tr>
 					<td>Area</td>
-					<td>Anna nagar</td>
+					<td class="player_area"></td>
 				  </tr>
 				  <tr>
 					<td>About</td>
-					<td>I am a Rightarm batsman and good wicket keeper</td>
+					<td class="player_about"></td>
 				  </tr>
 			</tbody>
 		  </table>
@@ -122,24 +120,65 @@
 
 	"isCaptain" : true,
 	
-	// "teamDetails" : {
-	// "teamName" : "indian11",
+	"teamDetails" : {
+	"teamName" : "indian11",
 
-	// "teamImage" : {
-	// "source" : "../../assets/images/team profile image/team2profile.jpg",
-	// "alt" : "logo of Avengers 11",
-    // },
+	"teamImage" : {
+	"source" : "../../assets/images/team profile image/team2profile.jpg",
+	"alt" : "logo of Avengers 11",
+    },
 
-	// "address" : {
-	// "area": "Annanagar",
-	// "distric" : "Chennai"},
+	"address" : {
+	"area": "Annanagar",
+	"distric" : "Chennai"},
 
-	// "about" : "	We are regularly playing cricket in annanagar, shennoi nagar and aminjikarai",
+	"about" : "	We are regularly playing cricket in annanagar, shennoi nagar and aminjikarai",
 
-	// "dateOfJoin" : "Thu Dec 11 2022 00:00:00"
-	// }
+	"dateOfJoin" : "Thu Dec 11 2022 00:00:00"
+	}
 
 	}
+
+const player_image = document.createElement("img");
+player_image.setAttribute("src", playerProfile["playerImage"]["source"]);
+player_image.setAttribute("alt", playerProfile["playerImage"]["alt"]);
+document.querySelector(".playerimagediv").prepend(player_image);
+
+const player_background_image = document.createElement("img");
+player_background_image.setAttribute("class", "bgimg")
+player_background_image.setAttribute("src", playerProfile["playerImage"]["source"]);
+player_background_image.setAttribute("alt", playerProfile["playerImage"]["alt"]);
+document.querySelector("header").prepend(player_background_image);
+
+let playerUserName = playerProfile["userName"]
+document.querySelector(".profiledetailsdiv h1").innerHTML = playerUserName;
+
+let playerLocation = playerProfile["address"]["area"]
+document.querySelector(".profiledetailsdiv div:nth-child(2) p").innerHTML = playerLocation;
+
+let playerSince = playerProfile["dateOfJoin"]
+document.querySelector(".profiledetailsdiv div:nth-child(3) p").innerHTML = "Since" + "  " +playerSince;
+
+let playerFullName = playerProfile["fullName"]
+document.querySelector(".player_full_name").innerHTML = playerFullName ;
+
+let playerAge = playerProfile["fullName"]
+document.querySelector(".player_age").innerHTML = playerAge ;
+
+let playerGender = playerProfile["gender"]
+document.querySelector(".player_gender").innerHTML = playerGender ;
+
+let playerGame = playerProfile["game"]
+document.querySelector(".player_game").innerHTML = playerGame ;
+
+let playerTeamName = playerProfile["teamDetails"]["teamName"]
+document.querySelector(".player_team_name").innerHTML = playerTeamName ;
+
+let playerArea = playerProfile["address"]["area"]
+document.querySelector(".player_area").innerHTML = playerArea ;
+
+let playerAbout = playerProfile["about"]
+document.querySelector(".player_about").innerHTML = playerAbout ;
 
 </script>
 

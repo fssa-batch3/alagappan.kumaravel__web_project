@@ -28,7 +28,7 @@
 		</div>
 	</div>
 
-	<div class="teams">
+	<!-- <div class="teams">
 		<div class="teamssub">
 		<div class="teamimagediv">
 			<img class="teamprofile" src="../../assets/images/team profile image/team2profile.jpg" alt="teamprofile">
@@ -74,7 +74,7 @@
 		<i class="fa-solid fa-trash-can"></i>
 		<i class="fa-brands fa-whatsapp"></i>
 	</div>
-	</div>
+	</div> -->
 </main>
 <!-- main end -->
 <script>
@@ -101,7 +101,135 @@
   }
 },
 
+{
+  "teamImage" : {
+	"source" : "../../assets/images/team profile image/team5profile.jpg",
+	"alt" : "logo of Asgard"},
+
+  "teamName" : "Asgard",
+
+  "address" : {
+	"area": "Annanagar",
+	"distric" : "Chennai"},
+
+  "dateOfJoin" : "Thu Dec 01 2021 00:00:00",
+
+  "openForPlayers" : "We need one good allrounder and....",
+
+  "responseStatus" : {
+	"time" : "Thu Jan 01 2022 15:30:00",
+	"result" : "REJECTED"	
+  }
+}
 ]
+for(i=0;i<=join_team_response.length;i++){
+
+
+
+const div_teams = document.createElement("div");
+div_teams.setAttribute("class", "teams");
+
+const team_sub_div = document.createElement("div");
+team_sub_div.setAttribute("class", "teamssub");
+div_teams.append(team_sub_div);
+
+const team_image_div = document.createElement("div");
+team_image_div.setAttribute("class", "teamimagediv");
+team_sub_div.append(team_image_div);
+
+const team_image_button = document.createElement("button");
+team_image_button.setAttribute("type", "button");
+// team_image_button.setAttribute("onclick", "OpenPopup()");
+team_image_div.append(team_image_button);
+
+const team_image = document.createElement("img");
+team_image.setAttribute("class", "teamprofile");
+team_image.setAttribute("src", join_team_response[i]["teamImage"]["source"]);
+team_image.setAttribute("alt", join_team_response[i]["teamImage"]["alt"]);
+team_image_button.append(team_image);
+
+const team_details_div = document.createElement("div");
+team_details_div.setAttribute("class", "teamdetaildiv");
+team_sub_div.append(team_details_div);
+
+const team_details_subdiv1 = document.createElement("div");
+team_details_div.append(team_details_subdiv1);
+
+const team_name_button = document.createElement("button");
+team_name_button.setAttribute("type", "button");
+// team_name_button.setAttribute("onclick", "OpenPopup()");
+team_details_subdiv1.append(team_name_button);
+
+const team_name_button_div1 = document.createElement("div");
+team_name_button.append(team_name_button_div1);
+
+const team_name_header = document.createElement("h2");
+team_name_header.innerText = join_team_response[i]["teamName"];
+team_name_button_div1.append(team_name_header);
+
+const team_name_button_div2 = document.createElement("div");
+team_name_button.append(team_name_button_div2);
+
+const icon_location = document.createElement("i");
+icon_location.setAttribute("class", "fa-solid fa-location-dot");
+team_name_button_div2.append(icon_location);
+
+const area_name_para = document.createElement("p");
+area_name_para.innerText = join_team_response[i]["address"]["area"];
+team_name_button_div2.append(area_name_para);
+
+const team_details_subdiv2 = document.createElement("div");
+team_details_div.append(team_details_subdiv2);
+
+const icon_handshake = document.createElement("i");
+icon_handshake.setAttribute("class", "fa-regular fa-handshake");
+team_details_subdiv2.append(icon_handshake);
+
+const open_for_players_details_para = document.createElement("p");
+open_for_players_details_para.innerText = join_team_response[i]["openForPlayers"];
+team_details_subdiv2.append(open_for_players_details_para);
+
+const status_div = document.createElement("div");
+status_div.setAttribute("class", "statusdiv");
+div_teams.append(status_div);
+
+const status_para = document.createElement("p");
+status_para.innerText = join_team_response[i]["responseStatus"]["time"]
+status_div.append(status_para);
+
+let result_data = join_team_response[i]["responseStatus"]["result"]
+
+let result_value = ""
+
+const status_para_bold = document.createElement("b");
+if (result_data == "ACCEPTED"){
+	status_para_bold.setAttribute("class", "boldaccepted");
+	 result_value = "   ACCEPTED"
+}
+else if (result_data == "REJECTED"){
+	status_para_bold.setAttribute("class", "boldrejected");
+	 result_value = "   REJECTED"
+}
+else {
+ 	 result_value = "   Not yet Response"
+}
+
+status_para_bold.innerText = result_value ;
+status_para.append(status_para_bold);
+
+const delete_icon = document.createElement("i");
+delete_icon.setAttribute("class", "fa-solid fa-trash-can");
+status_div.append(delete_icon);
+
+const whatsapp_icon = document.createElement("i");
+whatsapp_icon.setAttribute("class", "fa-brands fa-whatsapp");
+status_div.append(whatsapp_icon);
+
+document.querySelector("main.response-main").append(div_teams)
+
+}
+
+
 </script>
 </body>
 </html>

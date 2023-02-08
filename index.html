@@ -46,14 +46,15 @@
 			<div class="para">
 				<div class="right">
 					<div>
-					<form>
+					<form role="form" onsubmit="signIn(event)";>
 						<div>
-							<input id="email" type="email" type="tel" placeholder="Email address or Phone number" />
+							<input id="email" type="email"  placeholder="Email address or Phone number" />
 						</div>
 						<div>
 							<input id="password" type="password" placeholder="Password"  />
 						</div>
-						<button type="button" onclick="login()">Log in</button>
+						<p id="error_msg"></p>
+						<button type="submit" >Log in</button>
 					</form>
 				</div>
 				<div class="or"><hr><p><b>(or)</b></p><hr></div>
@@ -130,19 +131,69 @@
 		<div class="rights"><p>Copyright © 2019 - 2022 Sportshub - Website Designed By Alagappan</p></div>
 	</footer>
 <!--  footer ends -->
+<!-- <a href="./pages/homepage/hpexist.html"></a> -->
+<script src="./assets/css/login.js">
 
-<script>
-function login(){
-	const email = document.getElementById("email").value 	
-	const password = document.getElementById("password").value 
+</script>
+
+
+<!-- <script>
+
+// function login(){
+// 	const user_password_list = [
+//         {"password": "1", "userName": "Alagu"},
+// 		{"password": "2", "userName": "AK"}
+//     ];
+
+// 	const userName = document.getElementById("email").value
+// 	const password = document.getElementById("password").value 
+
+// 	let userName_result = user_password_list.find(item => item.userName === userName);
 	
-	console.log(email)
-	console.log(password)
+//  if(userName_result.password == password && userName_result.userName == userName){
+// 	window.location.href = "./pages/homepage/hpexist.html"
+//  }
 
-	window.location.href = "./pages/homepage/hpexist.html"
-}
+//  else {
+// 	const error_msg = document.getElementById("error_msg");
+// 	error_msg.innerText = "Wrong Password or username";
+//  }
+// }
 
+// const signUp = e => {
+//     let user_name = document.getElementById("user_name").value,
+//         user_phonenumber = document.getElementById("user_phonenumber").value,
+//         user_email = document.getElementById("user_email").value,
+//         user_address = document.getElementById("user_address").value,
+//         user_password = document.getElementById("user_password").value,
+//         confirm_password = document.getElementById("confirm_password").value;
 
-	</script>
+//     let user_list = JSON.parse(localStorage.getItem('user_list')) || [];
+
+//     let exist = user_list.length &&
+//         JSON.parse(localStorage.getItem('user_list')).some(data =>
+//             data.user_phonenumber.toLowerCase() == user_phonenumber.toLowerCase() ||
+//             data.user_email.toLowerCase() == user_email.toLowerCase()
+//         );
+
+//     if(!exist){
+//         user_list.push({ user_name, user_phonenumber, user_email, user_address,
+//                         user_password, confirm_password });
+//         localStorage.setItem('user_list', JSON.stringify(user_list));
+//         // console.log(localStorage.getItem('user_list'));
+//         document.querySelector('form').reset();
+//         document.getElementById('user_phonenumber').focus();
+//         document.getElementById('user_email').focus();
+//         // alert('Account created Successfully');
+//         // location.href = "../../index.html";
+//     }
+//     else{
+//         alert('Sorry the User already Exist!! \n Try with different Phone number or email');
+//         document.querySelector('form').reset();
+//     }
+//     e.preventDefault();
+// }
+    </script> -->
+
 </body>
 </html>

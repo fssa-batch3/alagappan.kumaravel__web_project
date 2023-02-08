@@ -15,11 +15,10 @@
 
 	<!-- header start -->
 	<header>
-		<img class="bgimg" src="../../assets/images/team1profile.jpg" alt="backgroundimage">
+		<!-- <img class="bgimg" src="../../assets/images/team1profile.jpg" alt="backgroundimage"> -->
 		<div class="color"></div>
 		<div class="top">
 			<i class="fa-solid fa-arrow-left"></i>
-			<p class="title-name">TEAM PROFILE</p>
 			<div class="topleft">
 				<i class="fa-solid fa-share"></i>
 				<i class="fa-brands fa-whatsapp"></i>
@@ -27,17 +26,17 @@
 		</div>
 		<div class="sidebar-profile">
 				<div class="playerimagediv">
-					<img src="../../assets/images/team1profile.jpg" alt="teamprofile">
+					<!-- <img src="../../assets/images/team1profile.jpg" alt="teamprofile"> -->
 				</div>
 				<div class="profiledetailsdiv">
-					<h1>Indians</h1>
+					<h1></h1>
 					<div>
 						<i class="fa-solid fa-location-dot"></i>
-						<p>Chennai, Annanagar</p>
+						<p></p>
 					</div>
 					<div>
 						<i class="fa-regular fa-calendar"></i>
-						<p>Since 30-Nov-2022</p>
+						<p></p>
 					</div>
 				</div>
 			</div>
@@ -63,23 +62,23 @@
 			<tbody>
 				<tr>
 					<td>Area</td>
-					<td>Anna nagar</td>
+					<td></td>
 				  </tr>
 				  <tr>
 					<td>Age</td>
-					<td>19 to 22</td>
+					<td></td>
 				  </tr>
 				  <tr>
 					<td>Members</td>
-					<td>10</td>
+					<td></td>
 				  </tr>
 				  <tr>
 					<td>About</td>
-					<td>We are regularly playing cricket in annanagar, shennoi nagar and aminjikarai</td>
+					<td></td>
 				  </tr>
 				  <tr>
 					<td>Open for players</td>
-					<td>We need one good allrounder</td>
+					<td></td>
 				  </tr>
 			</tbody>
 		  </table>
@@ -156,6 +155,30 @@ let teamProfile = {
   "openForPlayers" : "We need one good allrounder"
 
 }
+
+const team_image = document.createElement("img");
+team_image.setAttribute("src", teamProfile["teamImage"]["source"]);
+team_image.setAttribute("alt", teamProfile["teamImage"]["alt"]);
+document.querySelector(".playerimagediv").prepend(team_image);
+
+const team_background_image = document.createElement("img");
+team_background_image.setAttribute("class", "bgimg")
+team_background_image.setAttribute("src", teamProfile["teamImage"]["source"]);
+team_background_image.setAttribute("alt", teamProfile["teamImage"]["alt"]);
+document.querySelector("header").prepend(team_background_image);
+
+let playerUserName = teamProfile["teamName"]
+document.querySelector(".profiledetailsdiv h1").innerHTML = playerUserName;
+
+let playerLocation = teamProfile["address"]["area"]
+document.querySelector(".profiledetailsdiv div:nth-child(2) p").innerHTML = playerLocation;
+
+let playerSince = teamProfile["dateOfJoin"]
+document.querySelector(".profiledetailsdiv div:nth-child(3) p").innerHTML = "Since" + "  " +playerSince;
+
+
+
+
 
 </script>
 </body>
