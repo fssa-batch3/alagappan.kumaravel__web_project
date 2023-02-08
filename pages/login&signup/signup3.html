@@ -49,6 +49,146 @@
 		<div class="rights"><p>Copyright © 2019 - 2022 Sportshub - Website Designed By Alagappan</p></div>
 	</footer>
 
+
+	<script>
+
+let jointeam = [
+
+{
+	"teamImage": {
+		"source": "../../assets/images/team profile image/team2profile.jpg",
+		"alt": "logo of Avengers 11"
+	},
+
+	"teamName": "Avengers11",
+
+	"address": {
+		"area": "Annanagar",
+		"distric": "Chennai"
+	},
+
+	"dateOfJoin": "Thu Dec 01 2021 00:00:00",
+
+	"teamMembers": [
+		{
+			"playerImage": {
+				"source": "../../assets/images/Player profile image/playerno1.jfif",
+				"alt": "image of Jedaja"
+			},
+			"userName": "Jedaja",
+			"dateOfBirth": "Thu Dec 11 2001 00:00:00",
+			"captainStatus": true
+		},
+		{
+			"playerImage": {
+				"source": "../../assets/images/Player profile image/playerno2.jpg",
+				"alt": "image of Anderson"
+			},
+			"userName": "Anderson",
+			"dateOfBirth": "Thu Dec 01 2000 00:00:00",
+			"captainStatus": false
+		},
+		{
+			"playerImage": {
+				"source": "../../assets/images/Player profile image/playerno3.jpg",
+				"alt": "image of Breet lee"
+			},
+			"userName": "Breet lee",
+			"dateOfBirth": "Thu Dec 22 2002 00:00:00",
+			"captainStatus": false
+		},
+		{
+			"playerImage": {
+				"source": "../../assets/images/Player profile image/playerno4.png",
+				"alt": "logo of viratkolhi"
+			},
+			"userName": "VK-18",
+			"dateOfBirth": "Thu Dec 01 2001 00:00:00",
+			"captainStatus": false
+		},
+		{
+			"playerImage": {
+				"source": "../../assets/images/Player profile image/playerno5.png",
+				"alt": "image of Rohit sharma"
+			},
+			"userName": "Hit man",
+			"dateOfBirth": "Thu Dec 01 2000 00:00:00",
+			"captainStatus": false
+		}
+	],
+
+	"openForPlayers": "We need one good allrounder and...."
+
+},
+{
+	"teamImage": {
+		"source": "../../assets/images/team profile image/team5profile.jpg",
+		"alt": "logo of Asgard"
+	},
+
+	"teamName": "Asgard",
+
+	"address": {
+		"area": "Annanagar",
+		"distric": "Chennai"
+	},
+
+	"dateOfJoin": "Thu Dec 01 2021 00:00:00",
+
+	"teamMembers": [
+		{
+			"playerImage": {
+				"source": "../../assets/images/Player profile image/playerno1.jfif",
+				"alt": "image of Jedaja"
+			},
+			"userName": "Jedaja",
+			"dateOfBirth": "Thu Dec 11 2001 00:00:00",
+			"captainStatus": true
+		},
+		{
+			"playerImage": {
+				"source": "../../assets/images/Player profile image/playerno2.jpg",
+				"alt": "image of Anderson"
+			},
+			"userName": "Anderson",
+			"dateOfBirth": "Thu Dec 01 2000 00:00:00",
+			"captainStatus": false
+		},
+		{
+			"playerImage": {
+				"source": "../../assets/images/Player profile image/playerno3.jpg",
+				"alt": "image of Breet lee"
+			},
+			"userName": "Breet lee",
+			"dateOfBirth": "Thu Dec 22 2002 00:00:00",
+			"captainStatus": false
+		},
+		{
+			"playerImage": {
+				"source": "../../assets/images/Player profile image/playerno4.png",
+				"alt": "logo of viratkolhi"
+			},
+			"userName": "VK-18",
+			"dateOfBirth": "Thu Dec 01 2001 00:00:00",
+			"captainStatus": false
+		}
+	],
+
+	"openForPlayers": "We need one good allrounder and...."
+
+}
+
+]
+
+
+function findPlayer(e) {
+  return e.teamName === "Asgard";
+}
+
+console.log(jointeam.find(findPlayer));
+
+
+	</script>
 </body>
 
 </html>

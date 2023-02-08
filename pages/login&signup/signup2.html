@@ -27,14 +27,14 @@
 			<div class="border">
 			<div><img class="logo" src="../../assets/images/logo.png" alt="sportshub logo"></div>
 			<div class="form">
-				<form>
+				<form role="form" onsubmit="signUp_2(event);">
 					<div>
 						<label>DOB</label>
-						<input id="date_of_birth" type="date" />
+						<input id="date_of_birth" type="date" required/>
 					</div>
 					<div>
 						<label>Gender</label>
-						<select id="gender" >
+						<select id="gender" required>
 							<option>Male</option>
 							<option>Female</option>
 							<option>Others</option>
@@ -42,7 +42,7 @@
 					</div>
 					<div>
 						<label>Game</label>
-						<select id="game">
+						<select id="game" required>
 							<option>Cricket</option>
 							<option>Football</option>
 							<option>Kabadi</option>
@@ -55,11 +55,12 @@
 					</div>
 					<div>
 						<label>Area</label>
-						<input id="area" type="text" placeholder="Eg: Annanagar"  />
+						<input id="area" type="text" placeholder="Eg: Annanagar"  required/>
 					</div>
+				
+				<button class="nextbtn" type="submit">Submit & Lets Rock</button>
 				</form>
 			</div>
-			<div><button class="nextbtn" onclick="start()" type="button">Submit & Lets Rock</button></div>
 				<div class="back"><a href="./signup1.html">Go Back</a></div>
 			</div>
 				<div class="login">
@@ -84,26 +85,10 @@
 		<div class="rights"><p>Copyright © 2019 - 2022 Sportshub - Website Designed By Alagappan</p></div>
 	</footer>
 
-	<script>
 
+	<script src="../../assets/css/login.js">
 
-function start(){
-		const date_of_birth = document.getElementById("date_of_birth").value 	
-		const gender = document.getElementById("gender").value 	
-		const game = document.getElementById("game").value 
-		const area = document.getElementById("area").value
-		
-		console.log(area)
-		
-		localStorage.setItem("user_date_of_birth", date_of_birth)
-		localStorage.setItem("user_gender", gender)
-		localStorage.setItem("user_game", game)
-		localStorage.setItem("user_area", area)
-
-		window.location.href = "../homepage/hpnew.html"
-}
 	</script>
-
 </body>
 
 </html>
