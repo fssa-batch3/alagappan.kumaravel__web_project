@@ -88,6 +88,11 @@ input{
     margin: 15px;
     border: 1px solid var(--icncolor);
 }
+form p.wrong_password{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--red);
+}
 div.login a{
     text-decoration: none;
     color: #fa8907;

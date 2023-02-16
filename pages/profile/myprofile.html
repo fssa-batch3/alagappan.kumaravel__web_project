@@ -29,7 +29,7 @@
 		<!-- upper profile start -->
 		<div class="profilediv">
 			<div class="profileimagediv">
-				<img src="../../assets/images/playerface.jpg" alt="playerface">
+				<img id="player_image" alt="playerface">
 			</div>
 			<div class="profiledetailsdiv">
 				<h1 id="user_username"></h1>
@@ -39,15 +39,19 @@
 				</div>
 				<div>
 					<i class="fa-regular fa-calendar"></i>
-					<p></p>
+					<p id="create_date"></p>
 				</div>
 			</div>
 		</div>
 <!-- upper profile end -->
 		<!-- My profile start -->
 		<div class="myprofilediv">
-			<div class="myprofilehead"><p>My Profile</p><a href="../profile/profileedit.html">EDIT</a></div>
+			<div class="myprofilehead"><p>My Profile</p><a onClick="onEdit(event)">EDIT</a></div>
 			<div class="myprofiledetails">
+				<div>
+					<p>Full Name</p>
+					<P id="user_full_name"></P>
+				</div>
 				<div>
 					<p>MOBILE NUMBER</p>
 					<P id="user_phone_number"></P>
@@ -57,20 +61,16 @@
 					<P id="user_gender"></P>
 				</div>
 				<div>
-					<p>Area</p>
-					<P id="user_area"></P>
-				</div>
-				<div>
 					<p>Date of birth</p>
 					<P id="user_date_of_birth"></P>
 				</div>
 				<div>
-					<p>Email</p>
-					<P id="user_email"></P>
+					<p>Area</p>
+					<P id="user_area"></P>
 				</div>
 				<div>
-					<p>Pin</p>
-					<P id="user_password"></P>
+					<p>Distric</p>
+					<P id="user_distric"></P>
 				</div>
 				<div>
 					<p>ABOUT</p>
@@ -79,12 +79,15 @@
 
 			</div>
 			<div class="myprofilerange">
-			<div><input type="range" value="30"> <label>30%</label></div>
+			<div>
+				<input class="range-value" type="range" disabled readonly> <label class="range-label"></label>
+			</div>
 			<p> Complete Profile</p>
 			</div>
 		</div>
 		<!-- My profile end -->
-		<div class="logout"><button>LOG OUT</button></div>
+		<div class="logout"><button type="button" onclick="logOut()">LOG OUT</button><button type="button" onclick="del()">DELETE</button></div>
+
 	</main>
 	<!-- main end -->
 	<!-- footer starts -->
@@ -104,7 +107,9 @@
 		<div class="rights"><p>Copyright © 2019 - 2022 Sportshub - Website Designed By Alagappan</p></div>
 	</footer>
 <!--  footer ends -->
-	
+<script src="../../lib/moment/moment.min.js">
+
+</script>
 <script>
 
 let user_data = JSON.parse(localStorage.getItem('user_data'));
@@ -120,20 +125,55 @@ function findPlayer(e) {
 
 person_data = user_detail.find(findPlayer);
 
-
-
 document.getElementById("user_username").innerText = person_data["userName"];
-document.getElementById("user_password").innerText = person_data["password"];
-// document.getElementById("user_email").innerText = person_data["userName"] ;
+let a = moment(person_data["createDate"]);
+document.getElementById("create_date").innerText = "Since" + "  " + a.format("MMM Do YY"); 	
+document.getElementById("user_full_name").innerText = person_data["firstName"] +" "+ person_data["lastName"];
 document.getElementById("user_date_of_birth").innerText = person_data["dateOFBirth"];
 document.getElementById("user_gender").innerText = person_data["gender"];
 document.getElementById("user_area").innerText = person_data["area"] ;
+document.getElementById("user_distric").innerText = person_data["distric"] ;
 document.getElementById("user_area_header").innerText = person_data["area"] ;
 document.getElementById("user_phone_number").innerText = person_data["phoneNumber"] ;
-// document.getElementById("user_about").innerText = person_data["userName"] ;
+document.getElementById("user_about").innerText = person_data["about"] ;
+
+
+let player_image_url = person_data["imageUrl"] ;
+let player_image = document.getElementById("player_image");
+if(player_image_url == ""){
+player_image.setAttribute("src", "../../assets/images/defalt_player_image.webp");
+}
+else{
+player_image.setAttribute("src", player_image_url);
+}
+
+// for range value start
+
+const emptyValues = new Set(["", null, undefined]);
+let null_count = Object.values(person_data).filter(x => emptyValues.has(x)).length;
+let key_count = 0;
+
+// loop through each key/value
+for(let key in person_data) {
+
+    // increase the count
+    ++key_count;
+}
+// range calculation
+
+let range_value = 100-((null_count/key_count)*100);
+
+let range_input = document.querySelector(".range-value");
+range_input.setAttribute("value", range_value);
+
+document.querySelector(".range-label").innerHTML = Math.round(range_value) + "%";
+
+// for range value end
 
 </script>
+<script src="../../assets/css/login.js">
 
+</script>
 </body>
 
 </html>

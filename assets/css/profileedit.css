@@ -77,6 +77,15 @@ form input, form select, form textarea{
     border: none;
     border-bottom: 1.5px solid var(--offwhite);
 }
+/* same user name */
+.wrong_password{
+    size: 14px;
+    color: var(--red);
+    margin-left: 5%;
+}
+
+
+
 form input:focus, form select:focus, form textarea:focus{
     outline: none;
 }

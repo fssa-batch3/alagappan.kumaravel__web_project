@@ -152,7 +152,7 @@
 					<i class="fa-solid fa-location-dot"></i>
 					<p>Chennai, Anna nagar</p>
 				</div>
-				<div>
+				<div >
 					<i class="fa-regular fa-clock"></i>
 					<p>Since 26-Nov-2021</p>
 				</div>
@@ -210,16 +210,7 @@
 	<!--script for popup start-->
 
 	<script>
-		let popup = document.getElementById("popup");
-
-		function OpenPopup() {
-			popup.classList.add("open-popup")
-
-		}
-		function ClosePopup() {
-			popup.classList.remove("open-popup");
-		}
-
+		
 
 		let jointeam = [
 
@@ -348,9 +339,6 @@
 			}
 
 		]
-		let a = jointeam.find(data => data.teamImage.alt);
-
-		console.log(a)
 
 
 		// team card div start
@@ -472,15 +460,15 @@
 				</div>
 				<div class="teamdetaildiv">
 					<div>
-						<button type="button" onclick="OpenPopup()">
+						
 							<div>
-								<h2>${team["teamName"]}</h2>
+								<h2 class="onclick">${team["teamName"]}</h2>
 							</div>
 							<div>
 								<i class="fa-solid fa-location-dot"></i>
 								<p>${team["address"]["area"]}</p>
 							</div>
-						</button>
+						
 					</div>
 					<div>
 						<i class="fa-regular fa-handshake"></i>
@@ -504,10 +492,23 @@
 
 		}
 
+// onclick button
+		
+let team_name_popup = document.querySelectorAll(".onclick");
 
+console.log(team_name_popup.length);
 
+team_name_popup.addEventListener("click", OpenPopup);
+		let popup = document.getElementById("popup");
+		function OpenPopup() {
+			popup.classList.add("open-popup")
+
+		}
+		function ClosePopup() {
+			popup.classList.remove("open-popup");
+		}
+// custom attribute , query selector
 	</script>
-
 
 
 </body>

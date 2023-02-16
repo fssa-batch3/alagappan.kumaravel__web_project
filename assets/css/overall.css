@@ -633,6 +633,9 @@ main{
     margin-left: 5px;
 
 }
+.statusdiv p b{
+    margin-left: 10px;
+}
 .statusdiv i{
     font-size: 1.3rem;
 }

@@ -76,62 +76,6 @@
 			</div>
 		</div> -->
 
-		<!-- <div class="invitation">
-			<div class="invitation-one">
-				<div class="teamimgdiv">
-					<img src="../../assets/images/team profile image/team5profile.jpg" alt="teamprofile">
-				</div>
-				<div class="teamnamediv">
-					<div>
-						<div><h2>Asgard</h2></div>
-						<div>
-							<p class="public">Public</p></div>
-					</div>
-					
-				</div>
-			</div>
-			<div class="invitation-two">
-				<div>
-					<p>Type</p>
-					<p>Betting Match</p>
-				</div>
-				<div>
-					<p>Time</p>
-					<p>21-Nov-2022 | 16:00</p>
-				</div>
-			</div>
-			<div class="invitation-three">
-				
-				<div>
-					<i class="fa-regular fa-copyright"></i>
-					<p>Jedaja</p>
-				</div>
-				<div>
-					<i class="fa-solid fa-people-group"></i>
-					<p>10 Members  (Age : 19 to 22)</p>
-				</div>
-				<div>
-					<i class="fa-solid fa-location-dot"></i>
-					<p>Chennai, Methanagar, Methanagar park ground</p>
-				</div>
-				<div>
-					<i class="fa-solid fa-circle-info"></i>	
-					<p>Rubber ball match, betting amount per match 100rs</p>
-				</div>
-			</div>
-			<div class="accept-reject">
-				<button>Reject</button>
-				<button>Accept</button>
-			</div>
-			<div class="invitation-four">
-				<div class="timetaken">
-					<i class="fa-regular fa-clock"></i>
-					<p>4 hour ago</p>
-				</div>
-			</div>
-		</div> -->
-		
-		
 
 </section>
 
@@ -158,10 +102,7 @@ let matchInvitaton = [
   },
   "matchLocation" : "Chennai, Methanagar, Methanagar park ground",
   "additionalInformation" : "Rubber ball match, betting amount per match 100rs",
-  "timeStatus" : {
-	"duriation" : 1,
-	"type" : "hours",
-  },
+  "createdTime" : "Thu Dec 31 2022 15:30:00",
   "responseStatus" : {
 	"time" : "Thu Jan 01 2022 15:30:00",
 	"result" : "ACCEPTED"
@@ -169,27 +110,28 @@ let matchInvitaton = [
 
 },
 {
-  teamName : "Asgard",
-  teamImage : {
-	source : "../../assets/images/team profile image/team5profile.jpg",
-	alt : "logo of Asgard"
+  "teamName" : "Asgard",
+  "teamImage" : {
+	"source" : "../../assets/images/team profile image/team5profile.jpg",
+	"alt" : "logo of Asgard"
   },
-  typeOfMatch : "Betting match",
-  typeOfFriend : "Public",
-  matchTime : "Thu Dec 31 2022 15:30:00",
-  captainUserName : "Jedaja",
-  teamMember : {
-	count : 10 ,
-    age : {
-		from : 19 ,
-    	to : 22 ,
+  "typeOfMatch" : "Betting match",
+  "typeOfFriend" : "Public",
+  "matchTime" : "Thu Dec 31 2022 15:30:00",
+  "captainUserName" : "Jedaja",
+  "teamMember" : {
+	"count" : 10 ,
+    "age" : {
+		"from" : 19 ,
+    	"to" : 22 ,
 	}
   },
-  matchLocation : "Chennai, Methanagar, Methanagar park ground",
-  additionalInformation : "Rubber ball match, betting amount per match 100rs",
-  timeStatus : {
-	duriation : 1,
-	type : "hours",
+  "matchLocation" : "Chennai, Methanagar, Methanagar park ground",
+  "additionalInformation" : "Rubber ball match, betting amount per match 100rs",
+  "createdTime" : "Thu Dec 31 2022 15:30:00",
+  "responseStatus" : {
+	"time" : "Thu Jan 01 2022 15:30:00",
+	"result" : "ACCEPTED"
   }
 
 }
@@ -347,11 +289,9 @@ const div_class_invitation_four_i = document.createElement("i");
 div_class_invitation_four_i.setAttribute("class", "fa-regular fa-clock");
 div_class_invitation_four_subdiv.append(div_class_invitation_four_i);
 
-const div_class_invitation_four_p = document.createElement("p");
-div_class_invitation_four_p.innerText = matchInvitaton[i]["timeStatus"]["duriation"]+ " " + matchInvitaton[i]["timeStatus"]["type"] + " ago";
-div_class_invitation_four_subdiv.append(div_class_invitation_four_p);
-
-
+// const div_class_invitation_four_p = document.createElement("p");
+// div_class_invitation_four_p.innerText = matchInvitaton[i]["timeStatus"]["duriation"]+ " " + matchInvitaton[i]["timeStatus"]["type"] + " ago";
+// div_class_invitation_four_subdiv.append(div_class_invitation_four_p);
 
 document.querySelector(".match-invitation-main").append(div_class_invitation)
 

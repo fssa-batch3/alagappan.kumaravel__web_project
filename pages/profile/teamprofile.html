@@ -62,23 +62,23 @@
 			<tbody>
 				<tr>
 					<td>Area</td>
-					<td></td>
+					<td class="area"></td>
 				  </tr>
 				  <tr>
 					<td>Age</td>
-					<td></td>
+					<td class="age"></td>
 				  </tr>
 				  <tr>
 					<td>Members</td>
-					<td></td>
+					<td class="member"></td>
 				  </tr>
 				  <tr>
 					<td>About</td>
-					<td></td>
+					<td class="about"></td>
 				  </tr>
 				  <tr>
 					<td>Open for players</td>
-					<td></td>
+					<td class="open_for_player"></td>
 				  </tr>
 			</tbody>
 		  </table>
@@ -167,16 +167,26 @@ team_background_image.setAttribute("src", teamProfile["teamImage"]["source"]);
 team_background_image.setAttribute("alt", teamProfile["teamImage"]["alt"]);
 document.querySelector("header").prepend(team_background_image);
 
-let playerUserName = teamProfile["teamName"]
-document.querySelector(".profiledetailsdiv h1").innerHTML = playerUserName;
+let teamUserName = teamProfile["teamName"]
+document.querySelector(".profiledetailsdiv h1").innerHTML = teamUserName;
 
-let playerLocation = teamProfile["address"]["area"]
-document.querySelector(".profiledetailsdiv div:nth-child(2) p").innerHTML = playerLocation;
+let teamLocation = teamProfile["address"]["area"]
+document.querySelector(".profiledetailsdiv div:nth-child(2) p").innerHTML = teamLocation;
 
-let playerSince = teamProfile["dateOfJoin"]
-document.querySelector(".profiledetailsdiv div:nth-child(3) p").innerHTML = "Since" + "  " +playerSince;
+let teamSince = teamProfile["dateOfJoin"]
+document.querySelector(".profiledetailsdiv div:nth-child(3) p").innerHTML = "Since" + "  " +teamSince;
 
+let teamArea = teamProfile["address"]["area"]
+document.querySelector(".area").innerHTML = teamArea ;
 
+let teamAbout = teamProfile["about"]
+document.querySelector(".about").innerHTML = teamAbout ;
+
+let teamOpenForPlayer = teamProfile["openForPlayers"]
+document.querySelector(".open_for_player").innerHTML = teamOpenForPlayer ;
+
+let teamMemberCount = teamProfile["teamMembers"].length
+document.querySelector(".member").innerHTML = teamMemberCount  ;
 
 
 
