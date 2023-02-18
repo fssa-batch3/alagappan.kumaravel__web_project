@@ -79,8 +79,11 @@
 
 			</div>
 			<div class="myprofilerange">
-			<div>
-				<input class="range-value" type="range" disabled readonly> <label class="range-label"></label>
+			<div class="range_div">
+				<div class="range_back">
+					<div class="range_cover"></div>
+				</div>
+				<label class="range-label"></label>
 			</div>
 			<p> Complete Profile</p>
 			</div>
@@ -148,13 +151,26 @@ player_image.setAttribute("src", player_image_url);
 }
 
 // for range value start
+let username = person_data["userName"],  
+firstname =  person_data["firstName"] ,
+lastname = person_data["lastName"] ,
+dateofbirth = person_data["dateOFBirth"],
+gender = person_data["gender"] ,
+game = person_data["game"] ,
+area = person_data["area"] ,
+distric= person_data["distric"],
+about = person_data["about"],
+image = person_data["imageUrl"];
+
+let person_data_range = { username, firstname, lastname,dateofbirth,gender,game,area,distric,about,image}
+
 
 const emptyValues = new Set(["", null, undefined]);
-let null_count = Object.values(person_data).filter(x => emptyValues.has(x)).length;
+let null_count = Object.values(person_data_range).filter(x => emptyValues.has(x)).length;
 let key_count = 0;
 
 // loop through each key/value
-for(let key in person_data) {
+for(let key in person_data_range) {
 
     // increase the count
     ++key_count;
@@ -163,15 +179,16 @@ for(let key in person_data) {
 
 let range_value = 100-((null_count/key_count)*100);
 
-let range_input = document.querySelector(".range-value");
-range_input.setAttribute("value", range_value);
+let range_input = document.querySelector(".range_cover");
+range_input.style.width = `${range_value}%`;
+
 
 document.querySelector(".range-label").innerHTML = Math.round(range_value) + "%";
 
 // for range value end
 
 </script>
-<script src="../../assets/css/login.js">
+<script src="../../assets/js/login.js">
 
 </script>
 </body>

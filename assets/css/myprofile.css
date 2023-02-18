@@ -179,15 +179,35 @@ main{
     width: 100%;
     text-align: center;
 }
-.myprofilerange div{
+.myprofilerange div.range_div{
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center; 
 }
+.myprofilerange div.range_div div.range_back{
+    width: 80%;
+    height: 6px;
+    border-radius: 3px;
+    background-color: var(--drakgray);
+}
+.myprofilerange div.range_div div.range_back div.range_cover{
+    margin-left: 0;
+    height: 100%;
+    border-radius: 3px;
+    background-color: var(--ltgreen);
+}
+.range-label{
+    display: inline-block; 
+    margin-left: 10px;
+}
+
 .myprofilerange input{
     width: 80%;
+    
 }
 .myprofilerange p{
     color: var(--ltgreen);

@@ -22,10 +22,13 @@
 		
 		<div class="line"></div>
 		<div class="select-team-button">
-			<a href="./creatematch.html"><button class="darkbtn" type="button">Friend</button></a>
-			<a href="./creatematch-stranger.html"><button class="lightbtn" type="button">Public</button></a>
+			<div class="toggle_button"></div>
+				<button class="darkbtn" type="button" onclick="leftbtn()"><p class="choose_friend">Friend</p></button>
+
+				<button class="lightbtn" type="button" onclick="rightbtn()"><p class="choose_friend">Public</p></button>
+
 		</div>
-		<p>Select opponent type</p>
+		<p class="select_head">Select opponent type</p>
 	</div>
 	<div class="battle-team-div">
 		<div>
@@ -92,6 +95,28 @@ function submit(){
 	console.log(members)
 	window.location.href = "./team response.html"
 
+}
+function leftbtn(){
+	let toggle_button = document.querySelector(".toggle_button");
+	toggle_button.style.left = "5%";
+
+	let btn_color_1 = document.querySelector(".darkbtn");
+	btn_color_1.style.color = "#000";
+
+	let btn_color_2 = document.querySelector(".lightbtn");
+	btn_color_2.style.color = "#f7f7f7";
+
+}
+
+function rightbtn(){
+	let toggle_button = document.querySelector(".toggle_button");
+	toggle_button.style.left = "50%";
+
+	let btn_color_1 = document.querySelector(".darkbtn");
+	btn_color_1.style.color = "#f7f7f7";
+
+	let btn_color_2 = document.querySelector(".lightbtn");
+	btn_color_2.style.color = "#000";
 }
 
 </script>

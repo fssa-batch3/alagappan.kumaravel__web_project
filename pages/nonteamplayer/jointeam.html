@@ -28,9 +28,10 @@
 	<section class="jointeammain">
 		<div class="dummy-div"></div>
 		<div class="content join-team-content">
-			<div class="content-subheader searchbardiv">
+			
+			<!-- <div class="content-subheader searchbardiv">
 				<div class="searchbar"><input type="search"><i class="fa-solid fa-magnifying-glass"></i></div>
-			</div>
+			</div> -->
 			<!-- <div class="teams">
 				<div class="teamimagediv">
 					<button type="button" onclick="OpenPopup()"><img class="teamprofile"
@@ -146,20 +147,21 @@
 		<div class="popup-team-content">
 			<button class="backbtn" type="button" onclick="ClosePopup()"><i
 					class="fa-regular fa-circle-xmark"></i></button>
-			<h2>Avengers11</h2>
+			<h2></h2>
 			<div class="popup-team-area">
 				<div>
 					<i class="fa-solid fa-location-dot"></i>
-					<p>Chennai, Anna nagar</p>
+					<p class="popup_area_name"></p>
 				</div>
 				<div >
 					<i class="fa-regular fa-clock"></i>
-					<p>Since 26-Nov-2021</p>
+					<p class="popup_since"></p>
 				</div>
 			</div>
+			
+			<h3 class="popup_member_count"></h3>
 			<div class="players-list">
-
-				<h3>Members (10)</h3>
+				
 				<!-- <div>
 					<img class="players-list-image" src="../../assets/images/Player profile image/playerno1.jfif" alt="players image">
 					<p>Jedaja <i class="fa-regular fa-copyright"></i>
@@ -340,8 +342,7 @@
 
 		]
 
-
-		// team card div start
+// team card div start
 		// for (i = 0; i <= jointeam.length; i++) {
 
 		// 	// team popup details start
@@ -427,42 +428,19 @@
 
 
 
-		function renderPlayer(player) {  // {}
-
-			const template1 = `	
-			<div>
-					<img class="players-list-image" src="${player["playerImage"]["source"]}" alt="${player["playerImage"]["alt"]}">
-					<p>${player["userName"]}</p>
-				</div>
-				`
-
-			return template1;
-		}
-
-		for (let index = 0; index < jointeam[0]["teamMembers"].length; index++) {
-
-		const player = jointeam[0]["teamMembers"][index];
-		const template1 = renderPlayer(player);
- 
-
-		document.querySelector(".players-list").insertAdjacentHTML("beforeend", template1)
-
-	}
-
-
 
 		function renderTeam(team) {
 			const template = `
 			<div class="teams">
-				<div class="teamimagediv">
-					<button type="button" onclick="OpenPopup()"><img class="teamprofile"
-							src="${team["teamImage"]["source"]}" alt="${team["teamImage"]["alt"]}"></button>
+				<div class="teamimagediv popup-name" data-id="${team["teamName"]}">
+					<img class="teamprofile"
+							src="${team["teamImage"]["source"]}" alt="${team["teamImage"]["alt"]}">
 				</div>
 				<div class="teamdetaildiv">
 					<div>
 						
-							<div>
-								<h2 class="onclick">${team["teamName"]}</h2>
+							<div class="popup-name" data-id="${team["teamName"]}">
+								<h2>${team["teamName"]}</h2>
 							</div>
 							<div>
 								<i class="fa-solid fa-location-dot"></i>
@@ -492,25 +470,60 @@
 
 		}
 
+// function for team members display in popup start
+function renderPlayer(player) {  
+const template1 = `	
+<div>
+		<img class="players-list-image" src="${player["playerImage"]["source"]}" alt="${player["playerImage"]["alt"]}">
+		<p>${player["userName"]}</p>
+	</div>
+	`
+return template1;
+}
+
 // onclick button
-		
-let team_name_popup = document.querySelectorAll(".onclick");
 
-console.log(team_name_popup.length);
-
-team_name_popup.addEventListener("click", OpenPopup);
+const bookCovers = document.querySelectorAll(".popup-name");
+    bookCovers.forEach(bookCover => {
+      bookCover.addEventListener("click", (event) => {
+        const person_data = jointeam.find(book => book["teamName"] === bookCover.dataset.id);
 		let popup = document.getElementById("popup");
-		function OpenPopup() {
-			popup.classList.add("open-popup")
+			popup.classList.add("open-popup");// hear we add class for show popup
+			//  hear we work for display team member repeat pattern 
+			document.querySelector(".players-list").innerHTML = ""
+			for (let index = 0; index < person_data["teamMembers"].length; index++) {
 
-		}
-		function ClosePopup() {
-			popup.classList.remove("open-popup");
-		}
-// custom attribute , query selector
+			const player = person_data["teamMembers"][index];
+			const template1 = renderPlayer(player);
+			document.querySelector(".players-list").insertAdjacentHTML("beforeend", template1)
+
+				}
+			// popup team content 
+			let popup_team_name = document.querySelector("div.popup-team-content h2");
+			popup_team_name.innerHTML = person_data["teamName"];
+
+			let popup_area_name = document.querySelector("p.popup_area_name");
+			popup_area_name.innerHTML = person_data["address"]["area"] + ",  " + person_data["address"]["distric"];
+			
+			let popup_since = document.querySelector("p.popup_since");
+			popup_since.innerHTML = "Since  " + person_data["dateOfJoin"];
+
+			let popup_member_count = document.querySelector("h3.popup_member_count");
+			popup_member_count.innerHTML = "Members (" + person_data["teamMembers"].length +")" ;
+
+	
+      })
+    })
+				
+function ClosePopup() {
+	popup.classList.remove("open-popup");
+}
+
+// function for team members display in popup end
 	</script>
 
 
 </body>
 
 </html>
+

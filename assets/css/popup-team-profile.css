@@ -75,7 +75,7 @@ img.players-list-image {
     color: var(--icncolor);
 }
 
-.players-list h3{
+.popup-team-content h3{
     font-size: 16px;
     font-weight: 600;
     margin: 0;
@@ -84,6 +84,7 @@ img.players-list-image {
     position: sticky;
     top: 0;
     background-color: var(--white);
+    border-top: 1.5px solid var(--offwhite);
 }
 /* team profile popup end */
 
