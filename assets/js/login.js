@@ -1,15 +1,15 @@
 function signUp_1(e) {
     e.preventDefault();
-    // hear i collect value from signUp form 
+    // here i collect value from signUp form 
     let phonenumber = document.getElementById("phonenumber").value,	
 	 username = document.getElementById("username").value,
 	 password = document.getElementById("password").value,
      confrim_password = document.getElementById("confirm_password").value;
 
-     // hear i give var name for local storage data (initially there is no data so we mentioned or (||) symbol to get empty array)
+     // here i give var name for local storage data (initially there is no data so we mentioned or (||) symbol to get empty array)
     let user_detail = JSON.parse(localStorage.getItem('user_detail')) || [];
 
-    // hear we give some condition for signup to restict same unique id 
+    // here we give some condition for signup to restict same unique id 
 
     let same_number = user_detail.some(data =>
         data.phoneNumber == phonenumber );
@@ -52,7 +52,7 @@ function signUp_1(e) {
 
 function signUp_2(e) {
 
-    // hear i collect value from signUp form 
+    // here i collect value from signUp form 
     let date_of_birth = document.getElementById("date_of_birth").value,	
 	 gender = document.getElementById("gender").value,
 	 game = document.getElementById("game").value,
@@ -76,7 +76,12 @@ function signUp_2(e) {
     user_data["about"]= "";
     user_data["imageUrl"]= "";
 
-    // hear i give var name for local storage data (initially there is no data so we mentioned or (||) symbol to get empty array)
+    let person_unique_id = uuidv4();
+    user_data["uniqueId"]= person_unique_id;
+
+
+
+    // here i give var name for local storage data (initially there is no data so we mentioned or (||) symbol to get empty array)
     let user_detail = JSON.parse(localStorage.getItem('user_detail')) || [];
 
         user_detail.push(user_data);

@@ -22,32 +22,39 @@
 <!-- main start -->
 <main class="createteam-main">
 	<div class="changephoto">
-	<input type="image" src="../../assets/images/team1profile.jpg">
-	<input type="file" src="../../assets/images/playerface.jpg">
-	<label>Upload team Photo</label>
+	<input type="image" id="team_image_show">
+	<!-- <label>Upload team Photo</label> -->
 	</div>
-	<form>
-		<label>Team name</label>
-					<input id="teamname" type="text" value="Indians"> 
-					   
+	<form onsubmit="createTeam(event);">
+					<label>Team image</label>
+					<input id="team_image" type="url" onfocusout="myFunction()">
+					<label>Team name</label>
+					<input id="teamname" title="Use firstletter between (A-Z) and min 15 character" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,15}$" type="text" required> 
+					<p class="wrong_password"></p>
 					<label>Area</label> 
-					<input id="area" type="text" value="Annanagar"> 
+					<input id="area" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" type="text" required> 
+
+						<label>Distric</label>
+						<input id="distric" type="text" placeholder="Eg: chennai" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" required/>
 
 					<label>About</label>
-					<textarea></textarea>
+					<textarea id="team_about"></textarea>
 
 					<label>Open for players</label>
-					<textarea placeholder="Eg: we need one good allrounder "></textarea>
-	</form>		 
+					<textarea id="team_player_description" placeholder="Eg: we need one good allrounder " required></textarea>
+		 
 	<div class="updatediv">
-		<a href="../homepage/hpexist.html"><button type="button">Create my team</button></a>
-	</div>  
+		<button type="submit">Create my team</button>
+	</div>
+</form>	  
 </main>
 <!-- main end -->
+<script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+<script src="../../lib/moment/moment.min.js">
 
-<script>
-	const area = document.getElementById("area").value
-	const teamname = document.getElementById("teamname").value
+	</script>
+		<script src="../../assets/js/create_team.js">
+
 		</script>
 </body>
 </html>

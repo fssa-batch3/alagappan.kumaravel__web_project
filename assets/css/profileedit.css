@@ -39,7 +39,7 @@ main{
 .changephoto input{
     width: 30%;
     height: 120px;
-    border-radius: 100%;
+    /* border-radius: 100%; */
     border: 1.5px solid var(--icncolor);
     margin: 20px 0px 10px 0px;
 }
