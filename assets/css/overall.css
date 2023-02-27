@@ -247,6 +247,18 @@ div.range_div div.range_back div.range_cover{
     border-radius: 3px;
     background-color: var(--ltgreen);
 }
+div.range_div div.range_back_home{
+    width: 80%;
+    height: 6px;
+    border-radius: 3px;
+    background-color: var(--offwhite);
+}
+div.range_div div.range_back_home div.range_cover{
+    margin-left: 0;
+    height: 100%;
+    border-radius: 3px;
+    background-color: var(--ltgreen);
+}
 .range-label{
     display: inline-block; 
     margin-left: 10px;
@@ -278,6 +290,7 @@ div.range_div div.range_back div.range_cover{
 }
 .sandwich a{
     text-decoration: none;
+    cursor: pointer;
 }
 
 /* sandwich button end */
@@ -730,7 +743,7 @@ main{
     box-shadow: 0 0px 10px 0px rgba(0,0,0,0.1);
 }
 
-.player-request-div button img{
+.player-request-div div img{
     width: 70%;
     height: 80%;
     margin: 0 0 0 5px;
@@ -738,19 +751,19 @@ main{
     border: .5px solid var(--icncolor);
 }
 
-.player-request-div button:nth-child(2), .player-request-div button{
+.player-request-div div:nth-child(2), .player-request-div div{
     background-color: transparent;
     border: none;
     text-align: left;
 }
-.player-request-div button:nth-child(2) h2{
+.player-request-div div:nth-child(2) h2{
     font-size: 16px;
     font-weight: 600;
     display: inline;
     color: var(--drakgray);
     margin: 3px 0 0 0 ;
 }
-.player-request-div button:nth-child(2) div{
+.player-request-div div:nth-child(2) div{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -758,12 +771,12 @@ main{
     align-items: center;
     margin: 0;
 }
-.player-request-div button:nth-child(2) div i{
+.player-request-div div:nth-child(2) div i{
     font-size: 1rem;
     color: var(--icncolor);
     margin-right: 5px;
 }
-.player-request-div button:nth-child(2) div p{
+.player-request-div div:nth-child(2) div p{
     font-size: 14px;
     font-weight: 500;
     color: var(--icncolor);
@@ -888,6 +901,9 @@ main{
     font-size: 1rem;
     color: var(--drakgray);
     margin: 0;
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .profilebtn{

@@ -2,10 +2,9 @@ let image_element = document.getElementById("team_image_show");
     image_element.setAttribute("src", "../../assets/images/defalt_team_image.png")
 
 
-
 function createTeam(e) {
 
-    e.preventDefault(); 
+    e.preventDefault();  
 
     // hear i collect value from signUp form 
     let team_image_url = document.getElementById("team_image").value,	
@@ -33,10 +32,14 @@ function createTeam(e) {
     else {
         let team_unique_id = uuidv4();
 
-        let user_data = JSON.parse(localStorage.getItem('user_data'));
+        const queryString = window.location.search;
 
-        let unique_id = user_data["phoneNumber"];
-        
+        const urlParams = new URLSearchParams(queryString);
+    
+        const phonenumber = urlParams.get('unique_id');
+    
+        let unique_id = phonenumber;
+ 
         let user_detail = JSON.parse(localStorage.getItem('user_detail'))
         
         

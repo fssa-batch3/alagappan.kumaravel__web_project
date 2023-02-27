@@ -22,46 +22,342 @@
 <!-- main start -->
 <main>
 	<div class="changephoto">
-	<input type="image" src="../../assets/images/playerface.jpg" alt="playerface">
-	<input type="file" src="../../assets/images/playerface.jpg">
+	<input class="team_image_show" type="image" src="../../assets/images/playerface.jpg" alt="team logo">
 	<label>Change Photo</label>
+	<input id="team_image" type="url" > 
 	</div>
-	<div class="headerbottom">
-		<a href="./myteamedit.html"><button type="button">PROFILE</button></a>
-		<a href="./myteameditmember.html"><button type="button">MEMBER</button></a>
+	<div class="headerbottom">	
+		<button class="darkbtn" onclick="profileEdit()" type="button">PROFILE</button>
+		<button class="lightbtn" onclick="memberEdit()" type="button">MEMBER</button>
+		<div class="toggle_button"></div>
 	</div>
+<section class="first"> 
 	<form>
 		<label>Team name</label>
-		<input id="teamname" type="text" value="Indians"> 
-		   
+		<input id="teamname" type="text" required> 
+		<p class="wrong_password"></p>  
 		<label>Area</label> 
-		<input id="area" type="text" value="Annanagar"> 
+		<input id="area" type="text" required> 
 
+		<label>Distric</label> 
+		<input id="distric" type="text" required> 
+		
 		<label>About</label>
-		<textarea></textarea>
+		<textarea id="team_about"></textarea>
 		
 		<div>
 			<label class="onoffdiv">Open for players (On/Off)</label>
 			<label class="switch">
-				<input type="checkbox" id="open_for_players" value="false">
+				<input type="checkbox" id="open_for_players">
 				<span class="slider round"></span>
 			  </label>
 			</div>
 
 		<label>Players Description</label>
-		<textarea placeholder="Eg: we need one good allrounder "></textarea>
+		<textarea id="team_player_description"></textarea>
 
 	</form>		 
 	<div class="updatediv">
-		<button>UPDATE</button>
-	</div>  
+		<button onclick="teamUpdate(event)" type="button">UPDATE</button>
+	</div> 
+</section>
+<section class="second">
+	<div class="teams">
+		<div class="teamimagediv">
+			<img class="teamprofile playerimg" src="../../assets/images/playerface.jpg" alt="playerprofile">
+		</div>
+		<div class="teamdetaildiv playerdet">
+			<div>
+				<div><p class="playername">MSD   <b>Captain</b></p></div>
+				<div class="whatsapp">
+					<a class="switchcap" href="./myteameditswitchcaptain.html">SWITCH CAPTAIN</a>
+					</div>
+			</div>
+			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
+				<p>21</p></div>
+	
+		</div>
+	</div>
+	
+	<div class="teams">
+		<div class="teamimagediv">
+			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno1.jfif" alt="playerprofile">
+		</div>
+		<div class="teamdetaildiv playerdet">
+			<div>
+				<div><p class="playername">Jedaja</p></div>
+				<div class="whatsapp">
+					<a href="#">REMOVE</a>
+					</div>
+			</div>
+			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
+				<p>20</p></div>
+	
+		</div>
+	</div>
+	
+	<div class="teams">
+		<div class="teamimagediv">
+			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno2.jpg" alt="playerprofile">
+		</div>
+		<div class="teamdetaildiv playerdet">
+			<div>
+				<div><p class="playername">Marsh</p></div>
+				<div class="whatsapp">
+					<a href="#">REMOVE</a>
+					</div>
+			</div>
+			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
+				<p>20</p></div>
+	
+		</div>
+	</div>
+	
+	<div class="teams">
+		<div class="teamimagediv">
+			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno3.jpg" alt="playerprofile">
+		</div>
+		<div class="teamdetaildiv playerdet">
+			<div>
+				<div><p class="playername">Breet lee</p></div>
+				<div class="whatsapp">
+					<a href="#">REMOVE</a>
+					</div>
+			</div>
+			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
+				<p>21</p></div>
+	
+		</div>
+	</div>
+	
+	<div class="teams">
+		<div class="teamimagediv">
+			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno4.png" alt="playerprofile">
+		</div>
+		<div class="teamdetaildiv playerdet">
+			<div>
+				<div><p class="playername">Virat Kolhi</p></div>
+				<div class="whatsapp">
+					<a href="#">REMOVE</a>
+					</div>
+			</div>
+			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
+				<p>22</p></div>
+	
+		</div>
+	</div>
+	
+	<div class="teams">
+		<div class="teamimagediv">
+			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno5.png" alt="playerprofile">
+		</div>
+		<div class="teamdetaildiv playerdet">
+			<div>
+				<div><p class="playername">Hitman</p></div>
+				<div class="whatsapp">
+					<a href="#">REMOVE</a>
+					</div>
+			</div>
+			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
+				<p>20</p></div>
+	
+		</div>
+	</div>
+	
+	<div class="teams">
+		<div class="teamimagediv">
+			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno2.jpg" alt="playerprofile">
+		</div>
+		<div class="teamdetaildiv playerdet">
+			<div>
+				<div><p class="playername">Marsh</p></div>
+				<div class="whatsapp">
+					<a href="#">REMOVE</a>
+					</div>
+			</div>
+			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
+				<p>20</p></div>
+	
+		</div>
+	</div>
+	
+	<div class="teams">
+		<div class="teamimagediv">
+			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno3.jpg" alt="playerprofile">
+		</div>
+		<div class="teamdetaildiv playerdet">
+			<div>
+				<div><p class="playername">Breet lee</p></div>
+				<div class="whatsapp">
+					<a href="#">REMOVE</a>
+					</div>
+			</div>
+			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
+				<p>21</p></div>
+	
+		</div>
+	</div>
+	
+	<div class="teams">
+		<div class="teamimagediv">
+			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno4.png" alt="playerprofile">
+		</div>
+		<div class="teamdetaildiv playerdet">
+			<div>
+				<div><p class="playername">Virat Kolhi</p></div>
+				<div class="whatsapp">
+					<a href="#">REMOVE</a>
+					</div>
+			</div>
+			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
+				<p>22</p></div>
+	
+		</div><a href=""></a>
+	</div>
+	
+	<div class="teams">
+		<div class="teamimagediv">
+			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno5.png" alt="playerprofile">
+		</div>
+		<div class="teamdetaildiv playerdet">
+			<div>
+				<div><p class="playername">Hitman</p></div>
+				<div class="whatsapp">
+					<a href="#">REMOVE</a>
+					</div>
+			</div>
+			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
+				<p>20</p></div>
+	
+		</div>
+	</div>
+	
+	
+	
+	<!-- players end -->
+		<div class="updatediv">
+			<button onclick="teamUpdate(event)" type="button">UPDATE</button>
+		</div>
+</section> 
 </main>
 <!-- main end -->
 
 <script>
-	const area = document.getElementById("area").value
-	const open_for_players = document.getElementById("open_for_players").value
-	const teamname = document.getElementById("teamname").value
-		</script>
+
+const queryString = window.location.search;
+
+const urlParams = new URLSearchParams(queryString);
+
+const captain_id = urlParams.get('unique_id');
+
+const team_id = urlParams.get('team_id');
+
+let team_list = JSON.parse(localStorage.getItem('team_details_list'));
+
+let all_player_list = JSON.parse(localStorage.getItem('user_detail'));
+
+function findPlayer(a) {
+
+return a.uniqueId == team_id ;
+}
+
+let teamProfile = team_list.find(findPlayer);
+
+// here i paste the value in input form local storage
+
+document.getElementById("team_image").value = teamProfile["teamImageUrl"];
+document.getElementById("teamname").value = teamProfile["teamName"];
+document.getElementById("area").value = teamProfile["address"]["area"];
+document.getElementById("distric").value = teamProfile["address"]["distric"];
+document.getElementById("team_about").value = teamProfile["about"];
+document.getElementById("open_for_players").checked = teamProfile["openForPlayers"]["status"];
+document.getElementById("team_player_description").value = teamProfile["openForPlayers"]["description"];
+
+
+function teamUpdate(e){
+    e.preventDefault();
+
+// for unique user name start
+teamProfile["teamName"] = "";
+
+let team_name = document.getElementById("teamname").value;
+
+let same_team_name = team_list.some(data =>
+    data.teamName == team_name );
+
+if(same_team_name){
+    b = document.querySelector(".wrong_password").innerHTML = "Team name not available.  "
+    return b;
+}
+
+// for unique user name end
+
+
+let open_player_checkbox = document.getElementById("open_for_players").checked,
+player_description = document.getElementById("team_player_description").value ,
+area = document.getElementById("area").value ,
+distric = document.getElementById("distric").value ,
+about = document.getElementById("team_about").value ,
+image = document.getElementById("team_image").value;
+
+
+teamProfile["teamName"] = team_name;
+teamProfile["address"]["area"] = area;
+teamProfile["address"]["distric"] = distric;
+teamProfile["about"] = about;
+teamProfile["openForPlayers"]["status"] = open_player_checkbox;
+teamProfile["openForPlayers"]["description"]= player_description;
+if(image == ""){
+    image = "https://iili.io/HGUnV71.png";
+}
+teamProfile["teamImageUrl"] = image;
+
+localStorage.setItem('team_details_list', JSON.stringify(team_list));
+
+window.location.href = `../profile/teamprofile.html?unique_id=${captain_id}`;
+
+}
+
+
+
+function memberEdit(){
+
+	let toggle_button = document.querySelector(".toggle_button");
+	toggle_button.style.left = "50%";
+
+	let btn_color_1 = document.querySelector(".darkbtn");
+	btn_color_1.style.color = "#000";
+
+	let btn_color_2 = document.querySelector(".lightbtn");
+	btn_color_2.style.color = "#fff";
+
+	let content_1 = document.querySelector("section.first")
+	content_1.style.display = "none";
+
+	let content_2 = document.querySelector("section.second")
+	content_2.style.display = "block";
+
+}
+
+function profileEdit(){
+
+let toggle_button = document.querySelector(".toggle_button");
+toggle_button.style.left = "0%";
+
+let btn_color_1 = document.querySelector(".darkbtn");
+btn_color_1.style.color = "#fff";
+
+let btn_color_2 = document.querySelector(".lightbtn");
+btn_color_2.style.color = "#000";
+
+let content_1 = document.querySelector("section.first")
+content_1.style.display = "block";
+
+let content_2 = document.querySelector("section.second")
+content_2.style.display = "none";
+
+}
+
+</script>
 </body>
 </html>

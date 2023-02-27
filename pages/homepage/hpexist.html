@@ -20,7 +20,7 @@
 				<i class="fa-solid fa-xmark" id="cancel"></i>
 			</label>
 	<div class="sandwich">
-		<a href="../profile/myprofile.html"><div class="sidebar-profile">
+		<a onclick="profilepage()"><div class="sidebar-profile">
 			<div class="playerimagediv">
 				<img class="player_image" alt="playerprofile">
 			</div>
@@ -28,12 +28,11 @@
 				<h1 id="player_name"></h1>
 				<p id="player_number"></p>
 				<div class="range_div">
-					<div class="range_back">
+					<div class="range_back_home">
 						<div class="range_cover"></div>
 					</div>
 					<label class="range-label"></label>
 				</div>
-				<!-- <input type="range" value="30"> <label>30%</label> -->
 			</div>
 		</div></a>
 		<div class="sidebar-nav">
@@ -44,23 +43,27 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><a href="../profile/teamprofile.html"><i class="fa-solid fa-people-group"></i></a></td>
-						<td><a href="../profile/teamprofile.html"><p>My Team</p></a></td>
+						<td><a onclick="myTeam()"><i class="fa-solid fa-people-group"></i></a></td>
+						<td><a onclick="myTeam()"><p>My Team</p></a></td>
 					</tr>
 
 					<tr>
-						<td><a href="../teamplayer captain/team response.html"><i class="fa-regular fa-envelope"></i></a></td>
-						<td><a href="../teamplayer captain/team response.html"><p>Response</p></a></td>
+						<td><a onclick="teamResponse()"><i class="fa-regular fa-envelope"></i></a></td>
+						<td><a onclick="teamResponse()"><p>Response</p></a></td>
 					</tr>
 					
 					<tr>
 						<td><a href="../teamplayer captain/creatematch.html"><i class="fa-solid fa-circle-plus"></i></a></td>
 						<td><a href="../teamplayer captain/creatematch.html"><p>Create Match</p></a></td>
 					</tr>
+					<tr>
+						<td><a onclick="createteambtn()" ><i class="fa-solid fa-circle-plus"></i></a></td>
+						<td><a onclick="createteambtn()" ><p>Create a team</p></a></td>
+					</tr>
 
 					<tr>
-						<td><a href="../teamplayer captain/playerrequests.html"><i class="fa-solid fa-user-plus"></i></a></td>
-						<td><a href="../teamplayer captain/playerrequests.html"><p>Player Requests</p></a></td>
+						<td><a onclick="playerRequest()"><i class="fa-solid fa-user-plus"></i></a></td>
+						<td><a onclick="playerRequest()"><p>Player Requests</p></a></td>
 					</tr>
 
 					<tr>
@@ -407,69 +410,8 @@
 		<div class="rights"><p>Copyright © 2019 - 2022 Sportshub - Website Designed By Alagappan</p></div>
 	</footer>
 <!--  footer ends -->
-<script>
-	let user_data = JSON.parse(localStorage.getItem('user_data'));
+<script src="../../assets/js/home_page.js"></script>
 
-let unique_id = user_data["phoneNumber"];
-
-let user_detail = JSON.parse(localStorage.getItem('user_detail'))
-
-
-function findPlayer(e) {
-  return e.phoneNumber == unique_id ;
-}
-
-person_data = user_detail.find(findPlayer);
-
-
-document.querySelector("#player_name").innerText = person_data["userName"];
-document.querySelector("#player_number").innerText = person_data["phoneNumber"];
-
-
-let player_image_url = person_data["imageUrl"] ;
-let player_image = document.querySelector(".player_image");
-if(player_image_url == ""){
-player_image.setAttribute("src", "../../assets/images/defalt_player_image.webp");
-}
-else{
-player_image.setAttribute("src", player_image_url);
-}
-// for range value start
-let username = person_data["userName"],  
-firstname =  person_data["firstName"] ,
-lastname = person_data["lastName"] ,
-dateofbirth = person_data["dateOFBirth"],
-gender = person_data["gender"] ,
-game = person_data["game"] ,
-area = person_data["area"] ,
-distric= person_data["distric"],
-about = person_data["about"],
-image = person_data["imageUrl"];
-
-let person_data_range = { username, firstname, lastname,dateofbirth,gender,game,area,distric,about,image}
-
-
-const emptyValues = new Set(["", null, undefined]);
-let null_count = Object.values(person_data_range).filter(x => emptyValues.has(x)).length;
-let key_count = 0;
-
-// loop through each key/value
-for(let key in person_data_range) {
-
-    // increase the count
-    ++key_count;
-}
-// range calculation
-
-let range_value = 100-((null_count/key_count)*100);
-
-let range_input = document.querySelector(".range_cover");
-range_input.style.width = `${range_value}%`;
-
-
-document.querySelector(".range-label").innerHTML = Math.round(range_value) + "%";
-
-</script>
 </body>
 
 </html>

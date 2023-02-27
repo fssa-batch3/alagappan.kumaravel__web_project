@@ -44,7 +44,7 @@ function signUp_1(e) {
         
         document.querySelector('form').reset();
 
-    	location.href = "./signup2.html";
+    	location.href = `./signup2.html?unique_id=${phonenumber}`;
     }
     
     
@@ -74,7 +74,8 @@ function signUp_2(e) {
     user_data["firstName"] = "";
     user_data["lastName"] = "";
     user_data["about"]= "";
-    user_data["imageUrl"]= "";
+    user_data["imageUrl"]= "../../assets/images/defalt_player_image.webp",
+    user_data["captainStatus"] = "";
 
     let person_unique_id = uuidv4();
     user_data["uniqueId"]= person_unique_id;
@@ -90,7 +91,13 @@ function signUp_2(e) {
         
         document.querySelector('form').reset();
 
-    	window.location.href = "../homepage/hpnew.html"
+        const queryString = window.location.search;
+
+	    const urlParams = new URLSearchParams(queryString);
+
+	    const phonenumber = urlParams.get('unique_id');
+
+    	window.location.href = `../homepage/hpnew.html?unique_id=${phonenumber}`
 
         e.preventDefault(); 
 }
@@ -117,7 +124,7 @@ function signIn(e){
         localStorage.setItem('user_data', JSON.stringify(user_detail_single))
 
         alert("Your login in successful");
-        window.location.href = "./pages/homepage/hpexist.html";
+        window.location.href = `/pages/homepage/hpexist.html?unique_id=${phonenumber}`;
 
     }
     e.preventDefault();
@@ -126,7 +133,7 @@ function signIn(e){
 // function for profile edit.
 
 function onEdit(){
-    window.location.href = "./profileedit.html";
+    window.location.href = `./profileedit.html?unique_id=${phonenumber}`;
 
 }
 
@@ -134,13 +141,6 @@ function onEdit(){
 
 function update(e){
     e.preventDefault();
-
-let user_data = JSON.parse(localStorage.getItem('user_data'));
-
-let unique_id = user_data["phoneNumber"];
-
-let user_detail = JSON.parse(localStorage.getItem('user_detail'))
-
 
 function findPlayer(a) {
 return a.phoneNumber == unique_id ;
@@ -181,11 +181,14 @@ person_data["game"] = game;
 person_data["area"] = area;
 person_data["distric"] = distric;
 person_data["about"]= about;
+if(image == ""){
+    image = "../../assets/images/defalt_player_image.webp";
+}
 person_data["imageUrl"]= image;
 
 localStorage.setItem('user_detail', JSON.stringify(user_detail));
 
-window.location.href = "./myprofile.html";
+window.location.href = `./myprofile.html?unique_id=${phonenumber}`;
 
 }
 
@@ -194,10 +197,15 @@ window.location.href = "./myprofile.html";
 function del(){
     
     if(confirm("Are you sure to delete this Account ?")){
-let user_data = JSON.parse(localStorage.getItem('user_data'));
 
-let unique_id = user_data["phoneNumber"];
+        const queryString = window.location.search;
 
+        const urlParams = new URLSearchParams(queryString);
+    
+        const phonenumber = urlParams.get('unique_id');
+    
+    let unique_id = phonenumber;
+    
 let user_detail = JSON.parse(localStorage.getItem('user_detail'))
 
 
@@ -224,7 +232,7 @@ window.location.href = "../../index.html";
 
 function logOut(){
     localStorage.setItem('user_data', "")
-    window.location.href = "../../index.html";
+    window.location.href = `../../index.html`;
 
 
 }

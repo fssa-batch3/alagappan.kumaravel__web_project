@@ -115,9 +115,13 @@
 </script>
 <script>
 
-let user_data = JSON.parse(localStorage.getItem('user_data'));
+const queryString = window.location.search;
 
-let unique_id = user_data["phoneNumber"];
+	    const urlParams = new URLSearchParams(queryString);
+
+	    const phonenumber = urlParams.get('unique_id');
+
+let unique_id = phonenumber;
 
 let user_detail = JSON.parse(localStorage.getItem('user_detail'))
 
