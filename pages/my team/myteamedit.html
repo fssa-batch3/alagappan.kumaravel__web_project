@@ -21,10 +21,10 @@
 <!-- header end -->
 <!-- main start -->
 <main>
-	<div class="changephoto">
-	<input class="team_image_show" type="image" src="../../assets/images/playerface.jpg" alt="team logo">
+	<div class="changephoto" >
+	<input class="team_image_show" id="team_image_show" type="image" >
 	<label>Change Photo</label>
-	<input id="team_image" type="url" > 
+	<input id="team_image" type="url"  onfocusout="myFunction()"> 
 	</div>
 	<div class="headerbottom">	
 		<button class="darkbtn" onclick="profileEdit()" type="button">PROFILE</button>
@@ -57,192 +57,25 @@
 		<textarea id="team_player_description"></textarea>
 
 	</form>		 
-	<div class="updatediv">
+	<!-- <div class="updatediv">
 		<button onclick="teamUpdate(event)" type="button">UPDATE</button>
-	</div> 
+	</div>  -->
 </section>
 <section class="second">
-	<div class="teams">
-		<div class="teamimagediv">
-			<img class="teamprofile playerimg" src="../../assets/images/playerface.jpg" alt="playerprofile">
-		</div>
-		<div class="teamdetaildiv playerdet">
-			<div>
-				<div><p class="playername">MSD   <b>Captain</b></p></div>
-				<div class="whatsapp">
-					<a class="switchcap" href="./myteameditswitchcaptain.html">SWITCH CAPTAIN</a>
-					</div>
-			</div>
-			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
-				<p>21</p></div>
-	
-		</div>
-	</div>
-	
-	<div class="teams">
-		<div class="teamimagediv">
-			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno1.jfif" alt="playerprofile">
-		</div>
-		<div class="teamdetaildiv playerdet">
-			<div>
-				<div><p class="playername">Jedaja</p></div>
-				<div class="whatsapp">
-					<a href="#">REMOVE</a>
-					</div>
-			</div>
-			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
-				<p>20</p></div>
-	
-		</div>
-	</div>
-	
-	<div class="teams">
-		<div class="teamimagediv">
-			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno2.jpg" alt="playerprofile">
-		</div>
-		<div class="teamdetaildiv playerdet">
-			<div>
-				<div><p class="playername">Marsh</p></div>
-				<div class="whatsapp">
-					<a href="#">REMOVE</a>
-					</div>
-			</div>
-			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
-				<p>20</p></div>
-	
-		</div>
-	</div>
-	
-	<div class="teams">
-		<div class="teamimagediv">
-			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno3.jpg" alt="playerprofile">
-		</div>
-		<div class="teamdetaildiv playerdet">
-			<div>
-				<div><p class="playername">Breet lee</p></div>
-				<div class="whatsapp">
-					<a href="#">REMOVE</a>
-					</div>
-			</div>
-			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
-				<p>21</p></div>
-	
-		</div>
-	</div>
-	
-	<div class="teams">
-		<div class="teamimagediv">
-			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno4.png" alt="playerprofile">
-		</div>
-		<div class="teamdetaildiv playerdet">
-			<div>
-				<div><p class="playername">Virat Kolhi</p></div>
-				<div class="whatsapp">
-					<a href="#">REMOVE</a>
-					</div>
-			</div>
-			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
-				<p>22</p></div>
-	
-		</div>
-	</div>
-	
-	<div class="teams">
-		<div class="teamimagediv">
-			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno5.png" alt="playerprofile">
-		</div>
-		<div class="teamdetaildiv playerdet">
-			<div>
-				<div><p class="playername">Hitman</p></div>
-				<div class="whatsapp">
-					<a href="#">REMOVE</a>
-					</div>
-			</div>
-			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
-				<p>20</p></div>
-	
-		</div>
-	</div>
-	
-	<div class="teams">
-		<div class="teamimagediv">
-			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno2.jpg" alt="playerprofile">
-		</div>
-		<div class="teamdetaildiv playerdet">
-			<div>
-				<div><p class="playername">Marsh</p></div>
-				<div class="whatsapp">
-					<a href="#">REMOVE</a>
-					</div>
-			</div>
-			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
-				<p>20</p></div>
-	
-		</div>
-	</div>
-	
-	<div class="teams">
-		<div class="teamimagediv">
-			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno3.jpg" alt="playerprofile">
-		</div>
-		<div class="teamdetaildiv playerdet">
-			<div>
-				<div><p class="playername">Breet lee</p></div>
-				<div class="whatsapp">
-					<a href="#">REMOVE</a>
-					</div>
-			</div>
-			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
-				<p>21</p></div>
-	
-		</div>
-	</div>
-	
-	<div class="teams">
-		<div class="teamimagediv">
-			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno4.png" alt="playerprofile">
-		</div>
-		<div class="teamdetaildiv playerdet">
-			<div>
-				<div><p class="playername">Virat Kolhi</p></div>
-				<div class="whatsapp">
-					<a href="#">REMOVE</a>
-					</div>
-			</div>
-			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
-				<p>22</p></div>
-	
-		</div><a href=""></a>
-	</div>
-	
-	<div class="teams">
-		<div class="teamimagediv">
-			<img class="teamprofile playerimg" src="../../assets/images/Player profile image/playerno5.png" alt="playerprofile">
-		</div>
-		<div class="teamdetaildiv playerdet">
-			<div>
-				<div><p class="playername">Hitman</p></div>
-				<div class="whatsapp">
-					<a href="#">REMOVE</a>
-					</div>
-			</div>
-			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
-				<p>20</p></div>
-	
-		</div>
-	</div>
-	
-	
-	
-	<!-- players end -->
-		<div class="updatediv">
-			<button onclick="teamUpdate(event)" type="button">UPDATE</button>
-		</div>
+
+<div class="popup_content">
+
+</div>
 </section> 
+<div class="updatediv">
+	<button onclick="teamUpdate(event)" type="button">UPDATE</button>
+</div>
 </main>
 <!-- main end -->
 
+
 <script>
+
 
 const queryString = window.location.search;
 
@@ -263,6 +96,24 @@ return a.uniqueId == team_id ;
 
 let teamProfile = team_list.find(findPlayer);
 
+let unique_player = teamProfile["teamMembers"];
+
+let players_list = []
+
+for(i=0;i<unique_player.length;i++){
+
+	let player_number = unique_player[i];
+
+	function findPlayer(a) {
+	return a.phoneNumber == player_number ;
+	}	
+
+	let player_object = all_player_list.find(findPlayer);
+
+	players_list.push(player_object)
+
+}
+
 // here i paste the value in input form local storage
 
 document.getElementById("team_image").value = teamProfile["teamImageUrl"];
@@ -273,6 +124,8 @@ document.getElementById("team_about").value = teamProfile["about"];
 document.getElementById("open_for_players").checked = teamProfile["openForPlayers"]["status"];
 document.getElementById("team_player_description").value = teamProfile["openForPlayers"]["description"];
 
+let image_element = document.getElementById("team_image_show");
+    image_element.setAttribute("src", teamProfile["teamImageUrl"])
 
 function teamUpdate(e){
     e.preventDefault();
@@ -307,6 +160,7 @@ teamProfile["address"]["distric"] = distric;
 teamProfile["about"] = about;
 teamProfile["openForPlayers"]["status"] = open_player_checkbox;
 teamProfile["openForPlayers"]["description"]= player_description;
+
 if(image == ""){
     image = "https://iili.io/HGUnV71.png";
 }
@@ -318,7 +172,121 @@ window.location.href = `../profile/teamprofile.html?unique_id=${captain_id}`;
 
 }
 
+// here i done function for show players details
 
+function playerstemp(player, captain, remove, classes, click) {  
+
+const template1 = `	
+<div class="teams">
+		<div class="teamimagediv">
+			<img class="teamprofile playerimg" src="${player["imageUrl"]}" alt="profile of ${player["userName"]}">
+		</div>
+		<div class="teamdetaildiv playerdet">
+			<div>
+				<div><p class="playername">${player["userName"]}   <b>${captain}</b></p></div>
+				<div class="whatsapp">
+					<a class="${classes}" data-id="${player["phoneNumber"]}" onclick="${click}">${remove}</a>
+					</div>
+			</div>
+			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
+				<p>21</p></div>
+	
+		</div>
+	</div>
+	`
+return template1;
+}
+
+
+for(i=0;i<players_list.length;i++){
+
+let captain = "" ;
+let remove = "";
+let classes = "";
+let click = "";
+if(players_list[i]["captainStatus"]){
+	captain = "captain"
+	remove = "SWITCH CAPTAIN"
+	classes = "switchcap"
+	click = "switchCaptain()"
+}
+else{
+	remove = "REMOVE"
+	classes = "remove_player"
+}
+
+	const player = players_list[i];
+	const template1 = playerstemp(player, captain, remove, classes, click);
+	document.querySelector("section.second").insertAdjacentHTML("beforeend", template1);
+
+}
+
+// here i create popup for switch captain
+
+function switchCap(player, remove, click) {  
+
+const template1 = `	
+<div class="teams">
+		<div class="teamimagediv">
+			<img class="teamprofile playerimg" src="${player["imageUrl"]}" alt="profile of ${player["userName"]}">
+		</div>
+		<div class="teamdetaildiv playerdet">
+			<div>
+				<div><p class="playername">${player["userName"]}</p></div>
+				<div class="whatsapp">
+					<a class="select_cap" data-id="${player["phoneNumber"]}" onclick="${click}">${remove}</a>
+					</div>
+			</div>
+			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
+				<p>21</p></div>
+	
+		</div>
+	</div>
+	`
+return template1;
+}
+
+for(i=0;i<players_list.length;i++){
+
+let captain = "" ;
+let remove = "";
+let classes = "";
+let click = "";
+if(!players_list[i]["captainStatus"]){
+	remove = "SELECT"
+	click = "switchCaptain()"
+}
+
+
+	const player = players_list[i];
+	const template1 = switchCap(player, remove, click);
+	document.querySelector("div.popup_content").insertAdjacentHTML("beforeend", template1);
+
+}
+
+
+const bookCovers = document.querySelectorAll(".remove_player");
+    bookCovers.forEach(bookCover => {
+      bookCover.addEventListener("click", (event) => {
+        const person_data = all_player_list.find(book => book["phoneNumber"] === bookCover.dataset.id);
+		if (confirm("Are you confrim to Remove " + person_data["userName"] + " From your team")){
+		
+		person_data["captainStatus"] = "";
+		
+		let indexOfUser = teamProfile["teamMembers"].indexOf(person_data["phoneNumber"]);
+
+		teamProfile["teamMembers"].splice(indexOfUser, 1);
+		
+		localStorage.setItem('user_detail', JSON.stringify(all_player_list));
+		localStorage.setItem('team_details_list', JSON.stringify(team_list));
+		
+		location.reload();
+		}
+
+
+	})
+    })
+		
 
 function memberEdit(){
 
@@ -355,6 +323,16 @@ content_1.style.display = "block";
 
 let content_2 = document.querySelector("section.second")
 content_2.style.display = "none";
+
+}
+
+function myFunction() {
+        let image_input = document.getElementById("team_image").value;
+        let image_element = document.getElementById("team_image_show");
+        image_element.setAttribute("src", image_input)
+        if(image_element.getAttribute("src") == ""){
+            image_element.setAttribute("src", "../../assets/images/defalt_team_image.png")
+        }
 
 }
 

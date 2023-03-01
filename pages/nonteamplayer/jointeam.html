@@ -153,7 +153,9 @@
 		// }
 		// team card div end 
 
-	let jointeam = JSON.parse(localStorage.getItem('team_details_list'));
+
+
+	let jointeam = (JSON.parse(localStorage.getItem('team_details_list'))).filter(e => e.openForPlayers["status"] == true);
 
 
 		function renderTeam(team) {
@@ -238,7 +240,6 @@ let selectbtn = document.querySelectorAll(".select-link");
         localStorage.setItem('response_list', JSON.stringify(response_list));
 
     	window.location.href = "./response.html";
-
 
 	  })
 	})

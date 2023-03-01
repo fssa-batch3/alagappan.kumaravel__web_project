@@ -222,8 +222,6 @@ user_detail.splice(indexOfUser, 1);
 
 localStorage.setItem('user_detail', JSON.stringify(user_detail));
 
-localStorage.setItem('user_data', "")
-
 window.location.href = "../../index.html";
 
     }
