@@ -1,6 +1,13 @@
 let image_element = document.getElementById("team_image_show");
     image_element.setAttribute("src", "../../assets/images/defalt_team_image.png")
 
+    
+const queryString = window.location.search;
+
+const urlParams = new URLSearchParams(queryString);
+
+const phonenumber = urlParams.get('unique_id');
+
 
 function createTeam(e) {
 
@@ -49,7 +56,7 @@ function createTeam(e) {
         
         person_data = user_detail.find(findPlayer);
         
-        person_data["captainStatus"] = true ;
+        person_data["captainStatus"] = 1 ;
 
         localStorage.setItem('user_detail', JSON.stringify(user_detail));
 
@@ -78,7 +85,7 @@ function createTeam(e) {
         
         document.querySelector('form').reset();
 
-    	window.location.href = "../homepage/hpexist.html";
+    	window.location.href = `../homepage/hpexist.html?unique_id=${phonenumber}`;
 
 
     }

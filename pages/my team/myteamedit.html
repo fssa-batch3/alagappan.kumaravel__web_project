@@ -24,8 +24,8 @@
 	<div class="changephoto" >
 	<input class="team_image_show" id="team_image_show" type="image" >
 	<label>Change Photo</label>
-	<input id="team_image" type="url"  onfocusout="myFunction()"> 
-	</div>
+	<input id="team_image" type="url" onfocusout="myFunction()"> 
+	<iv>
 	<div class="headerbottom">	
 		<button class="darkbtn" onclick="profileEdit()" type="button">PROFILE</button>
 		<button class="lightbtn" onclick="memberEdit()" type="button">MEMBER</button>
@@ -65,11 +65,19 @@
 
 <div class="popup_content">
 
+	<div class="updatediv">
+		<button type="button" onclick="ClosePopup()" >CANCEL</button>
+	</div>
 </div>
 </section> 
 <div class="updatediv">
 	<button onclick="teamUpdate(event)" type="button">UPDATE</button>
 </div>
+
+<div class="deletediv">
+	<button onclick="teamDelete(event)" type="button">DELETE</button>
+</div>
+
 </main>
 <!-- main end -->
 
@@ -113,6 +121,37 @@ for(i=0;i<unique_player.length;i++){
 	players_list.push(player_object)
 
 }
+
+
+// here i done function for delete team 
+
+function teamDelete(){
+	if(confirm("Are you sure to DELETE your team ?"+" You can't get '"+ teamProfile["teamName"] + "' same user name after you delete this team")){
+		for(let i=0; i<unique_player.length; i++){
+
+			let player_number = unique_player[i];
+
+			function findPlayer(a) {
+			return a.phoneNumber == player_number ;
+			}	
+
+			let player_object = all_player_list.find(findPlayer);
+
+			player_object["captainStatus"] = 2;
+
+		}
+		localStorage.setItem('user_detail', JSON.stringify(all_player_list));
+
+		teamProfile["teamMembers"] = [];
+
+		teamProfile["openForPlayers"]["status"] = false ;
+
+		localStorage.setItem('team_details_list', JSON.stringify(team_list));
+
+		window.location.href=`../homepage/hpexist.html?unique_id=${captain_id}`
+	}
+}
+
 
 // here i paste the value in input form local storage
 
@@ -204,7 +243,7 @@ let captain = "" ;
 let remove = "";
 let classes = "";
 let click = "";
-if(players_list[i]["captainStatus"]){
+if(players_list[i]["captainStatus"] == 1){
 	captain = "captain"
 	remove = "SWITCH CAPTAIN"
 	classes = "switchcap"
@@ -222,8 +261,19 @@ else{
 }
 
 // here i create popup for switch captain
+function switchCaptain(){
+	let popup = document.querySelector(".popup_content");
+			popup.classList.add("open-popup");// hear we add class for show popup
+			//  hear we work for display team member repeat pattern 
+			
+}
+function ClosePopup() {
+	let popup = document.querySelector(".popup_content");
+	popup.classList.remove("open-popup");
 
-function switchCap(player, remove, click) {  
+}
+
+function switchCap(player) {  
 
 const template1 = `	
 <div class="teams">
@@ -234,7 +284,7 @@ const template1 = `
 			<div>
 				<div><p class="playername">${player["userName"]}</p></div>
 				<div class="whatsapp">
-					<a class="select_cap" data-id="${player["phoneNumber"]}" onclick="${click}">${remove}</a>
+					<a type="button" class="select_cap" data-id="${player['phoneNumber']}">SELECT</a>
 					</div>
 			</div>
 			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
@@ -246,23 +296,38 @@ const template1 = `
 return template1;
 }
 
-for(i=0;i<players_list.length;i++){
 
-let captain = "" ;
-let remove = "";
-let classes = "";
-let click = "";
-if(!players_list[i]["captainStatus"]){
-	remove = "SELECT"
-	click = "switchCaptain()"
-}
+let team_members = players_list.filter(e => e.captainStatus == 0)
 
+for(i=0;i<team_members.length;i++){
 
-	const player = players_list[i];
-	const template1 = switchCap(player, remove, click);
-	document.querySelector("div.popup_content").insertAdjacentHTML("beforeend", template1);
+	const player = team_members[i];
+	const template1 = switchCap(player);
+	document.querySelector(".popup_content").insertAdjacentHTML("afterbegin", template1);
 
 }
+
+const switchnewcap = document.querySelectorAll(".select_cap")
+switchnewcap.forEach(bookCover => {
+      bookCover.addEventListener("click", (event) => {
+		
+		let new_cap_id = bookCover.dataset.id
+
+	let my_profile = all_player_list.find(e => e.phoneNumber == captain_id)
+
+	my_profile["captainStatus"] = 0;
+
+	let new_cap = all_player_list.find(e => e.phoneNumber == new_cap_id)
+
+	new_cap["captainStatus"] = 1;
+
+	localStorage.setItem('user_detail', JSON.stringify(all_player_list));
+
+	window.location.href=`../profile/teamprofile.html?unique_id=${captain_id}&team_id=${team_id}`
+
+})
+	})
+
 
 
 const bookCovers = document.querySelectorAll(".remove_player");
@@ -271,7 +336,7 @@ const bookCovers = document.querySelectorAll(".remove_player");
         const person_data = all_player_list.find(book => book["phoneNumber"] === bookCover.dataset.id);
 		if (confirm("Are you confrim to Remove " + person_data["userName"] + " From your team")){
 		
-		person_data["captainStatus"] = "";
+		person_data["captainStatus"] = 2;
 		
 		let indexOfUser = teamProfile["teamMembers"].indexOf(person_data["phoneNumber"]);
 

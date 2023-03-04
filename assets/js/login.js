@@ -75,7 +75,7 @@ function signUp_2(e) {
     user_data["lastName"] = "";
     user_data["about"]= "";
     user_data["imageUrl"]= "../../assets/images/defalt_player_image.webp",
-    user_data["captainStatus"] = "";
+    user_data["captainStatus"] = 2 ;
 
     let person_unique_id = uuidv4();
     user_data["uniqueId"]= person_unique_id;
@@ -97,7 +97,7 @@ function signUp_2(e) {
 
 	    const phonenumber = urlParams.get('unique_id');
 
-    	window.location.href = `../homepage/hpnew.html?unique_id=${phonenumber}`
+    	window.location.href = `../homepage/hpexist.html?unique_id=${phonenumber}`
 
         e.preventDefault(); 
 }
@@ -124,7 +124,7 @@ function signIn(e){
         localStorage.setItem('user_data', JSON.stringify(user_detail_single))
 
         alert("Your login in successful");
-        window.location.href = `/pages/homepage/hpexist.html?unique_id=${phonenumber}`;
+        window.location.href = `./pages/homepage/hpexist.html?unique_id=${phonenumber}`;
 
     }
     e.preventDefault();
@@ -137,10 +137,26 @@ function onEdit(){
 
 }
 
+function myFunction() {
+    let image_input = document.getElementById("user_image").value;
+    let image_element = document.getElementById("team_image_show");
+    image_element.setAttribute("src", image_input)
+    if(image_element.getAttribute("src") == ""){
+        image_element.setAttribute("src", "../../assets/images/defalt_team_image.png")
+    }
 
+}
 
 function update(e){
     e.preventDefault();
+
+const queryString = window.location.search;
+
+const urlParams = new URLSearchParams(queryString);
+
+const phonenumber = urlParams.get('unique_id');
+
+
 
 function findPlayer(a) {
 return a.phoneNumber == unique_id ;

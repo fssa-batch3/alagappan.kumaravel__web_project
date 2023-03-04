@@ -21,7 +21,7 @@
 			<i class="fa-solid fa-arrow-left"></i>
 			<div class="topleft">
 				<i class="fa-solid fa-share"></i>
-				<a onclick="teamEdit()"><i class="fa-solid fa-pen"></i></a>
+				<a onclick="teamEdit()" class="edit_team"><i class="fa-solid fa-pen"></i></a>
 				<i class="fa-brands fa-whatsapp"></i>
 			</div>
 		</div>
@@ -49,7 +49,7 @@
 
 				<button  type="button" onclick="member()">MEMBER</button>
 
-				<button type="button" onclick="match()">MEMBER</button>
+				<button type="button" onclick="match()">MATCHES</button>
 
 				<button type="button" onclick="profile()">PROFILE</button>
 			<div class="button_underline"></div>
@@ -198,6 +198,9 @@
 	</main>
 	<!-- main end -->
 
+	<script src="../../lib/moment/moment.min.js">
+
+	</script>
 
 <script>
 
@@ -241,28 +244,45 @@ for(i=0;i<unique_player.length;i++){
 
 }
 
+let my_profile = players_list.find(e => e.phoneNumber == unique_id)
 
+console.log(my_profile)
+if(my_profile["captainStatus"] == 0){
+	document.querySelector(".edit_team").style.display = "none";
+}
 
 for(i=0;i<players_list.length;i++){
 
 let captain = "" ;
+let whatsapp = "";
+let me = ""
 
-if(players_list[i]["captainStatus"]){
+if(players_list[i]["captainStatus"] == 1){
 	captain = "captain"
+}
+if(players_list[i]["phoneNumber"] == phonenumber && players_list[i]["captainStatus"] == 1){
+    whatsapp = "";
+	me = "(you)"
+}
+
+else if(players_list[i]["phoneNumber"] != phonenumber){
+	whatsapp = '<i class="fa-brands fa-whatsapp"></i>'
+}
+
+else{
+	whatsapp = '<a class="exit_from_team" onclick="exit()">EXIT</a>'
+	me = "(you)"
 }
 
 
 	const player = players_list[i];
-	const template1 = renderPlayer(player, captain);
+	const template1 = renderPlayer(player, captain, whatsapp, me);
 	document.querySelector(".playermatch").insertAdjacentHTML("beforeend", template1);
 
 }
+  
 
-
-function renderPlayer(player, captain) {  
-
-	
-
+function renderPlayer(player, captain, whatsapp, me) {  
 
 const template1 = `	
 	<div class="teams">
@@ -271,9 +291,9 @@ const template1 = `
 					</div>
 					<div class="teamdetaildiv playerdet">
 						<div>
-							<div><p class="playername">${player["userName"]}<b>${captain}</b></p></div>
+							<div><p class="playername">${player["userName"]}<b>${me} ${captain}</b></p></div>
 							<div class="whatsapp">
-								<i class="fa-brands fa-whatsapp"></i>
+								${whatsapp}
 								</div>
 						</div>
 						<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
@@ -283,6 +303,25 @@ const template1 = `
 				</div>
 	`
 return template1;
+}
+
+
+function exit(){
+	if(confirm("Do you want to Exit from " + teamProfile["teamName"] + " team ?")){
+
+		let my_profile = all_player_list.find(e => e.phoneNumber == phonenumber)
+
+		my_profile["captainStatus"] = 2 ;
+
+		let indexOfUser = teamProfile["teamMembers"].indexOf(my_profile["phoneNumber"]);
+
+		teamProfile["teamMembers"].splice(indexOfUser, 1);
+
+		localStorage.setItem('user_detail', JSON.stringify(all_player_list));
+		localStorage.setItem('team_details_list', JSON.stringify(team_list));
+
+		window.location.href = `../homepage/hpexist.html?unique_id=${phonenumber}`
+	}
 }
 
 function member(){
@@ -349,8 +388,9 @@ document.querySelector(".profiledetailsdiv h1").innerHTML = teamUserName;
 let teamLocation = teamProfile["address"]["area"]
 document.querySelector(".profiledetailsdiv div:nth-child(2) p").innerHTML = teamLocation;
 
-let teamSince = teamProfile["dateOfJoin"]
-document.querySelector(".profiledetailsdiv div:nth-child(3) p").innerHTML = "Since" + "  " +teamSince;
+let teamSince = moment(teamProfile["dateOfJoin"])
+
+document.querySelector(".profiledetailsdiv div:nth-child(3) p").innerHTML = "Since" + "  " +teamSince.format("MMM Do YY");
 
 let teamArea = teamProfile["address"]["area"]
 document.querySelector(".area").innerHTML = teamArea ;

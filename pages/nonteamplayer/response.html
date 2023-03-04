@@ -30,54 +30,79 @@
 
 
 </main>
+<script src="../../lib/moment/moment.min.js">
+</script>
 <!-- main end -->
 <script>
-	let join_team_response = [
+// 	let join_team_response = [
 
-{
-  "teamImage" : {
-	"source" : "../../assets/images/team profile image/team5profile.jpg",
-	"alt" : "logo of Asgard"},
+// {
+//   "teamImage" : {
+// 	"source" : "../../assets/images/team profile image/team5profile.jpg",
+// 	"alt" : "logo of Asgard"},
 
-  "teamName" : "Asgard",
+//   "teamName" : "Asgard",
 
-  "address" : {
-	"area": "Annanagar",
-	"distric" : "Chennai"},
+//   "address" : {
+// 	"area": "Annanagar",
+// 	"distric" : "Chennai"},
 
-  "dateOfJoin" : "Thu Dec 01 2021 00:00:00",
+//   "dateOfJoin" : "Thu Dec 01 2021 00:00:00",
 
-  "openForPlayers" : "We need one good allrounder and....",
+//   "openForPlayers" : "We need one good allrounder and....",
 
-  "responseStatus" : {
-	"time" : "Thu Jan 01 2022 15:30:00",
-	"result" : "ACCEPTED"
-  }
-},
+//   "responseStatus" : {
+// 	"time" : "Thu Jan 01 2022 15:30:00",
+// 	"result" : "ACCEPTED"
+//   }
+// },
 
-{
-  "teamImage" : {
-	"source" : "../../assets/images/team profile image/team5profile.jpg",
-	"alt" : "logo of Asgard"},
+// {
+//   "teamImage" : {
+// 	"source" : "../../assets/images/team profile image/team5profile.jpg",
+// 	"alt" : "logo of Asgard"},
 
-  "teamName" : "Asgard",
+//   "teamName" : "Asgard",
 
-  "address" : {
-	"area": "Annanagar",
-	"distric" : "Chennai"},
+//   "address" : {
+// 	"area": "Annanagar",
+// 	"distric" : "Chennai"},
 
-  "dateOfJoin" : "Thu Dec 01 2021 00:00:00",
+//   "dateOfJoin" : "Thu Dec 01 2021 00:00:00",
 
-  "openForPlayers" : "We need one good allrounder and....",
+//   "openForPlayers" : "We need one good allrounder and....",
 
-  "responseStatus" : {
-	"time" : "Thu Jan 01 2022 15:30:00",
-	"result" : "REJECTED"	
-  }
+//   "responseStatus" : {
+// 	"time" : "Thu Jan 01 2022 15:30:00",
+// 	"result" : "REJECTED"	
+//   }
+// }
+// ]
+
+const queryString = window.location.search;
+
+const urlParams = new URLSearchParams(queryString);
+
+const phonenumber = urlParams.get('unique_id');
+
+let all_request = (JSON.parse(localStorage.getItem('response_list'))).filter(e => e.playerUniqueId == phonenumber);
+
+console.log(all_request)
+let all_team_list = JSON.parse(localStorage.getItem('team_details_list'));
+
+let join_team_response = []
+
+for(let i=0; i<all_request.length;i++){
+	let a = all_request[i]["teamUniqueId"]
+
+	let b = all_team_list.find(e => e.uniqueId == a)
+
+	join_team_response.push(b)
 }
-]
-for(i=0;i<=join_team_response.length;i++){
 
+console.log(join_team_response)
+
+for(i=0;i<join_team_response.length;i++){
 
 
 const div_teams = document.createElement("div");
@@ -98,8 +123,8 @@ team_image_div.append(team_image_button);
 
 const team_image = document.createElement("img");
 team_image.setAttribute("class", "teamprofile");
-team_image.setAttribute("src", join_team_response[i]["teamImage"]["source"]);
-team_image.setAttribute("alt", join_team_response[i]["teamImage"]["alt"]);
+team_image.setAttribute("src", join_team_response[i]["teamImageUrl"]);
+team_image.setAttribute("alt", "image of" + join_team_response[i]["teamName"]);
 team_image_button.append(team_image);
 
 const team_details_div = document.createElement("div");
@@ -140,7 +165,7 @@ icon_handshake.setAttribute("class", "fa-regular fa-handshake");
 team_details_subdiv2.append(icon_handshake);
 
 const open_for_players_details_para = document.createElement("p");
-open_for_players_details_para.innerText = join_team_response[i]["openForPlayers"];
+open_for_players_details_para.innerText = join_team_response[i]["openForPlayers"]["description"];
 team_details_subdiv2.append(open_for_players_details_para);
 
 const status_div = document.createElement("div");
@@ -148,33 +173,38 @@ status_div.setAttribute("class", "statusdiv");
 div_teams.append(status_div);
 
 const status_para = document.createElement("p");
-status_para.innerText = join_team_response[i]["responseStatus"]["time"]
+let time = moment(all_request[i]["createdTime"])
+status_para.innerText = time.startOf('sec').fromNow(); 
 status_div.append(status_para);
 
-let result_data = join_team_response[i]["responseStatus"]["result"]
+let result_data = all_request[i]["requestStatus"]
 
 let result_value = ""
 
 const status_para_bold = document.createElement("b");
-if (result_data == "ACCEPTED"){
+if (result_data == 1){
 	status_para_bold.setAttribute("class", "boldaccepted");
-	 result_value = "   ACCEPTED"
+	 result_value = "  (ACCEPTED)"
 }
-else if (result_data == "REJECTED"){
+else if (result_data == 0){
 	status_para_bold.setAttribute("class", "boldrejected");
-	 result_value = "   REJECTED"
+	 result_value = "  (REJECTED)"
 }
 else {
- 	 result_value = "   Not yet Response"
+ 	 result_value = "  (Not yet Response)"
 }
 
 status_para_bold.innerText = result_value ;
 status_para.append(status_para_bold);
 
-const delete_icon = document.createElement("i");
-delete_icon.setAttribute("class", "fa-solid fa-trash-can");
-status_div.append(delete_icon);
+if (result_data == 2 || result_data == 0){
+	
+	const delete_icon = document.createElement("i");
+	delete_icon.setAttribute("class", "fa-solid fa-trash-can");
+	delete_icon.setAttribute("data-id", all_request[i]["responseUniqueId"]);
+	status_div.append(delete_icon);
 
+}
 const whatsapp_icon = document.createElement("i");
 whatsapp_icon.setAttribute("class", "fa-brands fa-whatsapp");
 status_div.append(whatsapp_icon);
@@ -182,6 +212,22 @@ status_div.append(whatsapp_icon);
 document.querySelector("main.response-main").append(div_teams)
 
 }
+
+const switchnewcap = document.querySelectorAll(".fa-trash-can")
+switchnewcap.forEach(bookCover => {
+      bookCover.addEventListener("click", (event) => {
+		let request_data = all_request.find(e => e.responseUniqueId == bookCover.dataset.id)
+		
+		let index = all_request.indexOf(request_data);
+
+		all_request.splice(index, 1)
+
+		localStorage.setItem('response_list', JSON.stringify(all_request));
+
+		location.reload()
+	  })
+	})
+
 
 
 </script>

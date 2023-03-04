@@ -23,6 +23,7 @@ body{
 }  
 
 /* three content swipe css start */
+
 section.second{
 display: none;
 }
@@ -265,6 +266,13 @@ main{
     margin: 0;
 }
 
+.exit_from_team{
+    text-decoration: none;
+    color: var(--red);
+    font-size: 18px;
+    font-weight: 600;
+
+}
 
 .teamdetaildiv div:nth-child(1) div:nth-child(2){
     display: flex;
@@ -282,6 +290,7 @@ main{
 
 .matchdetails{
     margin-top: 5px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -293,7 +302,12 @@ main{
     font-size: 14px;
     margin-left: .5rem;
     color: var(--icncolor);
+    width: 90%;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
 .teams i, .myteam i{
     color: var(--icncolor);
 }

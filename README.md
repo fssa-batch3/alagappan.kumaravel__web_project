@@ -19,15 +19,16 @@ user profile CRUD
 Team CRUD 
 
 * Create a team profile
-* Read team 
+* Read team profile
 * edit or Update team profile
 * create join request to team
-* Delete join Request to team
+* Delete join Request to team.
 * Accept or Reject join request
-* read status of join request response
-* remove new player from team
+* read status of join request response.
+* remove player from team 
 * exit player from team
 * Switch captain in team
+* delete team
 
 
 Match CRUD

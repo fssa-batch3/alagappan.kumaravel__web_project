@@ -19,8 +19,8 @@
 		<div><i class="fa-solid fa-arrow-left"></i></div>
 		
 			<div>
-				<a href="../profile/playerprofile.html"><p>My Cricket Profile</p></a>
-				<a href="../profile/playerprofile.html"><i class="fa-solid fa-circle-chevron-right"></i></a>
+				<a onclick="moveProfile()"><p>My Cricket Profile</p></a>
+				<a onclick="moveProfile()"><i class="fa-solid fa-circle-chevron-right"></i></a>
 			</div>
 	</header>
 	<!-- header end -->
@@ -115,6 +115,7 @@
 </script>
 <script>
 
+
 const queryString = window.location.search;
 
 	    const urlParams = new URLSearchParams(queryString);
@@ -190,6 +191,9 @@ range_input.style.width = `${range_value}%`;
 document.querySelector(".range-label").innerHTML = Math.round(range_value) + "%";
 
 // for range value end
+function moveProfile(){
+	window.location.href = `../profile/playerprofile.html?unique_id=${phonenumber}`;
+}
 
 </script>
 <script src="../../assets/js/login.js">

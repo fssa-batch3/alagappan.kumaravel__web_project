@@ -40,13 +40,123 @@
 			</div>
 	</header>
 	<!-- header end -->
-	<!-- main start -->
 	<main>
 		<div class="headerbottom">
-			<a href="../profile/playerprofile.html"><button type="button">PROFILE</button></a>
-			<a href="../profile/playermatch.html"><button type="button">MATCH</button></a>
-			<a href="../profile/playerteam.html"><button type="button">TEAM</button></a>
+			<button type="button" onclick="profile()">PROFILE</button>
+
+			<button type="button" onclick="match()">MATCHES</button>
+
+			<button  type="button" onclick="member()">TEAM</button>
+		<div class="button_underline"></div>
+	</div>
+
+	<section class="three">
+		<div class="playermatch">
+			Player currently not in team.
 		</div>
+	</section>
+
+	<section class="second">
+		<div class="playermatch">
+
+			<div class="teams">
+				<div class="teamimagediv">
+					<img class="teamprofile" src="../../assets/images/team profile image/team2profile.jpg" alt="teamprofile">
+				</div>
+				<div class="teamdetaildiv">
+					<div>
+						<div><p>vs</p><h2>Avengers11</h2></div>
+						<div>
+							<i class="fa-regular fa-clock"></i>
+							<p>2-Dec-2022,15:30</p></div>
+					</div>
+					<div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
+						<p>Chennai, Annanagar</p></div>
+
+						<div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
+							<p>Betting match, Rubberball match</p></div>	
+				</div>
+			</div>
+
+			<div class="teams">
+				<div class="teamimagediv">
+					<img class="teamprofile" src="../../assets/images/team profile image/team3profile.jpg" alt="teamprofile">
+				</div>
+				<div class="teamdetaildiv">
+					<div>
+						<div><p>vs</p><h2>Warriors</h2></div>
+						<div>
+							<i class="fa-regular fa-clock"></i>
+							<p>2-Dec-2022,08:30</p></div>
+					</div>
+					<div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
+						<p>Chennai, Annanagar</p></div>
+
+						<div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
+							<p>Betting match, Rubberball match</p></div>	
+				</div>
+			</div>
+
+			<div class="teams">
+				<div class="teamimagediv">
+					<img class="teamprofile" src="../../assets/images/team profile image/team4profile.jpg" alt="teamprofile">
+				</div>
+				<div class="teamdetaildiv">
+					<div>
+						<div><p>vs</p><h2>Madmax11</h2></div>
+						<div>
+							<i class="fa-regular fa-clock"></i>
+							<p>1-Dec-2022,15:30</p></div>
+					</div>
+					<div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
+						<p>Chennai, Annanagar</p></div>
+
+						<div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
+							<p>Friendly match, Rubberball match</p></div>	
+				</div>
+			</div>
+
+			<div class="teams">
+				<div class="teamimagediv">
+					<img class="teamprofile" src="../../assets/images/team profile image/team5profile.jpg" alt="teamprofile">
+				</div>
+				<div class="teamdetaildiv">
+					<div>
+						<div><p>vs</p><h2>Wonder11</h2></div>
+						<div>
+							<i class="fa-regular fa-clock"></i>
+							<p>24-Nov-2022,15:30</p></div>
+					</div>
+					<div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
+						<p>Chennai, Annanagar</p></div>
+
+						<div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
+							<p>Betting match, Rubberball match</p></div>	
+				</div>
+			</div>
+
+			<div class="teams">
+				<div class="teamimagediv">
+					<img class="teamprofile" src="../../assets/images/team profile image/team6profile.png" alt="teamprofile">
+				</div>
+				<div class="teamdetaildiv">
+					<div>
+						<div><p>vs</p><h2>Asgard</h2></div>
+						<div>
+							<i class="fa-regular fa-clock"></i>
+							<p>23-Nov-2022,15:30</p></div>
+					</div>
+					<div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
+						<p>Chennai, Annanagar</p></div>
+
+						<div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
+							<p>Betting match, Rubberball match</p></div>	
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="first">
 		<div class="playerprofile">
 			<table class="data">
 				<caption></caption>
@@ -88,82 +198,167 @@
 			</tbody>
 		  </table>
 		</div>
+	</section>
 	</main>
 	<!-- main end -->
 </body>
 
+<script src="../../lib/moment/moment.min.js">
+
+</script>
+
 <script>
 
-	let playerProfile = {
-	"playerImage" : {
-	"source" : "../../assets/images/Player profile image/playerno1.jfif",
-	"alt" : "image of Jedaja"
-     },
+const queryString = window.location.search;
 
-	"userName" : "Jedaja",
+const urlParams = new URLSearchParams(queryString);
 
-	"fullName" : "Ravindra Jedaja",
+const phonenumber = urlParams.get('unique_id');
 
-	"address" : {
-	"area": "Annanagar",
-	"distric" : "Chennai"},
+let unique_id = phonenumber;
 
-  	"dateOfJoin" : "Thu Dec 01 2021 00:00:00",
+let all_player_list = JSON.parse(localStorage.getItem('user_detail'));
 
-	"dateOfBirth": "Thu Dec 11 2001 00:00:00",
 
-	"gender" : "Male",
+let playerProfile = all_player_list.find(e => e.phoneNumber == unique_id)// here i find player profile
+console.log(playerProfile)
 
-	"game" : "Cricket",
+// ------------players team start-----
 
-	"about" : "I am a Rightarm batsman and good wicket keeper",
+let teamProfile = ""
+// we find players team if he/she in team this condition works (start)
+if(playerProfile["captainStatus"] != 2 ){
 
-	"isCaptain" : true,
+let team_list = JSON.parse(localStorage.getItem('team_details_list')); 
+
+function findPlayer(a) {
+let index = a.teamMembers.indexOf(unique_id);
+return a.teamMembers[index] == unique_id ;
+}
+
+teamProfile = team_list.find(findPlayer);// here i find the team profile
+console.log(teamProfile)
+
+document.querySelector("section.three .playermatch").innerHTML = teamCard(teamProfile);
+    
+
+function teamCard(teamProfile){
+	template =
+	`<div class="playerteam">
+				<div class="myteam">
+					<div class="teamimagediv">
+						<img class="teamprofile" src="${teamProfile["teamImageUrl"]}" alt="${teamProfile["teamName"]}">
+					</div>
+					<div class="teamdetaildiv">
+						<div>
+							<div><h2>${teamProfile["teamName"]}</h2></div>
+							<div>
+								<i class="fa-regular fa-calendar"></i>
+								<p>Since ${moment(teamProfile["dateOfJoin"]).format("MMM Do YY")}</p></div>
+						</div>
+						<div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
+							<p>${teamProfile["address"]["area"]}, ${teamProfile["address"]["distric"]}</p></div>
 	
-	"teamDetails" : {
-	"teamName" : "indian11",
+							<div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
+								<p>${teamProfile["about"]}</p></div>	
+					</div>
+				</div>
+		</div>
+		`
+		return template;
+}
 
-	"teamImage" : {
-	"source" : "../../assets/images/team profile image/team2profile.jpg",
-	"alt" : "logo of Avengers 11",
-    },
+document.querySelector(".playerteam").addEventListener("click", moveTeam)
 
-	"address" : {
-	"area": "Annanagar",
-	"distric" : "Chennai"},
+function moveTeam(){
+	window.location.href= `../profile/teamprofile.html?unique_id=${phonenumber}`
+}
 
-	"about" : "	We are regularly playing cricket in annanagar, shennoi nagar and aminjikarai",
+}
+// we find players team if he/she in team this condition works (end)
 
-	"dateOfJoin" : "Thu Dec 11 2022 00:00:00"
-	}
 
-	}
+// ------------players team end-----
 
+
+// ----------------- button css animation start
+
+function member(){
+let toggle_button = document.querySelector(".button_underline");
+toggle_button.style.left = "66.6%";
+
+let content_1 = document.querySelector("section.first")
+content_1.style.display = "none";
+
+let content_2 = document.querySelector("section.second")
+content_2.style.display = "none";
+
+let content_3 = document.querySelector("section.three")
+content_3.style.display = "block";
+
+}
+function match(){
+let toggle_button = document.querySelector(".button_underline");
+toggle_button.style.left = "33.3%";
+
+let content_1 = document.querySelector("section.first")
+content_1.style.display = "none";
+
+let content_2 = document.querySelector("section.second")
+content_2.style.display = "block";
+
+let content_3 = document.querySelector("section.three")
+content_3.style.display = "none";
+}
+function profile(){
+let toggle_button = document.querySelector(".button_underline");
+toggle_button.style.left = "0%";
+
+let content_1 = document.querySelector("section.first")
+content_1.style.display = "block";
+
+let content_2 = document.querySelector("section.second")
+content_2.style.display = "none";
+
+let content_3 = document.querySelector("section.three")
+content_3.style.display = "none";
+
+}
+
+
+// ----------------button css animation end
+
+
+// PLAYER PROFILE START 
 const player_image = document.createElement("img");
-player_image.setAttribute("src", playerProfile["playerImage"]["source"]);
-player_image.setAttribute("alt", playerProfile["playerImage"]["alt"]);
+player_image.setAttribute("src", playerProfile["imageUrl"]);
+player_image.setAttribute("alt", playerProfile["userName"]);
 document.querySelector(".playerimagediv").prepend(player_image);
 
 const player_background_image = document.createElement("img");
 player_background_image.setAttribute("class", "bgimg")
-player_background_image.setAttribute("src", playerProfile["playerImage"]["source"]);
-player_background_image.setAttribute("alt", playerProfile["playerImage"]["alt"]);
+player_background_image.setAttribute("src", playerProfile["imageUrl"]);
+player_background_image.setAttribute("alt", playerProfile["userName"]);
 document.querySelector("header").prepend(player_background_image);
 
 let playerUserName = playerProfile["userName"]
 document.querySelector(".profiledetailsdiv h1").innerHTML = playerUserName;
 
-let playerLocation = playerProfile["address"]["area"]
+let playerLocation = playerProfile["area"]
 document.querySelector(".profiledetailsdiv div:nth-child(2) p").innerHTML = playerLocation;
 
-let playerSince = playerProfile["dateOfJoin"]
-document.querySelector(".profiledetailsdiv div:nth-child(3) p").innerHTML = "Since" + "  " +playerSince;
+let playerSince = moment(playerProfile["dateOfJoin"])
+document.querySelector(".profiledetailsdiv div:nth-child(3) p").innerHTML = "Since" + "  " +playerSince.format("MMM Do YY");
 
-let playerFullName = playerProfile["fullName"]
+let playerFullName = playerProfile["firstName"] + " " + playerProfile["lastName"]
 document.querySelector(".player_full_name").innerHTML = playerFullName ;
 
-let playerAge = playerProfile["fullName"]
-document.querySelector(".player_age").innerHTML = playerAge ;
+let playerAge = playerProfile["dateOFBirth"]
+let dob = new Date(playerAge);
+        let today = new Date();
+        let age = today.getTime() - dob.getTime();
+        age = Math.floor(age / (1000 * 60 * 60 * 24 * 365.25));
+document.querySelector(".player_age").innerHTML = age ;
 
 let playerGender = playerProfile["gender"]
 document.querySelector(".player_gender").innerHTML = playerGender ;
@@ -171,14 +366,20 @@ document.querySelector(".player_gender").innerHTML = playerGender ;
 let playerGame = playerProfile["game"]
 document.querySelector(".player_game").innerHTML = playerGame ;
 
-let playerTeamName = playerProfile["teamDetails"]["teamName"]
+let playerTeamName = "--"
+if(playerProfile["captainStatus"] != 2 ){
+	playerTeamName = teamProfile["teamName"];
+}
 document.querySelector(".player_team_name").innerHTML = playerTeamName ;
 
-let playerArea = playerProfile["address"]["area"]
+let playerArea = playerProfile["area"] + ", " + playerProfile["distric"]
 document.querySelector(".player_area").innerHTML = playerArea ;
 
 let playerAbout = playerProfile["about"]
 document.querySelector(".player_about").innerHTML = playerAbout ;
+
+// PLAYER PROFILE END
+
 
 </script>
 

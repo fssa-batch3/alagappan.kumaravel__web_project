@@ -69,93 +69,46 @@
 	<script src="../../lib/moment/moment.min.js"></script>
 	<script>
 		
-// team card div start
-		// for (i = 0; i <= jointeam.length; i++) {
+        const queryString = window.location.search;
 
-		// 	// team popup details start
-		// 	for (j = 0; j < jointeam[i]["teamMembers"].length; j++) {
+        const urlParams = new URLSearchParams(queryString);
+    
+        const phonenumber = urlParams.get('unique_id');
 
-		// 		const player = jointeam[i]["teamMembers"][j]
-		// 		const div_team_players = renderPlayer(player)
+		let response_list = JSON.parse(localStorage.getItem('response_list'))||[] ;
 
-		// 		document.querySelector("div.players-list").append(div_team_players)
-		// 	}
-		// 	// team popup details end
+		let players_request = response_list.filter(e => e.requestStatus == 2 && e.playerUniqueId == phonenumber)
+		console.log(players_request)
+		let requested_team_id = []
 
-		// 	const div_teams = document.createElement("div");
-		// 	div_teams.setAttribute("class", "teams");
+		for(let i=0; i<players_request.length ; i++){
+			let a = players_request[i]["teamUniqueId"]
 
-		// 	const team_image_div = document.createElement("div");
-		// 	team_image_div.setAttribute("class", "teamimagediv");
-		// 	div_teams.append(team_image_div);
+			requested_team_id.push(a)
+		}
+		console.log(requested_team_id)
 
-		// 	const team_image_button = document.createElement("button");
-		// 	team_image_button.setAttribute("type", "button");
-		// 	team_image_button.setAttribute("onclick", "OpenPopup()");
-		// 	team_image_div.append(team_image_button);
+	let jointeam = (JSON.parse(localStorage.getItem('team_details_list'))).filter(e => e.openForPlayers["status"] == true);	 
 
-		// 	const team_image = document.createElement("img");
-		// 	team_image.setAttribute("class", "teamprofile");
-		// 	team_image.setAttribute("src", jointeam[i]["teamImage"]["source"]);
-		// 	team_image.setAttribute("alt", jointeam[i]["teamImage"]["alt"]);
-		// 	team_image_button.append(team_image);
+	let requested_teams = []
 
-		// 	const team_details_div = document.createElement("div");
-		// 	team_details_div.setAttribute("class", "teamdetaildiv");
-		// 	div_teams.append(team_details_div);
+	for(let i=0; i<requested_team_id.length ; i++){
+			let a = requested_team_id[i]
 
-		// 	const team_details_subdiv1 = document.createElement("div");
-		// 	team_details_div.append(team_details_subdiv1);
+			let b = jointeam.find(e => e.uniqueId == a)
 
-		// 	const team_name_button = document.createElement("button");
-		// 	team_name_button.setAttribute("type", "button");
-		// 	team_name_button.setAttribute("onclick", "OpenPopup()");
-		// 	team_details_subdiv1.append(team_name_button);
+			requested_teams.push(b)
+		}
 
-		// 	const team_name_button_div1 = document.createElement("div");
-		// 	team_name_button.append(team_name_button_div1);
+	for(let i=0; i<requested_team_id.length ; i++){
+			let user_id = requested_teams[i]
 
-		// 	const team_name_header = document.createElement("h2");
-		// 	team_name_header.innerText = jointeam[i]["teamName"];
-		// 	team_name_button_div1.append(team_name_header);
+			let index = jointeam.indexOf(user_id)
 
-		// 	const team_name_button_div2 = document.createElement("div");
-		// 	team_name_button.append(team_name_button_div2);
+			console.log(index)
+			jointeam.splice(index, 1)
 
-		// 	const icon_location = document.createElement("i");
-		// 	icon_location.setAttribute("class", "fa-solid fa-location-dot");
-		// 	team_name_button_div2.append(icon_location);
-
-		// 	const area_name_para = document.createElement("p");
-		// 	area_name_para.innerText = jointeam[i]["address"]["area"];
-		// 	team_name_button_div2.append(area_name_para);
-
-		// 	const team_details_subdiv2 = document.createElement("div");
-		// 	team_details_div.append(team_details_subdiv2);
-
-		// 	const icon_handshake = document.createElement("i");
-		// 	icon_handshake.setAttribute("class", "fa-regular fa-handshake");
-		// 	team_details_subdiv2.append(icon_handshake);
-
-		// 	const open_for_players_details_para = document.createElement("p");
-		// 	open_for_players_details_para.innerText = jointeam[i]["openForPlayers"];
-		// 	team_details_subdiv2.append(open_for_players_details_para);
-
-		// 	const select_link = document.createElement("i");
-		// 	select_link.setAttribute("class", "select-link");
-		// 	select_link.setAttribute("href", "#");
-		// 	select_link.innerText = "SELECT";
-		// 	div_teams.append(select_link);
-
-
-		// 	document.querySelector(".join-team-content").append(div_teams)
-
-		// }
-		// team card div end 
-
-
-
-	let jointeam = (JSON.parse(localStorage.getItem('team_details_list'))).filter(e => e.openForPlayers["status"] == true);
+		}
 
 
 		function renderTeam(team) {
@@ -199,6 +152,19 @@ for (let index = 0; index < jointeam.length; index++) {
 
 }
 
+let players_list = JSON.parse(localStorage.getItem('user_detail'));
+
+let owner_profile = players_list.find(e => e.phoneNumber == phonenumber)
+
+if(owner_profile["captainStatus"] != 2){
+	let a = document.querySelectorAll("p.select-link")
+	for (let i = 0; i < a.length; i++) {
+  	a[i].style.display = "none";
+	}
+	
+	
+}
+
 // function for team members display in popup start
 function renderPlayer(player) {  
 const template1 = `	
@@ -222,24 +188,24 @@ let selectbtn = document.querySelectorAll(".select-link");
 
 		let response_unique_id = uuidv4();	
 		team_unique_id = person_data["uniqueId"],
-		player_unique_id = user_data["phoneNumber"],
+		player_unique_id = phonenumber,
 		created_time = moment();
 
-		let response_list = JSON.parse(localStorage.getItem('response_list'))||[] ;
+		
 
 		let response_details = {
 			"responseUniqueId" : response_unique_id,
 			"playerUniqueId" : player_unique_id,
 			"teamUniqueId" : team_unique_id,
 			"createdTime" : created_time,
-			"requestStatus" : ""
+			"requestStatus" : 2 
 		}
 
 		response_list.push(response_details);
         
         localStorage.setItem('response_list', JSON.stringify(response_list));
 
-    	window.location.href = "./response.html";
+    	window.location.href = `./response.html?unique_id=${phonenumber}`;
 
 	  })
 	})
@@ -300,7 +266,8 @@ const bookCovers = document.querySelectorAll(".popup-name");
 			popup_area_name.innerHTML = person_data["address"]["area"] + ",  " + person_data["address"]["distric"];
 			
 			let popup_since = document.querySelector("p.popup_since");
-			popup_since.innerHTML = "Since  " + person_data["dateOfJoin"];
+			let teamSince = moment(person_data["dateOfJoin"])
+			popup_since.innerHTML = "Since  " + teamSince.format("MMM Do YY");
 
 			let popup_member_count = document.querySelector("h3.popup_member_count");
 			popup_member_count.innerHTML = "Members (" + person_data["teamMembers"].length +")" ;

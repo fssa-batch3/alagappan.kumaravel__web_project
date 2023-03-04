@@ -4,6 +4,8 @@ const urlParams = new URLSearchParams(queryString);
 
 const phonenumber = urlParams.get('unique_id')
 
+
+
 function responsebtn(){
 window.location.href = `../nonteamplayer/response.html?unique_id=${phonenumber}`;
 }
@@ -37,11 +39,34 @@ let user_detail = JSON.parse(localStorage.getItem('user_detail'))
 
 
 function findPlayer(e) {
-  return e.phoneNumber == unique_id ;
+  return e.phoneNumber == unique_id ;x``
 }
 
 person_data = user_detail.find(findPlayer);
 
+if(person_data["captainStatus"] != 2){
+    let all = document.querySelectorAll(".not_in_team")
+
+    all.forEach(e => e.style.display = "none")  
+
+    if(person_data["captainStatus"] != 1){
+        let all = document.querySelectorAll(".captain")
+
+        all.forEach(e => e.style.display = "none") 
+    }
+}
+
+if(person_data["captainStatus"] == 2){
+
+    let all = document.querySelectorAll(".in_team")
+
+    all.forEach(e => e.style.display = "none")  
+    if(person_data["captainStatus"] != 1){
+        let all = document.querySelectorAll(".captain")
+
+        all.forEach(e => e.style.display = "none") 
+    }
+}
 
 document.querySelector("#player_name").innerText = person_data["userName"];
 document.querySelector("#player_number").innerText = person_data["phoneNumber"];

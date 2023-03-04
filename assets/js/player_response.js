@@ -32,7 +32,7 @@ let request_list = player_request_list.filter(findRequest); // request list data
 let player_request_id = []
 
 for(let i=0;i<request_list.length; i++){
-    if(request_list[i]["requestStatus"] == ""){
+    if(request_list[i]["requestStatus"] != 0 && request_list[i]["requestStatus"] != 1){
     let value = request_list[i]["playerUniqueId"];
 
     player_request_id.push(value)
@@ -127,7 +127,7 @@ let selectbtn = document.querySelectorAll(".popup_profile");
         let today = new Date();
         let age = today.getTime() - dob.getTime();
         age = Math.floor(age / (1000 * 60 * 60 * 24 * 365.25));
-        player_popup_age.innerHTML = age ;
+        player_popup_age.innerHTML = age + "   Years";
 
 
         // players popup details start
@@ -141,13 +141,13 @@ acceptBtn.forEach(accept => {
       accept.addEventListener("click", (event) => {
         const request_data = request_list.find(react => react["playerUniqueId"] === accept.dataset.id);
 
-        request_data["requestStatus"] = true
+        request_data["requestStatus"] = 1
 
         localStorage.setItem('response_list', JSON.stringify(player_request_list));
 
         const person_data = all_player_list.find(react => react["phoneNumber"] === accept.dataset.id);
 
-        person_data["captainStatus"] = false
+        person_data["captainStatus"] = 0
 
         // here we should find that players other request data that should delete from local storage
 
@@ -157,7 +157,7 @@ acceptBtn.forEach(accept => {
 
         for(let i=0; i<filter_player_request.length; i++){
            let index = player_request_list.indexOf(filter_player_request[i]);
-           if(filter_player_request[i]["requestStatus"] == ""){
+           if(filter_player_request[i]["requestStatus"] == 2){
            player_request_list.splice(index, 1);
         }
         }
@@ -170,6 +170,23 @@ acceptBtn.forEach(accept => {
 
         localStorage.setItem('team_details_list', JSON.stringify(team_list));
 
-        location.reload()
+        location.reload();
+    })
+})
+
+// request accept or reject ;
+
+const rejectbtn = document.querySelectorAll(".player_request_reject");
+rejectbtn.forEach(accept => {
+      accept.addEventListener("click", (event) => {
+
+        
+        const request_data = request_list.find(react => react["playerUniqueId"] === accept.dataset.id);
+
+        request_data["requestStatus"] = 0
+
+        localStorage.setItem('response_list', JSON.stringify(player_request_list));
+
+        location.reload();
     })
 })

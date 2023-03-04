@@ -22,13 +22,13 @@
 <!-- main start -->
 <main>
 	<div class="changephoto">
-	<!-- <input type="image" src="../../assets/images/playerface.jpg">  -->
+		<input class="team_image_show" id="team_image_show" type="image" > 
 	<label>Change Photo</label>
 	
 	</div>
 	<form onsubmit="update(event);">
 					<label>Image</label>
-					<input id="user_image" type="url" > 
+					<input id="user_image" type="url" onfocusout="myFunction()"> 
 
 		
 					<label>Firstname</label>
@@ -107,6 +107,10 @@ document.getElementById("user_area").value = person_data["area"] ;
 document.getElementById("user_distric").value = person_data["distric"] ;
 document.getElementById("user_about").value = person_data["about"] ;
 document.getElementById("user_image").value = person_data["imageUrl"] ;
+
+let image_element = document.getElementById("team_image_show");
+    image_element.setAttribute("src", person_data["imageUrl"])
+
 </script>
 
 
