@@ -30,54 +30,12 @@
 
 
 </main>
+<script type="text/javascript"
+    src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="../../lib/moment/moment.min.js">
 </script>
 <!-- main end -->
 <script>
-// 	let join_team_response = [
-
-// {
-//   "teamImage" : {
-// 	"source" : "../../assets/images/team profile image/team5profile.jpg",
-// 	"alt" : "logo of Asgard"},
-
-//   "teamName" : "Asgard",
-
-//   "address" : {
-// 	"area": "Annanagar",
-// 	"distric" : "Chennai"},
-
-//   "dateOfJoin" : "Thu Dec 01 2021 00:00:00",
-
-//   "openForPlayers" : "We need one good allrounder and....",
-
-//   "responseStatus" : {
-// 	"time" : "Thu Jan 01 2022 15:30:00",
-// 	"result" : "ACCEPTED"
-//   }
-// },
-
-// {
-//   "teamImage" : {
-// 	"source" : "../../assets/images/team profile image/team5profile.jpg",
-// 	"alt" : "logo of Asgard"},
-
-//   "teamName" : "Asgard",
-
-//   "address" : {
-// 	"area": "Annanagar",
-// 	"distric" : "Chennai"},
-
-//   "dateOfJoin" : "Thu Dec 01 2021 00:00:00",
-
-//   "openForPlayers" : "We need one good allrounder and....",
-
-//   "responseStatus" : {
-// 	"time" : "Thu Jan 01 2022 15:30:00",
-// 	"result" : "REJECTED"	
-//   }
-// }
-// ]
 
 const queryString = window.location.search;
 
@@ -174,7 +132,13 @@ div_teams.append(status_div);
 
 const status_para = document.createElement("p");
 let time = moment(all_request[i]["createdTime"])
-status_para.innerText = time.startOf('sec').fromNow(); 
+status_para.innerText = time.startOf('sec').fromNow(); 			
+// $(document).ready(
+// function() {
+// 	setInterval(function() {	
+		
+// 	}, 3000);
+// });
 status_div.append(status_para);
 
 let result_data = all_request[i]["requestStatus"]
@@ -197,12 +161,15 @@ else {
 status_para_bold.innerText = result_value ;
 status_para.append(status_para_bold);
 
-if (result_data == 2 || result_data == 0){
-	
-	const delete_icon = document.createElement("i");
-	delete_icon.setAttribute("class", "fa-solid fa-trash-can");
-	delete_icon.setAttribute("data-id", all_request[i]["responseUniqueId"]);
-	status_div.append(delete_icon);
+const delete_icon = document.createElement("i");
+delete_icon.setAttribute("class", "fa-solid fa-trash-can");
+delete_icon.setAttribute("data-id", all_request[i]["responseUniqueId"]);
+status_div.append(delete_icon);
+
+
+if (result_data == 1){
+
+delete_icon.style.visibility = "hidden";
 
 }
 const whatsapp_icon = document.createElement("i");

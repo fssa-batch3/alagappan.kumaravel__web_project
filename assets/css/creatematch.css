@@ -64,7 +64,7 @@ header .header-top i{
 }
 
 .battle-team-div div:nth-child(1), .battle-team-div div:nth-child(3){
-    padding-left: 15px;
+    padding-left: 2%;
     width: 100%;
     display: grid;
     grid-template-columns: 25% 75%;
@@ -73,19 +73,27 @@ header .header-top i{
 
 
 
-.teamimage{
-    width: 80%;
-    /* max-width: 60px; */
+.teamimage, .opponent_image{
+    width: 70%;
+    min-width: 40px;
+    max-width: 60px;
+    height: 70%;
+    min-height: 45px;
+    max-height: 60px;
     border-radius: 100%;
     border: 1px solid var(--fntwight);
 
 }
 
 .battle-team-div div h2{
+    width: 95%;
     font-size: 16px;
     font-weight: 500;
     margin: 0;
     color: var(--ltgray);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
 }
 

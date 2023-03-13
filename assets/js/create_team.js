@@ -1,6 +1,5 @@
 let image_element = document.getElementById("team_image_show");
-    image_element.setAttribute("src", "../../assets/images/defalt_team_image.png")
-
+    image_element.setAttribute("src", "https://iili.io/HWEqLtp.webp")
     
 const queryString = window.location.search;
 
@@ -27,10 +26,11 @@ function createTeam(e) {
 
      let team_details_list = JSON.parse(localStorage.getItem('team_details_list'))||[] ;
 
+     let area_list = JSON.parse(localStorage.getItem('area_list'))||[];
+
      let same_user_name = team_details_list.some(data => data.teamName == team_name );
             
     if(same_user_name){
-        // alert("User name not available.");
         a = document.querySelector(".wrong_password").innerHTML = "Team name not available."
         return a;
     }
@@ -81,6 +81,33 @@ function createTeam(e) {
         
         team_details_list.push(team_details);
         
+        // here i push data for area list
+
+        area_name_same = area_list.some(e => e.area == area && e.distric == distric)
+
+        if(!area_name_same){
+
+        let area_object = {
+            "area" : area,
+            "distric" : distric,
+            "count" : 1
+        }
+
+        area_list.push(area_object);
+
+        localStorage.setItem('area_list', JSON.stringify(area_list))
+    }
+        if(area_name_same){
+            let find = area_list.find(e => e.area == area && e.distric == distric);
+
+            find["count"] += 1
+
+            localStorage.setItem('area_list', JSON.stringify(area_list))
+        }
+
+
+        
+
         localStorage.setItem('team_details_list', JSON.stringify(team_details_list));
         
         document.querySelector('form').reset();
@@ -97,7 +124,7 @@ function myFunction() {
         let image_element = document.getElementById("team_image_show");
         image_element.setAttribute("src", image_input)
         if(image_element.getAttribute("src") == ""){
-            image_element.setAttribute("src", "../../assets/images/defalt_team_image.png")
+            image_element.setAttribute("src", "https://iili.io/HWEqLtp.webp")
         }
 
 }

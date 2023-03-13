@@ -25,7 +25,7 @@
 	<input class="team_image_show" id="team_image_show" type="image" >
 	<label>Change Photo</label>
 	<input id="team_image" type="url" onfocusout="myFunction()"> 
-	<iv>
+	</div>
 	<div class="headerbottom">	
 		<button class="darkbtn" onclick="profileEdit()" type="button">PROFILE</button>
 		<button class="lightbtn" onclick="memberEdit()" type="button">MEMBER</button>
@@ -34,13 +34,13 @@
 <section class="first"> 
 	<form>
 		<label>Team name</label>
-		<input id="teamname" type="text" required> 
+		<input id="teamname" type="text" title="Use firstletter between (A-Z) and min 15 character" pattern="^[a-zA-Z][a-zA-Z0-9\s]{1,30}$" required> 
 		<p class="wrong_password"></p>  
 		<label>Area</label> 
-		<input id="area" type="text" required> 
+		<input id="area" type="text" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" required> 
 
 		<label>Distric</label> 
-		<input id="distric" type="text" required> 
+		<input id="distric" type="text" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" required> 
 		
 		<label>About</label>
 		<textarea id="team_about"></textarea>
@@ -184,7 +184,6 @@ if(same_team_name){
 
 // for unique user name end
 
-
 let open_player_checkbox = document.getElementById("open_for_players").checked,
 player_description = document.getElementById("team_player_description").value ,
 area = document.getElementById("area").value ,
@@ -205,7 +204,37 @@ if(image == ""){
 }
 teamProfile["teamImageUrl"] = image;
 
+
 localStorage.setItem('team_details_list', JSON.stringify(team_list));
+
+// // area update 
+
+// let area_list = JSON.parse(localStorage.getItem('area_list'))
+
+// if()
+
+// area_name_same = area_list.some(e => e.area == area && e.distric == distric)
+
+// if(!area_name_same){
+
+// let area_object = {
+// 	"area" : area,
+// 	"distric" : distric,
+// 	"count" : 1
+// }
+
+// area_list.push(area_object);
+
+// localStorage.setItem('area_list', JSON.stringify(area_list))
+// }
+// if(area_name_same){
+// 	let find = area_list.find(e => e.area == area && e.distric == distric);
+
+// 	find["count"] += 1
+
+// 	localStorage.setItem('area_list', JSON.stringify(area_list))
+// }
+
 
 window.location.href = `../profile/teamprofile.html?unique_id=${captain_id}`;
 

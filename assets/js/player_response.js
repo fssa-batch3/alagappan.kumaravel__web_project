@@ -139,7 +139,7 @@ let selectbtn = document.querySelectorAll(".popup_profile");
 const acceptBtn = document.querySelectorAll(".player_request_accept");
 acceptBtn.forEach(accept => {
       accept.addEventListener("click", (event) => {
-        const request_data = request_list.find(react => react["playerUniqueId"] === accept.dataset.id);
+        const request_data = (request_list.filter(e => e.requestStatus == 2)).find(react => react["playerUniqueId"] === accept.dataset.id);
 
         request_data["requestStatus"] = 1
 
@@ -181,7 +181,7 @@ rejectbtn.forEach(accept => {
       accept.addEventListener("click", (event) => {
 
         
-        const request_data = request_list.find(react => react["playerUniqueId"] === accept.dataset.id);
+        const request_data = (request_list.filter(e => e.requestStatus == 2)).find(react => react["playerUniqueId"] === accept.dataset.id);
 
         request_data["requestStatus"] = 0
 

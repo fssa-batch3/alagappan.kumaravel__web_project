@@ -328,6 +328,7 @@ main{
 .content-subheader h1{
     font-size: 16px;
     font-weight: 600;
+    margin-left: 10px;  
 }
 .content-subheader-searchbar{
     width: 100%;

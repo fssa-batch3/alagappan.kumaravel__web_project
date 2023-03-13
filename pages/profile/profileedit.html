@@ -84,9 +84,11 @@
 
 </script>
 <script>
-	let user_data = JSON.parse(localStorage.getItem('user_data'));
+const queryString = window.location.search;
 
-let unique_id = user_data["phoneNumber"];
+const urlParams = new URLSearchParams(queryString);
+
+const unique_id = urlParams.get('unique_id');
 
 let user_detail = JSON.parse(localStorage.getItem('user_detail'))
 

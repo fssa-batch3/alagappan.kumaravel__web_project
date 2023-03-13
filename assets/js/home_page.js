@@ -4,8 +4,6 @@ const urlParams = new URLSearchParams(queryString);
 
 const phonenumber = urlParams.get('unique_id')
 
-
-
 function responsebtn(){
 window.location.href = `../nonteamplayer/response.html?unique_id=${phonenumber}`;
 }
@@ -15,7 +13,7 @@ window.location.href = `../nonteamplayer/jointeam.html?unique_id=${phonenumber}`
 function createteambtn(){
 window.location.href = `../nonteamplayer/createteam.html?unique_id=${phonenumber}`;
 }
-// up to new home page person above 
+
 function myTeam(){
     window.location.href = `../profile/teamprofile.html?unique_id=${phonenumber}`;
 }
@@ -23,16 +21,17 @@ function teamResponse(){
     window.location.href = `../teamplayer captain/team response.html?unique_id=${phonenumber}`;
 }
 
-
 function playerRequest(){
     window.location.href = `../teamplayer captain/playerrequests.html?unique_id=${phonenumber}`;
 }
-
 
 function profilepage(){
     window.location.href = `../profile/myprofile.html?unique_id=${phonenumber}`;
 }
 
+// upto above links for home page 
+
+// options depending upon player team status (start)--------------------------
 let unique_id = phonenumber;
 
 let user_detail = JSON.parse(localStorage.getItem('user_detail'))
@@ -43,6 +42,12 @@ function findPlayer(e) {
 }
 
 person_data = user_detail.find(findPlayer);
+
+
+function createMatchBtn(){
+    window.location.href = `../teamplayer captain/creatematch.html?unique_id=${phonenumber}&my_name=${person_data["userName"]}&opponent_url=0&opponent_name=0&captain=0&type=0&opponent_id=0`;  
+}
+
 
 if(person_data["captainStatus"] != 2){
     let all = document.querySelectorAll(".not_in_team")
@@ -68,6 +73,9 @@ if(person_data["captainStatus"] == 2){
     }
 }
 
+// options depending upon player team status (end)--------------------------
+
+// sidebar js work start ---------------------------------------------------
 document.querySelector("#player_name").innerText = person_data["userName"];
 document.querySelector("#player_number").innerText = person_data["phoneNumber"];
 
@@ -115,3 +123,5 @@ range_input.style.width = `${range_value}%`;
 
 
 document.querySelector(".range-label").innerHTML = Math.round(range_value) + "%";
+
+// sidebar js work end ---------------------------------------------------

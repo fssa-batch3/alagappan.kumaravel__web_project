@@ -15,16 +15,14 @@ function signUp_1(e) {
         data.phoneNumber == phonenumber );
 
     if(same_number){
-        // alert("This number already have account");
        a = document.querySelector(".wrong_password").innerHTML = "This number already have account.  ";
-        // document.querySelector('form').reset();
         return a;
     }
     let same_user_name = user_detail.some(data =>
         data.userName == username );
             
     if(same_user_name){
-        // alert("User name not available.");
+
         a = document.querySelector(".wrong_password").innerHTML = "User name not available.  "
         return a;
     }
@@ -32,8 +30,6 @@ function signUp_1(e) {
     let wrong_password = password != confrim_password ;
     
     if (wrong_password){
-        // alert("Password not match.");
-        
         a = document.querySelector(".wrong_password").innerHTML = "Password not match.  "
         return a;
     }
@@ -74,7 +70,7 @@ function signUp_2(e) {
     user_data["firstName"] = "";
     user_data["lastName"] = "";
     user_data["about"]= "";
-    user_data["imageUrl"]= "../../assets/images/defalt_player_image.webp",
+    user_data["imageUrl"]= "https://iili.io/HWhKUrB.webp",
     user_data["captainStatus"] = 2 ;
 
     let person_unique_id = uuidv4();
@@ -106,6 +102,7 @@ function signUp_2(e) {
 
 // for sign in()
 function signIn(e){
+    e.preventDefault();
     let phonenumber = document.getElementById('phonenumber').value,
         password = document.getElementById('password').value;
 
@@ -119,15 +116,12 @@ function signIn(e){
         document.querySelector("#error_msg").innerHTML = "Wrong Password or Phone number"
     }
     else{
-        user_detail_single = { "phoneNumber": phonenumber}
-
-        localStorage.setItem('user_data', JSON.stringify(user_detail_single))
 
         alert("Your login in successful");
         window.location.href = `./pages/homepage/hpexist.html?unique_id=${phonenumber}`;
 
     }
-    e.preventDefault();
+   
 }
 
 // function for profile edit.
@@ -142,7 +136,7 @@ function myFunction() {
     let image_element = document.getElementById("team_image_show");
     image_element.setAttribute("src", image_input)
     if(image_element.getAttribute("src") == ""){
-        image_element.setAttribute("src", "../../assets/images/defalt_team_image.png")
+        image_element.setAttribute("src", "https://iili.io/HWhKUrB.webp")
     }
 
 }
@@ -198,7 +192,7 @@ person_data["area"] = area;
 person_data["distric"] = distric;
 person_data["about"]= about;
 if(image == ""){
-    image = "../../assets/images/defalt_player_image.webp";
+    image = "https://iili.io/HWhKUrB.webp";
 }
 person_data["imageUrl"]= image;
 
@@ -245,7 +239,6 @@ window.location.href = "../../index.html";
 }
 
 function logOut(){
-    localStorage.setItem('user_data', "")
     window.location.href = `../../index.html`;
 
 

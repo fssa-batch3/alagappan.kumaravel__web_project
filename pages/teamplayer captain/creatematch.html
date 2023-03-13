@@ -15,7 +15,7 @@
 <!-- header start -->
 <header>
 	<div class="header-top">
-		<i class="fa-solid fa-arrow-left"></i>
+		<i onclick="backBtn()" class="fa-solid fa-arrow-left"></i>
 	 <h1>Create Match</h1>
 	</div>
 	<div class="select-team-option">
@@ -32,21 +32,21 @@
 	</div>
 	<div class="battle-team-div">
 		<div>
-			<img class="teamimage" src="../../assets/images/team1profile.jpg" alt="teamprofile">
+			<img class="teamimage">
 			<div>
-				<h2>Indians</h2>
+				<h2 class="my_team_name"></h2>
 			<div>
 				<i class="fa-regular fa-copyright"></i>
-				<p>MSD</p>
+				<p class="my_name"></p>
 			</div>
 			</div>
 		</div>
 		<p class="vs">vs</p>
         <!-- changes -->
 		<div class="select_opponent_div">
-			<img class="teamimage" src="../../assets/images/team1profile.jpg" alt="teamprofile">
+			<img class="opponent_image" >
 			<div>
-				<h2>Choose Your Opponent</h2>
+				<h2 class="opponent_name"></h2>
 			<div>
 				<i></i>
 				<p class="opp_captain"></p>
@@ -60,12 +60,12 @@
 <!-- header end -->
 <!-- main start -->
 <main>
-	<form>
+	<form onsubmit="matchCreate(event)">
 	<label>Members</label>
 	<input id="members" type="number" required>
 	
 	<label>Type of match</label>
-	<select id="type_of_match">
+	<select id="type_of_match" required>
 		  <option>Betting match</option>
 		  <option>Friendly match</option>
 	</select>
@@ -79,91 +79,24 @@
 		<input id="date_and_time" type="datetime-local" required>
 	
 		<label>Address</label>
-		<textarea></textarea>
+		<textarea id="address_details"></textarea>
 	
 		<label>Additional Details</label>
-		<textarea></textarea>
+		<textarea id="add_info"></textarea>
 		<p class="alert_msg"></p>
+		<div class="updatediv">
+			<button  type="submit">CREATE</button>
+		</div>
 	</form>
-	<div class="updatediv">
-		<button type="button" onclick="submit(event)">CREATE</button>
-	</div>
+	
 </main>
 
 <!-- main end -->
-<script>
+<script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+<script src="../../lib/moment/moment.min.js"></script>
+	
+<script src="../../assets/js/create_match.js"></script>
 
-
-function submit(e){
-	e.preventDefault();
-let opponent = document.querySelector(".opp_captain").innerText;
-	if(opponent == ""){
-		document.querySelector(".alert_msg").innerText = "Select your opponent";
-	}
-	else{
-	const members = document.getElementById("members").value 	
-	const type_of_match = document.getElementById("type_of_match").value 	
-	const players_from_age = document.getElementById("players_from_age").value 
-	const players_to_age = document.getElementById("players_to_age").value
-	const date_and_time = document.getElementById("date_and_time").value
-
-	console.log(members)
-	window.location.href = "./team response.html"
-	}
-
-
-}
-
-
-const select_team = document.querySelector(".select_opponent_div");
-    select_team.addEventListener("click", selectTeam);
-
-    function selectTeam(){
-    window.location.href="./team-select.html";
-    }
-
-function leftbtn(){
-	let toggle_button = document.querySelector(".toggle_button");
-	toggle_button.style.left = "5%";
-
-	let btn_color_1 = document.querySelector(".darkbtn");
-	btn_color_1.style.color = "#000";
-
-	let btn_color_2 = document.querySelector(".lightbtn");
-	btn_color_2.style.color = "#f7f7f7";
-
-    const select_team = document.querySelector(".select_opponent_div");
-    select_team.addEventListener("click", selectTeam);
-
-    function selectTeam(){
-    window.location.href="./team-select.html";
-
-    }
-}
-
-
-function rightbtn(){
-	let toggle_button = document.querySelector(".toggle_button");
-	toggle_button.style.left = "50%";
-
-	let btn_color_1 = document.querySelector(".darkbtn");
-	btn_color_1.style.color = "#f7f7f7";
-
-	let btn_color_2 = document.querySelector(".lightbtn");
-	btn_color_2.style.color = "#000";
-
-    const select_team = document.querySelector(".select_opponent_div");
-    select_team.addEventListener("click", selectTeam);
-
-    function selectTeam(){
-    window.location.href="./area-select.html";
-}
-
-}
-
-
-
-</script>
 
 </body>
 </html>

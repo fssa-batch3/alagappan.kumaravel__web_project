@@ -251,6 +251,8 @@ if(my_profile["captainStatus"] == 0){
 	document.querySelector(".edit_team").style.display = "none";
 }
 
+let players_age =[]
+
 for(i=0;i<players_list.length;i++){
 
 let captain = "" ;
@@ -274,15 +276,26 @@ else{
 	me = "(you)"
 }
 
+let playerAge = players_list[i]["dateOFBirth"]
+let dob = new Date(playerAge);
+        let today = new Date();
+        let age = today.getTime() - dob.getTime();
+        age = Math.floor(age / (1000 * 60 * 60 * 24 * 365.25));
+		players_age.push(age)
 
 	const player = players_list[i];
-	const template1 = renderPlayer(player, captain, whatsapp, me);
+	const template1 = renderPlayer(player, captain, whatsapp, me, age);
 	document.querySelector(".playermatch").insertAdjacentHTML("beforeend", template1);
 
 }
-  
 
-function renderPlayer(player, captain, whatsapp, me) {  
+// here i find max and min of players of the age 
+
+let max = Math.max(...players_age)
+let min  = Math.min(...players_age)
+
+
+function renderPlayer(player, captain, whatsapp, me, age) {  
 
 const template1 = `	
 	<div class="teams">
@@ -297,7 +310,7 @@ const template1 = `
 								</div>
 						</div>
 						<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
-							<p>19</p></div>
+							<p>${age}</p></div>
 	
 					</div>
 				</div>
@@ -395,6 +408,9 @@ document.querySelector(".profiledetailsdiv div:nth-child(3) p").innerHTML = "Sin
 let teamArea = teamProfile["address"]["area"]
 document.querySelector(".area").innerHTML = teamArea ;
 
+let teamAge = min + " - " + max;
+document.querySelector(".age").innerHTML = teamAge ;
+
 let teamAbout = teamProfile["about"]
 document.querySelector(".about").innerHTML = teamAbout ;
 
@@ -409,7 +425,6 @@ document.querySelector(".open_for_player").innerHTML = "They did Not want any pl
 
 let teamMemberCount = teamProfile["teamMembers"].length
 document.querySelector(".member").innerHTML = teamMemberCount  ;
-
 
 
 </script>
