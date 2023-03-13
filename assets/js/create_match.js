@@ -94,6 +94,10 @@ if(opponent_type == 2){
 }
 }
 
+console.log("hi hello");
+
+
+
 function matchCreate(e){
     e.preventDefault();
 
