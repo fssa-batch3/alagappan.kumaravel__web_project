@@ -14,6 +14,10 @@ function createteambtn(){
 window.location.href = `../nonteamplayer/createteam.html?unique_id=${phonenumber}`;
 }
 
+function matchInvitationBtn(){
+    window.location.href = `../teamplayer captain/match invitation.html?unique_id=${phonenumber}`;
+    }
+
 function myTeam(){
     window.location.href = `../profile/teamprofile.html?unique_id=${phonenumber}`;
 }

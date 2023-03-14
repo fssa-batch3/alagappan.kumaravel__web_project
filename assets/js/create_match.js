@@ -110,7 +110,6 @@ function matchCreate(e){
 	else{
     
 	const match_unique_id = uuidv4();
-	const match_request_id = uuidv4();
     const opp_type = opponent_type;
     const opp_id = opponent_id;
 	const members = document.getElementById("members").value;	
@@ -145,10 +144,11 @@ function matchCreate(e){
 		"location" : address,
 		"information" : add_info,
 		"createdTime" : created_time,
+		"activeStatus" : true
 	}
 
 	let match_response = {
-		"request_id" : match_request_id,
+		"request_id" : uuidv4(),
 		"matchUniqueId" : match_unique_id,
 		"team_id" : teamProfile["uniqueId"],
 		"match_in_status" : 1 
@@ -167,12 +167,24 @@ function matchCreate(e){
 
 	if(opp_type == 1){
 		let team_2_details = {
-			"request_id" : match_request_id,
+			"request_id" : uuidv4(),
 			"matchUniqueId" : match_unique_id,
-			"team_id" : teamProfile["uniqueId"],
+			"team_id" : opp_id,
 			"match_in_status" : 2
 		}
 		match_response_list.push(team_2_details);
+	}
+	let area_list = team_list.filter(e => e.address["area"] == area && e.uniqueId != teamProfile["uniqueId"])
+	if(opp_type == 2){
+		for(let i=0; i<area_list.length; i++){
+		let team_2_details = {
+			"request_id" : uuidv4(),
+			"matchUniqueId" : match_unique_id,
+			"team_id" : area_list[i]["uniqueId"],
+			"match_in_status" : 2
+		}
+		match_response_list.push(team_2_details);
+	}
 	}
 
 	localStorage.setItem('match_response_list', JSON.stringify(match_response_list));
