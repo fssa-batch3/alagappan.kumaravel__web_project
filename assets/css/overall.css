@@ -520,14 +520,15 @@ main{
     grid-template-columns: 15% 85%;
 }
 .teamimgdiv img{
-    width: 60%;
+    width: 35px;
+    height: 35px;
     border-radius: 100px;
     border: 1.5px solid var(--icncolor);
     margin: 10px 0px 0px 10px;
 }
 .teamnamediv .teamnamesubdiv{
     display: grid;
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 60% 40%;
 }
 .teamnamediv div:nth-child(2){
     margin: 0;
@@ -634,9 +635,26 @@ main{
     background-color: var(--ltgreen);
 }
 
-
-
 /* Accept reject button end*/
+/* my match nav start */
+.my_match_nav {
+    width: 100%;
+    height: 5vh;
+    background-color: var(--white);
+    box-shadow: 0 0px 10px 0px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+}
+.my_match_nav a{
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0px 15px;
+    color: var(--drakgray);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+/* my match nav end */
 /* invitation four start*/
 .invitation-four{
     width: 100%;
@@ -697,15 +715,16 @@ main{
 
 .calendar{
     width: 100%;
-    height: 92vh;
+    height: 87vh;
     font-family: 'Source Sans Pro', sans-serif;
     background-color: var(--offwhite);
+    overflow-x: hidden;
 }
 .timetogo p{
     font-size: 14px;
     font-weight: 600;
     color: var(--ltgreen);
-    margin: 0px 10px 5px 5px;
+    margin: 0px 10px 2px 5px;
 }
 .timetogo i{
     font-size: 14px;

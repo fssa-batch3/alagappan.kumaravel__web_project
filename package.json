@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/fssa-batch3/alagappan.kumaravel__web_project#readme",
   "dependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
     "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3"
   }
 }

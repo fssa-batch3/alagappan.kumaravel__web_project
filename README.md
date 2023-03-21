@@ -33,8 +33,8 @@ Team CRUD
 
 Match CRUD
 
-* create match invitation
-* Accept or Reject invitation
+* create match invitation.
+* Accept or Reject invitation.
 * delete invitation
 * read invitation response 
 * read accepted match list

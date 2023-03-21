@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="../../assets/css/overall.css">
+	<link rel="stylesheet" href="../../assets/css/update_score.css">
 	<link rel="stylesheet" href="../../assets/css/commonheader.css">
 </head>
 
@@ -20,299 +21,616 @@
 </header>
 <!-- header end -->
 <!-- main start -->
-<section class="calendar"> 
-		<div class="content-subheader searchbardiv">
-			<div class="searchbar"><input type="search"><i class="fa-solid fa-magnifying-glass"></i></div>
-		</div>
+<div class="my_match_nav">
+	<a onclick="upcoming()">Upcoming</a>
+	<a onclick="live()">Live</a>
+	<a onclick="completed()">Completed</a>
+</div>
 
-		<!-- <div class="invitation">
-				<div class="invitation-one">
-					<div class="teamimgdiv">
-						<img src="../../assets/images/team profile image/team2profile.jpg" alt="teamprofile">
-					</div>
-					<div class="teamnamediv">
-						<div>
-							<div><h2>vs Avengers11</h2></div>
-							<div class="timetogo">
-								<i class="fa-regular fa-clock"></i>
-								<p>50 Min to go</p>
-							</div>
-						</div>
-						
-					</div>
-				</div>
-				<div class="invitation-two">
-					<div>
-						<p>Type</p>
-						<p>Betting Match</p>
-					</div>
-					<div>
-						<p>Time</p>
-						<p>22-Nov-2022 | 15:00</p>
-					</div>
-				</div>
-				<div class="invitation-three">
-					
-					<div>
-						<i class="fa-regular fa-copyright"></i>
-						<p>Breed lee</p>
-					</div>
-					<div>
-						<i class="fa-solid fa-people-group"></i>
-						<p>10 Members  (Age : 19 to 22)</p>
-					</div>
-					<div>
-						<i class="fa-solid fa-location-dot"></i>
-						<p>Chennai, Annanagar, Cresent ground</p>
-					</div>
-					<div>
-						<i class="fa-solid fa-circle-info"></i>	
-						<p>Rubber ball match, betting amount per match 100rs</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="invitation">
-				<div class="invitation-one">
-					<div class="teamimgdiv">
-						<img src="../../assets/images/team profile image/team5profile.jpg" alt="teamprofile">
-					</div>
-					<div class="teamnamediv">
-						<div>
-							<div><h2>vs Asgard</h2></div>
-							<div class="timetogo">
-								<i class="fa-regular fa-clock"></i>
-								<p>1:30 hour ago</p>
-							</div>
-						</div>
-						
-					</div>
-				</div>
-				<div class="invitation-two">
-					<div>
-						<p>Type</p>
-						<p>Betting Match</p>
-					</div>
-					<div>
-						<p>Time</p>
-						<p>22-Nov-2022 | 15:00</p>
-					</div>
-				</div>
-				<div class="invitation-three">
-					
-					<div>
-						<i class="fa-regular fa-copyright"></i>
-						<p>Jedaja</p>
-					</div>
-					<div>
-						<i class="fa-solid fa-people-group"></i>
-						<p>10 Members  (Age : 19 to 22)</p>
-					</div>
-					<div>
-						<i class="fa-solid fa-location-dot"></i>
-						<p>Chennai, Annanagar, Cresent ground</p>
-					</div>
-					<div>
-						<i class="fa-solid fa-circle-info"></i>	
-						<p>Rubber ball match, betting amount per match 100rs</p>
-					</div>
-				</div>
-			</div> -->
-
+<section class="calendar upcoming">
 			
 </section>
-<!-- main end -->
+<section class="calendar live">
 
+	<div class="popup" id="popup">
+
+		<div class="popup-team-content">
+			<div class="score_container">
+				<div class="top">
+					<div class="backgroundimage">
+					<div class="score_head">
+						<button type="button" onclick="ClosePopup()">
+							<i class="fa-solid fa-chevron-left"></i></button>
+						<h1>SCORECARD</h1>
+					</div>
+					<div class="team_score">
+						<div class="team_name">
+							<img class="my_team_image" src="" alt="my team image">
+							<p class="my_team_name"></p>
+						</div>
+						<div class="score_value">	
+							<h2>How many matches</h2>
+							<div>
+								<input id="won_number" type="number">
+								<p>:</p>
+								<input id="loss_number" type="number">
+							</div>
+							<p class="score_lable">WON & LOSS</p>
+						</div>
+						<div class="team_name">
+							<img class="opp_team_image" src="" alt="opponent image">
+							<p class="opp_team_name"></p>
+						</div>
+					</div>
+				</div>
+				</div>
+				<div class="bottom">
+					<h2>Choose two<br><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>   Most Valuble Players   <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h2>
+					<div class="players_list">
+							
+							
+					</div>
+					<div class="invitation-update-scorecard">
+						<button class="update-score" type="button">Update Score</button>
+						</div>
+				</div>
+				
+			</div>	
+		</div>
+	</div>
+</section>
+<section class="calendar completed">
+zshbaskzchbasjkc
+</section>
+
+
+	<script src="../../lib/moment/moment.min.js"></script>
 <script>
-	let matchInvitaton = [
-	
-	{
-	  "teamName" : "Avengers11",
-	  "teamImage" : {
-		"source" : "../../assets/images/team profile image/team2profile.jpg",
-		"alt" : "logo of Avengers 11",
-	  },
-	  
-	  "typeOfMatch" : "Betting match",
-	  "typeOfFriend" : "Friend",
-	  "matchTime" : "Thu Dec 31 2022 15:30:00",
-	  "captainUserName" : "MSD",
-	  "teamMember" : {
-		"count" : 10 ,
-		"age" : {
-			"from" : 19 ,
-			"to" : 22 ,
-		}
-	  },
-	  "matchLocation" : "Chennai, Methanagar, Methanagar park ground",
-	  "additionalInformation" : "Rubber ball match, betting amount per match 100rs",
-	  "createdTime" : "Thu Dec 31 2022 15:30:00",
-	  "responseStatus" : {
-		"time" : "Thu Jan 01 2022 15:30:00",
-		"result" : "ACCEPTED"
-	  }
-	
-	},
-	{
-	  "teamName" : "Asgard",
-	  "teamImage" : {
-		"source" : "../../assets/images/team profile image/team5profile.jpg",
-		"alt" : "logo of Asgard"
-	  },
-	  "typeOfMatch" : "Betting match",
-	  "typeOfFriend" : "Public",
-	  "matchTime" : "Thu Dec 31 2022 15:30:00",
-	  "captainUserName" : "Jedaja",
-	  "teamMember" : {
-		"count" : 10 ,
-		"age" : {
-			"from" : 19 ,
-			"to" : 22 ,
-		}
-	  },
-	  "matchLocation" : "Chennai, Methanagar, Methanagar park ground",
-	  "additionalInformation" : "Rubber ball match, betting amount per match 100rs",
-	  "createdTime" : "Thu Dec 31 2022 15:30:00",
-	  "responseStatus" : {
-		"time" : "Thu Jan 01 2022 15:30:00",
-		"result" : "ACCEPTED"
-	  }
-	
-	}
-	
-	]
-	
-	for(i=0;i< matchInvitaton.length ;i++){
-	
-	
-	const div_class_invitation = document.createElement("div");
-	div_class_invitation.setAttribute("class", "invitation");
-	
-	
-	// div one
-	
-	const div_class_invitation_one = document.createElement("div");
-	div_class_invitation_one.setAttribute("class", "invitation-one");
-	div_class_invitation.prepend(div_class_invitation_one);
-	
-	const team_img_div = document.createElement("div");
-	team_img_div.setAttribute("class", "teamimgdiv");
-	div_class_invitation_one.prepend(team_img_div);
-	
-	const team_image = document.createElement("img");
-	team_image.setAttribute("src", matchInvitaton[i]["teamImage"]["source"]);
-	team_image.setAttribute("alt", matchInvitaton[i]["teamImage"]["alt"]);
-	team_img_div.prepend(team_image);
-	
-	const team_name_div = document.createElement("div");
-	team_name_div.setAttribute("class", "teamnamediv");
-	div_class_invitation_one.append(team_name_div);
-	
-	const team_name_subdiv = document.createElement("div");
-	team_name_div.append(team_name_subdiv);
-	
-	const team_name_subdivnthchild1 = document.createElement("div");
-	team_name_subdiv.prepend(team_name_subdivnthchild1);
-	
-	const team_name_subdiv_header = document.createElement("h2");
-	team_name_subdiv_header.innerText = matchInvitaton[i]["teamName"]
-	team_name_subdivnthchild1.append(team_name_subdiv_header);
-	
-	const team_name_subdivnthchild2 = document.createElement("div");
-	team_name_subdivnthchild2.setAttribute("class", "timetogo");
-	team_name_subdiv.append(team_name_subdivnthchild2);
+function upcoming(){
 
-	const team_name_subdiv_time_icon = document.createElement("i");
-	team_name_subdiv_time_icon.setAttribute("class", "fa-regular fa-clock");
-	team_name_subdivnthchild2.append(team_name_subdiv_time_icon);
+let content_1 = document.querySelector("section.upcoming");
+content_1.style.display = "block";
+
+let content_2 = document.querySelector("section.live")
+content_2.style.display = "none";
+
+let content_3 = document.querySelector("section.completed")
+content_3.style.display = "none";
+}
+function live(){
+
+let content_1 = document.querySelector("section.upcoming")
+content_1.style.display = "none";
+
+let content_2 = document.querySelector("section.live")
+content_2.style.display = "block";
+
+let content_3 = document.querySelector("section.completed")
+content_3.style.display = "none";
+}
+
+function completed(){
+
+let content_1 = document.querySelector("section.upcoming")
+content_1.style.display = "none";
+
+let content_2 = document.querySelector("section.live")
+content_2.style.display = "none";
+
+let content_3 = document.querySelector("section.completed")
+content_3.style.display = "block";
+}
+
+// for friend list start
+
+const queryString = window.location.search;
+
+const urlParams = new URLSearchParams(queryString);
+
+const phonenumber = urlParams.get('unique_id');
+
+let team_list = JSON.parse(localStorage.getItem('team_details_list'));
+
+let players_list = JSON.parse(localStorage.getItem('user_detail'));
+
+function findPlayer(a) {
+let index = a.teamMembers.indexOf(phonenumber);
+return a.teamMembers[index] == phonenumber ;
+}
+
+let teamProfile = team_list.find(findPlayer);
+
+let my_team_id = teamProfile["uniqueId"]
+
+console.log(teamProfile)
+let match_list = JSON.parse(localStorage.getItem('match_list'));
+
+let request_list = JSON.parse(localStorage.getItem('match_response_list'))
+
+// upto this common for all section
+
+let match_request_list = request_list.filter(e => e.team_id == my_team_id && e.match_in_status == 1);
+
+
+let matchInvitaton = []
+
+for(let i=0; i<match_request_list.length; i++){
+	let check = match_request_list[i]["matchUniqueId"]
+	let find = match_list.find(e => 
+		 e.matchUniqueId == check && 
+		 e.activeStatus == false && 
+		 new Date(e.time) > new Date() 
+		)
+	if(find){
+		matchInvitaton.push(find)
+	}
+}
+
+console.log(matchInvitaton)
+let live_match = []
+
+for(let i=0; i<match_request_list.length; i++){
+	let check = match_request_list[i]["matchUniqueId"]
+	let find = match_list.find(function (e){
+
+		let today = new Date(e.time)
+		let tomorrow = new Date(today)
+		tomorrow.setDate(tomorrow.getDate() + 1)
 	
-	const team_name_subdiv_para = document.createElement("p");
-	team_name_subdiv_para.innerText = "50 min to go"
-	team_name_subdivnthchild2.append(team_name_subdiv_para);
-	
-	// div two
-	
-	const div_class_invitation_two = document.createElement("div");
-	div_class_invitation_two.setAttribute("class", "invitation-two");
-	div_class_invitation.append(div_class_invitation_two);
-	
-	
-	const div_class_invitation_two_subdiv1 = document.createElement("div");
-	div_class_invitation_two.prepend(div_class_invitation_two_subdiv1);
-	
-	const team_name_subdiv_typeheader = document.createElement("p");
-	team_name_subdiv_typeheader.innerText = "Type"
-	div_class_invitation_two_subdiv1.append(team_name_subdiv_typeheader);
-	
-	const team_name_subdiv_typevalue = document.createElement("p");
-	team_name_subdiv_typevalue.innerText = matchInvitaton[i]["typeOfMatch"]
-	div_class_invitation_two_subdiv1.append(team_name_subdiv_typevalue);
-	
-	const div_class_invitation_two_subdiv2 = document.createElement("div");
-	div_class_invitation_two.append(div_class_invitation_two_subdiv2);
-	
-	const team_name_subdiv_timeheader = document.createElement("p");
-	team_name_subdiv_timeheader.innerText = "Time"
-	div_class_invitation_two_subdiv2.append(team_name_subdiv_timeheader);
-	
-	const team_name_subdiv_timevalue = document.createElement("p");
-	team_name_subdiv_timevalue.innerText = matchInvitaton[i]["matchTime"]
-	div_class_invitation_two_subdiv2.append(team_name_subdiv_timevalue);
-	
-	// div three
-	
-	const div_class_invitation_three = document.createElement("div");
-	div_class_invitation_three.setAttribute("class", "invitation-three");
-	div_class_invitation.append(div_class_invitation_three);
-	
-	const div_class_invitation_three_subdiv1 = document.createElement("div");
-	div_class_invitation_three.append(div_class_invitation_three_subdiv1);
-	
-	const div_class_invitation_three_icon1 = document.createElement("i");
-	div_class_invitation_three_icon1.setAttribute("class", "fa-regular fa-copyright");
-	div_class_invitation_three_subdiv1.append(div_class_invitation_three_icon1);
-	
-	const div_class_invitation_three_para1 = document.createElement("p");
-	div_class_invitation_three_para1.innerText = matchInvitaton[i]["captainUserName"]
-	div_class_invitation_three_subdiv1.append(div_class_invitation_three_para1);
-	
-	const div_class_invitation_three_subdiv2 = document.createElement("div");
-	div_class_invitation_three.append(div_class_invitation_three_subdiv2);
-	
-	const div_class_invitation_three_icon2 = document.createElement("i");
-	div_class_invitation_three_icon2.setAttribute("class", "fa-solid fa-people-group");
-	div_class_invitation_three_subdiv2.append(div_class_invitation_three_icon2);
-	
-	const div_class_invitation_three_para2 = document.createElement("p");
-	div_class_invitation_three_para2.innerText = matchInvitaton[i]["teamMember"]["count"] + "  Members" + " (Age :" + matchInvitaton[i]["teamMember"]["age"]["from"] + " to " + matchInvitaton[i]["teamMember"]["age"]["to"] + ")";
-	div_class_invitation_three_subdiv2.append(div_class_invitation_three_para2);
-	
-	const div_class_invitation_three_subdiv3 = document.createElement("div");
-	div_class_invitation_three.append(div_class_invitation_three_subdiv3);
-	
-	const div_class_invitation_three_icon3 = document.createElement("i");
-	div_class_invitation_three_icon3.setAttribute("class", "fa-solid fa-location-dot");
-	div_class_invitation_three_subdiv3.append(div_class_invitation_three_icon3);
-	
-	const div_class_invitation_three_para3 = document.createElement("p");
-	div_class_invitation_three_para3.innerText = matchInvitaton[i]["matchLocation"]
-	div_class_invitation_three_subdiv3.append(div_class_invitation_three_para3);
-	
-	const div_class_invitation_three_subdiv4 = document.createElement("div");
-	div_class_invitation_three.append(div_class_invitation_three_subdiv4);
-	
-	const div_class_invitation_three_icon4 = document.createElement("i");
-	div_class_invitation_three_icon4.setAttribute("class", "fa-solid fa-circle-info");
-	div_class_invitation_three_subdiv4.append(div_class_invitation_three_icon4);
-	
-	const div_class_invitation_three_para4 = document.createElement("p");
-	div_class_invitation_three_para4.innerText = matchInvitaton[i]["additionalInformation"]
-	div_class_invitation_three_subdiv4.append(div_class_invitation_three_para4);
-	
-	
-	document.querySelector(".calendar").append(div_class_invitation)
+		let ans = e.matchUniqueId == check && 
+		 e.activeStatus == false && 
+		 new Date(e.time) < new Date() &&
+		tomorrow > new Date() ;
+
+		
+		return ans
+	})
+	if(find){
+		live_match.push(find)
+	}
+}
+
+console.log(live_match)
+
+// this loop is for upcoming match start ----------------
+
+
+if(matchInvitaton.length == 0){
+	let div_name = document.createElement("div")
+	div_name.setAttribute("class", "no_content")
+
+	let div_p = document.createElement("p")
+	div_p.innerHTML = "(You have no match)"
+	div_name.append(div_p)
+	document.querySelector(".upcoming").append(div_name)
+
+
+}
+
+if(matchInvitaton != 0){
+	for(let i=0;i< matchInvitaton.length ;i++){
+
+		let opponent_team_object = ""
+
+
+let opponent_team_id = request_list.find(e => e.matchUniqueId == matchInvitaton[i]["matchUniqueId"] && e.team_id != my_team_id)
+
+opponent_team_object = team_list.find(e => e.uniqueId == opponent_team_id["team_id"])
+
+
+let captain = ""
+
+for(let j=0 ; j<opponent_team_object["teamMembers"].length; j++){
+	let a = opponent_team_object["teamMembers"][j] 
+
+	let find = players_list.find(e => e.phoneNumber == a)
+
+	if(find["captainStatus"] == 1){
+		captain = find["userName"] ;
+	}
+
+}
+
+const div_class_invitation = document.createElement("div");
+div_class_invitation.setAttribute("class", "invitation");
+
+
+// div one
+
+const div_class_invitation_one = document.createElement("div");
+div_class_invitation_one.setAttribute("class", "invitation-one");
+div_class_invitation.prepend(div_class_invitation_one);
+
+const team_img_div = document.createElement("div");
+team_img_div.setAttribute("class", "teamimgdiv");
+div_class_invitation_one.prepend(team_img_div);
+let opp_team_url = "",
+opp_team_name = "";
+if(opponent_team_object){
+	opp_team_url = opponent_team_object["teamImageUrl"];
+	opp_team_name = opponent_team_object["teamName"];
+}
+if(!opponent_team_object){
+	opp_team_url = "https://iili.io/HXFAu87.png"
+	opp_team_name = matchInvitaton[i]["opponentArea"]["area"]
+}
+
+const team_image = document.createElement("img");
+team_image.setAttribute("src", opp_team_url);
+team_image.setAttribute("alt", opp_team_name);
+team_img_div.prepend(team_image);
+
+const team_name_div = document.createElement("div");
+team_name_div.setAttribute("class", "teamnamediv");
+div_class_invitation_one.append(team_name_div);
+
+const team_name_subdiv = document.createElement("div");
+team_name_subdiv.setAttribute("class", "teamnamesubdiv");
+team_name_div.append(team_name_subdiv);
+
+const team_name_subdivnthchild1 = document.createElement("div");
+team_name_subdiv.prepend(team_name_subdivnthchild1);
+
+
+
+const team_name_subdiv_header = document.createElement("h2");
+team_name_subdiv_header.innerText = "vs " + opp_team_name
+team_name_subdivnthchild1.append(team_name_subdiv_header);
+
+const team_name_subdivnthchild2 = document.createElement("div");
+team_name_subdivnthchild2.setAttribute("class", "timetogo");
+team_name_subdiv.append(team_name_subdivnthchild2);
+
+const team_name_subdiv_time_icon = document.createElement("i");
+team_name_subdiv_time_icon.setAttribute("class", "fa-regular fa-clock");
+team_name_subdivnthchild2.append(team_name_subdiv_time_icon);
+
+const team_name_subdiv_para = document.createElement("p");
+team_name_subdiv_para.innerText = moment(matchInvitaton[i]["time"]).startOf('sec').fromNow();
+team_name_subdivnthchild2.append(team_name_subdiv_para);
+
+
+// div two
+
+const div_class_invitation_two = document.createElement("div");
+div_class_invitation_two.setAttribute("class", "invitation-two");
+div_class_invitation.append(div_class_invitation_two);
+
+
+const div_class_invitation_two_subdiv1 = document.createElement("div");
+div_class_invitation_two.prepend(div_class_invitation_two_subdiv1);
+
+const team_name_subdiv_typeheader = document.createElement("p");
+team_name_subdiv_typeheader.innerText = "Type"
+div_class_invitation_two_subdiv1.append(team_name_subdiv_typeheader);
+
+const team_name_subdiv_typevalue = document.createElement("p");
+team_name_subdiv_typevalue.innerText = matchInvitaton[i]["typeOfMatch"]
+div_class_invitation_two_subdiv1.append(team_name_subdiv_typevalue);
+
+const div_class_invitation_two_subdiv2 = document.createElement("div");
+div_class_invitation_two.append(div_class_invitation_two_subdiv2);
+
+const team_name_subdiv_timeheader = document.createElement("p");
+team_name_subdiv_timeheader.innerText = "Time"
+div_class_invitation_two_subdiv2.append(team_name_subdiv_timeheader);
+
+const team_name_subdiv_timevalue = document.createElement("p");
+
+let match_time = matchInvitaton[i]["time"]
+
+team_name_subdiv_timevalue.innerText = moment(match_time).add(0, 'days').calendar()
+div_class_invitation_two_subdiv2.append(team_name_subdiv_timevalue);
+
+// div three
+
+const div_class_invitation_three = document.createElement("div");
+div_class_invitation_three.setAttribute("class", "invitation-three");
+div_class_invitation.append(div_class_invitation_three);
+
+const div_class_invitation_three_subdiv1 = document.createElement("div");
+div_class_invitation_three.append(div_class_invitation_three_subdiv1);
+
+const div_class_invitation_three_icon1 = document.createElement("i");
+div_class_invitation_three_icon1.setAttribute("class", "fa-regular fa-copyright");
+div_class_invitation_three_subdiv1.append(div_class_invitation_three_icon1);
+
+
+const div_class_invitation_three_para1 = document.createElement("p");
+div_class_invitation_three_para1.innerText = captain //not enter
+div_class_invitation_three_subdiv1.append(div_class_invitation_three_para1);
+
+
+const div_class_invitation_three_subdiv3 = document.createElement("div");
+div_class_invitation_three.append(div_class_invitation_three_subdiv3);
+
+const div_class_invitation_three_icon3 = document.createElement("i");
+div_class_invitation_three_icon3.setAttribute("class", "fa-solid fa-location-dot");
+div_class_invitation_three_subdiv3.append(div_class_invitation_three_icon3);
+
+const div_class_invitation_three_para3 = document.createElement("p");
+div_class_invitation_three_para3.innerText = matchInvitaton[i]["location"]
+div_class_invitation_three_subdiv3.append(div_class_invitation_three_para3);
+
+const div_class_invitation_three_subdiv4 = document.createElement("div");
+div_class_invitation_three.append(div_class_invitation_three_subdiv4);
+
+const div_class_invitation_three_icon4 = document.createElement("i");
+div_class_invitation_three_icon4.setAttribute("class", "fa-solid fa-circle-info");
+div_class_invitation_three_subdiv4.append(div_class_invitation_three_icon4);
+
+const div_class_invitation_three_para4 = document.createElement("p");
+div_class_invitation_three_para4.innerText = matchInvitaton[i]["information"]
+div_class_invitation_three_subdiv4.append(div_class_invitation_three_para4);
+
+
+document.querySelector(".upcoming").append(div_class_invitation)
 	
 	}
+}
+// this loop is for upcoming match end ----------------
+// this loop is for live match start ----------------
+function resultdiv(data){
+	const temp =
+	`<div class="update_score_div">
+<div class="score_card">
+<div class="score">
+	<p class="score_title">( SCORECARD )</p>
+	<i class="fa-regular fa-thumbs-up"></i>
+	<p class="won">1</p>
+	<P>-</P>
+	<p class="loss">1</p>
+	<i class="fa-regular fa-thumbs-down"></i>
+	<p class="mvp_title"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> MVPs <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+</div>
+<div class="mvp_div">	
+<div class="mvps">
+	<div class="player_img">
+		<img src="../../assets/images/avatar1.png" >
+	</div>
+	<h2>Rohit</h2>
+</div>
+<div class="mvps">
+	<div class="player_img">
+		<img src="../../assets/images/avatar1.png" >
+	</div>
+	<h2>Dhoni</h2>
+</div>
+</div>
+</div>
+<div class="invitation-update-score">
+<button class="update-score" data-id="${data["matchUniqueId"]}" type="button">Update Score</button>
+</div>
+</div>
+`
+return temp;
+}
+
+if(live_match.length == 0){
+	let div_name = document.createElement("div");
+	div_name.setAttribute("class", "no_content")
+
+	let div_p = document.createElement("p")
+	div_p.innerHTML = "(Currently you don't have matches)"
+	div_name.append(div_p)
+	document.querySelector(".upcoming").append(div_name)
+
+
+}
+
+if(live_match.length != 0){
+for(let i=0;i< live_match.length ;i++){
+
+let opponent_team_object = ""
+
+
+let opponent_team_id = request_list.find(e => e.matchUniqueId == live_match[i]["matchUniqueId"] && e.team_id != my_team_id)
+
+opponent_team_object = team_list.find(e => e.uniqueId == opponent_team_id["team_id"])
+
+
+let captain = ""
+
+for(let j=0 ; j<opponent_team_object["teamMembers"].length; j++){
+let a = opponent_team_object["teamMembers"][j] 
+
+let find = players_list.find(e => e.phoneNumber == a)
+
+if(find["captainStatus"] == 1){
+captain = find["userName"] ;
+}
+
+}
+
+const div_class_invitation = document.createElement("div");
+div_class_invitation.setAttribute("class", "invitation");
+
+
+// div one
+
+const div_class_invitation_one = document.createElement("div");
+div_class_invitation_one.setAttribute("class", "invitation-one");
+div_class_invitation.prepend(div_class_invitation_one);
+
+const team_img_div = document.createElement("div");
+team_img_div.setAttribute("class", "teamimgdiv");
+div_class_invitation_one.prepend(team_img_div);
+let opp_team_url = "",
+opp_team_name = "";
+if(opponent_team_object){
+opp_team_url = opponent_team_object["teamImageUrl"];
+opp_team_name = opponent_team_object["teamName"];
+}
+if(!opponent_team_object){
+opp_team_url = "https://iili.io/HXFAu87.png"
+opp_team_name = live_match[i]["opponentArea"]["area"]
+}
+
+const team_image = document.createElement("img");
+team_image.setAttribute("src", opp_team_url);
+team_image.setAttribute("alt", opp_team_name);
+team_img_div.prepend(team_image);
+
+const team_name_div = document.createElement("div");
+team_name_div.setAttribute("class", "teamnamediv");
+div_class_invitation_one.append(team_name_div);
+
+const team_name_subdiv = document.createElement("div");
+team_name_subdiv.setAttribute("class", "teamnamesubdiv");
+team_name_div.append(team_name_subdiv);
+
+const team_name_subdivnthchild1 = document.createElement("div");
+team_name_subdiv.prepend(team_name_subdivnthchild1);
+
+
+
+const team_name_subdiv_header = document.createElement("h2");
+team_name_subdiv_header.innerText = "vs " + opp_team_name
+team_name_subdivnthchild1.append(team_name_subdiv_header);
+
+const team_name_subdivnthchild2 = document.createElement("div");
+team_name_subdivnthchild2.setAttribute("class", "timetogo");
+team_name_subdiv.append(team_name_subdivnthchild2);
+
+const team_name_subdiv_time_icon = document.createElement("i");
+team_name_subdiv_time_icon.setAttribute("class", "fa-regular fa-clock");
+team_name_subdivnthchild2.append(team_name_subdiv_time_icon);
+
+const team_name_subdiv_para = document.createElement("p");
+team_name_subdiv_para.innerText = moment(live_match[i]["time"]).startOf('sec').fromNow();
+team_name_subdivnthchild2.append(team_name_subdiv_para);
+
+
+// div two
+
+const div_class_invitation_two = document.createElement("div");
+div_class_invitation_two.setAttribute("class", "invitation-two");
+div_class_invitation.append(div_class_invitation_two);
+
+
+const div_class_invitation_two_subdiv1 = document.createElement("div");
+div_class_invitation_two.prepend(div_class_invitation_two_subdiv1);
+
+const team_name_subdiv_typeheader = document.createElement("p");
+team_name_subdiv_typeheader.innerText = "Type"
+div_class_invitation_two_subdiv1.append(team_name_subdiv_typeheader);
+
+const team_name_subdiv_typevalue = document.createElement("p");
+team_name_subdiv_typevalue.innerText = live_match[i]["typeOfMatch"]
+div_class_invitation_two_subdiv1.append(team_name_subdiv_typevalue);
+
+const div_class_invitation_two_subdiv2 = document.createElement("div");
+div_class_invitation_two.append(div_class_invitation_two_subdiv2);
+
+const team_name_subdiv_timeheader = document.createElement("p");
+team_name_subdiv_timeheader.innerText = "Time"
+div_class_invitation_two_subdiv2.append(team_name_subdiv_timeheader);
+
+const team_name_subdiv_timevalue = document.createElement("p");
+
+let match_time = live_match[i]["time"]
+
+team_name_subdiv_timevalue.innerText = moment(match_time).add(0, 'days').calendar()
+div_class_invitation_two_subdiv2.append(team_name_subdiv_timevalue);
+
+// div three
+
+const div_class_invitation_three = document.createElement("div");
+div_class_invitation_three.setAttribute("class", "invitation-three");
+div_class_invitation.append(div_class_invitation_three);
+
+const div_class_invitation_three_subdiv3 = document.createElement("div");
+div_class_invitation_three.append(div_class_invitation_three_subdiv3);
+
+const div_class_invitation_three_icon3 = document.createElement("i");
+div_class_invitation_three_icon3.setAttribute("class", "fa-solid fa-location-dot");
+div_class_invitation_three_subdiv3.append(div_class_invitation_three_icon3);
+
+const div_class_invitation_three_para3 = document.createElement("p");
+div_class_invitation_three_para3.innerText = live_match[i]["location"]
+div_class_invitation_three_subdiv3.append(div_class_invitation_three_para3);
+
+const div_class_invitation_three_subdiv4 = document.createElement("div");
+div_class_invitation_three.append(div_class_invitation_three_subdiv4);
+
+const div_class_invitation_three_icon4 = document.createElement("i");
+div_class_invitation_three_icon4.setAttribute("class", "fa-solid fa-circle-info");
+div_class_invitation_three_subdiv4.append(div_class_invitation_three_icon4);
+
+const div_class_invitation_three_para4 = document.createElement("p");
+div_class_invitation_three_para4.innerText = live_match[i]["information"]
+div_class_invitation_three_subdiv4.append(div_class_invitation_three_para4);
+
+let score = resultdiv(live_match[i]) ;
+
+div_class_invitation.insertAdjacentHTML("beforeend", score);
+
+document.querySelector(".live").append(div_class_invitation)
+
+}
+}
+// this loop is for live match end ----------------
+function playerSelect(data){
+ const temp =
+ `<div class="mvps">
+	<div class="player_img">
+			<img src="${data["imageUrl"]}" >
+		</div>
+		<h2>${data["userName"]}</h2>
+		<div class="select_mvp">
+			<button class="select_name" data-id="${data["phoneNumber"]}" type="button">SELECT</button>
+		</div>
+	</div>
+ `
+ return temp
+}
+
+const bookCovers = document.querySelectorAll(".update-score");
+    bookCovers.forEach(bookCover => {
+      bookCover.addEventListener("click", (event) => {
+        const person_data = bookCover.dataset.id;
+		console.log(person_data)
+		let popup = document.getElementById("popup");
+			popup.classList.add("open-popup");// hear we add class for show popup
+			//  hear we work for display team member repeat pattern 
+
+			let opponent_team_id = request_list.find(e => e.matchUniqueId == person_data && e.team_id != my_team_id)
+
+			opponent_team_object = team_list.find(e => e.uniqueId == opponent_team_id["team_id"])
+
+			document.querySelector(".opp_team_name").innerHTML = opponent_team_object["teamName"]
+
+			let opp_image = document.querySelector(".opp_team_image")
+			opp_image.setAttribute("src", opponent_team_object["teamImageUrl"])
+
+			document.querySelector(".my_team_name").innerHTML = teamProfile["teamName"]
+
+			let my_team_image = document.querySelector(".my_team_image")
+			my_team_image.setAttribute("src", teamProfile["teamImageUrl"])
+
+			document.querySelector(".players_list").innerHTML = ""
+			for (let index = 0; index < teamProfile["teamMembers"].length; index++) {
+
+			const team = teamProfile["teamMembers"][index];
+
+			let player_profile = players_list.find(e => e.phoneNumber == team)
+			const template = playerSelect(player_profile);
+			document.querySelector(".players_list").insertAdjacentHTML("beforeend", template)
+
+}
+	
+      })
+    })
+	function ClosePopup() {
+	popup.classList.remove("open-popup");
+}
+
+
+
+
 	</script>
+
+
+
 </body>
 </html>

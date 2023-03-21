@@ -32,6 +32,9 @@ function playerRequest(){
 function profilepage(){
     window.location.href = `../profile/myprofile.html?unique_id=${phonenumber}`;
 }
+function myMatch(){
+    window.location.href = `../search and notification/calendar.html?unique_id=${phonenumber}`;
+}
 
 // upto above links for home page 
 
