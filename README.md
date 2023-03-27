@@ -39,6 +39,8 @@ Match CRUD
 * read invitation response 
 * read accepted match list
 * update the match result 
+* read the match result
+* edit the match result
 * read the previous match details
 
 others

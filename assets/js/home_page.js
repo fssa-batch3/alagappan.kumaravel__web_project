@@ -4,36 +4,38 @@ const urlParams = new URLSearchParams(queryString);
 
 const phonenumber = urlParams.get('unique_id')
 
+let origin = window.location.origin 
+
 function responsebtn(){
-window.location.href = `../nonteamplayer/response.html?unique_id=${phonenumber}`;
+window.location.href = `${origin}/pages/nonteamplayer/response.html?unique_id=${phonenumber}`;
 }
 function jointeambtn(){
-window.location.href = `../nonteamplayer/jointeam.html?unique_id=${phonenumber}`;
+window.location.href = `${origin}/pages/nonteamplayer/jointeam.html?unique_id=${phonenumber}`;
 }
 function createteambtn(){
-window.location.href = `../nonteamplayer/createteam.html?unique_id=${phonenumber}`;
+window.location.href = `${origin}/pages/nonteamplayer/createteam.html?unique_id=${phonenumber}`;
 }
 
 function matchInvitationBtn(){
-    window.location.href = `../teamplayer captain/match invitation.html?unique_id=${phonenumber}`;
+    window.location.href = `${origin}/pages/teamplayer captain/match invitation.html?unique_id=${phonenumber}`;
     }
 
 function myTeam(){
-    window.location.href = `../profile/teamprofile.html?unique_id=${phonenumber}`;
+    window.location.href = `${origin}/pages/profile/teamprofile.html?unique_id=${phonenumber}`;
 }
 function teamResponse(){
-    window.location.href = `../teamplayer captain/team response.html?unique_id=${phonenumber}`;
+    window.location.href = `${origin}/pages/teamplayer captain/team response.html?unique_id=${phonenumber}`;
 }
 
 function playerRequest(){
-    window.location.href = `../teamplayer captain/playerrequests.html?unique_id=${phonenumber}`;
+    window.location.href = `${origin}/pages/teamplayer captain/playerrequests.html?unique_id=${phonenumber}`;
 }
 
 function profilepage(){
-    window.location.href = `../profile/myprofile.html?unique_id=${phonenumber}`;
+    window.location.href = `${origin}/pages/profile/myprofile.html?unique_id=${phonenumber}`;
 }
 function myMatch(){
-    window.location.href = `../search and notification/calendar.html?unique_id=${phonenumber}`;
+    window.location.href = `${origin}/pages/search and notification/calendar.html?unique_id=${phonenumber}`;
 }
 
 // upto above links for home page 
@@ -52,7 +54,7 @@ person_data = user_detail.find(findPlayer);
 
 
 function createMatchBtn(){
-    window.location.href = `../teamplayer captain/creatematch.html?unique_id=${phonenumber}&my_name=${person_data["userName"]}&opponent_url=0&opponent_name=0&captain=0&type=0&opponent_id=0`;  
+    window.location.href = `/pages/teamplayer captain/creatematch.html?unique_id=${phonenumber}&my_name=${person_data["userName"]}&opponent_url=0&opponent_name=0&captain=0&type=0&opponent_id=0`;  
 }
 
 

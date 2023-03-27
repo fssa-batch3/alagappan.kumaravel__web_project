@@ -1,3 +1,5 @@
+let origin = window.location.origin 
+
 function signUp_1(e) {
     e.preventDefault();
     // here i collect value from signUp form 
@@ -40,7 +42,7 @@ function signUp_1(e) {
         
         document.querySelector('form').reset();
 
-    	location.href = `./signup2.html?unique_id=${phonenumber}`;
+    	location.href = `${origin}/pages/login&signup/signup2.html?unique_id=${phonenumber}`;
     }
     
     
@@ -93,7 +95,7 @@ function signUp_2(e) {
 
 	    const phonenumber = urlParams.get('unique_id');
 
-    	window.location.href = `../homepage/hpexist.html?unique_id=${phonenumber}`
+    	window.location.href = `${origin}/pages/homepage/hpexist.html?unique_id=${phonenumber}`
 
         e.preventDefault(); 
 }
@@ -118,7 +120,7 @@ function signIn(e){
     else{
 
         alert("Your login in successful");
-        window.location.href = `./pages/homepage/hpexist.html?unique_id=${phonenumber}`;
+        window.location.href = `${origin}/pages/homepage/hpexist.html?unique_id=${phonenumber}`;
 
     }
    
@@ -127,7 +129,7 @@ function signIn(e){
 // function for profile edit.
 
 function onEdit(){
-    window.location.href = `./profileedit.html?unique_id=${phonenumber}`;
+    window.location.href = `${origin}/pages/profile/profileedit.html?unique_id=${phonenumber}`;
 
 }
 
@@ -198,7 +200,7 @@ person_data["imageUrl"]= image;
 
 localStorage.setItem('user_detail', JSON.stringify(user_detail));
 
-window.location.href = `./myprofile.html?unique_id=${phonenumber}`;
+window.location.href = `${origin}/pages/profile/myprofile.html?unique_id=${phonenumber}`;
 
 }
 
@@ -232,14 +234,13 @@ user_detail.splice(indexOfUser, 1);
 
 localStorage.setItem('user_detail', JSON.stringify(user_detail));
 
-window.location.href = "../../index.html";
+window.location.href = `${origin}/index.html`;
 
     }
 
 }
 
 function logOut(){
-    window.location.href = `../../index.html`;
-
+    window.location.href = `${origin}/index.html`;
 
 }

@@ -270,15 +270,69 @@ div.score_container .top{
     height: 100%;
 }
 
-.select_mvp button{
+.select_mvp label{
     width: 100%;
     height: 100%;
     background: none;
     border: none;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--ltgreen);
 }
+.select_name{
+    display: none;
+}
 
+section.upcoming, section.live{
+    display: none;
+}
 
+.no_content{
+    width: 100%;
+    height: 100%;
+}
 
+.no_score{
+    width: 100%;
+    border-top: 2px solid var(--offwhite);
+}
+.no_score p{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--icncolor);
+}
+
+/* past result css start */
+
+.past_result_container{
+    width: 100%;
+    background-color: var(--white);
+}
+
+.match_time{
+    width: 100%;
+}
+.match_time p{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--icncolor);
+}
+
+.past_result{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+}
+.team_img{
+    width: 100%;
+}
+.team_img img{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    margin-left: 33%;
+    margin-right: 33%;
+    
+}
