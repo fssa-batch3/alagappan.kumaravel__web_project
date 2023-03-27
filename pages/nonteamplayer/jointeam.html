@@ -20,7 +20,7 @@
 <body>
 	<!-- header start -->
 	<header>
-		<i class="fa-solid fa-arrow-left"></i>
+		<a onclick="previousPage()"><i class="fa-solid fa-arrow-left"></i></a>
 		<h1>Join with team</h1>
 	</header>
 	<!-- header end -->
@@ -277,7 +277,9 @@ const bookCovers = document.querySelectorAll(".popup-name");
 function ClosePopup() {
 	popup.classList.remove("open-popup");
 }
-
+function previousPage(){
+	window.history.go(-1)
+}
 // function for team members display in popup end
 	</script>
 

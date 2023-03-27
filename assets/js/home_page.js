@@ -134,3 +134,6 @@ range_input.style.width = `${range_value}%`;
 document.querySelector(".range-label").innerHTML = Math.round(range_value) + "%";
 
 // sidebar js work end ---------------------------------------------------
+function previousPage(){
+	window.history.go(-1)
+}

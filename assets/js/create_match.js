@@ -276,3 +276,7 @@ function backBtn(){
 
 }
 
+function previousPage(){
+	window.history.go(-1)
+}
+

@@ -15,7 +15,7 @@
 <body>
 <!-- header start -->
 <header class="match-invitation-header">
-	<i class="fa-solid fa-arrow-left"></i>
+	<a onclick="previousPage()"><i class="fa-solid fa-arrow-left"></i></a>
 	 <h1>Match Invitation</h1>
 </header>
 <!-- header end -->
@@ -390,6 +390,10 @@ let selectbtn = document.querySelectorAll(".accept-btn");
 		location.reload();
 	  })
 	})
+
+	function previousPage(){
+	window.history.go(-1)
+}
 </script>
 
 <!-- main end -->

@@ -15,7 +15,7 @@
 <body>
 <!-- header start -->
 <header>
-	<i class="fa-solid fa-arrow-left"></i>
+	<a onclick="previousPage()"><i class="fa-solid fa-arrow-left"></i></a>
 	 <h1>Edit My Team</h1>
 </header>
 <!-- header end -->
@@ -428,6 +428,9 @@ function myFunction() {
             image_element.setAttribute("src", "../../assets/images/defalt_team_image.png")
         }
 
+}
+function previousPage(){
+	window.history.go(-1)
 }
 
 </script>

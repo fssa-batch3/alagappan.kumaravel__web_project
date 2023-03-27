@@ -38,7 +38,7 @@ header {
     box-shadow: 0 0px 10px 0px rgba(0,0,0,0.2);
 }
 header.headerdiv{
-    grid-template-columns: 15% 50% 15% 10% 10%;
+    grid-template-columns: 15% 60% 10% 10%;
 }
 
 header i{
@@ -157,7 +157,7 @@ label #cancel{
     left: -70%;
     top: 17px;
     color: var(--offwhite);
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     transition: all .5s ease;
 }
 #check:checked~.sandwich{

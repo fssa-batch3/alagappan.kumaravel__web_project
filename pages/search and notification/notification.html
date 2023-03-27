@@ -14,7 +14,7 @@
 <body>
 <!-- header start -->
 <header>
-	<i class="fa-solid fa-arrow-left"></i>
+	<a onclick="previousPage()"><i class="fa-solid fa-arrow-left"></i></a>
 	 <h1>Notifications</h1>
 	 <div class="onoffswitch">
 		<label class="switch">
@@ -97,6 +97,12 @@
 
 
 </main>
+<script>
+	function previousPage(){
+	window.history.go(-1)
+}
+
+</script>
 <!-- main end -->
 </body>
 </html>

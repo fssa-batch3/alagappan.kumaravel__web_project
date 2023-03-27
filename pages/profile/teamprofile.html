@@ -18,7 +18,7 @@
 		<!-- <img class="bgimg" src="../../assets/images/team1profile.jpg" alt="backgroundimage"> -->
 		<div class="color"></div>
 		<div class="top">
-			<i class="fa-solid fa-arrow-left"></i>
+			<a onclick="previousPage()"><i class="fa-solid fa-arrow-left"></i></a>
 			<div class="topleft">
 				<i class="fa-solid fa-share"></i>
 				<a onclick="teamEdit()" class="edit_team"><i class="fa-solid fa-pen"></i></a>
@@ -253,6 +253,8 @@ if(my_profile["captainStatus"] == 0){
 
 let players_age =[]
 
+console.log(players_list)
+
 for(i=0;i<players_list.length;i++){
 
 let captain = "" ;
@@ -426,6 +428,9 @@ document.querySelector(".open_for_player").innerHTML = "They did Not want any pl
 let teamMemberCount = teamProfile["teamMembers"].length
 document.querySelector(".member").innerHTML = teamMemberCount  ;
 
+function previousPage(){
+	window.history.go(-1)
+}
 
 </script>
 </body>

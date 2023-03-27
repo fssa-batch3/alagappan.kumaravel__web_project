@@ -4,7 +4,6 @@ let teamData = [{"teamImageUrl":"https://iili.io/HNNQShx.jpg","teamName":"Chenna
 
 let request = [{"responseUniqueId":"32d48754-d9db-4567-ada7-3c48bae8c110","playerUniqueId":"9344655219","teamUniqueId":"22c81ffd-0a9e-404a-b9a6-55abea873ae2","createdTime":"2023-03-17T09:43:47.542Z","requestStatus":1}]
 
-
 let area = [{"area":"aminjikarai","distric":"chennai","count":2},{"area":"annanagar","distric":"chennai","count":1}]
 
 let players = [{"phoneNumber":"9344655211","userName":"Dhoni","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2001-02-08","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-03-08T13:07:49.971Z","firstName":"Meena","lastName":"Subramanian","about":"Ennam pol valkkai","imageUrl":"https://iili.io/HWhKUrB.webp","captainStatus":1,"uniqueId":"233255ef-241a-43ac-9e4d-d7b39184bca4"},

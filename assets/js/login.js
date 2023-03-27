@@ -244,3 +244,12 @@ function logOut(){
     window.location.href = `${origin}/index.html`;
 
 }
+
+function backBtnHome(){
+	window.location.href = `../homepage/hpexist.html?unique_id=${phonenumber}`
+
+}
+
+function previousPage(){
+	window.history.go(-1)
+}

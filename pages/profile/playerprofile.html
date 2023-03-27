@@ -17,7 +17,7 @@
 	<header>
 		<div class="color"></div>
 		<div class="top">
-			<i class="fa-solid fa-arrow-left"></i>
+			<a onclick="previousPage()"><i class="fa-solid fa-arrow-left"></i></a>
 			<div class="topleft">
 				<i class="fa-solid fa-share"></i>
 				<i class="fa-brands fa-whatsapp"></i>
@@ -380,6 +380,9 @@ document.querySelector(".player_about").innerHTML = playerAbout ;
 
 // PLAYER PROFILE END
 
+function previousPage(){
+	window.history.go(-1)
+}
 
 </script>
 

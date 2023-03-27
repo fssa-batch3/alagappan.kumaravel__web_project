@@ -15,7 +15,7 @@
 <body>
 <!-- header start -->
 <header>
-	<i class="fa-solid fa-arrow-left"></i>
+	<a onclick="previousPage()"><i class="fa-solid fa-arrow-left"></i></a>
 	 <h1>Players Request</h1>
 </header>
 <!-- header end -->
@@ -88,7 +88,9 @@
 function ClosePopup(){
 popup.classList.remove("open-popup");
 }
-
+function previousPage(){
+	window.history.go(-1)
+}
 
 </script>
 <script src="../../assets/js/player_response.js"></script>
