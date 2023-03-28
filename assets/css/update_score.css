@@ -283,7 +283,7 @@ div.score_container .top{
     display: none;
 }
 
-section.upcoming, section.live{
+section.completed, section.live{
     display: none;
 }
 

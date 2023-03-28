@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Home page for newmember</title>
+	<title>Select area</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="../../assets/css/overall.css">
@@ -21,9 +21,9 @@
 <!-- header end -->
 <!-- main start -->
 <section class="area-select-main">
-	<div class="content-subheader searchbardiv">
+	<!-- <div class="content-subheader searchbardiv">
 		<div class="searchbar"><input type="search"><i class="fa-solid fa-magnifying-glass"></i></div>
-	</div>
+	</div> -->
 	<div class="area-background-color">
 	<!-- <div class="area-content">
 		<i class="fa-solid fa-location-dot"></i>
@@ -210,6 +210,11 @@ let selectbtn = document.querySelectorAll(".area-link");
 		window.location.href = `../teamplayer captain/creatematch.html?unique_id=${phonenumber}&my_name=${my_name}&opponent_url=https://iili.io/HXFAu87.png&opponent_name=${area_list[index_value]["area"]}&captain=${area_list[index_value]["distric"]}&type=2&opponent_id=0`;
 	  })
 	})
+
+function previousPage(){
+	window.history.go(-1)
+}
+
 
 
 </script>
