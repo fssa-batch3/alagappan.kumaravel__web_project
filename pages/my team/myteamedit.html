@@ -17,6 +17,7 @@
 <header>
 	<a onclick="previousPage()"><i class="fa-solid fa-arrow-left"></i></a>
 	 <h1>Edit My Team</h1>
+	 <a class="deleteTeam" onclick="teamDelete(event)"><i class="fa-solid fa-trash-can"></i></a>
 </header>
 <!-- header end -->
 <!-- main start -->
@@ -74,9 +75,9 @@
 	<button onclick="teamUpdate(event)" type="button">UPDATE</button>
 </div>
 
-<div class="deletediv">
+<!-- <div class="deletediv">
 	<button onclick="teamDelete(event)" type="button">DELETE</button>
-</div>
+</div> -->
 
 </main>
 <!-- main end -->
@@ -126,7 +127,7 @@ for(i=0;i<unique_player.length;i++){
 // here i done function for delete team 
 
 function teamDelete(){
-	if(confirm("Are you sure to DELETE your team ?"+" You can't get '"+ teamProfile["teamName"] + "' same user name after you delete this team")){
+	if(confirm("Are you sure that you want to DELETE ?"+" You can't get '"+ teamProfile["teamName"] + "' as your user name again after you delete this team")){
 		for(let i=0; i<unique_player.length; i++){
 
 			let player_number = unique_player[i];

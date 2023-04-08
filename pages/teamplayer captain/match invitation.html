@@ -357,6 +357,8 @@ let selectbtn = document.querySelectorAll(".accept-btn");
 			console.log(person_response)
 
 			person_response["match_in_status"] = 1 ;
+
+			person_response["team_players"] = teamProfile["teamMembers"] ;
 		
 		localStorage.setItem('match_list', JSON.stringify(match_list));
 		

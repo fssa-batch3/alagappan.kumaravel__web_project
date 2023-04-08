@@ -137,3 +137,6 @@ document.querySelector(".range-label").innerHTML = Math.round(range_value) + "%"
 function previousPage(){
 	window.history.go(-1)
 }
+
+document.querySelector(".playerdetailsdiv").addEventListener("click", profilepage)
+document.querySelector(".playerimagediv").addEventListener("click", profilepage)

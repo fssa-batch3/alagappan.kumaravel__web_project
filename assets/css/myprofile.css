@@ -91,7 +91,11 @@ main{
     top: 60px;
     left: 15px;
     width: 20%;
-    max-width: 150px;
+    max-width: 140px;
+    min-width: 100px;
+    height: 5%;
+    min-height: 105px;
+    max-height: 110px;
     border-radius: 80%;
     border: 2px solid var(--white);
 }

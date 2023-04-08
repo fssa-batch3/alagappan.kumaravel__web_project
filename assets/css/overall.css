@@ -132,7 +132,7 @@ header .logo{
     top: 0px;
     left: -80%;
     transition: all .5s ease;
-    z-index: 111;
+    z-index: 1;
     overflow-y: scroll;
 }
 *::-webkit-scrollbar {
@@ -152,14 +152,24 @@ label #btn {
     padding: 6px 12px;
     transition: all .5s;
 }
-label #cancel{
+#cancel{
     z-index: 1111;
-    left: -70%;
-    top: 17px;
+    right: 8%;
+    top: 16px;
     color: var(--offwhite);
     font-size: 1.7rem;
     transition: all .5s ease;
 }
+/* 
+.sandwich_label{
+    position: absolute;
+    z-index: 1111;
+    width: 100px;
+    height: 100px;
+    right: 0%;
+    top: 0px;
+    background-color: var(--fntwight);
+} */
 #check:checked~.sandwich{
     left: 0;
 }
@@ -200,8 +210,9 @@ label #cancel{
     align-items: center;
 }
 .playerimagediv img{
-    width: 70%;
-    border-radius: 80%;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
 }
 .playerdetailsdiv{
     width: 70%;
@@ -539,7 +550,7 @@ main{
     align-items: center;
 }
 .teamnamediv div:nth-child(1) h2{
-    font-size: 18px;
+    font-size: 16px;
     margin: 12px 0px 5px 0px ;
     color: #000;
 } 

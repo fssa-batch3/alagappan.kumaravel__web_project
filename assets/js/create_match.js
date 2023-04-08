@@ -151,6 +151,7 @@ function matchCreate(e){
 		"request_id" : uuidv4(),
 		"matchUniqueId" : match_unique_id,
 		"team_id" : teamProfile["uniqueId"],
+		"team_players" : teamProfile["teamMembers"],
 		"match_in_status" : 1 
 	}
 

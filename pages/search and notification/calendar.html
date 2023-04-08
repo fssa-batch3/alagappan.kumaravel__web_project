@@ -17,14 +17,14 @@
 <!-- header start -->
 <header class="calender-header">
 	<a onclick="previousPage()"><i class="fa-solid fa-arrow-left"></i></a>
-	 <h1>Calendar</h1>
+	 <h1>My Matches</h1>
 </header>
 <!-- header end -->
 <!-- main start -->
 <div class="my_match_nav">
-	<a onclick="upcoming()">Upcoming</a>
-	<a onclick="live()">Live</a>
-	<a onclick="completed()">Completed</a>
+	<a class="link1" onclick="upcoming()">Upcoming</a>
+	<a class="link2" onclick="live()">Live</a>
+	<a class="link3" onclick="completed()">Completed</a>
 </div>
 
 <section class="calendar upcoming">
@@ -50,12 +50,29 @@
 						</div>
 						<div class="score_value">	
 							<h2>How many matches</h2>
-							<div>
-								<input id="won_number" type="number" required>
-								<p>:</p>
-								<input id="loss_number" type="number" required>
+							<div class="score">
+								<div>
+									<input id="won_number" type="number" required>
+									<p class="subname">Won</p>
+								</div>
+							
+								<div>
+									<input id="draw_number" type="number" required>
+									<p class="subname">Draw</p>
+								</div>
+							
+								<div>
+									<input id="loss_number" type="number" required>
+									<p class="subname">Loss</p>
+								</div>
+								
 							</div>
-							<p class="score_lable">WON & LOSS</p>
+							<!-- <div>
+								
+								
+								
+								
+							</div> -->
 						</div>
 						<div class="team_name">
 							<img class="opp_team_image" src="" alt="opponent image">
@@ -81,38 +98,215 @@
 	</div>
 </section>
 <section class="calendar completed">
-<div class="past_result_container">
-<div class="match_time">
-	<p>Thus, Oct-17-2023</p>
-</div>
-<div class="past_result">
-	<div class="my_team">
-		<div class="team_img">
-			<img src="../../assets/images/Avatar.png" alt="asdf">
-		</div>
-		<h2>Chennai super kings</h2>
-	</div>
 
-	<div class="result">
-	<p class="won">1</p>
-	<P>-</P>
-	<p class="loss">0</p>
-	</div>
-
-	<div class="opp_team">
-		<div class="team_img">
-			<img src="../../assets/images/Avatar.png" alt="asdf">
+	<!-- popup past result start -->
+	<div class="popup" id="popup_result">
+	<div class="popup-team-content">
+		<div class="score_container">
+			<div class="top">
+				<div class="backgroundimage">
+				<div class="score_head">
+					<button type="button" onclick="ClosePopupResult()">
+						<i class="fa-solid fa-chevron-left"></i></button>
+					<h1>SCORECARD</h1>
+				</div>
+				<div class="team_score">
+					<div class="team_name">
+						<img class="my_team_image" id="past_my_team_img" src="" alt="my team image">
+						<p class="my_team_name" id="past_my_team"></p>
+					</div>
+					<div class="score_value">	
+						<h2>Matches</h2>
+						<div class="score">
+								<div>
+									<p id="past_Won_score"></p>
+									<p class="subname">Won</p>
+								</div>
+							
+								<div>
+									<p id="past_draw_score"></p>
+									<p class="subname">Draw</p>
+								</div>
+							
+								<div>
+									<p id="past_loss_score"></p>
+									<p class="subname">Loss</p>
+								</div>
+								
+							</div>
+					</div>
+					<div class="team_name">
+						<img class="opp_team_image" id="past_opp_team_img" src="" alt="opponent image">
+						<p class="opp_team_name" id="past_opp_team"></p>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="bottom">
+				<div class="result_nav">
+					<button class="mvpbtn" type="button" onclick="pastMvp()">MVPs</button>
+					<button class="playersbtn" type="button" onclick="pastPlayers()">Players</button>
+					<button class="detailsbtn" type="button" onclick="pastDetails()">Details</button>
+				</div>
+<!-- match details start -->
+<div class="past_match_details">
+	<h3>Details</h3>
+	<div class="details">
+		<div>
+			<i class="fa-regular fa-clock"></i>
+			<p id="past_match_time"></p>
 		</div>
-		<h2>Mumbai indians</h2>
+		<div>
+			<i class="fa-solid fa-shield-halved"></i>
+			<p id="past_match_type"></p>
+		</div>
+		<div>
+			<i class="fa-solid fa-location-dot"></i>
+			<p id="past_match_location"></p>
+		</div>
+		<div>
+			<i class="fa-solid fa-circle-info"></i>	
+			<p id="past_match_info"></p>
+		</div>
 	</div>
 </div>
+
+<!-- match details end -->
+
+<!-- match players start -->
+				<div class="past_match_players">
+					<h3>Players</h3>
+					<div class="members">
+						<div class="my_team_players">
+							<h4></h4>
+							<div>
+
+							</div>
+						
+
+						</div>
+						<div class="opp_team_players">
+							<h4></h4>
+							<div>
+
+							</div>
+							<!-- <div class="players">
+								<img src="../../assets/images/Avatar.png" alt="">
+								<p>Madhav</p>
+							</div>
+
+							<div class="players">
+								<img src="../../assets/images/Avatar.png" alt="">
+								<p>Madhav</p>
+							</div> -->
+
+						</div>
+					</div>
+				</div>
+<!-- match players end -->
+
+<!-- match mvps start -->
+				<div class="mvp_det">
+						<table class="past_players_list">
+							<caption>Most Valuble Players</caption>
+							<thead>
+							<tr>
+								<th></th>
+								<th>Players</th>
+								<th>Team</th>
+							  </tr></thead>
+							  <tbody>
+
+							  </tbody>
+							  
+						  </table>
+	
+				</div>
+<!-- match mvps end -->
+
+
+			</div>
+			
+		</div>	
+	</div>
 </div>
+	<!-- popup past result end -->
+
+
+
+<!-- <div class="past_result_container">
+	<div class="match_time">
+		<p>Sat, Oct-19-2023</p>
+	</div>
+	<div class="past_result">
+		<div class="my_team">
+			<h2>Chennai super kings</h2>
+			<div class="team_img">
+				<img src="../../assets/images/Avatar.png" alt="asdf">
+				<p>CHE</p>
+			</div>
+			
+		</div>
+	
+		<div class="result">
+		<p class="won">3</p>
+		<P>-</P>
+		<p class="loss">1</p>
+		</div>
+	
+		<div class="opp_team">
+			<h2>Karnatakans</h2>
+			<div class="team_img">
+				<p>KAR</p>
+				<img src="../../assets/images/Avatar.png" alt="asdf">
+			</div>
+			
+		</div>
+	</div>
+	</div> -->
+
+
+<!-- 	<div class="past_result_container">
+		<div class="match_time">
+			<p>Wed, Oct-22-2023</p>
+		</div>
+		<div class="past_result">
+			<div class="my_team">
+				<h2>Chennai super kings</h2>
+				<div class="team_img">
+					<img src="../../assets/images/Avatar.png" alt="asdf">
+					<p>CHE</p>
+				</div>
+				
+			</div>
+		
+			<div class="result">
+			<p class="won">2</p>
+			<P>-</P>
+			<p class="loss">1</p>
+			</div>
+		
+			<div class="opp_team">
+				<h2>Attackars</h2>
+				<div class="team_img">
+					<p>ATT</p>
+					<img src="../../assets/images/Avatar.png" alt="asdf">
+				</div>
+				
+			</div>
+		</div>
+		</div> -->
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 	<script src="../../lib/moment/moment.min.js"></script>
 <script>
+
+
 function upcoming(){
+document.querySelector(".link1").style.color = "#ff8908"
+document.querySelector(".link2").style.color = "#2a373f"
+document.querySelector(".link3").style.color = "#2a373f"
 
 let content_1 = document.querySelector("section.upcoming");
 content_1.style.display = "block";
@@ -124,6 +318,9 @@ let content_3 = document.querySelector("section.completed")
 content_3.style.display = "none";
 }
 function live(){
+document.querySelector(".link1").style.color = "#2a373f"
+document.querySelector(".link2").style.color = "#ff8908"
+document.querySelector(".link3").style.color = "#2a373f"
 
 let content_1 = document.querySelector("section.upcoming")
 content_1.style.display = "none";
@@ -136,6 +333,9 @@ content_3.style.display = "none";
 }
 
 function completed(){
+document.querySelector(".link1").style.color = "#2a373f"
+document.querySelector(".link2").style.color = "#2a373f"
+document.querySelector(".link3").style.color = "#ff8908"
 
 let content_1 = document.querySelector("section.upcoming")
 content_1.style.display = "none";
@@ -168,10 +368,12 @@ let teamProfile = team_list.find(findPlayer);
 
 let my_team_id = teamProfile["uniqueId"]
 
-console.log(teamProfile)
+// console.log(teamProfile)
 let match_list = JSON.parse(localStorage.getItem('match_list'));
 
 let request_list = JSON.parse(localStorage.getItem('match_response_list'))
+
+let score_resopnse = JSON.parse(localStorage.getItem('score_card'));
 
 // upto this common for all section
 
@@ -180,6 +382,10 @@ let request_list = JSON.parse(localStorage.getItem('match_response_list'))
 let matchInvitaton = []
 
 let live_match = []
+
+let completed_match = []
+
+let completed_match_list = request_list.filter(e => e.match_in_status == 1 && e.team_players.find(e => e == phonenumber) == phonenumber)
 
 
 if(request_list != undefined){
@@ -218,8 +424,8 @@ for(let i=0; i<match_request_list.length; i++){
 		live_match.push(find)
 	}
 }
-}
 
+}
 
 // this loop is for upcoming match start ----------------
 
@@ -410,16 +616,26 @@ function resultdiv(data, score_id){
 return temp;
 }
 
-function scoreCardTemp(won, loss){
+function scoreCardTemp(won, loss, draw){
 	const temp = 
 	`<div class="score_card">
 <div class="score">
-	<p class="score_title">( SCORECARD )</p>
-	<i class="fa-regular fa-thumbs-up"></i>
-	<p class="won">${won}</p>
-	<P>-</P>
+	
+	<div>
+		<p class="won">${won}</p>
+		<p class="subname">Won</p>
+	</div>
+
+	<div>
+	<p class="draw">${draw}</p>
+	<p class="subname">Draw</p>
+	</div>
+
+	<div>
 	<p class="loss">${loss}</p>
-	<i class="fa-regular fa-thumbs-down"></i>
+	<p class="subname">Loss</p>
+	</div>
+	<p class="score_title">( SCORECARD )</p>
 	<p class="mvp_title"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> MVPs <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
 </div>
 <div class="mvp_div">	
@@ -617,6 +833,8 @@ let won_value = ""
 
 let loss_value = ""
 
+let draw_value = ""
+
 let mvp_players_list = ""
 
 if(score_card_object){
@@ -625,6 +843,8 @@ if(score_card_object){
 	won_value = score_card_object["score"]["win"]
 
 	loss_value = score_card_object["score"]["loss"]
+
+	draw_value = score_card_object["score"]["draw"]
 
 	mvp_players_list = score_card_object["mvps"]
 
@@ -642,7 +862,7 @@ document.querySelector(".live").append(div_class_invitation);
 
 
 if(score_card_object){
-	let score_data = scoreCardTemp(won_value, loss_value) ;
+	let score_data = scoreCardTemp(won_value, loss_value, draw_value) ;
 	let div = document.querySelectorAll(".update_score_div")
 div[i].insertAdjacentHTML("afterbegin", score_data);
 
@@ -680,7 +900,7 @@ function playerSelect(data, i){
  return temp
 }
 
-
+// update score in live match start ------------------------------------
 
 const bookCovers = document.querySelectorAll(".update-score");
     bookCovers.forEach(bookCover => {
@@ -722,6 +942,8 @@ if(bookCover.dataset.name == 0){
 
 	document.querySelector("#won_number").value = 0;
 
+	document.querySelector("#draw_number").value = 0;
+
 	document.querySelector("#loss_number").value = 0;
 
 	card_no.setAttribute("data-value", 0)
@@ -734,6 +956,8 @@ let score_card = JSON.parse(localStorage.getItem('score_card'))||[];
 score_card_object = score_card.find(e => e.score_card_id == bookCover.dataset.name)
 
 document.querySelector("#won_number").value = score_card_object["score"]["win"];
+
+document.querySelector("#draw_number").value = score_card_object["score"]["draw"];
 
 document.querySelector("#loss_number").value = score_card_object["score"]["loss"];
 
@@ -758,9 +982,7 @@ for(let i=0;i<mvp_players.length;i++){
 }
 
 
-
 }
-
 
 
 localStorage.setItem('match_id', JSON.stringify(person_data))
@@ -793,6 +1015,8 @@ select_mvps.forEach(bookCover => {
     })
 
 
+
+
 function updateScore(){
   let score_card = JSON.parse(localStorage.getItem('score_card'))||[];
 
@@ -803,6 +1027,8 @@ function updateScore(){
 	let match_id = JSON.parse(localStorage.getItem('match_id'))
 
 	let won_score = document.querySelector("#won_number").value;
+
+	let draw_score = document.querySelector("#draw_number").value;
 
 	let loss_score = document.querySelector("#loss_number").value;
 
@@ -838,6 +1064,7 @@ function updateScore(){
 			"teamUniqueId" : my_team_id,
 			"score" : {
 				"win" : won_score,
+				"draw" : draw_score,
 				"loss" : loss_score
 			},
 			"mvps" : all_mvps
@@ -860,6 +1087,8 @@ function updateScore(){
 
 		find_score_card["score"]["win"] = won_score;
 
+		find_score_card["score"]["draw"] = draw_score;
+
 		find_score_card["score"]["loss"] = loss_score;
 
 		find_score_card["mvps"] = all_mvps;
@@ -879,15 +1108,16 @@ function updateScore(){
 	
 }
 
+
+
+
 	function ClosePopup() {
+		let popup = document.getElementById("popup");
 	popup.classList.remove("open-popup");
 }
-function previousPage(){
-	window.history.go(-1)
-}
+
 	</script>
-
-
+<script src="../../assets/js/past_match.js"></script>
 
 </body>
 </html>
