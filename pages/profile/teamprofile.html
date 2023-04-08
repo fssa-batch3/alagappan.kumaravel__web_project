@@ -272,10 +272,11 @@ return a.teamMembers[index] == unique_id ;
 let teamProfile = team_list.find(findPlayer);
 
 let team_id = teamProfile["uniqueId"]
-
+let completed_match_list;
 let completed_match = []
-
-let completed_match_list = request_list.filter(e => e.match_in_status == 1 && e.team_id == team_id)
+if(request_list != undefined){
+completed_match_list = request_list.filter(e => e.match_in_status == 1 && e.team_id == team_id)
+}
 
 let unique_player = teamProfile["teamMembers"];
 

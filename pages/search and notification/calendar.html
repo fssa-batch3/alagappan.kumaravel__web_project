@@ -384,9 +384,10 @@ let matchInvitaton = []
 let live_match = []
 
 let completed_match = []
-
-let completed_match_list = request_list.filter(e => e.match_in_status == 1 && e.team_players.find(e => e == phonenumber) == phonenumber)
-
+let completed_match_list;
+if(request_list){
+completed_match_list = request_list.filter(e => e.match_in_status == 1 && e.team_players.find(e => e == phonenumber) == phonenumber)
+}
 
 if(request_list != undefined){
 	let match_request_list = request_list.filter(e => e.team_id == my_team_id && e.match_in_status == 1);

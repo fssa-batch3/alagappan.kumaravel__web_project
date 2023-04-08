@@ -371,13 +371,11 @@ let score_resopnse = JSON.parse(localStorage.getItem('score_card'));
 
 // upto this common for all section
 
-
+let completed_match_list;
 let completed_match = []
-
-let completed_match_list = request_list.filter(e => e.match_in_status == 1 && e.team_players.find(e => e == phonenumber) == phonenumber)
-
-
-
+if(request_list){
+completed_match_list = request_list.filter(e => e.match_in_status == 1 && e.team_players.find(e => e == phonenumber) == phonenumber)
+}
 let unique_id = phonenumber;
 
 let all_player_list = JSON.parse(localStorage.getItem('user_detail'));

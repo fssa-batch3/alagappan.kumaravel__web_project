@@ -75,6 +75,18 @@ function completedMatchTemp(match_data, my_team, opp_team, won, loss,draw){
 }
 console.log(completed_match.length)
 
+if(completed_match.length == 0){
+	let div_name = document.createElement("div")
+	div_name.setAttribute("class", "no_content")
+
+	let div_p = document.createElement("p")
+	div_p.innerHTML = "(matches not played)"
+	div_name.append(div_p)
+	document.querySelector(".completed").append(div_name)
+
+
+}
+
 for(let i=0; i<completed_match.length; i++){
 
 	let match_data = completed_match[i]
