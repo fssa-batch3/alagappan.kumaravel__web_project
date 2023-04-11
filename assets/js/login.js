@@ -8,6 +8,7 @@ function signUp_1(e) {
 	 password = document.getElementById("password").value,
      confrim_password = document.getElementById("confirm_password").value;
 
+
      // here i give var name for local storage data (initially there is no data so we mentioned or (||) symbol to get empty array)
     let user_detail = JSON.parse(localStorage.getItem('user_detail')) || [];
 
@@ -47,6 +48,32 @@ function signUp_1(e) {
     
     
 }
+
+function validation(password){
+    var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/;
+      if (password.match(passw)) {
+         return true;
+      }
+      else {
+         return false;
+      }
+}
+
+function mytest(){
+    let  password = document.getElementById("password").value;
+    let valid = validation(password)
+
+if(valid == true){
+document.querySelector(".password_error_not_ok").style.display = "none"
+document.querySelector(".password_error_ok").style.display = "flex"
+}
+if(valid == false){
+document.querySelector(".password_error_not_ok").style.display = "flex"
+document.querySelector(".password_error_ok").style.display = "none"
+}
+
+}
+
 
 function signUp_2(e) {
 

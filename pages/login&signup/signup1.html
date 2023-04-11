@@ -30,16 +30,19 @@
 				<form onsubmit="signUp_1(event);">
 					<!-- <div> -->
 						<input id="phonenumber" pattern="[0-9]{10}" type="tel" title="Please enter a valid 10 digit mobile number." placeholder="Phone number"  required/>
-					<!-- </div>
-					<div> -->
-						<!-- <input id="firstname" type="text" placeholder="firstname" pattern="[A-Za-z]{1,15}" required />
-						<input id="lastname" type="text" placeholder="lastname" pattern="[A-Za-z]{1,15}" required />
-					</div> -->
-					<!-- <div>  -->
+
 						<input id="username" type="text" placeholder="Username" title="Use firstletter between (A-Z) and min 15 character" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,15}$" required/>
 					<!-- </div>
 					<div> -->
-						<input id="password" type="password" title="Use (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)" placeholder="Password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required/>
+						<input onkeyup="mytest()" id="password" type="password" title="Use (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)" placeholder="Password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required/>
+						<div class="password_error_not_ok">
+							
+							<p><i class="fa-solid fa-circle-exclamation"></i>  Weak : Use (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)</p>
+						</div>
+						<div class="password_error_ok">
+							<i class="fa-solid fa-circle-check"></i>
+							<p>Strong</p>
+						</div>
 						<input id="confirm_password" type="password"  placeholder="Confrim Password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required/>
 						<p class="wrong_password"></p>
 					<!-- </div>
@@ -71,7 +74,6 @@
 
 </script>
 
-	
 </body>
 
 </html>
