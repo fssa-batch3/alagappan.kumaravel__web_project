@@ -26,6 +26,9 @@ function myTeam(){
 function teamResponse(){
     window.location.href = `${origin}/pages/teamplayer captain/team response.html?unique_id=${phonenumber}`;
 }
+function teamResponseNew(){
+    window.location.href = `${origin}/pages/nonteamplayer/response.html?unique_id=${phonenumber}`;
+}
 
 function playerRequest(){
     window.location.href = `${origin}/pages/teamplayer captain/playerrequests.html?unique_id=${phonenumber}`;

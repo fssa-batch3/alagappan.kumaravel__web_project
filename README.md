@@ -46,7 +46,7 @@ Team Module (completed)
 * delete team. (completed)
 
 
-Match Module (Not completed)
+Match Module (completed)
 
 * create match invitation. (completed)
 * Accept or Reject invitation. (completed)
@@ -56,9 +56,9 @@ Match Module (Not completed)
 * update the match result. (completed)
 * read the match result. (completed)
 * edit the match result. (completed)
-* read the previous match details. (Not completed)
-* read others team profile.(Not completed)
-* read others players profile.(Not completed)
+* read the previous match details. (completed)
+* read others team profile.(completed)
+* read others players profile.(completed)
 
 
 other module. (Not completed)
@@ -157,7 +157,7 @@ other module. (Not completed)
         - The request is sent to the respective team.
         - you are redirected to the Response page.
 
-### View sent request to team (Not completed)
+### View sent request to team (completed)
 - Scenario 1: Successfully view request to team.
     - Steps:
         1. Log in as a non team player.
@@ -404,7 +404,7 @@ other module. (Not completed)
         - The user is redirected to my match page.
         - That match score is updated 
 
-### Read previous match details. (Not completed)
+### Read previous match details. (completed)
 - Scenario 1: Successfully read previous match details.
     - Steps:
         1. Log in as a player.
