@@ -51,10 +51,11 @@
 					<div>
 					<form role="form" onsubmit="signIn(event)";>
 						<div>
-							<input id="phonenumber" type="tel"  placeholder="Phone number" />
+							<input id="phonenumber" type="tel" pattern="[0-9]{10}" title="Please enter a valid 10 digit mobile number."  placeholder="Phone number" />
 						</div>
-						<div>
+						<div class="password_outer_div">
 							<input id="password" type="password" placeholder="Password" />
+							<i id="togglePassword" class="fa-solid fa-eye"></i>
 						</div>
 						<p id="error_msg"></p>
 						<button type="submit" >Log in</button>

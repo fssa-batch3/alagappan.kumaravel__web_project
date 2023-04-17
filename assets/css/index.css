@@ -257,6 +257,18 @@ input:focus{
     position: relative;
 }
 
+.password_outer_div{
+    position: relative;
+}
+
+#togglePassword{
+    font-size: 16px;
+    margin-left: 5px;
+    color: var(--icncolor);
+    position: absolute;
+    top: 40%;
+    right: 10%;
+}
 
 .gif{
     width: 100%;
@@ -272,6 +284,8 @@ input:focus{
 .gif1{
     animation: move1 15s infinite;
 }
+
+
 
 @keyframes move1 {
     0% {

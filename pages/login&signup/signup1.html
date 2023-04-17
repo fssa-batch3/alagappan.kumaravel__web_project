@@ -34,7 +34,10 @@
 						<input id="username" type="text" placeholder="Username" title="Use firstletter between (A-Z) and min 15 character" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,15}$" required/>
 					<!-- </div>
 					<div> -->
+						<div class="password_outer_div">
 						<input onkeyup="mytest()" id="password" type="password" title="Use (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)" placeholder="Password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required/>
+						<i id="togglePassword" class="fa-solid fa-eye"></i>
+					</div>
 						<div class="password_error_not_ok">
 							
 							<p><i class="fa-solid fa-circle-exclamation"></i>  Weak : Use (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)</p>
@@ -43,7 +46,10 @@
 							<i class="fa-solid fa-circle-check"></i>
 							<p>Strong</p>
 						</div>
+						<div class="password_outer_div">
 						<input id="confirm_password" type="password"  placeholder="Confrim Password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required/>
+						<i id="togglePassword_con" class="fa-solid fa-eye"></i>
+					</div>
 						<p class="wrong_password"></p>
 					<!-- </div>
 					<div> -->

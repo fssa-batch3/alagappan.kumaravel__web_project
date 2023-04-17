@@ -32,7 +32,7 @@
 	</div>
 	<div class="battle-team-div">
 		<div>
-			<img class="teamimage">
+			<img class="teamimage" alt="">
 			<div>
 				<h2 class="my_team_name"></h2>
 			<div>
@@ -44,7 +44,7 @@
 		<p class="vs">vs</p>
         <!-- changes -->
 		<div class="select_opponent_div">
-			<img class="opponent_image" >
+			<img class="opponent_image" alt="">
 			<div>
 				<h2 class="opponent_name"></h2>
 			<div>
@@ -62,7 +62,7 @@
 <main>
 	<form onsubmit="matchCreate(event)">
 	<label>Members</label>
-	<input id="members" type="number" required>
+	<input id="members" type="number" min="1" max="14" required>
 	
 	<label>Type of match</label>
 	<select id="type_of_match" required>
@@ -72,8 +72,8 @@
 
 	<label>Players Age</label>
 		<div class="age">
-		<label >From</label><input id="players_from_age" class="age1" type="number" required >
-		<label>To</label><input id="players_to_age" class="age1" type="number" required>
+		<label >From</label><input id="players_from_age" min="3" max="70" class="age1" type="number" required >
+		<label>To</label><input id="players_to_age" min="3" max="70" class="age1" type="number" required>
 			</div>
 		<label>Time</label>
 		<input id="date_and_time" type="datetime-local" required>

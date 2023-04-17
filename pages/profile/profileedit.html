@@ -22,7 +22,7 @@
 <!-- main start -->
 <main>
 	<div class="changephoto">
-		<input class="team_image_show" id="team_image_show" type="image" > 
+		<input class="team_image_show" id="team_image_show" type="image" alt=""> 
 	<label>Change Photo</label>
 	
 	</div>
@@ -112,6 +112,12 @@ document.getElementById("user_image").value = person_data["imageUrl"] ;
 
 let image_element = document.getElementById("team_image_show");
     image_element.setAttribute("src", person_data["imageUrl"])
+
+let DOB_edit = document.querySelector("#user_date_of_birth")
+
+let max_value_1 = yyyy + '-' + mm + '-' + dd;
+DOB_edit.setAttribute("max", max_value_1)
+
 
 </script>
 

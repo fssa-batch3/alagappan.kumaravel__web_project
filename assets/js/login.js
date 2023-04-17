@@ -280,3 +280,43 @@ function backBtnHome(){
 function previousPage(){
 	window.history.go(-1)
 }
+
+// new js for show password start ---------------------------
+
+const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#password');
+if(togglePassword){
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+}
+
+const togglePassword_con = document.querySelector('#togglePassword_con');
+  const confirm_password = document.querySelector('#confirm_password');
+  if(togglePassword_con){
+  togglePassword_con.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = confirm_password.getAttribute('type') === 'password' ? 'text' : 'password';
+    confirm_password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+  }
+// new js for show password end --------------------------- 
+
+let DOB = document.querySelector("#date_of_birth")
+
+let today = new Date();
+
+let dd = String(today.getDate()).padStart(2, '0');
+let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+let yyyy = today.getFullYear();
+
+let max_value = yyyy + '-' + mm + '-' + dd;
+if(DOB){
+DOB.setAttribute("max", max_value)
+}

@@ -23,7 +23,7 @@
 <!-- main start -->
 <main>
 	<div class="changephoto" >
-	<input class="team_image_show" id="team_image_show" type="image" >
+	<input class="team_image_show" alt="team image" id="team_image_show" type="image" >
 	<label>Change Photo</label>
 	<input id="team_image" type="url" onfocusout="myFunction()"> 
 	</div>
@@ -97,6 +97,14 @@ const team_id = urlParams.get('team_id');
 let team_list = JSON.parse(localStorage.getItem('team_details_list'));
 
 let all_player_list = JSON.parse(localStorage.getItem('user_detail'));
+
+
+//  find captain or not
+
+let player_obj = all_player_list.find(e => e.phoneNumber == captain_id) 
+if(player_obj["captainStatus"] != 1){
+	window.location.href = `../homepage/hpexist.html?unique_id=${captain_id}`
+}
 
 function findPlayer(a) {
 

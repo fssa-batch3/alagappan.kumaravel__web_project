@@ -90,9 +90,9 @@ if(completed_match.length == 0){
 for(let i=0; i<completed_match.length; i++){
 
 	let match_data = completed_match[i]
-
-	let my_team_response = request_list.find(e => e.matchUniqueId == match_data["matchUniqueId"] && e.team_players.find(e => e == phonenumber) == phonenumber)
-
+	console.log(match_data)
+	let my_team_response = request_list.find(e => e.matchUniqueId == match_data["matchUniqueId"] && e.team_players.find(e => e == phonenumber) == phonenumber)// some error is there 
+console.log(my_team_response)
 	let my_team_score = score_resopnse.find(e => e.matchUniqueId == match_data["matchUniqueId"] && e.teamUniqueId == my_team_response["team_id"])
 
 	let my_team_obj = team_list.find(e => e.uniqueId == my_team_response["team_id"])

@@ -50,7 +50,7 @@ let user_detail = JSON.parse(localStorage.getItem('user_detail'))
 
 
 function findPlayer(e) {
-  return e.phoneNumber == unique_id ;x``
+  return e.phoneNumber == unique_id ;
 }
 
 person_data = user_detail.find(findPlayer);
