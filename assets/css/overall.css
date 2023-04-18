@@ -873,6 +873,13 @@ main{
     
 }
 
+#error_msg{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--red);
+    text-align: center;
+}
+
 
 .backbtn{
     position: absolute;

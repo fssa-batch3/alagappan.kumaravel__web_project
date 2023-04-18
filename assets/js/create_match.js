@@ -1,3 +1,15 @@
+let date_of_match = document.querySelector("#date_and_time")
+
+let today = new Date();
+
+let dd = String(today.getDate()).padStart(2, '0');
+let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+let yyyy = today.getFullYear();
+let max_value = yyyy + '-' + mm + '-' + dd + 'T' + today.getHours() + ":" + today.getMinutes();
+if(date_of_match){
+date_of_match.setAttribute("min", max_value)
+}
+
 const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
@@ -196,10 +208,10 @@ function matchCreate(e){
 }
 
 
-function submit(e){
+// function submit(e){
 	
 
-}
+// }
 
 
 const select_team = document.querySelector(".select_opponent_div");
@@ -281,14 +293,3 @@ function previousPage(){
 	window.history.go(-1)
 }
 
-let date_of_match = document.querySelector("#date_and_time")
-
-let today = new Date();
-
-let dd = String(today.getDate()).padStart(2, '0');
-let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-let yyyy = today.getFullYear();
-let max_value = yyyy + '-' + mm + '-' + dd + 'T' + today.getHours() + ":" + today.getMinutes();
-if(date_of_match){
-date_of_match.setAttribute("min", max_value)
-}

@@ -1046,18 +1046,20 @@ function updateScore(){
 
 	}
 
-
+	if(won_score < 0 || loss_score < 0 || draw_score < 0){
+		document.querySelector("#error_msg").innerHTML = "Please update match result only positive values"
+	}
 
 	if(won_score == "" || loss_score == ""){
-		document.querySelector("#error_msg").innerHTML += "Please update match result "
+		document.querySelector("#error_msg").innerHTML = "Please update match result "
 	}
 	let exist = all_mvps.length
 	console.log(exist)
     if(exist >= 3){
-        document.querySelector("#error_msg").innerHTML += "Please select two person "
+        document.querySelector("#error_msg").innerHTML = "Please select two person "
     }
 
-	if(exist < 3 && won_score != "" && loss_score != ""){
+	if(exist < 3 && won_score != "" && loss_score != "" && won_score >= 0 && loss_score >= 0 && draw_score >= 0){
 		if(score_card_id == 0){
 		let object = {
 			"score_card_id" : uuidv4(),
