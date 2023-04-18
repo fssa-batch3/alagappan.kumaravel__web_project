@@ -92,7 +92,7 @@
 		}
 		console.log(requested_team_id)
 
-	let jointeam = (JSON.parse(localStorage.getItem('team_details_list'))).filter(e => e.uniqueId != team_id);	 
+	let jointeam = (JSON.parse(localStorage.getItem('team_details_list'))).filter(e => e.uniqueId != team_id && (e.teamMembers).length != 0);	 
 
 	let requested_teams = []
 
