@@ -110,6 +110,7 @@
 		<div class="rights"><p>Copyright © 2019 - 2022 Sportshub - Website Designed By Alagappan</p></div>
 	</footer>
 <!--  footer ends -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="../../lib/moment/moment.min.js">
 
 </script>
@@ -124,14 +125,29 @@ const queryString = window.location.search;
 
 let unique_id = phonenumber;
 
-let user_detail = JSON.parse(localStorage.getItem('user_detail'))
+// let user_detail = JSON.parse(localStorage.getItem('user_detail'))
+let endpoint = "users/";
 
+let user_api_id = JSON.parse(localStorage.getItem("user_id"));
 
-function findPlayer(e) {
-  return e.phoneNumber == unique_id ;
+if(user_api_id == null){
+	window.location.href = `${origin}/index.html`;
 }
 
-person_data = user_detail.find(findPlayer);
+if(user_api_id != null){
+axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`)
+.then ( res => {
+    
+ let person_data = res['data']
+
+ myProfile(person_data)
+
+})
+
+}
+
+function myProfile(person_data){
+
 
 document.getElementById("user_username").innerText = person_data["userName"];
 let a = moment(person_data["createDate"]);
@@ -189,11 +205,14 @@ range_input.style.width = `${range_value}%`;
 
 
 document.querySelector(".range-label").innerHTML = Math.round(range_value) + "%";
+}
 
 // for range value end
 function moveProfile(){
 	window.location.href = `../profile/playerprofile.html?unique_id=${phonenumber}`;
 }
+
+
 
 </script>
 <script src="../../assets/js/login.js">

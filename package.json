@@ -4,7 +4,8 @@
   "description": "[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=fssa-batch3_alagappan.kumaravel__web_project&metric=bugs)](https://sonarcloud.io/summary/new_code?id=fssa-batch3_alagappan.kumaravel__web_project)",
   "main": "main.js",
   "scripts": {
-    "dev": "http-server ./"
+    "dev": "http-server ./",
+    "dev:server": "json-server --watch database/db.json"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,8 @@
   "dependencies": {
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "json-server": "^0.17.3"
   },
   "devDependencies": {
     "husky": "^8.0.3"

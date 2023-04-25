@@ -46,20 +46,27 @@ function myMatch(){
 // options depending upon player team status (start)--------------------------
 let unique_id = phonenumber;
 
-let user_detail = JSON.parse(localStorage.getItem('user_detail'))
+// let user_detail = JSON.parse(localStorage.getItem('user_detail'))
+
+    // here i get data from mockapi start
+let endpoint = "users/";
+
+let user_api_id = JSON.parse(localStorage.getItem("user_id"));
+
+axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`)
+.then ( res => {
+    
+ let person_data = res['data']
+
+ homepageCondition(person_data)
+
+})
 
 
-function findPlayer(e) {
-  return e.phoneNumber == unique_id ;
-}
-
-person_data = user_detail.find(findPlayer);
+        // here i get data from mockapi end
 
 
-function createMatchBtn(){
-    window.location.href = `/pages/teamplayer captain/creatematch.html?unique_id=${phonenumber}&my_name=${person_data["userName"]}&opponent_url=0&opponent_name=0&captain=0&type=0&opponent_id=0`;  
-}
-
+function homepageCondition(person_data){
 
 if(person_data["captainStatus"] != 2){
     let all = document.querySelectorAll(".not_in_team")
@@ -136,10 +143,17 @@ range_input.style.width = `${range_value}%`;
 
 document.querySelector(".range-label").innerHTML = Math.round(range_value) + "%";
 
-// sidebar js work end ---------------------------------------------------
-function previousPage(){
-	window.history.go(-1)
+
+function createMatchBtn(){
+    window.location.href = `/pages/teamplayer captain/creatematch.html?unique_id=${phonenumber}&my_name=${person_data["userName"]}&opponent_url=0&opponent_name=0&captain=0&type=0&opponent_id=0`;  
 }
+}
+// sidebar js work end ---------------------------------------------------
+
 
 document.querySelector(".playerdetailsdiv").addEventListener("click", profilepage)
 document.querySelector(".playerimagediv").addEventListener("click", profilepage)
+
+function previousPage(){
+	window.history.go(-1)
+}

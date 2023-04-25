@@ -1,0 +1,467 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "game": "Cricket"
+    },
+    {
+      "id": 2,
+      "game": "Football"
+    },
+    {
+      "id": 3,
+      "game": "Kabadi"
+    },
+    {
+      "id": 4,
+      "game": "Basketball"
+    },
+    {
+      "id": 5,
+      "game": "Volleyball"
+    }
+  ],
+  "area_list": [
+    {
+      "id": 1,
+      "area": "aminjikarai",
+      "distric": "chennai"
+    }
+  ],
+  "users": [
+    {
+      "phoneNumber": "9344655211",
+      "userName": "Dhoni",
+      "password": "Aa!1aaaa",
+      "dateOFBirth": "2001-02-08",
+      "gender": "Male",
+      "game": 1,
+      "areaUniqueId": 1,
+      "createDate": "2023-03-08T13:07:49.971Z",
+      "firstName": "MahendraSingh",
+      "lastName": "dhoni",
+      "about": "Ennam pol valkkai",
+      "imageUrl": "data:image/jpeg;base64,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",
+      "captainStatus": 1,
+      "id": 1
+    },
+    {
+      "phoneNumber": "9344655212",
+      "userName": "Raina",
+      "password": "Aa!1aaaa",
+      "dateOFBirth": "2001-06-08",
+      "gender": "Male",
+      "game": 1,
+      "areaUniqueId": 1,
+      "createDate": "2023-03-08T13:11:43.346Z",
+      "firstName": "",
+      "lastName": "",
+      "about": "",
+      "imageUrl": "https://iili.io/HWhKUrB.webp",
+      "captainStatus": 1,
+      "id": 2
+    },
+    {
+      "phoneNumber": "9344655200",
+      "userName": "Alagu",
+      "password": "Aa!1aaaa",
+      "confirmPassword": "Aa!1aaaa",
+      "dateOFBirth": "2023-04-01",
+      "gender": "Male",
+      "game": 1,
+      "areaUniqueId": 1,
+      "createDate": "2023-04-24T14:02:22.089Z",
+      "firstName": "",
+      "lastName": "",
+      "about": "",
+      "imageUrl": "https://iili.io/HWhKUrB.webp",
+      "captainStatus": 2,
+      "id": 3
+    },
+    {
+      "phoneNumber": "9344655201",
+      "userName": "asdfghj",
+      "password": "Aa!1aaaa",
+      "confirmPassword": "Aa!1aaaa",
+      "dateOFBirth": "2023-04-14",
+      "gender": "Male",
+      "game": "1",
+      "areaUniqueId": 1,
+      "createDate": "2023-04-24T17:17:54.750Z",
+      "firstName": "",
+      "lastName": "",
+      "about": "",
+      "imageUrl": "https://iili.io/HWhKUrB.webp",
+      "captainStatus": 2,
+      "id": 4
+    }
+  ],
+  "match_list": [
+    {
+      "matchUniqueId": "238efc2a-7893-407d-912a-930a5a435772",
+      "opponentArea": {
+        "area": "",
+        "distric": ""
+      },
+      "friendType": "1",
+      "typeOfMatch": "Betting match",
+      "time": "2023-04-05T10:33",
+      "members": "19",
+      "membersAge": {
+        "from": "19",
+        "to": "22"
+      },
+      "location": "cresent ground",
+      "information": "Rubber ball match",
+      "createdTime": "2023-04-06T03:03:53.374Z",
+      "activeStatus": false
+    },
+    {
+      "matchUniqueId": "9f113eb0-23dc-429c-841c-7c344c4e6d25",
+      "opponentArea": {
+        "area": "",
+        "distric": ""
+      },
+      "friendType": "1",
+      "typeOfMatch": "Betting match",
+      "time": "2023-04-05T08:50",
+      "members": "11",
+      "membersAge": {
+        "from": "19",
+        "to": "22"
+      },
+      "location": "Metha nagar ",
+      "information": "Rubber ball match",
+      "createdTime": "2023-04-06T03:10:24.777Z",
+      "activeStatus": false
+    },
+    {
+      "matchUniqueId": "bc4e2064-9715-4542-86e8-d70ba11a9201",
+      "opponentArea": {
+        "area": "",
+        "distric": ""
+      },
+      "friendType": "1",
+      "typeOfMatch": "Betting match",
+      "time": "2023-04-06T16:30",
+      "members": "11",
+      "membersAge": {
+        "from": "20",
+        "to": "22"
+      },
+      "location": "Cresent Ground ",
+      "information": "Rubber ball match",
+      "createdTime": "2023-04-06T13:03:33.247Z",
+      "activeStatus": false
+    },
+    {
+      "matchUniqueId": "6cfc28f8-42f9-44eb-9dfc-8b2b8ce9baf1",
+      "opponentArea": {
+        "area": "aminjikarai",
+        "distric": "chennai"
+      },
+      "friendType": "2",
+      "typeOfMatch": "Betting match",
+      "time": "2023-04-10T16:51",
+      "members": "11",
+      "membersAge": {
+        "from": "19",
+        "to": "22"
+      },
+      "location": "cresent ground",
+      "information": "rubber ball match",
+      "createdTime": "2023-04-10T12:21:57.620Z",
+      "activeStatus": false
+    },
+    {
+      "matchUniqueId": "735690f9-9a37-4648-9ac8-64b7db5582ba",
+      "opponentArea": {
+        "area": "",
+        "distric": ""
+      },
+      "friendType": "1",
+      "typeOfMatch": "Betting match",
+      "time": "2023-04-18T17:15",
+      "members": "11",
+      "membersAge": {
+        "from": "11",
+        "to": "22"
+      },
+      "location": "asdfg",
+      "information": "sdf",
+      "createdTime": "2023-04-18T11:45:08.028Z",
+      "activeStatus": false
+    },
+    {
+      "matchUniqueId": "b15c1f00-d0e8-404f-b2c8-d21812ada865",
+      "opponentArea": {
+        "area": "",
+        "distric": ""
+      },
+      "friendType": "1",
+      "typeOfMatch": "Betting match",
+      "time": "2023-04-21T15:40",
+      "members": "12",
+      "membersAge": {
+        "from": "19",
+        "to": "22"
+      },
+      "location": "ground",
+      "information": "summa",
+      "createdTime": "2023-04-20T10:11:09.300Z",
+      "activeStatus": false
+    }
+  ],
+  "response_list": [
+    {
+      "responseUniqueId": "32d48754-d9db-4567-ada7-3c48bae8c110",
+      "playerUniqueId": "9344655219",
+      "teamUniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
+      "createdTime": "2023-03-17T09:43:47.542Z",
+      "requestStatus": 1
+    },
+    {
+      "responseUniqueId": "3b00527e-1f13-45b7-9abc-3e7e77d7b851",
+      "playerUniqueId": "9344655222",
+      "teamUniqueId": "ea73eb8e-ff5a-46e4-9e9d-646de4567734",
+      "createdTime": "2023-03-20T11:05:15.997Z",
+      "requestStatus": 0
+    },
+    {
+      "responseUniqueId": "22e2ae6a-7413-40d8-9c20-cf9f4a0c8ccd",
+      "playerUniqueId": "9344655222",
+      "teamUniqueId": "ea73eb8e-ff5a-46e4-9e9d-646de4567734",
+      "createdTime": "2023-03-20T11:05:57.057Z",
+      "requestStatus": 1
+    },
+    {
+      "responseUniqueId": "2af1205e-ce4b-4d5f-afa4-4155c8c054f8",
+      "playerUniqueId": "9344655232",
+      "teamUniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
+      "createdTime": "2023-03-21T12:04:09.216Z",
+      "requestStatus": 1
+    },
+    {
+      "responseUniqueId": "ba5ad8d0-8e4e-43a4-9b8b-ca8039680644",
+      "playerUniqueId": "9344655232",
+      "teamUniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
+      "createdTime": "2023-03-21T12:05:30.892Z",
+      "requestStatus": 1
+    },
+    {
+      "responseUniqueId": "2f1ff16a-1359-4a9c-867b-195667a87e48",
+      "playerUniqueId": "9344655250",
+      "teamUniqueId": "f7b05118-3c2f-4929-9f20-9cdf953c76f0",
+      "createdTime": "2023-03-27T17:33:15.641Z",
+      "requestStatus": 2
+    },
+    {
+      "responseUniqueId": "1a998f26-969c-4b41-a91b-bc854359c0d3",
+      "playerUniqueId": "9344612345",
+      "teamUniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
+      "createdTime": "2023-04-12T16:24:08.875Z",
+      "requestStatus": 1
+    }
+  ],
+  "team_details_list": [
+    {
+      "teamImageUrl": "https://iili.io/HNNQShx.jpg",
+      "teamName": "Chennai Super Kings",
+      "address": {
+        "area": "aminjikarai",
+        "distric": "chennai"
+      },
+      "dateOfJoin": "2023-03-08T13:09:13.829Z",
+      "uniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
+      "about": "Hi team",
+      "openForPlayers": {
+        "status": true,
+        "description": "we need some good bolwers"
+      },
+      "teamMembers": [
+        "9344655211",
+        "9344655219",
+        "9344612345"
+      ]
+    },
+    {
+      "teamImageUrl": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+      "teamName": "Indians",
+      "address": {
+        "area": "aminjikarai",
+        "distric": "chennai"
+      },
+      "dateOfJoin": "2023-03-08T13:13:33.890Z",
+      "uniqueId": "ea73eb8e-ff5a-46e4-9e9d-646de4567734",
+      "about": "hi",
+      "openForPlayers": {
+        "status": true,
+        "description": "hi"
+      },
+      "teamMembers": [
+        "9344655212"
+      ]
+    },
+    {
+      "teamImageUrl": "https://iili.io/HWEqLtp.webp",
+      "teamName": "attackers",
+      "address": {
+        "area": "annanagar",
+        "distric": "chennai"
+      },
+      "dateOfJoin": "2023-03-08T15:10:01.050Z",
+      "uniqueId": "f7b05118-3c2f-4929-9f20-9cdf953c76f0",
+      "about": "hi",
+      "openForPlayers": {
+        "status": true,
+        "description": "Summa oru team"
+      },
+      "teamMembers": [
+        "9344655213"
+      ]
+    },
+    {
+      "teamImageUrl": "https://iili.io/HWEqLtp.webp",
+      "teamName": "Deleted team",
+      "address": {
+        "area": "aminjikarai",
+        "distric": "chennai"
+      },
+      "dateOfJoin": "2023-03-16T10:35:41.382Z",
+      "uniqueId": "0f4bda79-480c-4f5d-866e-0e9b895fb4d1",
+      "about": "summa",
+      "openForPlayers": {
+        "status": false,
+        "description": "all rounders"
+      },
+      "teamMembers": []
+    },
+    {
+      "teamImageUrl": "https://iili.io/HWEqLtp.webp",
+      "teamName": "Rajasthan royals",
+      "address": {
+        "area": "aminjikarai",
+        "distric": "chennai"
+      },
+      "dateOfJoin": "2023-03-16T10:36:06.606Z",
+      "uniqueId": "12b8e249-116b-429b-b899-156cb6431bad",
+      "about": "rahane",
+      "openForPlayers": {
+        "status": true,
+        "description": "summa"
+      },
+      "teamMembers": [
+        "9344655216"
+      ]
+    },
+    {
+      "teamImageUrl": "https://iili.io/HWEqLtp.webp",
+      "teamName": "Maharastras",
+      "address": {
+        "area": "annanagar",
+        "distric": "chennai"
+      },
+      "dateOfJoin": "2023-03-27T18:09:13.140Z",
+      "uniqueId": "ee19130c-11b3-44f6-88e1-a1bf3a759391",
+      "about": "Ganguly fans",
+      "openForPlayers": {
+        "status": true,
+        "description": "We need some players"
+      },
+      "teamMembers": [
+        "9344655250"
+      ]
+    }
+  ],
+  "score_card": [
+    {
+      "score_card_id": "2bf3bc9d-c1d5-4893-887c-56ec560140a1",
+      "matchUniqueId": "238efc2a-7893-407d-912a-930a5a435772",
+      "teamUniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
+      "score": {
+        "win": "1",
+        "draw": "0",
+        "loss": "2"
+      },
+      "mvps": [
+        "9344655219"
+      ]
+    },
+    {
+      "score_card_id": "c12a835d-9ae9-4616-8532-996381bff01e",
+      "matchUniqueId": "238efc2a-7893-407d-912a-930a5a435772",
+      "teamUniqueId": "ea73eb8e-ff5a-46e4-9e9d-646de4567734",
+      "score": {
+        "win": "2",
+        "draw": "0",
+        "loss": "1"
+      },
+      "mvps": [
+        "9344655212"
+      ]
+    },
+    {
+      "score_card_id": "81ab8197-4078-4ec0-ba57-a530ea056864",
+      "matchUniqueId": "9f113eb0-23dc-429c-841c-7c344c4e6d25",
+      "teamUniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
+      "score": {
+        "win": "1",
+        "draw": "0",
+        "loss": "1"
+      },
+      "mvps": [
+        "9344655211"
+      ]
+    },
+    {
+      "score_card_id": "e9d3a798-e0c6-465a-9cdf-5760bc7f9dd6",
+      "matchUniqueId": "9f113eb0-23dc-429c-841c-7c344c4e6d25",
+      "teamUniqueId": "f7b05118-3c2f-4929-9f20-9cdf953c76f0",
+      "score": {
+        "win": "1",
+        "draw": "0",
+        "loss": "1"
+      },
+      "mvps": [
+        "9344655213"
+      ]
+    },
+    {
+      "score_card_id": "b188c942-86c1-42fd-aa47-9cf91e5cffd6",
+      "matchUniqueId": "6cfc28f8-42f9-44eb-9dfc-8b2b8ce9baf1",
+      "teamUniqueId": "ea73eb8e-ff5a-46e4-9e9d-646de4567734",
+      "score": {
+        "win": "1",
+        "draw": "0",
+        "loss": "2"
+      },
+      "mvps": [
+        "9344655212"
+      ]
+    },
+    {
+      "score_card_id": "6f2b236e-8dcf-453f-b735-ee1b1e529f75",
+      "matchUniqueId": "6cfc28f8-42f9-44eb-9dfc-8b2b8ce9baf1",
+      "teamUniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
+      "score": {
+        "win": "2",
+        "draw": "0",
+        "loss": "1"
+      },
+      "mvps": [
+        "9344655219"
+      ]
+    },
+    {
+      "score_card_id": "45944988-5256-4608-8b66-df925a997c92",
+      "matchUniqueId": "735690f9-9a37-4648-9ac8-64b7db5582ba",
+      "teamUniqueId": "ea73eb8e-ff5a-46e4-9e9d-646de4567734",
+      "score": {
+        "win": "0",
+        "draw": "0",
+        "loss": "0"
+      },
+      "mvps": []
+    }
+  ]
+}

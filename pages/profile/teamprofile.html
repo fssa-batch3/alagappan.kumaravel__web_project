@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="../../assets/css/profileview.css">
 	<link rel="stylesheet" href="../../assets/css/update_score.css">
+	<link rel="stylesheet" href="../../assets/css/roundslider.css">
+
 </head>
 
 <body>
@@ -47,6 +49,7 @@
 		<!-- main start -->
 		<main>
 			<div class="headerbottom">
+				<button type="button" onclick="stats()">STATS</button>
 
 				<button  type="button" onclick="member()">MEMBER</button>
 
@@ -55,6 +58,31 @@
 				<button type="button" onclick="profile()">PROFILE</button>
 			<div class="button_underline"></div>
 		</div>
+
+		<section class="four">
+			<!-- <div class="playermatch">
+				Player not played match.
+			</div> -->
+			<h2>Team stats</h2>
+			<div class="stats_container">
+				<div class="stats_left">
+					<h3>No of matches played</h3>
+					<p>20</p>
+					<h3>Won</h3>
+					<p>15</p>
+					<h3>Draw</h3>
+					<p>1</p>
+					<h3>Loss</h3>
+					<p>4</p>
+				</div>
+				<div class="stats_right">
+					<p>Win Rating</p>
+					<input type="range" class="c-rng" min="0" max="5" step="0.1" value="1.3" data-range="circular" />
+				</div>
+			</div>
+	
+		</section>
+
 		<section class="first">
 			<div class="playermatch">
 			</div>
@@ -239,6 +267,7 @@
 	<script src="../../lib/moment/moment.min.js">
 
 	</script>
+<script src="../../assets/js/roundslider.js"></script>
 
 <script>
 
@@ -390,47 +419,75 @@ function exit(){
 		window.location.href = `../homepage/hpexist.html?unique_id=${phonenumber}`
 	}
 }
+function profile(){
+let toggle_button = document.querySelector(".button_underline");
+toggle_button.style.left = "75%";
 
-function member(){
-    let toggle_button = document.querySelector(".button_underline");
-	toggle_button.style.left = "0%";
-    console.log("hi")
+let content_1 = document.querySelector("section.first")
+content_1.style.display = "none";
 
-	let content_1 = document.querySelector("section.first")
-	content_1.style.display = "block";
+let content_2 = document.querySelector("section.second")
+content_2.style.display = "none";
 
-	let content_2 = document.querySelector("section.second")
-	content_2.style.display = "none";
+let content_3 = document.querySelector("section.three")
+content_3.style.display = "block";
 
-	let content_3 = document.querySelector("section.three")
-	content_3.style.display = "none";
+let content_4 = document.querySelector("section.four")
+content_4.style.display = "none";
+
 }
 function match(){
-    let toggle_button = document.querySelector(".button_underline");
-	toggle_button.style.left = "33.3%";
-	
-	let content_1 = document.querySelector("section.first")
-	content_1.style.display = "none";
+let toggle_button = document.querySelector(".button_underline");
+toggle_button.style.left = "50%";
 
-	let content_2 = document.querySelector("section.second")
-	content_2.style.display = "block";
+let content_1 = document.querySelector("section.first")
+content_1.style.display = "none";
 
-	let content_3 = document.querySelector("section.three")
-	content_3.style.display = "none";
+let content_2 = document.querySelector("section.second")
+content_2.style.display = "block";
+
+let content_3 = document.querySelector("section.three")
+content_3.style.display = "none";
+
+let content_4 = document.querySelector("section.four")
+content_4.style.display = "none";
 }
-function profile(){
-    let toggle_button = document.querySelector(".button_underline");
-	toggle_button.style.left = "66.6%";
-	
-	let content_1 = document.querySelector("section.first")
-	content_1.style.display = "none";
+function member(){
+let toggle_button = document.querySelector(".button_underline");
+toggle_button.style.left = "25%";
 
-	let content_2 = document.querySelector("section.second")
-	content_2.style.display = "none";
+let content_1 = document.querySelector("section.first")
+content_1.style.display = "block";
 
-	let content_3 = document.querySelector("section.three")
-	content_3.style.display = "block";
+let content_2 = document.querySelector("section.second")
+content_2.style.display = "none";
+
+let content_3 = document.querySelector("section.three")
+content_3.style.display = "none";
+
+let content_4 = document.querySelector("section.four")
+content_4.style.display = "none";
+
 }
+
+function stats(){
+let toggle_button = document.querySelector(".button_underline");
+toggle_button.style.left = "0%";
+
+let content_1 = document.querySelector("section.first")
+content_1.style.display = "none";
+
+let content_2 = document.querySelector("section.second")
+content_2.style.display = "none";
+
+let content_3 = document.querySelector("section.three")
+content_3.style.display = "none";
+
+let content_4 = document.querySelector("section.four")
+content_4.style.display = "block";
+
+}
+
 
 
 function teamEdit(){

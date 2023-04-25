@@ -32,10 +32,10 @@
 
 		
 					<label>Firstname</label>
-					<input id="user_first_name" type="text" placeholder="Username" title="Use alphabet character only" type="text" pattern="[A-Za-z]{0,15}" > 
+					<input id="user_first_name" type="text" title="Use alphabet character only" type="text" pattern="[A-Za-z]{0,15}" > 
 
 					<label>Lastname </label>
-					<input id="user_last_name" type="text" title="Use alphabet character only" pattern="[A-Za-z]{0,15}"  >
+					<input id="user_last_name" type="text"  title="Use alphabet character only" pattern="[A-Za-z]{0,15}"  >
 					
 					<label>Username </label><p class="wrong_password"></p>
 					<input id="user_username" type="text" title="Use firstletter between (A-Z) and min 15 character" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,15}$" required>
@@ -79,6 +79,7 @@
 </form>
 </main>
 <!-- main end -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <script src="../../assets/js/login.js">
 
@@ -90,14 +91,20 @@ const urlParams = new URLSearchParams(queryString);
 
 const unique_id = urlParams.get('unique_id');
 
-let user_detail = JSON.parse(localStorage.getItem('user_detail'))
+// let user_detail = JSON.parse(localStorage.getItem('user_detail'))
+let endpoint = "users/";
 
+let user_api_id = JSON.parse(localStorage.getItem("user_id"));
 
-function findPlayer(a) {
-return a.phoneNumber == unique_id ;
-}
+axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`)
+.then ( res => {
+    
+ let person_data = res['data']
 
-person_data = user_detail.find(findPlayer);
+ showInEdit(person_data)
+
+})
+function showInEdit(person_data) {
 
 document.getElementById("user_username").value = person_data["userName"];
 document.getElementById("user_first_name").value = person_data["firstName"];
@@ -118,6 +125,7 @@ let DOB_edit = document.querySelector("#user_date_of_birth")
 let max_value_1 = yyyy + '-' + mm + '-' + dd;
 DOB_edit.setAttribute("max", max_value_1)
 
+}
 
 </script>
 
