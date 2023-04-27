@@ -4,6 +4,7 @@
   "description": "[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=fssa-batch3_alagappan.kumaravel__web_project&metric=bugs)](https://sonarcloud.io/summary/new_code?id=fssa-batch3_alagappan.kumaravel__web_project)",
   "main": "main.js",
   "scripts": {
+    "lint": "eslint .",
     "dev": "http-server ./"
   },
   "repository": {
@@ -19,6 +20,8 @@
   "dependencies": {
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
+    "eslint": "^8.39.0",
+    "eslint-config-airbnb": "^19.0.4",
     "http-server": "^14.1.1"
   },
   "devDependencies": {
