@@ -1,5 +1,18 @@
 let origin = window.location.origin
 
+async function findnumber(value){
+    axios.get(`http://localhost:3000/users`, 
+    {params : {
+        phoneNumber : phonenumber
+      }})
+      .then ( res => {
+        let matchPhonenum = true
+        if ((res.data).length != 0) {
+        matchPhonenum = false
+        }
+       })
+}
+
 function signUp_1(e) {
     e.preventDefault();
     // here i collect value from signUp form 
@@ -9,39 +22,27 @@ function signUp_1(e) {
         confrim_password = document.getElementById("confirm_password").value;
 
 
-    // here i give var name for local storage data (initially there is no data so we mentioned or (||) symbol to get empty array)
-    // let user_detail = JSON.parse(localStorage.getItem('user_detail')) || [];
 
-    // here we give some condition for signup to restict same unique id 
-
-    axios.get(`http://localhost:3000/users`, 
-    {params : {
-        phoneNumber : phonenumber
-      }})
-      .then ( res => {
-       console.log (res.data)
-
-        if ((res.data).length != 0) {
-            a = document.querySelector(".wrong_password").innerHTML = "This number already have account.  ";
-            return a;
-        }
-        let wrong_password = password != confrim_password;
-
-    if (wrong_password) {
-        a = document.querySelector(".wrong_password").innerHTML = "Password not match.  "
+       if (matchPhonenum) {
+        a = document.querySelector(".wrong_password").innerHTML = "This number already have account.  ";
         return a;
     }
-    else {
-        user_detail_single = { "phoneNumber": phonenumber, "userName": username, "password": password, "confirmPassword": confrim_password }
 
-        localStorage.setItem('user_data', JSON.stringify(user_detail_single))
+       let wrong_password = password != confrim_password;
 
-        document.querySelector('form').reset();
-
-        location.href = `${origin}/pages/login&signup/signup2.html?unique_id=${phonenumber}`;
-    }
-
-       })
+       if (wrong_password) {
+           a = document.querySelector(".wrong_password").innerHTML = "Password not match.  "
+           return a;
+       }
+       else {
+           user_detail_single = { "phoneNumber": phonenumber, "userName": username, "password": password, "confirmPassword": confrim_password }
+   
+           localStorage.setItem('user_data', JSON.stringify(user_detail_single))
+   
+           document.querySelector('form').reset();
+   
+           location.href = `${origin}/pages/login&signup/signup2.html?unique_id=${phonenumber}`;
+       }
 
     // let same_number = user_detail.some(data =>
     //     data.phoneNumber == phonenumber);
