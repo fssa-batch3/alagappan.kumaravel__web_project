@@ -2,7 +2,7 @@ const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
 
-const phonenumber = urlParams.get('unique_id');
+const phonenumber = urlParams.get("unique_id");
 
 const { origin } = window.location;
 
@@ -46,7 +46,7 @@ function myMatch() {
 // options depending upon player team status (start)--------------------------
 const unique_id = phonenumber;
 
-const user_detail = JSON.parse(localStorage.getItem('user_detail'));
+const user_detail = JSON.parse(localStorage.getItem("user_detail"));
 
 function findPlayer(e) {
   return e.phoneNumber == unique_id;
@@ -59,40 +59,43 @@ function createMatchBtn() {
 }
 
 if (person_data.captainStatus != 2) {
-  const all = document.querySelectorAll('.not_in_team');
+  const all = document.querySelectorAll(".not_in_team");
 
-  all.forEach((e) => e.style.display = 'none');
+  all.forEach((e) => (e.style.display = "none"));
 
   if (person_data.captainStatus != 1) {
-    const all = document.querySelectorAll('.captain');
+    const all = document.querySelectorAll(".captain");
 
-    all.forEach((e) => e.style.display = 'none');
+    all.forEach((e) => (e.style.display = "none"));
   }
 }
 
 if (person_data.captainStatus == 2) {
-  const all = document.querySelectorAll('.in_team');
+  const all = document.querySelectorAll(".in_team");
 
-  all.forEach((e) => e.style.display = 'none');
+  all.forEach((e) => (e.style.display = "none"));
   if (person_data.captainStatus != 1) {
-    const all = document.querySelectorAll('.captain');
+    const all = document.querySelectorAll(".captain");
 
-    all.forEach((e) => e.style.display = 'none');
+    all.forEach((e) => (e.style.display = "none"));
   }
 }
 
 // options depending upon player team status (end)--------------------------
 
 // sidebar js work start ---------------------------------------------------
-document.querySelector('#player_name').innerText = person_data.userName;
-document.querySelector('#player_number').innerText = person_data.phoneNumber;
+document.querySelector("#player_name").innerText = person_data.userName;
+document.querySelector("#player_number").innerText = person_data.phoneNumber;
 
 const player_image_url = person_data.imageUrl;
-const player_image = document.querySelector('.player_image');
-if (player_image_url == '') {
-  player_image.setAttribute('src', '../../assets/images/defalt_player_image.webp');
+const player_image = document.querySelector(".player_image");
+if (player_image_url == "") {
+  player_image.setAttribute(
+    "src",
+    "../../assets/images/defalt_player_image.webp"
+  );
 } else {
-  player_image.setAttribute('src', player_image_url);
+  player_image.setAttribute("src", player_image_url);
 }
 // for range value start
 const username = person_data.userName;
@@ -107,11 +110,22 @@ const { about } = person_data;
 const image = person_data.imageUrl;
 
 const person_data_range = {
-  username, firstname, lastname, dateofbirth, gender, game, area, distric, about, image,
+  username,
+  firstname,
+  lastname,
+  dateofbirth,
+  gender,
+  game,
+  area,
+  distric,
+  about,
+  image,
 };
 
-const emptyValues = new Set(['', null, undefined]);
-const null_count = Object.values(person_data_range).filter((x) => emptyValues.has(x)).length;
+const emptyValues = new Set(["", null, undefined]);
+const null_count = Object.values(person_data_range).filter((x) =>
+  emptyValues.has(x)
+).length;
 let key_count = 0;
 
 // loop through each key/value
@@ -121,17 +135,23 @@ for (const key in person_data_range) {
 }
 // range calculation
 
-const range_value = 100 - ((null_count / key_count) * 100);
+const range_value = 100 - (null_count / key_count) * 100;
 
-const range_input = document.querySelector('.range_cover');
+const range_input = document.querySelector(".range_cover");
 range_input.style.width = `${range_value}%`;
 
-document.querySelector('.range-label').innerHTML = `${Math.round(range_value)}%`;
+document.querySelector(".range-label").innerHTML = `${Math.round(
+  range_value
+)}%`;
 
 // sidebar js work end ---------------------------------------------------
 function previousPage() {
   window.history.go(-1);
 }
 
-document.querySelector('.playerdetailsdiv').addEventListener('click', profilepage);
-document.querySelector('.playerimagediv').addEventListener('click', profilepage);
+document
+  .querySelector(".playerdetailsdiv")
+  .addEventListener("click", profilepage);
+document
+  .querySelector(".playerimagediv")
+  .addEventListener("click", profilepage);

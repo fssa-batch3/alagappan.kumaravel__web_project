@@ -1,126 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Profile edit</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="../../assets/css/profileedit.css">
-	<link rel="stylesheet" href="../../assets/css/commonheader.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile edit</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="../../assets/css/profileedit.css">
+        <link rel="stylesheet" href="../../assets/css/commonheader.css">
+    </head>
 
-<body>
-<!-- header start -->
-<header>
-	<a onclick="previousPage()"><i class="fa-solid fa-arrow-left"></i></a>
-	 <h1>Edit Profile</h1>
-</header>
-<!-- header end -->
-<!-- main start -->
-<main>
-	<div class="changephoto">
-		<input class="team_image_show" id="team_image_show" type="image" alt=""> 
-	<label>Change Photo</label>
+    <body>
+        <!-- header start -->
+        <header>
+            <a onclick="previousPage()">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <h1>Edit Profile</h1>
+        </header>
+        <!-- header end -->
+        <!-- main start -->
+        <main>
+            <div class="changephoto">
+                <input class="team_image_show" id="team_image_show" type="image" alt=""> 
+                <label>Change Photo</label>
 	
-	</div>
-	<form onsubmit="update(event);">
-					<label>Image</label>
-					<input id="user_image" type="url" onfocusout="myFunction()"> 
-
+            </div>
+            <form onsubmit="update(event);">
+                <label>Image</label>
+                <input id="user_image" type="url" onfocusout="myFunction()"> 
 		
-					<label>Firstname</label>
-					<input id="user_first_name" type="text" placeholder="Username" title="Use alphabet character only" type="text" pattern="[A-Za-z]{0,15}" > 
+                <label>Firstname</label>
+                <input id="user_first_name" type="text" placeholder="Username" title="Use alphabet character only" type="text" pattern="[A-Za-z]{0,15}"> 
 
-					<label>Lastname </label>
-					<input id="user_last_name" type="text" title="Use alphabet character only" pattern="[A-Za-z]{0,15}"  >
+                <label>Lastname </label>
+                <input id="user_last_name" type="text" title="Use alphabet character only" pattern="[A-Za-z]{0,15}">
 					
-					<label>Username </label><p class="wrong_password"></p>
-					<input id="user_username" type="text" title="Use firstletter between (A-Z) and min 15 character" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,15}$" required>
+                <label>Username </label>
+                <p class="wrong_password"></p>
+                <input id="user_username" type="text" title="Use firstletter between (A-Z) and min 15 character" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,15}$" required>
 
-					 <label>DOB </label>
-					<input id="user_date_of_birth" type="date" required > 
+                <label>DOB </label>
+                <input id="user_date_of_birth" type="date" required> 
 				   
+                <label>Gender</label> 
+                <select id="user_gender" required>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Prefer not to say</option>
+                </select>
 				   
-					<label>Gender</label> 
-					<select id="user_gender" required >
-						<option>Male</option>
-						<option>Female</option>
-						<option>Prefer not to say</option>
-						</select>
-					 
+                <label>Game</label> 
+                <select id="user_game" required>
+                    <option>Cricket</option>
+                    <option>Football</option>
+                    <option>Kabadi</option>
+                    <option>Tennis</option>
+                    <option>Badmitton</option>
+                    <option>Basketball</option>
+                    <option>Volleyball</option>
+                </select> 
 				   
-				   
-					<label>Game</label> 
-					<select id="user_game" required>
-						<option>Cricket</option>
-						<option>Football</option>
-						<option>Kabadi</option>
-						<option>Tennis</option>
-						<option>Badmitton</option>
-						<option>Basketball</option>
-						<option>Volleyball</option>
-				</select> 
-				   
-					<label>Area</label> 
-					<input id="user_area" type="text" placeholder="Eg:Annanagar" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" required > 
+                <label>Area</label> 
+                <input id="user_area" type="text" placeholder="Eg:Annanagar" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" required> 
 
-					<label>Distric</label> 
-					<input id="user_distric" type="text" placeholder="Eg:chennai" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" required>
+                <label>Distric</label> 
+                <input id="user_distric" type="text" placeholder="Eg:chennai" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" required>
 
-					<label>About</label>
-					<textarea id="user_about"></textarea>
+                <label>About</label>
+                <textarea id="user_about"></textarea>
 		 
-	<div class="updatediv">
-		<button type="submit" >UPDATE</button>
-	</div>
-</form>
-</main>
-<!-- main end -->
+                <div class="updatediv">
+                    <button type="submit">UPDATE</button>
+                </div>
+            </form>
+        </main>
+        <!-- main end -->
 
-<script src="../../assets/js/login.js">
+        <script src="../../assets/js/login.js">
 
 </script>
-<script>
+        <script>
 const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
 
-const unique_id = urlParams.get('unique_id');
+const unique_id = urlParams.get("unique_id");
 
-let user_detail = JSON.parse(localStorage.getItem('user_detail'))
-
+const user_detail = JSON.parse(localStorage.getItem("user_detail"));
 
 function findPlayer(a) {
-return a.phoneNumber == unique_id ;
+  return a.phoneNumber == unique_id;
 }
 
 person_data = user_detail.find(findPlayer);
 
-document.getElementById("user_username").value = person_data["userName"];
-document.getElementById("user_first_name").value = person_data["firstName"];
-document.getElementById("user_last_name").value = person_data["lastName"];
-document.getElementById("user_date_of_birth").value = person_data["dateOFBirth"];
-document.getElementById("user_gender").value = person_data["gender"];
-document.getElementById("user_game").value = person_data["game"];
-document.getElementById("user_area").value = person_data["area"] ;
-document.getElementById("user_distric").value = person_data["distric"] ;
-document.getElementById("user_about").value = person_data["about"] ;
-document.getElementById("user_image").value = person_data["imageUrl"] ;
+document.getElementById("user_username").value = person_data.userName;
+document.getElementById("user_first_name").value = person_data.firstName;
+document.getElementById("user_last_name").value = person_data.lastName;
+document.getElementById("user_date_of_birth").value = person_data.dateOFBirth;
+document.getElementById("user_gender").value = person_data.gender;
+document.getElementById("user_game").value = person_data.game;
+document.getElementById("user_area").value = person_data.area;
+document.getElementById("user_distric").value = person_data.distric;
+document.getElementById("user_about").value = person_data.about;
+document.getElementById("user_image").value = person_data.imageUrl;
 
-let image_element = document.getElementById("team_image_show");
-    image_element.setAttribute("src", person_data["imageUrl"])
+const image_element = document.getElementById("team_image_show");
+image_element.setAttribute("src", person_data.imageUrl);
 
-let DOB_edit = document.querySelector("#user_date_of_birth")
+const DOB_edit = document.querySelector("#user_date_of_birth");
 
-let max_value_1 = yyyy + '-' + mm + '-' + dd;
-DOB_edit.setAttribute("max", max_value_1)
-
-
+const max_value_1 = `${yyyy}-${mm}-${dd}`;
+DOB_edit.setAttribute("max", max_value_1);
 </script>
 
-
-</body>
+    </body>
 </html>

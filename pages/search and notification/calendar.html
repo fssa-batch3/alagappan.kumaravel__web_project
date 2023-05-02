@@ -1,350 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Home page for newmember</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="../../assets/css/overall.css">
-	<link rel="stylesheet" href="../../assets/css/update_score.css">
-	<link rel="stylesheet" href="../../assets/css/commonheader.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home page for newmember</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="../../assets/css/overall.css">
+        <link rel="stylesheet" href="../../assets/css/update_score.css">
+        <link rel="stylesheet" href="../../assets/css/commonheader.css">
+    </head>
 
-<body>
-<!-- header start -->
-<header class="calender-header">
-	<a onclick="previousPage()"><i class="fa-solid fa-arrow-left"></i></a>
-	 <h1>My Matches</h1>
-</header>
-<!-- header end -->
-<!-- main start -->
-<div class="my_match_nav">
-	<a class="link1" onclick="upcoming()">Upcoming</a>
-	<a class="link2" onclick="live()">Live</a>
-	<a class="link3" onclick="completed()">Completed</a>
-</div>
+    <body>
+        <!-- header start -->
+        <header class="calender-header">
+            <a onclick="previousPage()">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <h1>My Matches</h1>
+        </header>
+        <!-- header end -->
+        <!-- main start -->
+        <div class="my_match_nav">
+            <a class="link1" onclick="upcoming()">Upcoming</a>
+            <a class="link2" onclick="live()">Live</a>
+            <a class="link3" onclick="completed()">Completed</a>
+        </div>
 
-<section class="calendar upcoming">
+        <section class="calendar upcoming">
 			
-</section>
-<section class="calendar live">
+        </section>
+        <section class="calendar live">
 
-	<div class="popup" id="popup">
+            <div class="popup" id="popup">
 
-		<div class="popup-team-content">
-			<div class="score_container">
-				<div class="top">
-					<div class="backgroundimage">
-					<div class="score_head">
-						<button type="button" onclick="ClosePopup()">
-							<i class="fa-solid fa-chevron-left"></i></button>
-						<h1>MATCH RESULT</h1>
-					</div>
-					<div class="team_score">
-						<div class="team_name">
-							<img class="my_team_image" src="" alt="my team image">
-							<p class="my_team_name"></p>
-						</div>
-						<div class="score_value">	
-							<h2>How many matches</h2>
-							<div class="score">
-								<div>
-									<input id="won_number" type="number" min="0" max="20" required>
-									<p class="subname">Won</p>
-								</div>
+                <div class="popup-team-content">
+                    <div class="score_container">
+                        <div class="top">
+                            <div class="backgroundimage">
+                                <div class="score_head">
+                                    <button type="button" onclick="ClosePopup()">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </button>
+                                    <h1>MATCH RESULT</h1>
+                                </div>
+                                <div class="team_score">
+                                    <div class="team_name">
+                                        <img class="my_team_image" src="" alt="my team image">
+                                        <p class="my_team_name"></p>
+                                    </div>
+                                    <div class="score_value">	
+                                        <h2>How many matches</h2>
+                                        <div class="score">
+                                            <div>
+                                                <input id="won_number" type="number" min="0" max="20" required>
+                                                <p class="subname">Won</p>
+                                            </div>
 							
-								<div>
-									<input id="draw_number" type="number" min="0" max="20" required>
-									<p class="subname">Draw</p>
-								</div>
+                                            <div>
+                                                <input id="draw_number" type="number" min="0" max="20" required>
+                                                <p class="subname">Draw</p>
+                                            </div>
 							
-								<div>
-									<input id="loss_number" type="number" min="0" max="20" required>
-									<p class="subname">Loss</p>
-								</div>
+                                            <div>
+                                                <input id="loss_number" type="number" min="0" max="20" required>
+                                                <p class="subname">Loss</p>
+                                            </div>
 								
-							</div>
-							<!-- <div>
+                                        </div>
+                                        <!-- <div>
 								
-								
-								
-								
-							</div> -->
-						</div>
-						<div class="team_name">
-							<img class="opp_team_image" src="" alt="opponent image">
-							<p class="opp_team_name"></p>
-						</div>
-					</div>
-				</div>
-				</div>
-				<div class="bottom">
-					<h2>Choose two<br><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>   Most Valuble Players   <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h2>
-					<p id="error_msg"></p>	
-					<div class="players_list">
-						
+                                            </div> -->
+                                    </div>
+                                    <div class="team_name">
+                                        <img class="opp_team_image" src="" alt="opponent image">
+                                        <p class="opp_team_name"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <h2>
+                                Choose two<br>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                Most Valuble Players   <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </h2>
+                            <p id="error_msg"></p>	
+                            <div class="players_list">
 							
-					</div>
-					<div class="invitation-update-scorecard">
-						<button onclick="updateScore()" class="update-scorecard" type="button">Update Score</button>
-						</div>
-				</div>
+                            </div>
+                            <div class="invitation-update-scorecard">
+                                <button onclick="updateScore()" class="update-scorecard" type="button">Update Score</button>
+                            </div>
+                        </div>
 				
-			</div>	
-		</div>
-	</div>
-</section>
-<section class="calendar completed">
+                    </div>	
+                </div>
+            </div>
+        </section>
+        <section class="calendar completed">
 
-	<!-- popup past result start -->
-	<div class="popup" id="popup_result">
-	<div class="popup-team-content">
-		<div class="score_container">
-			<div class="top">
-				<div class="backgroundimage">
-				<div class="score_head">
-					<button type="button" onclick="ClosePopupResult()">
-						<i class="fa-solid fa-chevron-left"></i></button>
-					<h1>MATCH RESULT</h1>
-				</div>
-				<div class="team_score">
-					<div class="team_name">
-						<img class="my_team_image" id="past_my_team_img" src="" alt="my team image">
-						<p class="my_team_name" id="past_my_team"></p>
-					</div>
-					<div class="score_value">	
-						<h2>Matches</h2>
-						<div class="score">
-								<div>
-									<p id="past_Won_score"></p>
-									<p class="subname">Won</p>
-								</div>
+            <!-- popup past result start -->
+            <div class="popup" id="popup_result">
+                <div class="popup-team-content">
+                    <div class="score_container">
+                        <div class="top">
+                            <div class="backgroundimage">
+                                <div class="score_head">
+                                    <button type="button" onclick="ClosePopupResult()">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </button>
+                                    <h1>MATCH RESULT</h1>
+                                </div>
+                                <div class="team_score">
+                                    <div class="team_name">
+                                        <img class="my_team_image" id="past_my_team_img" src="" alt="my team image">
+                                        <p class="my_team_name" id="past_my_team"></p>
+                                    </div>
+                                    <div class="score_value">	
+                                        <h2>Matches</h2>
+                                        <div class="score">
+                                            <div>
+                                                <p id="past_Won_score"></p>
+                                                <p class="subname">Won</p>
+                                            </div>
 							
-								<div>
-									<p id="past_draw_score"></p>
-									<p class="subname">Draw</p>
-								</div>
+                                            <div>
+                                                <p id="past_draw_score"></p>
+                                                <p class="subname">Draw</p>
+                                            </div>
 							
-								<div>
-									<p id="past_loss_score"></p>
-									<p class="subname">Loss</p>
-								</div>
+                                            <div>
+                                                <p id="past_loss_score"></p>
+                                                <p class="subname">Loss</p>
+                                            </div>
 								
-							</div>
-					</div>
-					<div class="team_name">
-						<img class="opp_team_image" id="past_opp_team_img" src="" alt="opponent image">
-						<p class="opp_team_name" id="past_opp_team"></p>
-					</div>
-				</div>
-			</div>
-			</div>
-			<div class="bottom">
-				<div class="result_nav">
-					<button class="mvpbtn" type="button" onclick="pastMvp()">MVPs</button>
-					<button class="playersbtn" type="button" onclick="pastPlayers()">Players</button>
-					<button class="detailsbtn" type="button" onclick="pastDetails()">Details</button>
-				</div>
-<!-- match details start -->
-<div class="past_match_details">
-	<h3>Details</h3>
-	<div class="details">
-		<div>
-			<i class="fa-regular fa-clock"></i>
-			<p id="past_match_time"></p>
-		</div>
-		<div>
-			<i class="fa-solid fa-shield-halved"></i>
-			<p id="past_match_type"></p>
-		</div>
-		<div>
-			<i class="fa-solid fa-location-dot"></i>
-			<p id="past_match_location"></p>
-		</div>
-		<div>
-			<i class="fa-solid fa-circle-info"></i>	
-			<p id="past_match_info"></p>
-		</div>
-	</div>
-</div>
+                                        </div>
+                                    </div>
+                                    <div class="team_name">
+                                        <img class="opp_team_image" id="past_opp_team_img" src="" alt="opponent image">
+                                        <p class="opp_team_name" id="past_opp_team"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <div class="result_nav">
+                                <button class="mvpbtn" type="button" onclick="pastMvp()">MVPs</button>
+                                <button class="playersbtn" type="button" onclick="pastPlayers()">Players</button>
+                                <button class="detailsbtn" type="button" onclick="pastDetails()">Details</button>
+                            </div>
+                            <!-- match details start -->
+                            <div class="past_match_details">
+                                <h3>Details</h3>
+                                <div class="details">
+                                    <div>
+                                        <i class="fa-regular fa-clock"></i>
+                                        <p id="past_match_time"></p>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-shield-halved"></i>
+                                        <p id="past_match_type"></p>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <p id="past_match_location"></p>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-circle-info"></i>	
+                                        <p id="past_match_info"></p>
+                                    </div>
+                                </div>
+                            </div>
 
-<!-- match details end -->
+                            <!-- match details end -->
 
-<!-- match players start -->
-				<div class="past_match_players">
-					<h3>Players</h3>
-					<div class="members">
-						<div class="my_team_players">
-							<h4></h4>
-							<div>
+                            <!-- match players start -->
+                            <div class="past_match_players">
+                                <h3>Players</h3>
+                                <div class="members">
+                                    <div class="my_team_players">
+                                        <h4></h4>
+                                        <div>
 
-							</div>
-						
+                                        </div>
 
-						</div>
-						<div class="opp_team_players">
-							<h4></h4>
-							<div>
+                                    </div>
+                                    <div class="opp_team_players">
+                                        <h4></h4>
+                                        <div>
 
-							</div>
-							<!-- <div class="players">
-								<img src="../../assets/images/Avatar.png" alt="">
-								<p>Madhav</p>
-							</div>
+                                        </div>
+                                        <!-- <div class="players">
+                                            <img src="../../assets/images/Avatar.png" alt="">
+                                            <p>Madhav</p>
+                                            </div>
 
-							<div class="players">
-								<img src="../../assets/images/Avatar.png" alt="">
-								<p>Madhav</p>
-							</div> -->
+                                            <div class="players">
+                                            <img src="../../assets/images/Avatar.png" alt="">
+                                            <p>Madhav</p>
+                                            </div> -->
 
-						</div>
-					</div>
-				</div>
-<!-- match players end -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- match players end -->
 
-<!-- match mvps start -->
-				<div class="mvp_det">
-						<table class="past_players_list">
-							<caption>Most Valuble Players</caption>
-							<thead>
-							<tr>
-								<th></th>
-								<th>Players</th>
-								<th>Team</th>
-							  </tr></thead>
-							  <tbody>
+                            <!-- match mvps start -->
+                            <div class="mvp_det">
+                                <table class="past_players_list">
+                                    <caption>Most Valuble Players</caption>
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Players</th>
+                                            <th>Team</th>
+                                        </tr></thead>
+                                    <tbody>
 
-							  </tbody>
+                                    </tbody>
 							  
-						  </table>
+                                </table>
 	
-				</div>
-<!-- match mvps end -->
+                            </div>
+                            <!-- match mvps end -->
 
-
-			</div>
+                        </div>
 			
-		</div>	
-	</div>
-</div>
-	<!-- popup past result end -->
+                    </div>	
+                </div>
+            </div>
+            <!-- popup past result end -->
 
-
-
-<!-- <div class="past_result_container">
-	<div class="match_time">
-		<p>Sat, Oct-19-2023</p>
-	</div>
-	<div class="past_result">
-		<div class="my_team">
-			<h2>Chennai super kings</h2>
-			<div class="team_img">
-				<img src="../../assets/images/Avatar.png" alt="asdf">
-				<p>CHE</p>
-			</div>
+            <!-- <div class="past_result_container">
+                <div class="match_time">
+                <p>Sat, Oct-19-2023</p>
+                </div>
+                <div class="past_result">
+                <div class="my_team">
+                <h2>Chennai super kings</h2>
+                <div class="team_img">
+                <img src="../../assets/images/Avatar.png" alt="asdf">
+                <p>CHE</p>
+                </div>
 			
-		</div>
+                </div>
 	
-		<div class="result">
-		<p class="won">3</p>
-		<P>-</P>
-		<p class="loss">1</p>
-		</div>
+                <div class="result">
+                <p class="won">3</p>
+                <P>-</P>
+                <p class="loss">1</p>
+                </div>
 	
-		<div class="opp_team">
-			<h2>Karnatakans</h2>
-			<div class="team_img">
-				<p>KAR</p>
-				<img src="../../assets/images/Avatar.png" alt="asdf">
-			</div>
+                <div class="opp_team">
+                <h2>Karnatakans</h2>
+                <div class="team_img">
+                <p>KAR</p>
+                <img src="../../assets/images/Avatar.png" alt="asdf">
+                </div>
 			
-		</div>
-	</div>
-	</div> -->
+                </div>
+                </div>
+                </div> -->
 
-
-<!-- 	<div class="past_result_container">
-		<div class="match_time">
-			<p>Wed, Oct-22-2023</p>
-		</div>
-		<div class="past_result">
-			<div class="my_team">
-				<h2>Chennai super kings</h2>
-				<div class="team_img">
-					<img src="../../assets/images/Avatar.png" alt="asdf">
-					<p>CHE</p>
-				</div>
+            <!-- 	<div class="past_result_container">
+                <div class="match_time">
+                <p>Wed, Oct-22-2023</p>
+                </div>
+                <div class="past_result">
+                <div class="my_team">
+                <h2>Chennai super kings</h2>
+                <div class="team_img">
+                <img src="../../assets/images/Avatar.png" alt="asdf">
+                <p>CHE</p>
+                </div>
 				
-			</div>
+                </div>
 		
-			<div class="result">
-			<p class="won">2</p>
-			<P>-</P>
-			<p class="loss">1</p>
-			</div>
+                <div class="result">
+                <p class="won">2</p>
+                <P>-</P>
+                <p class="loss">1</p>
+                </div>
 		
-			<div class="opp_team">
-				<h2>Attackars</h2>
-				<div class="team_img">
-					<p>ATT</p>
-					<img src="../../assets/images/Avatar.png" alt="asdf">
-				</div>
+                <div class="opp_team">
+                <h2>Attackars</h2>
+                <div class="team_img">
+                <p>ATT</p>
+                <img src="../../assets/images/Avatar.png" alt="asdf">
+                </div>
 				
-			</div>
-		</div>
-		</div> -->
-</section>
+                </div>
+                </div>
+                </div> -->
+        </section>
 
-<script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
-	<script src="../../assets/js/vendor/lib/moment/moment.min.js"></script>
-<script>
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+        <script src="../../assets/js/vendor/lib/moment/moment.min.js"></script>
+        <script>
+function upcoming() {
+  document.querySelector(".link1").style.color = "#ff8908";
+  document.querySelector(".link2").style.color = "#2a373f";
+  document.querySelector(".link3").style.color = "#2a373f";
 
+  const content_1 = document.querySelector("section.upcoming");
+  content_1.style.display = "block";
 
-function upcoming(){
-document.querySelector(".link1").style.color = "#ff8908"
-document.querySelector(".link2").style.color = "#2a373f"
-document.querySelector(".link3").style.color = "#2a373f"
+  const content_2 = document.querySelector("section.live");
+  content_2.style.display = "none";
 
-let content_1 = document.querySelector("section.upcoming");
-content_1.style.display = "block";
-
-let content_2 = document.querySelector("section.live")
-content_2.style.display = "none";
-
-let content_3 = document.querySelector("section.completed")
-content_3.style.display = "none";
+  const content_3 = document.querySelector("section.completed");
+  content_3.style.display = "none";
 }
-function live(){
-document.querySelector(".link1").style.color = "#2a373f"
-document.querySelector(".link2").style.color = "#ff8908"
-document.querySelector(".link3").style.color = "#2a373f"
+function live() {
+  document.querySelector(".link1").style.color = "#2a373f";
+  document.querySelector(".link2").style.color = "#ff8908";
+  document.querySelector(".link3").style.color = "#2a373f";
 
-let content_1 = document.querySelector("section.upcoming")
-content_1.style.display = "none";
+  const content_1 = document.querySelector("section.upcoming");
+  content_1.style.display = "none";
 
-let content_2 = document.querySelector("section.live")
-content_2.style.display = "block";
+  const content_2 = document.querySelector("section.live");
+  content_2.style.display = "block";
 
-let content_3 = document.querySelector("section.completed")
-content_3.style.display = "none";
+  const content_3 = document.querySelector("section.completed");
+  content_3.style.display = "none";
 }
 
-function completed(){
-document.querySelector(".link1").style.color = "#2a373f"
-document.querySelector(".link2").style.color = "#2a373f"
-document.querySelector(".link3").style.color = "#ff8908"
+function completed() {
+  document.querySelector(".link1").style.color = "#2a373f";
+  document.querySelector(".link2").style.color = "#2a373f";
+  document.querySelector(".link3").style.color = "#ff8908";
 
-let content_1 = document.querySelector("section.upcoming")
-content_1.style.display = "none";
+  const content_1 = document.querySelector("section.upcoming");
+  content_1.style.display = "none";
 
-let content_2 = document.querySelector("section.live")
-content_2.style.display = "none";
+  const content_2 = document.querySelector("section.live");
+  content_2.style.display = "none";
 
-let content_3 = document.querySelector("section.completed")
-content_3.style.display = "block";
+  const content_3 = document.querySelector("section.completed");
+  content_3.style.display = "block";
 }
 
 // for friend list start
@@ -353,273 +352,276 @@ const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
 
-const phonenumber = urlParams.get('unique_id');
+const phonenumber = urlParams.get("unique_id");
 
-let team_list = JSON.parse(localStorage.getItem('team_details_list'));
+const team_list = JSON.parse(localStorage.getItem("team_details_list"));
 
-let players_list = JSON.parse(localStorage.getItem('user_detail'));
+const players_list = JSON.parse(localStorage.getItem("user_detail"));
 
 function findPlayer(a) {
-let index = a.teamMembers.indexOf(phonenumber);
-return a.teamMembers[index] == phonenumber ;
+  const index = a.teamMembers.indexOf(phonenumber);
+  return a.teamMembers[index] == phonenumber;
 }
 
-let teamProfile = team_list.find(findPlayer);
+const teamProfile = team_list.find(findPlayer);
 
-let my_team_id = teamProfile["uniqueId"]
+const my_team_id = teamProfile.uniqueId;
 
 // console.log(teamProfile)
-let match_list = JSON.parse(localStorage.getItem('match_list'));
+const match_list = JSON.parse(localStorage.getItem("match_list"));
 
-let request_list = JSON.parse(localStorage.getItem('match_response_list'))
+const request_list = JSON.parse(localStorage.getItem("match_response_list"));
 
-let score_resopnse = JSON.parse(localStorage.getItem('score_card'));
+const score_resopnse = JSON.parse(localStorage.getItem("score_card"));
 
 // upto this common for all section
 
+const matchInvitaton = [];
 
+const live_match = [];
 
-let matchInvitaton = []
-
-let live_match = []
-
-let completed_match = []
+const completed_match = [];
 let completed_match_list;
-if(request_list){
-completed_match_list = request_list.filter(e => e.match_in_status == 1 && e.team_players.find(e => e == phonenumber) == phonenumber)
+if (request_list) {
+  completed_match_list = request_list.filter(
+    (e) =>
+      e.match_in_status == 1 &&
+      e.team_players.find((e) => e == phonenumber) == phonenumber
+  );
 }
 
-if(request_list != undefined){
-	let match_request_list = request_list.filter(e => e.team_id == my_team_id && e.match_in_status == 1);
+if (request_list != undefined) {
+  const match_request_list = request_list.filter(
+    (e) => e.team_id == my_team_id && e.match_in_status == 1
+  );
 
-for(let i=0; i<match_request_list.length; i++){
-	let check = match_request_list[i]["matchUniqueId"]
-	let find = match_list.find(e => 
-		 e.matchUniqueId == check && 
-		 e.activeStatus == false && 
-		 new Date(e.time) > new Date() 
-		)
-	if(find){
-		matchInvitaton.push(find)
-	}
-}
+  for (let i = 0; i < match_request_list.length; i++) {
+    const check = match_request_list[i].matchUniqueId;
+    const find = match_list.find(
+      (e) =>
+        e.matchUniqueId == check &&
+        e.activeStatus == false &&
+        new Date(e.time) > new Date()
+    );
+    if (find) {
+      matchInvitaton.push(find);
+    }
+  }
 
+  for (let i = 0; i < match_request_list.length; i++) {
+    const check = match_request_list[i].matchUniqueId;
+    const find = match_list.find(function (e) {
+      const today = new Date(e.time);
+      const tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
 
-for(let i=0; i<match_request_list.length; i++){
-	let check = match_request_list[i]["matchUniqueId"]
-	let find = match_list.find(function (e){
+      const ans =
+        e.matchUniqueId == check &&
+        e.activeStatus == false &&
+        new Date(e.time) < new Date() &&
+        tomorrow > new Date();
 
-		let today = new Date(e.time)
-		let tomorrow = new Date(today)
-		tomorrow.setDate(tomorrow.getDate() + 1)
-	
-		let ans = e.matchUniqueId == check && 
-		 e.activeStatus == false && 
-		 new Date(e.time) < new Date() &&
-		tomorrow > new Date() ;
-
-		
-		return ans
-	})
-	if(find){
-		live_match.push(find)
-	}
-}
-
+      return ans;
+    });
+    if (find) {
+      live_match.push(find);
+    }
+  }
 }
 
 // this loop is for upcoming match start ----------------
 
+if (matchInvitaton.length == 0) {
+  const div_name = document.createElement("div");
+  div_name.setAttribute("class", "no_content");
 
-if(matchInvitaton.length == 0){
-	let div_name = document.createElement("div")
-	div_name.setAttribute("class", "no_content")
-
-	let div_p = document.createElement("p")
-	div_p.innerHTML = "(You have no match)"
-	div_name.append(div_p)
-	document.querySelector(".upcoming").append(div_name)
-
-
+  const div_p = document.createElement("p");
+  div_p.innerHTML = "(You have no match)";
+  div_name.append(div_p);
+  document.querySelector(".upcoming").append(div_name);
 }
 
-if(matchInvitaton != 0){
-	for(let i=0;i< matchInvitaton.length ;i++){
+if (matchInvitaton != 0) {
+  for (let i = 0; i < matchInvitaton.length; i++) {
+    let opponent_team_object = "";
 
-		let opponent_team_object = ""
+    const opponent_team_id = request_list.find(
+      (e) =>
+        e.matchUniqueId == matchInvitaton[i].matchUniqueId &&
+        e.team_id != my_team_id
+    );
 
+    opponent_team_object = team_list.find(
+      (e) => e.uniqueId == opponent_team_id.team_id
+    );
 
-let opponent_team_id = request_list.find(e => e.matchUniqueId == matchInvitaton[i]["matchUniqueId"] && e.team_id != my_team_id)
+    let captain = "";
 
-opponent_team_object = team_list.find(e => e.uniqueId == opponent_team_id["team_id"])
+    for (let j = 0; j < opponent_team_object.teamMembers.length; j++) {
+      const a = opponent_team_object.teamMembers[j];
 
+      const find = players_list.find((e) => e.phoneNumber == a);
 
-let captain = ""
+      if (find.captainStatus == 1) {
+        captain = find.userName;
+      }
+    }
 
-for(let j=0 ; j<opponent_team_object["teamMembers"].length; j++){
-	let a = opponent_team_object["teamMembers"][j] 
+    const div_class_invitation = document.createElement("div");
+    div_class_invitation.setAttribute("class", "invitation");
 
-	let find = players_list.find(e => e.phoneNumber == a)
+    // div one
 
-	if(find["captainStatus"] == 1){
-		captain = find["userName"] ;
-	}
+    const div_class_invitation_one = document.createElement("div");
+    div_class_invitation_one.setAttribute("class", "invitation-one");
+    div_class_invitation.prepend(div_class_invitation_one);
 
-}
+    const team_img_div = document.createElement("div");
+    team_img_div.setAttribute("class", "teamimgdiv");
+    div_class_invitation_one.prepend(team_img_div);
+    let opp_team_url = "";
+    let opp_team_name = "";
+    if (opponent_team_object) {
+      opp_team_url = opponent_team_object.teamImageUrl;
+      opp_team_name = opponent_team_object.teamName;
+    }
+    if (!opponent_team_object) {
+      opp_team_url = "https://iili.io/HXFAu87.png";
+      opp_team_name = matchInvitaton[i].opponentArea.area;
+    }
 
-const div_class_invitation = document.createElement("div");
-div_class_invitation.setAttribute("class", "invitation");
+    const team_image = document.createElement("img");
+    team_image.setAttribute("src", opp_team_url);
+    team_image.setAttribute("alt", opp_team_name);
+    team_img_div.prepend(team_image);
 
+    const team_name_div = document.createElement("div");
+    team_name_div.setAttribute("class", "teamnamediv");
+    div_class_invitation_one.append(team_name_div);
 
-// div one
+    const team_name_subdiv = document.createElement("div");
+    team_name_subdiv.setAttribute("class", "teamnamesubdiv");
+    team_name_div.append(team_name_subdiv);
 
-const div_class_invitation_one = document.createElement("div");
-div_class_invitation_one.setAttribute("class", "invitation-one");
-div_class_invitation.prepend(div_class_invitation_one);
+    const team_name_subdivnthchild1 = document.createElement("div");
+    team_name_subdiv.prepend(team_name_subdivnthchild1);
 
-const team_img_div = document.createElement("div");
-team_img_div.setAttribute("class", "teamimgdiv");
-div_class_invitation_one.prepend(team_img_div);
-let opp_team_url = "",
-opp_team_name = "";
-if(opponent_team_object){
-	opp_team_url = opponent_team_object["teamImageUrl"];
-	opp_team_name = opponent_team_object["teamName"];
-}
-if(!opponent_team_object){
-	opp_team_url = "https://iili.io/HXFAu87.png"
-	opp_team_name = matchInvitaton[i]["opponentArea"]["area"]
-}
+    const team_name_subdiv_header = document.createElement("h2");
+    team_name_subdiv_header.innerText = `vs ${opp_team_name}`;
+    team_name_subdivnthchild1.append(team_name_subdiv_header);
 
-const team_image = document.createElement("img");
-team_image.setAttribute("src", opp_team_url);
-team_image.setAttribute("alt", opp_team_name);
-team_img_div.prepend(team_image);
+    const team_name_subdivnthchild2 = document.createElement("div");
+    team_name_subdivnthchild2.setAttribute("class", "timetogo");
+    team_name_subdiv.append(team_name_subdivnthchild2);
 
-const team_name_div = document.createElement("div");
-team_name_div.setAttribute("class", "teamnamediv");
-div_class_invitation_one.append(team_name_div);
+    const team_name_subdiv_time_icon = document.createElement("i");
+    team_name_subdiv_time_icon.setAttribute("class", "fa-regular fa-clock");
+    team_name_subdivnthchild2.append(team_name_subdiv_time_icon);
 
-const team_name_subdiv = document.createElement("div");
-team_name_subdiv.setAttribute("class", "teamnamesubdiv");
-team_name_div.append(team_name_subdiv);
+    const team_name_subdiv_para = document.createElement("p");
+    team_name_subdiv_para.innerText = moment(matchInvitaton[i].time)
+      .startOf("sec")
+      .fromNow();
+    team_name_subdivnthchild2.append(team_name_subdiv_para);
 
-const team_name_subdivnthchild1 = document.createElement("div");
-team_name_subdiv.prepend(team_name_subdivnthchild1);
+    // div two
 
+    const div_class_invitation_two = document.createElement("div");
+    div_class_invitation_two.setAttribute("class", "invitation-two");
+    div_class_invitation.append(div_class_invitation_two);
 
+    const div_class_invitation_two_subdiv1 = document.createElement("div");
+    div_class_invitation_two.prepend(div_class_invitation_two_subdiv1);
 
-const team_name_subdiv_header = document.createElement("h2");
-team_name_subdiv_header.innerText = "vs " + opp_team_name
-team_name_subdivnthchild1.append(team_name_subdiv_header);
+    const team_name_subdiv_typeheader = document.createElement("p");
+    team_name_subdiv_typeheader.innerText = "Type";
+    div_class_invitation_two_subdiv1.append(team_name_subdiv_typeheader);
 
-const team_name_subdivnthchild2 = document.createElement("div");
-team_name_subdivnthchild2.setAttribute("class", "timetogo");
-team_name_subdiv.append(team_name_subdivnthchild2);
+    const team_name_subdiv_typevalue = document.createElement("p");
+    team_name_subdiv_typevalue.innerText = matchInvitaton[i].typeOfMatch;
+    div_class_invitation_two_subdiv1.append(team_name_subdiv_typevalue);
 
-const team_name_subdiv_time_icon = document.createElement("i");
-team_name_subdiv_time_icon.setAttribute("class", "fa-regular fa-clock");
-team_name_subdivnthchild2.append(team_name_subdiv_time_icon);
+    const div_class_invitation_two_subdiv2 = document.createElement("div");
+    div_class_invitation_two.append(div_class_invitation_two_subdiv2);
 
-const team_name_subdiv_para = document.createElement("p");
-team_name_subdiv_para.innerText = moment(matchInvitaton[i]["time"]).startOf('sec').fromNow();
-team_name_subdivnthchild2.append(team_name_subdiv_para);
+    const team_name_subdiv_timeheader = document.createElement("p");
+    team_name_subdiv_timeheader.innerText = "Time";
+    div_class_invitation_two_subdiv2.append(team_name_subdiv_timeheader);
 
+    const team_name_subdiv_timevalue = document.createElement("p");
 
-// div two
+    const match_time = matchInvitaton[i].time;
 
-const div_class_invitation_two = document.createElement("div");
-div_class_invitation_two.setAttribute("class", "invitation-two");
-div_class_invitation.append(div_class_invitation_two);
+    team_name_subdiv_timevalue.innerText = moment(match_time)
+      .add(0, "days")
+      .calendar();
+    div_class_invitation_two_subdiv2.append(team_name_subdiv_timevalue);
 
+    // div three
 
-const div_class_invitation_two_subdiv1 = document.createElement("div");
-div_class_invitation_two.prepend(div_class_invitation_two_subdiv1);
+    const div_class_invitation_three = document.createElement("div");
+    div_class_invitation_three.setAttribute("class", "invitation-three");
+    div_class_invitation.append(div_class_invitation_three);
 
-const team_name_subdiv_typeheader = document.createElement("p");
-team_name_subdiv_typeheader.innerText = "Type"
-div_class_invitation_two_subdiv1.append(team_name_subdiv_typeheader);
+    const div_class_invitation_three_subdiv1 = document.createElement("div");
+    div_class_invitation_three.append(div_class_invitation_three_subdiv1);
 
-const team_name_subdiv_typevalue = document.createElement("p");
-team_name_subdiv_typevalue.innerText = matchInvitaton[i]["typeOfMatch"]
-div_class_invitation_two_subdiv1.append(team_name_subdiv_typevalue);
+    const div_class_invitation_three_icon1 = document.createElement("i");
+    div_class_invitation_three_icon1.setAttribute(
+      "class",
+      "fa-regular fa-copyright"
+    );
+    div_class_invitation_three_subdiv1.append(div_class_invitation_three_icon1);
 
-const div_class_invitation_two_subdiv2 = document.createElement("div");
-div_class_invitation_two.append(div_class_invitation_two_subdiv2);
+    const div_class_invitation_three_para1 = document.createElement("p");
+    div_class_invitation_three_para1.innerText = captain; //not enter
+    div_class_invitation_three_subdiv1.append(div_class_invitation_three_para1);
 
-const team_name_subdiv_timeheader = document.createElement("p");
-team_name_subdiv_timeheader.innerText = "Time"
-div_class_invitation_two_subdiv2.append(team_name_subdiv_timeheader);
+    const div_class_invitation_three_subdiv3 = document.createElement("div");
+    div_class_invitation_three.append(div_class_invitation_three_subdiv3);
 
-const team_name_subdiv_timevalue = document.createElement("p");
+    const div_class_invitation_three_icon3 = document.createElement("i");
+    div_class_invitation_three_icon3.setAttribute(
+      "class",
+      "fa-solid fa-location-dot"
+    );
+    div_class_invitation_three_subdiv3.append(div_class_invitation_three_icon3);
 
-let match_time = matchInvitaton[i]["time"]
+    const div_class_invitation_three_para3 = document.createElement("p");
+    div_class_invitation_three_para3.innerText = matchInvitaton[i].location;
+    div_class_invitation_three_subdiv3.append(div_class_invitation_three_para3);
 
-team_name_subdiv_timevalue.innerText = moment(match_time).add(0, 'days').calendar()
-div_class_invitation_two_subdiv2.append(team_name_subdiv_timevalue);
+    const div_class_invitation_three_subdiv4 = document.createElement("div");
+    div_class_invitation_three.append(div_class_invitation_three_subdiv4);
 
-// div three
+    const div_class_invitation_three_icon4 = document.createElement("i");
+    div_class_invitation_three_icon4.setAttribute(
+      "class",
+      "fa-solid fa-circle-info"
+    );
+    div_class_invitation_three_subdiv4.append(div_class_invitation_three_icon4);
 
-const div_class_invitation_three = document.createElement("div");
-div_class_invitation_three.setAttribute("class", "invitation-three");
-div_class_invitation.append(div_class_invitation_three);
+    const div_class_invitation_three_para4 = document.createElement("p");
+    div_class_invitation_three_para4.innerText = matchInvitaton[i].information;
+    div_class_invitation_three_subdiv4.append(div_class_invitation_three_para4);
 
-const div_class_invitation_three_subdiv1 = document.createElement("div");
-div_class_invitation_three.append(div_class_invitation_three_subdiv1);
-
-const div_class_invitation_three_icon1 = document.createElement("i");
-div_class_invitation_three_icon1.setAttribute("class", "fa-regular fa-copyright");
-div_class_invitation_three_subdiv1.append(div_class_invitation_three_icon1);
-
-
-const div_class_invitation_three_para1 = document.createElement("p");
-div_class_invitation_three_para1.innerText = captain //not enter
-div_class_invitation_three_subdiv1.append(div_class_invitation_three_para1);
-
-
-const div_class_invitation_three_subdiv3 = document.createElement("div");
-div_class_invitation_three.append(div_class_invitation_three_subdiv3);
-
-const div_class_invitation_three_icon3 = document.createElement("i");
-div_class_invitation_three_icon3.setAttribute("class", "fa-solid fa-location-dot");
-div_class_invitation_three_subdiv3.append(div_class_invitation_three_icon3);
-
-const div_class_invitation_three_para3 = document.createElement("p");
-div_class_invitation_three_para3.innerText = matchInvitaton[i]["location"]
-div_class_invitation_three_subdiv3.append(div_class_invitation_three_para3);
-
-const div_class_invitation_three_subdiv4 = document.createElement("div");
-div_class_invitation_three.append(div_class_invitation_three_subdiv4);
-
-const div_class_invitation_three_icon4 = document.createElement("i");
-div_class_invitation_three_icon4.setAttribute("class", "fa-solid fa-circle-info");
-div_class_invitation_three_subdiv4.append(div_class_invitation_three_icon4);
-
-const div_class_invitation_three_para4 = document.createElement("p");
-div_class_invitation_three_para4.innerText = matchInvitaton[i]["information"]
-div_class_invitation_three_subdiv4.append(div_class_invitation_three_para4);
-
-
-document.querySelector(".upcoming").append(div_class_invitation)
-	
-	}
+    document.querySelector(".upcoming").append(div_class_invitation);
+  }
 }
 // this loop is for upcoming match end ----------------
 // this loop is for live match start ----------------
-function resultdiv(data, score_id){
-	const temp =
-	`<div class="update_score_div">
+function resultdiv(data, score_id) {
+  const temp = `<div class="update_score_div">
 <div class="invitation-update-score">
-<button class="update-score" data-id="${data["matchUniqueId"]}" data-name="${score_id}" type="button">Update Score</button>
+<button class="update-score" data-id="${data.matchUniqueId}" data-name="${score_id}" type="button">Update Score</button>
 </div>
 </div>
-`
-return temp;
+`;
+  return temp;
 }
 
-function scoreCardTemp(won, loss, draw){
-	const temp = 
-	`<div class="score_card">
+function scoreCardTemp(won, loss, draw) {
+  const temp = `<div class="score_card">
 <div class="score">
 	
 	<div>
@@ -642,485 +644,480 @@ function scoreCardTemp(won, loss, draw){
 <div class="mvp_div">	
 </div>
 </div>
-	`
-	return temp
+	`;
+  return temp;
 }
-function noScoreCardTemp(){
-	const temp = 
-	`<div class="no_score">
+function noScoreCardTemp() {
+  const temp = `<div class="no_score">
 <p>( update your score with in 24 hours )</p>
 </div>
-	`
-	return temp
+	`;
+  return temp;
 }
 
-function playerResultTemp(player){
-	const temp = 
-	`<div class="mvps">
+function playerResultTemp(player) {
+  const temp = `<div class="mvps">
 	<div class="player_img">
-		<img src="${player["imageUrl"]}" alt="${player["userName"]}">
+		<img src="${player.imageUrl}" alt="${player.userName}">
 	</div>
-	<h2>${player["userName"]}</h2>
+	<h2>${player.userName}</h2>
 </div>
-	`
-	return temp
+	`;
+  return temp;
 }
 
+if (live_match.length == 0) {
+  const div_name = document.createElement("div");
+  div_name.setAttribute("class", "no_content");
 
-
-if(live_match.length == 0){
-	let div_name = document.createElement("div");
-	div_name.setAttribute("class", "no_content")
-
-	let div_p = document.createElement("p")
-	div_p.innerHTML = "(Currently you don't have matches)"
-	div_name.append(div_p)
-	document.querySelector(".live").append(div_name)
-
-
+  const div_p = document.createElement("p");
+  div_p.innerHTML = "(Currently you don't have matches)";
+  div_name.append(div_p);
+  document.querySelector(".live").append(div_name);
 }
 
-if(live_match.length != 0){
-for(let i=0;i< live_match.length ;i++){
+if (live_match.length != 0) {
+  for (let i = 0; i < live_match.length; i++) {
+    let opponent_team_object = "";
+
+    const opponent_team_id = request_list.find(
+      (e) =>
+        e.matchUniqueId == live_match[i].matchUniqueId &&
+        e.team_id != my_team_id
+    );
+
+    opponent_team_object = team_list.find(
+      (e) => e.uniqueId == opponent_team_id.team_id
+    );
+
+    let captain = "";
+
+    for (let j = 0; j < opponent_team_object.teamMembers.length; j++) {
+      const a = opponent_team_object.teamMembers[j];
 
-let opponent_team_object = ""
+      const find = players_list.find((e) => e.phoneNumber == a);
 
+      if (find.captainStatus == 1) {
+        captain = find.userName;
+      }
+    }
 
-let opponent_team_id = request_list.find(e => e.matchUniqueId == live_match[i]["matchUniqueId"] && e.team_id != my_team_id)
+    const div_class_invitation = document.createElement("div");
+    div_class_invitation.setAttribute("class", "invitation");
 
-opponent_team_object = team_list.find(e => e.uniqueId == opponent_team_id["team_id"])
+    // div one
+
+    const div_class_invitation_one = document.createElement("div");
+    div_class_invitation_one.setAttribute("class", "invitation-one");
+    div_class_invitation.prepend(div_class_invitation_one);
+
+    const team_img_div = document.createElement("div");
+    team_img_div.setAttribute("class", "teamimgdiv");
+    div_class_invitation_one.prepend(team_img_div);
+    let opp_team_url = "";
+    let opp_team_name = "";
+    if (opponent_team_object) {
+      opp_team_url = opponent_team_object.teamImageUrl;
+      opp_team_name = opponent_team_object.teamName;
+    }
+    if (!opponent_team_object) {
+      opp_team_url = "https://iili.io/HXFAu87.png";
+      opp_team_name = live_match[i].opponentArea.area;
+    }
+
+    const team_image = document.createElement("img");
+    team_image.setAttribute("src", opp_team_url);
+    team_image.setAttribute("alt", opp_team_name);
+    team_img_div.prepend(team_image);
+
+    const team_name_div = document.createElement("div");
+    team_name_div.setAttribute("class", "teamnamediv");
+    div_class_invitation_one.append(team_name_div);
+
+    const team_name_subdiv = document.createElement("div");
+    team_name_subdiv.setAttribute("class", "teamnamesubdiv");
+    team_name_div.append(team_name_subdiv);
+
+    const team_name_subdivnthchild1 = document.createElement("div");
+    team_name_subdiv.prepend(team_name_subdivnthchild1);
 
+    const team_name_subdiv_header = document.createElement("h2");
+    team_name_subdiv_header.innerText = `vs ${opp_team_name}`;
+    team_name_subdivnthchild1.append(team_name_subdiv_header);
 
-let captain = ""
+    const team_name_subdivnthchild2 = document.createElement("div");
+    team_name_subdivnthchild2.setAttribute("class", "timetogo");
+    team_name_subdiv.append(team_name_subdivnthchild2);
 
-for(let j=0 ; j<opponent_team_object["teamMembers"].length; j++){
-let a = opponent_team_object["teamMembers"][j] 
+    const team_name_subdiv_time_icon = document.createElement("i");
+    team_name_subdiv_time_icon.setAttribute("class", "fa-regular fa-clock");
+    team_name_subdivnthchild2.append(team_name_subdiv_time_icon);
 
-let find = players_list.find(e => e.phoneNumber == a)
+    const team_name_subdiv_para = document.createElement("p");
+    team_name_subdiv_para.innerText = moment(live_match[i].time)
+      .startOf("sec")
+      .fromNow();
+    team_name_subdivnthchild2.append(team_name_subdiv_para);
 
-if(find["captainStatus"] == 1){
-captain = find["userName"] ;
-}
+    // div two
 
-}
+    const div_class_invitation_two = document.createElement("div");
+    div_class_invitation_two.setAttribute("class", "invitation-two");
+    div_class_invitation.append(div_class_invitation_two);
 
-const div_class_invitation = document.createElement("div");
-div_class_invitation.setAttribute("class", "invitation");
+    const div_class_invitation_two_subdiv1 = document.createElement("div");
+    div_class_invitation_two.prepend(div_class_invitation_two_subdiv1);
 
+    const team_name_subdiv_typeheader = document.createElement("p");
+    team_name_subdiv_typeheader.innerText = "Type";
+    div_class_invitation_two_subdiv1.append(team_name_subdiv_typeheader);
 
-// div one
+    const team_name_subdiv_typevalue = document.createElement("p");
+    team_name_subdiv_typevalue.innerText = live_match[i].typeOfMatch;
+    div_class_invitation_two_subdiv1.append(team_name_subdiv_typevalue);
 
-const div_class_invitation_one = document.createElement("div");
-div_class_invitation_one.setAttribute("class", "invitation-one");
-div_class_invitation.prepend(div_class_invitation_one);
+    const div_class_invitation_two_subdiv2 = document.createElement("div");
+    div_class_invitation_two.append(div_class_invitation_two_subdiv2);
 
-const team_img_div = document.createElement("div");
-team_img_div.setAttribute("class", "teamimgdiv");
-div_class_invitation_one.prepend(team_img_div);
-let opp_team_url = "",
-opp_team_name = "";
-if(opponent_team_object){
-opp_team_url = opponent_team_object["teamImageUrl"];
-opp_team_name = opponent_team_object["teamName"];
-}
-if(!opponent_team_object){
-opp_team_url = "https://iili.io/HXFAu87.png"
-opp_team_name = live_match[i]["opponentArea"]["area"]
-}
+    const team_name_subdiv_timeheader = document.createElement("p");
+    team_name_subdiv_timeheader.innerText = "Time";
+    div_class_invitation_two_subdiv2.append(team_name_subdiv_timeheader);
 
-const team_image = document.createElement("img");
-team_image.setAttribute("src", opp_team_url);
-team_image.setAttribute("alt", opp_team_name);
-team_img_div.prepend(team_image);
+    const team_name_subdiv_timevalue = document.createElement("p");
 
-const team_name_div = document.createElement("div");
-team_name_div.setAttribute("class", "teamnamediv");
-div_class_invitation_one.append(team_name_div);
+    const match_time = live_match[i].time;
 
-const team_name_subdiv = document.createElement("div");
-team_name_subdiv.setAttribute("class", "teamnamesubdiv");
-team_name_div.append(team_name_subdiv);
+    team_name_subdiv_timevalue.innerText = moment(match_time)
+      .add(0, "days")
+      .calendar();
+    div_class_invitation_two_subdiv2.append(team_name_subdiv_timevalue);
 
-const team_name_subdivnthchild1 = document.createElement("div");
-team_name_subdiv.prepend(team_name_subdivnthchild1);
+    // div three
 
+    const div_class_invitation_three = document.createElement("div");
+    div_class_invitation_three.setAttribute("class", "invitation-three");
+    div_class_invitation.append(div_class_invitation_three);
 
+    const div_class_invitation_three_subdiv3 = document.createElement("div");
+    div_class_invitation_three.append(div_class_invitation_three_subdiv3);
 
-const team_name_subdiv_header = document.createElement("h2");
-team_name_subdiv_header.innerText = "vs " + opp_team_name
-team_name_subdivnthchild1.append(team_name_subdiv_header);
+    const div_class_invitation_three_icon3 = document.createElement("i");
+    div_class_invitation_three_icon3.setAttribute(
+      "class",
+      "fa-solid fa-location-dot"
+    );
+    div_class_invitation_three_subdiv3.append(div_class_invitation_three_icon3);
 
-const team_name_subdivnthchild2 = document.createElement("div");
-team_name_subdivnthchild2.setAttribute("class", "timetogo");
-team_name_subdiv.append(team_name_subdivnthchild2);
+    const div_class_invitation_three_para3 = document.createElement("p");
+    div_class_invitation_three_para3.innerText = live_match[i].location;
+    div_class_invitation_three_subdiv3.append(div_class_invitation_three_para3);
 
-const team_name_subdiv_time_icon = document.createElement("i");
-team_name_subdiv_time_icon.setAttribute("class", "fa-regular fa-clock");
-team_name_subdivnthchild2.append(team_name_subdiv_time_icon);
+    const div_class_invitation_three_subdiv4 = document.createElement("div");
+    div_class_invitation_three.append(div_class_invitation_three_subdiv4);
 
-const team_name_subdiv_para = document.createElement("p");
-team_name_subdiv_para.innerText = moment(live_match[i]["time"]).startOf('sec').fromNow();
-team_name_subdivnthchild2.append(team_name_subdiv_para);
+    const div_class_invitation_three_icon4 = document.createElement("i");
+    div_class_invitation_three_icon4.setAttribute(
+      "class",
+      "fa-solid fa-circle-info"
+    );
+    div_class_invitation_three_subdiv4.append(div_class_invitation_three_icon4);
 
+    const div_class_invitation_three_para4 = document.createElement("p");
+    div_class_invitation_three_para4.innerText = live_match[i].information;
+    div_class_invitation_three_subdiv4.append(div_class_invitation_three_para4);
 
-// div two
+    const score_card = JSON.parse(localStorage.getItem("score_card")) || [];
 
-const div_class_invitation_two = document.createElement("div");
-div_class_invitation_two.setAttribute("class", "invitation-two");
-div_class_invitation.append(div_class_invitation_two);
+    score_card_object = score_card.find(
+      (e) =>
+        e.matchUniqueId == live_match[i].matchUniqueId &&
+        e.teamUniqueId == my_team_id
+    );
 
+    let score_id = "";
 
-const div_class_invitation_two_subdiv1 = document.createElement("div");
-div_class_invitation_two.prepend(div_class_invitation_two_subdiv1);
+    let won_value = "";
 
-const team_name_subdiv_typeheader = document.createElement("p");
-team_name_subdiv_typeheader.innerText = "Type"
-div_class_invitation_two_subdiv1.append(team_name_subdiv_typeheader);
+    let loss_value = "";
 
-const team_name_subdiv_typevalue = document.createElement("p");
-team_name_subdiv_typevalue.innerText = live_match[i]["typeOfMatch"]
-div_class_invitation_two_subdiv1.append(team_name_subdiv_typevalue);
+    let draw_value = "";
 
-const div_class_invitation_two_subdiv2 = document.createElement("div");
-div_class_invitation_two.append(div_class_invitation_two_subdiv2);
+    let mvp_players_list = "";
 
-const team_name_subdiv_timeheader = document.createElement("p");
-team_name_subdiv_timeheader.innerText = "Time"
-div_class_invitation_two_subdiv2.append(team_name_subdiv_timeheader);
+    if (score_card_object) {
+      score_id = score_card_object.score_card_id;
 
-const team_name_subdiv_timevalue = document.createElement("p");
+      won_value = score_card_object.score.win;
 
-let match_time = live_match[i]["time"]
+      loss_value = score_card_object.score.loss;
 
-team_name_subdiv_timevalue.innerText = moment(match_time).add(0, 'days').calendar()
-div_class_invitation_two_subdiv2.append(team_name_subdiv_timevalue);
+      draw_value = score_card_object.score.draw;
 
-// div three
+      mvp_players_list = score_card_object.mvps;
+    }
+    if (!score_card_object) {
+      score_id = 0;
+    }
 
-const div_class_invitation_three = document.createElement("div");
-div_class_invitation_three.setAttribute("class", "invitation-three");
-div_class_invitation.append(div_class_invitation_three);
+    const score = resultdiv(live_match[i], score_id);
 
-const div_class_invitation_three_subdiv3 = document.createElement("div");
-div_class_invitation_three.append(div_class_invitation_three_subdiv3);
+    div_class_invitation.insertAdjacentHTML("beforeend", score);
 
-const div_class_invitation_three_icon3 = document.createElement("i");
-div_class_invitation_three_icon3.setAttribute("class", "fa-solid fa-location-dot");
-div_class_invitation_three_subdiv3.append(div_class_invitation_three_icon3);
+    document.querySelector(".live").append(div_class_invitation);
 
-const div_class_invitation_three_para3 = document.createElement("p");
-div_class_invitation_three_para3.innerText = live_match[i]["location"]
-div_class_invitation_three_subdiv3.append(div_class_invitation_three_para3);
+    if (score_card_object) {
+      const score_data = scoreCardTemp(won_value, loss_value, draw_value);
+      const div = document.querySelectorAll(".update_score_div");
+      div[i].insertAdjacentHTML("afterbegin", score_data);
 
-const div_class_invitation_three_subdiv4 = document.createElement("div");
-div_class_invitation_three.append(div_class_invitation_three_subdiv4);
+      for (let k = 0; k < mvp_players_list.length; k++) {
+        const team = mvp_players_list[k];
 
-const div_class_invitation_three_icon4 = document.createElement("i");
-div_class_invitation_three_icon4.setAttribute("class", "fa-solid fa-circle-info");
-div_class_invitation_three_subdiv4.append(div_class_invitation_three_icon4);
-
-const div_class_invitation_three_para4 = document.createElement("p");
-div_class_invitation_three_para4.innerText = live_match[i]["information"]
-div_class_invitation_three_subdiv4.append(div_class_invitation_three_para4);
-
-
-let score_card = JSON.parse(localStorage.getItem('score_card'))||[];
-
-score_card_object = score_card.find(e => e.matchUniqueId == live_match[i]["matchUniqueId"] && e.teamUniqueId == my_team_id)
-
-let score_id = ""
-
-let won_value = ""
-
-let loss_value = ""
-
-let draw_value = ""
-
-let mvp_players_list = ""
-
-if(score_card_object){
-	score_id = score_card_object["score_card_id"];
-
-	won_value = score_card_object["score"]["win"]
-
-	loss_value = score_card_object["score"]["loss"]
-
-	draw_value = score_card_object["score"]["draw"]
-
-	mvp_players_list = score_card_object["mvps"]
-
-}
-if(!score_card_object){
-	score_id = 0 ;
-}
-
-
-let score = resultdiv(live_match[i], score_id) ;
-
-div_class_invitation.insertAdjacentHTML("beforeend", score);
-
-document.querySelector(".live").append(div_class_invitation);
-
-
-if(score_card_object){
-	let score_data = scoreCardTemp(won_value, loss_value, draw_value) ;
-	let div = document.querySelectorAll(".update_score_div")
-div[i].insertAdjacentHTML("afterbegin", score_data);
-
-	for(let k=0; k<mvp_players_list.length; k++){
-		const team = mvp_players_list[k];
-
-			let player_profile = players_list.find(e => e.phoneNumber == team)
-			const template = playerResultTemp(player_profile);
-			let all_subdiv = document.querySelectorAll(".mvp_div")
-			all_subdiv[i].insertAdjacentHTML("beforeend", template)
-	}
-}
-if(!score_card_object){
-	let score_data = noScoreCardTemp() ;
-	let div = document.querySelectorAll(".update_score_div")
-div[i].insertAdjacentHTML("afterbegin", score_data);
-}
-
-}
+        const player_profile = players_list.find((e) => e.phoneNumber == team);
+        const template = playerResultTemp(player_profile);
+        const all_subdiv = document.querySelectorAll(".mvp_div");
+        all_subdiv[i].insertAdjacentHTML("beforeend", template);
+      }
+    }
+    if (!score_card_object) {
+      const score_data = noScoreCardTemp();
+      const div = document.querySelectorAll(".update_score_div");
+      div[i].insertAdjacentHTML("afterbegin", score_data);
+    }
+  }
 }
 // this loop is for live match end ----------------
-function playerSelect(data, i){
- const temp =
- `<div class="mvps">
+function playerSelect(data, i) {
+  const temp = `<div class="mvps">
 	<div class="player_img">
-			<img src="${data["imageUrl"]}" >
+			<img src="${data.imageUrl}" >
 		</div>
-		<h2>${data["userName"]}</h2>
+		<h2>${data.userName}</h2>
 		<div class="select_mvp">
-			<input type="checkbox" class="select_name" data-id="${data["phoneNumber"]}" id="check${i}">
-			<label for="check${i}" id="${data["phoneNumber"]}" type="button">SELECT</label>
+			<input type="checkbox" class="select_name" data-id="${data.phoneNumber}" id="check${i}">
+			<label for="check${i}" id="${data.phoneNumber}" type="button">SELECT</label>
 		</div>
 	</div>
- `
- return temp
+ `;
+  return temp;
 }
 
 // update score in live match start ------------------------------------
 
 const bookCovers = document.querySelectorAll(".update-score");
-    bookCovers.forEach(bookCover => {
-      bookCover.addEventListener("click", (event) => {
-        const person_data = bookCover.dataset.id;
-		// console.log(person_data)
-		let popup = document.getElementById("popup");
-			popup.classList.add("open-popup");// hear we add class for show popup
-			//  hear we work for display team member repeat pattern 
+bookCovers.forEach((bookCover) => {
+  bookCover.addEventListener("click", (event) => {
+    const person_data = bookCover.dataset.id;
+    // console.log(person_data)
+    const popup = document.getElementById("popup");
+    popup.classList.add("open-popup"); // hear we add class for show popup
+    //  hear we work for display team member repeat pattern
 
-			let opponent_team_id = request_list.find(e => e.matchUniqueId == person_data && e.team_id != my_team_id)
+    const opponent_team_id = request_list.find(
+      (e) => e.matchUniqueId == person_data && e.team_id != my_team_id
+    );
 
-			opponent_team_object = team_list.find(e => e.uniqueId == opponent_team_id["team_id"])
+    opponent_team_object = team_list.find(
+      (e) => e.uniqueId == opponent_team_id.team_id
+    );
 
-			document.querySelector(".opp_team_name").innerHTML = opponent_team_object["teamName"]
+    document.querySelector(".opp_team_name").innerHTML =
+      opponent_team_object.teamName;
 
-			let opp_image = document.querySelector(".opp_team_image")
-			opp_image.setAttribute("src", opponent_team_object["teamImageUrl"])
+    const opp_image = document.querySelector(".opp_team_image");
+    opp_image.setAttribute("src", opponent_team_object.teamImageUrl);
 
-			document.querySelector(".my_team_name").innerHTML = teamProfile["teamName"]
+    document.querySelector(".my_team_name").innerHTML = teamProfile.teamName;
 
-			let my_team_image = document.querySelector(".my_team_image")
-			my_team_image.setAttribute("src", teamProfile["teamImageUrl"])
+    const my_team_image = document.querySelector(".my_team_image");
+    my_team_image.setAttribute("src", teamProfile.teamImageUrl);
 
-			document.querySelector(".players_list").innerHTML = ""
-			for (let index = 0; index < teamProfile["teamMembers"].length; index++) {
+    document.querySelector(".players_list").innerHTML = "";
+    for (let index = 0; index < teamProfile.teamMembers.length; index++) {
+      const team = teamProfile.teamMembers[index];
 
-			const team = teamProfile["teamMembers"][index];
-
-			let player_profile = players_list.find(e => e.phoneNumber == team)
-			const template = playerSelect(player_profile, index);
-			document.querySelector(".players_list").insertAdjacentHTML("beforeend", template)
-
-}			
-	
-let card_no = document.querySelector(".update-scorecard")
-
-if(bookCover.dataset.name == 0){
-
-	document.querySelector("#won_number").value = 0;
-
-	document.querySelector("#draw_number").value = 0;
-
-	document.querySelector("#loss_number").value = 0;
-
-	card_no.setAttribute("data-value", 0)
-}
-
-if(bookCover.dataset.name != 0){
-
-let score_card = JSON.parse(localStorage.getItem('score_card'))||[];
-
-score_card_object = score_card.find(e => e.score_card_id == bookCover.dataset.name)
-
-document.querySelector("#won_number").value = score_card_object["score"]["win"];
-
-document.querySelector("#draw_number").value = score_card_object["score"]["draw"];
-
-document.querySelector("#loss_number").value = score_card_object["score"]["loss"];
-
-card_no.setAttribute("data-value", score_card_object["score_card_id"])
-
-let mvp_players = score_card_object["mvps"]
-
-const select_mvps = document.querySelectorAll(".select_name");
-
-for(let i=0;i<mvp_players.length;i++){
-	let check = mvp_players[i]
-	for(let j=0;j<select_mvps.length;j++){
-	let find = select_mvps[j].dataset.id 
-	if(check == find){
-		select_mvps[j].checked = true
-		let a = document.getElementById(find)
-			a.style.color = "#96352c";
-			a.innerHTML = "SELECTED";
-	}
-}
-
-}
-
-
-}
-
-
-localStorage.setItem('match_id', JSON.stringify(person_data))
-
-
-// get mvps numbers by check box
-const select_mvps = document.querySelectorAll(".select_name");
-console.log(select_mvps.length)
-select_mvps.forEach(bookCover => {
-      bookCover.addEventListener("click", () => {
-		if(bookCover.checked == true){
-			let a = document.getElementById(bookCover.dataset.id)
-			a.style.color = "#96352c";
-			a.innerHTML = "SELECTED";
-
-		}
-		if(bookCover.checked == false){
-			let a = document.getElementById(bookCover.dataset.id)
-			a.style.color = "#14b393";
-			a.innerHTML = "SELECT";
-		}
-
-
-        const person_data = bookCover.dataset.id;
-		console.log(person_data)
-	})
-    })
-	
-      })
-    })
-
-
-
-
-function updateScore(){
-  let score_card = JSON.parse(localStorage.getItem('score_card'))||[];
-
-  	let score_button = document.querySelector(".update-scorecard");
-
-	let score_card_id =  score_button.dataset.value;
-
-	let match_id = JSON.parse(localStorage.getItem('match_id'))
-
-	let won_score = document.querySelector("#won_number").value;
-
-	let draw_score = document.querySelector("#draw_number").value;
-
-	let loss_score = document.querySelector("#loss_number").value;
-
-	let all_checkbox = document.querySelectorAll(".select_name");
-
-	let all_mvps = [];
-
-	for(let i=0; i<all_checkbox.length;i++){
-		let check = all_checkbox[i].checked;
-		if(check){
-			let id = all_checkbox[i].dataset.id
-			all_mvps.push(id)
-		}
-
-	}
-
-	if(won_score < 0 || loss_score < 0 || draw_score < 0){
-		document.querySelector("#error_msg").innerHTML = "Please update match result only positive values"
-	}
-
-	if(won_score == "" || loss_score == ""){
-		document.querySelector("#error_msg").innerHTML = "Please update match result "
-	}
-	let exist = all_mvps.length
-	console.log(exist)
-    if(exist >= 3){
-        document.querySelector("#error_msg").innerHTML = "Please select two person "
+      const player_profile = players_list.find((e) => e.phoneNumber == team);
+      const template = playerSelect(player_profile, index);
+      document
+        .querySelector(".players_list")
+        .insertAdjacentHTML("beforeend", template);
     }
 
-	if(exist < 3 && won_score != "" && loss_score != "" && won_score >= 0 && loss_score >= 0 && draw_score >= 0){
-		if(score_card_id == 0){
-		let object = {
-			"score_card_id" : uuidv4(),
-			"matchUniqueId" : match_id,
-			"teamUniqueId" : my_team_id,
-			"score" : {
-				"win" : won_score,
-				"draw" : draw_score,
-				"loss" : loss_score
-			},
-			"mvps" : all_mvps
-		}
+    const card_no = document.querySelector(".update-scorecard");
 
-		score_card.push(object);
+    if (bookCover.dataset.name == 0) {
+      document.querySelector("#won_number").value = 0;
 
-		localStorage.setItem('score_card', JSON.stringify(score_card))
+      document.querySelector("#draw_number").value = 0;
 
-		location.reload()
+      document.querySelector("#loss_number").value = 0;
 
-		popup.classList.remove("open-popup");
+      card_no.setAttribute("data-value", 0);
+    }
 
-		
-	}
+    if (bookCover.dataset.name != 0) {
+      const score_card = JSON.parse(localStorage.getItem("score_card")) || [];
 
-	if(score_card_id != 0){
+      score_card_object = score_card.find(
+        (e) => e.score_card_id == bookCover.dataset.name
+      );
 
-		let find_score_card = score_card.find(e => e.score_card_id == score_card_id)
+      document.querySelector("#won_number").value = score_card_object.score.win;
 
-		find_score_card["score"]["win"] = won_score;
+      document.querySelector("#draw_number").value =
+        score_card_object.score.draw;
 
-		find_score_card["score"]["draw"] = draw_score;
+      document.querySelector("#loss_number").value =
+        score_card_object.score.loss;
 
-		find_score_card["score"]["loss"] = loss_score;
+      card_no.setAttribute("data-value", score_card_object.score_card_id);
 
-		find_score_card["mvps"] = all_mvps;
+      const mvp_players = score_card_object.mvps;
 
-		localStorage.setItem('score_card', JSON.stringify(score_card))
-	
-		location.reload()
+      const select_mvps = document.querySelectorAll(".select_name");
 
-		popup.classList.remove("open-popup");
+      for (let i = 0; i < mvp_players.length; i++) {
+        const check = mvp_players[i];
+        for (let j = 0; j < select_mvps.length; j++) {
+          const find = select_mvps[j].dataset.id;
+          if (check == find) {
+            select_mvps[j].checked = true;
+            const a = document.getElementById(find);
+            a.style.color = "#96352c";
+            a.innerHTML = "SELECTED";
+          }
+        }
+      }
+    }
 
-	}
+    localStorage.setItem("match_id", JSON.stringify(person_data));
 
+    // get mvps numbers by check box
+    const select_mvps = document.querySelectorAll(".select_name");
+    console.log(select_mvps.length);
+    select_mvps.forEach((bookCover) => {
+      bookCover.addEventListener("click", () => {
+        if (bookCover.checked == true) {
+          const a = document.getElementById(bookCover.dataset.id);
+          a.style.color = "#96352c";
+          a.innerHTML = "SELECTED";
+        }
+        if (bookCover.checked == false) {
+          const a = document.getElementById(bookCover.dataset.id);
+          a.style.color = "#14b393";
+          a.innerHTML = "SELECT";
+        }
 
-	console.log(won_score)
+        const person_data = bookCover.dataset.id;
+        console.log(person_data);
+      });
+    });
+  });
+});
 
+function updateScore() {
+  const score_card = JSON.parse(localStorage.getItem("score_card")) || [];
+
+  const score_button = document.querySelector(".update-scorecard");
+
+  const score_card_id = score_button.dataset.value;
+
+  const match_id = JSON.parse(localStorage.getItem("match_id"));
+
+  const won_score = document.querySelector("#won_number").value;
+
+  const draw_score = document.querySelector("#draw_number").value;
+
+  const loss_score = document.querySelector("#loss_number").value;
+
+  const all_checkbox = document.querySelectorAll(".select_name");
+
+  const all_mvps = [];
+
+  for (let i = 0; i < all_checkbox.length; i++) {
+    const check = all_checkbox[i].checked;
+    if (check) {
+      const { id } = all_checkbox[i].dataset;
+      all_mvps.push(id);
+    }
+  }
+
+  if (won_score < 0 || loss_score < 0 || draw_score < 0) {
+    document.querySelector("#error_msg").innerHTML =
+      "Please update match result only positive values";
+  }
+
+  if (won_score == "" || loss_score == "") {
+    document.querySelector("#error_msg").innerHTML =
+      "Please update match result ";
+  }
+  const exist = all_mvps.length;
+  console.log(exist);
+  if (exist >= 3) {
+    document.querySelector("#error_msg").innerHTML =
+      "Please select two person ";
+  }
+
+  if (
+    exist < 3 &&
+    won_score != "" &&
+    loss_score != "" &&
+    won_score >= 0 &&
+    loss_score >= 0 &&
+    draw_score >= 0
+  ) {
+    if (score_card_id == 0) {
+      const object = {
+        score_card_id: uuidv4(),
+        matchUniqueId: match_id,
+        teamUniqueId: my_team_id,
+        score: {
+          win: won_score,
+          draw: draw_score,
+          loss: loss_score,
+        },
+        mvps: all_mvps,
+      };
+
+      score_card.push(object);
+
+      localStorage.setItem("score_card", JSON.stringify(score_card));
+
+      location.reload();
+
+      popup.classList.remove("open-popup");
+    }
+
+    if (score_card_id != 0) {
+      const find_score_card = score_card.find(
+        (e) => e.score_card_id == score_card_id
+      );
+
+      find_score_card.score.win = won_score;
+
+      find_score_card.score.draw = draw_score;
+
+      find_score_card.score.loss = loss_score;
+
+      find_score_card.mvps = all_mvps;
+
+      localStorage.setItem("score_card", JSON.stringify(score_card));
+
+      location.reload();
+
+      popup.classList.remove("open-popup");
+    }
+
+    console.log(won_score);
+  }
 }
-	
+
+function ClosePopup() {
+  const popup = document.getElementById("popup");
+  popup.classList.remove("open-popup");
 }
-
-
-
-
-	function ClosePopup() {
-		let popup = document.getElementById("popup");
-	popup.classList.remove("open-popup");
-}
-
 	</script>
-<script src="../../assets/js/past_match.js"></script>
+        <script src="../../assets/js/past_match.js"></script>
 
-</body>
+    </body>
 </html>

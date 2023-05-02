@@ -1,290 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Join team</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-		integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-		integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="../../assets/css/overall.css">
-	<link rel="stylesheet" href="../../assets/css/popup-team-profile.css">
-	<link rel="stylesheet" href="../../assets/css/commonheader.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Join team</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="../../assets/css/overall.css">
+        <link rel="stylesheet" href="../../assets/css/popup-team-profile.css">
+        <link rel="stylesheet" href="../../assets/css/commonheader.css">
+    </head>
 
-<body>
-	<!-- header start -->
-	<header>
-		<a onclick="previousPage()"><i class="fa-solid fa-arrow-left"></i></a>
-		<h1>Join with team</h1>
-	</header>
-	<!-- header end -->
-	<!-- main start -->
-	<section class="jointeammain">
-		<div class="dummy-div"></div>
-		<div class="content join-team-content">
+    <body>
+        <!-- header start -->
+        <header>
+            <a onclick="previousPage()">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <h1>Join with team</h1>
+        </header>
+        <!-- header end -->
+        <!-- main start -->
+        <section class="jointeammain">
+            <div class="dummy-div"></div>
+            <div class="content join-team-content">
 			
-			<div class="content-subheader searchbardiv">
-				<div class="searchbar"><input type="search"><i class="fa-solid fa-magnifying-glass"></i></div>
-			</div>
+                <div class="content-subheader searchbardiv">
+                    <div class="searchbar">
+                        <input type="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
 
-		</div>
-	</section>
-	<!-- main end -->
-	<!-- popup content start -->
-	<div class="popup" id="popup">
+            </div>
+        </section>
+        <!-- main end -->
+        <!-- popup content start -->
+        <div class="popup" id="popup">
 
-		<div class="popup-team-content">
-			<button class="backbtn" type="button" onclick="ClosePopup()"><i
-					class="fa-regular fa-circle-xmark"></i></button>
-			<h2></h2>
-			<div class="popup-team-area">
-				<div>
-					<i class="fa-solid fa-location-dot"></i>
-					<p class="popup_area_name"></p>
-				</div>
-				<div >
-					<i class="fa-regular fa-clock"></i>
-					<p class="popup_since"></p>
-				</div>
-			</div>
+            <div class="popup-team-content">
+                <button class="backbtn" type="button" onclick="ClosePopup()">
+                    <i
+                        class="fa-regular fa-circle-xmark"></i></button>
+                <h2></h2>
+                <div class="popup-team-area">
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p class="popup_area_name"></p>
+                    </div>
+                    <div >
+                        <i class="fa-regular fa-clock"></i>
+                        <p class="popup_since"></p>
+                    </div>
+                </div>
 			
-			<h3 class="popup_member_count"></h3>
-			<div class="players-list">
+                <h3 class="popup_member_count"></h3>
+                <div class="players-list">
 				
-			</div>
+                </div>
 
-			<a href="../profile/teammember.html"><button class="profile-view-btn">VIEW PROFILE</button></a>
-		</div>
-	</div>
+                <a href="../profile/teammember.html">
+                    <button class="profile-view-btn">VIEW PROFILE</button>
+                </a>
+            </div>
+        </div>
 
-	<!-- popup content end -->
-	<!--script for popup start-->
-	<script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
-	<script src="../../assets/js/vendor/lib/moment/moment.min.js"></script>
-	<script>
-		
-        const queryString = window.location.search;
+        <!-- popup content end -->
+        <!--script for popup start-->
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+        <script src="../../assets/js/vendor/lib/moment/moment.min.js"></script>
+        <script>
+		        const queryString = window.location.search;
 
-        const urlParams = new URLSearchParams(queryString);
-    
-        const phonenumber = urlParams.get('unique_id');
+const urlParams = new URLSearchParams(queryString);
 
-		let response_list = JSON.parse(localStorage.getItem('response_list'))||[] ;
+const phonenumber = urlParams.get("unique_id");
 
-		let players_request = response_list.filter(e => e.requestStatus == 2 && e.playerUniqueId == phonenumber)
-		console.log(players_request)
-		let requested_team_id = []
+const response_list = JSON.parse(localStorage.getItem("response_list")) || [];
 
-		for(let i=0; i<players_request.length ; i++){
-			let a = players_request[i]["teamUniqueId"]
+const players_request = response_list.filter(
+  (e) => e.requestStatus == 2 && e.playerUniqueId == phonenumber
+);
+console.log(players_request);
+const requested_team_id = [];
 
-			requested_team_id.push(a)
-		}
-		console.log(requested_team_id)
+for (let i = 0; i < players_request.length; i++) {
+  const a = players_request[i].teamUniqueId;
 
-	let jointeam = (JSON.parse(localStorage.getItem('team_details_list'))).filter(e => e.openForPlayers["status"] == true);	 
+  requested_team_id.push(a);
+}
+console.log(requested_team_id);
 
-	let requested_teams = []
+const jointeam = JSON.parse(localStorage.getItem("team_details_list")).filter(
+  (e) => e.openForPlayers.status == true
+);
 
-	for(let i=0; i<requested_team_id.length ; i++){
-			let a = requested_team_id[i]
+const requested_teams = [];
 
-			let b = jointeam.find(e => e.uniqueId == a)
+for (let i = 0; i < requested_team_id.length; i++) {
+  const a = requested_team_id[i];
 
-			requested_teams.push(b)
-		}
+  const b = jointeam.find((e) => e.uniqueId == a);
 
-	for(let i=0; i<requested_team_id.length ; i++){
-			let user_id = requested_teams[i]
+  requested_teams.push(b);
+}
 
-			let index = jointeam.indexOf(user_id)
+for (let i = 0; i < requested_team_id.length; i++) {
+  const user_id = requested_teams[i];
 
-			console.log(index)
-			jointeam.splice(index, 1)
+  const index = jointeam.indexOf(user_id);
 
-		}
+  console.log(index);
+  jointeam.splice(index, 1);
+}
 
-
-		function renderTeam(team) {
-			const template = `
+function renderTeam(team) {
+  const template = `
 			<div class="teams">
-				<div class="teamimagediv popup-name" data-id="${team["teamName"]}">
+				<div class="teamimagediv popup-name" data-id="${team.teamName}">
 					<img class="teamprofile"
-							src="${team["teamImageUrl"]}" alt="logo of ${team["teamName"]}">
+							src="${team.teamImageUrl}" alt="logo of ${team.teamName}">
 				</div>
 				<div class="teamdetaildiv">
 					<div>
 						
-							<div class="popup-name" data-id="${team["teamName"]}">
-								<h2>${team["teamName"]}</h2>
+							<div class="popup-name" data-id="${team.teamName}">
+								<h2>${team.teamName}</h2>
 							</div>
 							<div>
 								<i class="fa-solid fa-location-dot"></i>
-								<p>${team["address"]["area"]}</p>
+								<p>${team.address.area}</p>
 							</div>
 						
 					</div>
 					<div>
 						<i class="fa-regular fa-handshake"></i>
-						<p>${team["openForPlayers"]["description"]}</p>
+						<p>${team.openForPlayers.description}</p>
 					</div>
 				</div>
-				<p class="select-link" data-id="${team["teamName"]}">SELECT</p>
+				<p class="select-link" data-id="${team.teamName}">SELECT</p>
 			</div>
-			`
-			return template;
-		}
-
-
-for (let index = 0; index < jointeam.length; index++) {
-
-	const team = jointeam[index];
-	const template = renderTeam(team);
-	document.querySelector(".join-team-content").insertAdjacentHTML("beforeend", template)
-
+			`;
+  return template;
 }
 
-let players_list = JSON.parse(localStorage.getItem('user_detail'));
+for (let index = 0; index < jointeam.length; index++) {
+  const team = jointeam[index];
+  const template = renderTeam(team);
+  document
+    .querySelector(".join-team-content")
+    .insertAdjacentHTML("beforeend", template);
+}
 
-let owner_profile = players_list.find(e => e.phoneNumber == phonenumber)
+const players_list = JSON.parse(localStorage.getItem("user_detail"));
 
-if(owner_profile["captainStatus"] != 2){
-	let a = document.querySelectorAll("p.select-link")
-	for (let i = 0; i < a.length; i++) {
-  	a[i].style.display = "none";
-	}
-	
-	
+const owner_profile = players_list.find((e) => e.phoneNumber == phonenumber);
+
+if (owner_profile.captainStatus != 2) {
+  const a = document.querySelectorAll("p.select-link");
+  for (let i = 0; i < a.length; i++) {
+    a[i].style.display = "none";
+  }
 }
 
 // function for team members display in popup start
-function renderPlayer(player) {  
-const template1 = `	
+function renderPlayer(player) {
+  const template1 = `	
 <div>
-		<img class="players-list-image" src="${player["imageUrl"]}" alt="Image of ${player["userName"]}">
-		<p>${player["userName"]}</p>
+		<img class="players-list-image" src="${player.imageUrl}" alt="Image of ${player.userName}">
+		<p>${player.userName}</p>
 	</div>
-	`
-return template1;
+	`;
+  return template1;
 }
-
 
 // response create start
 
-let selectbtn = document.querySelectorAll(".select-link");
-	selectbtn.forEach(each => {
-      each.addEventListener("click", (event) => {
-		const person_data = jointeam.find(book => book["teamName"] === each.dataset.id);
+const selectbtn = document.querySelectorAll(".select-link");
+selectbtn.forEach((each) => {
+  each.addEventListener("click", (event) => {
+    const person_data = jointeam.find(
+      (book) => book.teamName === each.dataset.id
+    );
 
-		let user_data = JSON.parse(localStorage.getItem('user_data'));
+    const user_data = JSON.parse(localStorage.getItem("user_data"));
 
-		let response_unique_id = uuidv4();	
-		team_unique_id = person_data["uniqueId"],
-		player_unique_id = phonenumber,
-		created_time = moment();
+    const response_unique_id = uuidv4();
+    (team_unique_id = person_data.uniqueId),
+      (player_unique_id = phonenumber),
+      (created_time = moment());
 
-		
+    const response_details = {
+      responseUniqueId: response_unique_id,
+      playerUniqueId: player_unique_id,
+      teamUniqueId: team_unique_id,
+      createdTime: created_time,
+      requestStatus: 2,
+    };
 
-		let response_details = {
-			"responseUniqueId" : response_unique_id,
-			"playerUniqueId" : player_unique_id,
-			"teamUniqueId" : team_unique_id,
-			"createdTime" : created_time,
-			"requestStatus" : 2 
-		}
+    response_list.push(response_details);
 
-		response_list.push(response_details);
-        
-        localStorage.setItem('response_list', JSON.stringify(response_list));
+    localStorage.setItem("response_list", JSON.stringify(response_list));
 
-    	window.location.href = `./response.html?unique_id=${phonenumber}`;
-
-	  })
-	})
-
+    window.location.href = `./response.html?unique_id=${phonenumber}`;
+  });
+});
 
 // response create end
 
-// onclick button 
+// onclick button
 
 const bookCovers = document.querySelectorAll(".popup-name");
-    bookCovers.forEach(bookCover => {
-      bookCover.addEventListener("click", (event) => {
-        const person_data = jointeam.find(book => book["teamName"] === bookCover.dataset.id);
-		let popup = document.getElementById("popup");
-			popup.classList.add("open-popup");// hear we add class for show popup
-			//  hear we work for display team member repeat pattern 
-			document.querySelector(".players-list").innerHTML = ""
+bookCovers.forEach((bookCover) => {
+  bookCover.addEventListener("click", (event) => {
+    const person_data = jointeam.find(
+      (book) => book.teamName === bookCover.dataset.id
+    );
+    const popup = document.getElementById("popup");
+    popup.classList.add("open-popup"); // hear we add class for show popup
+    //  hear we work for display team member repeat pattern
+    document.querySelector(".players-list").innerHTML = "";
 
-			// find players in there team start
+    // find players in there team start
 
-			let all_player_list = JSON.parse(localStorage.getItem('user_detail'));
+    const all_player_list = JSON.parse(localStorage.getItem("user_detail"));
 
-			let unique_player = person_data["teamMembers"];
+    const unique_player = person_data.teamMembers;
 
+    const players_list = [];
 
-			let players_list = []
+    for (i = 0; i < unique_player.length; i++) {
+      const player_number = unique_player[i];
 
-			for(i=0;i<unique_player.length;i++){
+      function findPlayer(a) {
+		        return a.phoneNumber == player_number;
+      }
 
-				let player_number = unique_player[i];
+      const player_object = all_player_list.find(findPlayer);
 
-				function findPlayer(a) {
-				return a.phoneNumber == player_number ;
-				}	
+      players_list.push(player_object);
+    }
 
-				let player_object = all_player_list.find(findPlayer);
+    // find players in there team end
 
-				players_list.push(player_object)
+    for (let index = 0; index < players_list.length; index++) {
+      const player = players_list[index];
+      const template1 = renderPlayer(player);
+      document
+        .querySelector(".players-list")
+        .insertAdjacentHTML("beforeend", template1);
+    }
+    // popup team content
+    const popup_team_name = document.querySelector("div.popup-team-content h2");
+    popup_team_name.innerHTML = person_data.teamName;
 
-			}
+    const popup_area_name = document.querySelector("p.popup_area_name");
+    popup_area_name.innerHTML = `${person_data.address.area},  ${person_data.address.distric}`;
 
+    const popup_since = document.querySelector("p.popup_since");
+    const teamSince = moment(person_data.dateOfJoin);
+    popup_since.innerHTML = `Since  ${teamSince.format("MMM Do YY")}`;
 
-			// find players in there team end
+    const popup_member_count = document.querySelector("h3.popup_member_count");
+    popup_member_count.innerHTML = `Members (${person_data.teamMembers.length})`;
+  });
+});
 
-
-			for (let index = 0; index < players_list.length; index++) {
-
-			const player = players_list[index];
-			const template1 = renderPlayer(player);
-			document.querySelector(".players-list").insertAdjacentHTML("beforeend", template1)
-
-				}
-			// popup team content 
-			let popup_team_name = document.querySelector("div.popup-team-content h2");
-			popup_team_name.innerHTML = person_data["teamName"];
-
-			let popup_area_name = document.querySelector("p.popup_area_name");
-			popup_area_name.innerHTML = person_data["address"]["area"] + ",  " + person_data["address"]["distric"];
-			
-			let popup_since = document.querySelector("p.popup_since");
-			let teamSince = moment(person_data["dateOfJoin"])
-			popup_since.innerHTML = "Since  " + teamSince.format("MMM Do YY");
-
-			let popup_member_count = document.querySelector("h3.popup_member_count");
-			popup_member_count.innerHTML = "Members (" + person_data["teamMembers"].length +")" ;
-
-	
-      })
-    })
-				
 function ClosePopup() {
-	popup.classList.remove("open-popup");
+  popup.classList.remove("open-popup");
 }
-function previousPage(){
-	window.history.go(-1)
+function previousPage() {
+  window.history.go(-1);
 }
 // function for team members display in popup end
 	</script>
 
-
-</body>
+    </body>
 
 </html>
-

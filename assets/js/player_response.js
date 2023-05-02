@@ -2,13 +2,13 @@ const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
 
-const phonenumber = urlParams.get('unique_id');
+const phonenumber = urlParams.get("unique_id");
 
 const unique_id = phonenumber;
 
 // find player team
 
-const team_list = JSON.parse(localStorage.getItem('team_details_list'));
+const team_list = JSON.parse(localStorage.getItem("team_details_list"));
 
 function findPlayer(a) {
   const index = a.teamMembers.indexOf(unique_id);
@@ -21,7 +21,7 @@ const teamProfile = team_list.find(findPlayer);
 
 const team_unique_id = teamProfile.uniqueId;
 
-const player_request_list = JSON.parse(localStorage.getItem('response_list'));
+const player_request_list = JSON.parse(localStorage.getItem("response_list"));
 
 function findRequest(a) {
   return a.teamUniqueId == team_unique_id;
@@ -32,14 +32,17 @@ const request_list = player_request_list.filter(findRequest); // request list da
 const player_request_id = [];
 
 for (let i = 0; i < request_list.length; i++) {
-  if (request_list[i].requestStatus != 0 && request_list[i].requestStatus != 1) {
+  if (
+    request_list[i].requestStatus != 0 &&
+    request_list[i].requestStatus != 1
+  ) {
     const value = request_list[i].playerUniqueId;
 
     player_request_id.push(value);
   }
 }
 
-const all_player_list = JSON.parse(localStorage.getItem('user_detail'));
+const all_player_list = JSON.parse(localStorage.getItem("user_detail"));
 
 const players_data = [];
 
@@ -62,7 +65,9 @@ for (i = 0; i < player_request_id.length; i++) {
 for (i = 0; i < players_data.length; i++) {
   const player = players_data[i];
   const template1 = renderPlayer(player);
-  document.querySelector('.players-request-content').insertAdjacentHTML('beforeend', template1);
+  document
+    .querySelector(".players-request-content")
+    .insertAdjacentHTML("beforeend", template1);
 }
 
 function renderPlayer(team) {
@@ -88,31 +93,33 @@ function renderPlayer(team) {
   return template;
 }
 
-const selectbtn = document.querySelectorAll('.popup_profile');
+const selectbtn = document.querySelectorAll(".popup_profile");
 selectbtn.forEach((each) => {
-  each.addEventListener('click', (event) => {
-    popup.classList.add('open-popup');
-    const person_data = players_data.find((book) => book.phoneNumber === each.dataset.id);
+  each.addEventListener("click", (event) => {
+    popup.classList.add("open-popup");
+    const person_data = players_data.find(
+      (book) => book.phoneNumber === each.dataset.id
+    );
 
     // players popup details start
 
-    const player_popup_image = document.querySelector('.player_popup_image');
-    player_popup_image.setAttribute('src', person_data.imageUrl);
-    player_popup_image.setAttribute('alt', `image of  ${person_data.userName}`);
+    const player_popup_image = document.querySelector(".player_popup_image");
+    player_popup_image.setAttribute("src", person_data.imageUrl);
+    player_popup_image.setAttribute("alt", `image of  ${person_data.userName}`);
 
-    const player_popup_username = document.querySelector('.player-name h3');
+    const player_popup_username = document.querySelector(".player-name h3");
     player_popup_username.innerHTML = person_data.userName;
 
-    const player_popup_fullname = document.querySelector('.player-name p');
+    const player_popup_fullname = document.querySelector(".player-name p");
     player_popup_fullname.innerHTML = `${person_data.firstName} ${person_data.lastName}`;
 
-    const player_popup_area = document.querySelector('.area_name_para');
+    const player_popup_area = document.querySelector(".area_name_para");
     player_popup_area.innerHTML = `${person_data.area}, ${person_data.distric}`;
 
-    const player_popup_about = document.querySelector('.player_about');
+    const player_popup_about = document.querySelector(".player_about");
     player_popup_about.innerHTML = person_data.about;
 
-    const player_popup_age = document.querySelector('.player_age');
+    const player_popup_age = document.querySelector(".player_age");
     const date = person_data.dateOFBirth;
     const dob = new Date(date);
     const today = new Date();
@@ -126,24 +133,30 @@ selectbtn.forEach((each) => {
 
 // request accept or reject ;
 
-const acceptBtn = document.querySelectorAll('.player_request_accept');
+const acceptBtn = document.querySelectorAll(".player_request_accept");
 acceptBtn.forEach((accept) => {
-  accept.addEventListener('click', (event) => {
-    const request_data = (request_list.filter((e) => e.requestStatus == 2)).find((react) => react.playerUniqueId === accept.dataset.id);
+  accept.addEventListener("click", (event) => {
+    const request_data = request_list
+      .filter((e) => e.requestStatus == 2)
+      .find((react) => react.playerUniqueId === accept.dataset.id);
 
     request_data.requestStatus = 1;
 
-    localStorage.setItem('response_list', JSON.stringify(player_request_list));
+    localStorage.setItem("response_list", JSON.stringify(player_request_list));
 
-    const person_data = all_player_list.find((react) => react.phoneNumber === accept.dataset.id);
+    const person_data = all_player_list.find(
+      (react) => react.phoneNumber === accept.dataset.id
+    );
 
     person_data.captainStatus = 0;
 
     // here we should find that players other request data that should delete from local storage
 
-    localStorage.setItem('user_detail', JSON.stringify(all_player_list));
+    localStorage.setItem("user_detail", JSON.stringify(all_player_list));
 
-    const filter_player_request = player_request_list.filter((react) => react.playerUniqueId === accept.dataset.id);
+    const filter_player_request = player_request_list.filter(
+      (react) => react.playerUniqueId === accept.dataset.id
+    );
 
     for (let i = 0; i < filter_player_request.length; i++) {
       const index = player_request_list.indexOf(filter_player_request[i]);
@@ -152,13 +165,13 @@ acceptBtn.forEach((accept) => {
       }
     }
 
-    localStorage.setItem('response_list', JSON.stringify(player_request_list));
+    localStorage.setItem("response_list", JSON.stringify(player_request_list));
 
     // here we should add player unique id in team details
 
     teamProfile.teamMembers.push(accept.dataset.id);
 
-    localStorage.setItem('team_details_list', JSON.stringify(team_list));
+    localStorage.setItem("team_details_list", JSON.stringify(team_list));
 
     location.reload();
   });
@@ -166,14 +179,16 @@ acceptBtn.forEach((accept) => {
 
 // request accept or reject ;
 
-const rejectbtn = document.querySelectorAll('.player_request_reject');
+const rejectbtn = document.querySelectorAll(".player_request_reject");
 rejectbtn.forEach((accept) => {
-  accept.addEventListener('click', (event) => {
-    const request_data = (request_list.filter((e) => e.requestStatus == 2)).find((react) => react.playerUniqueId === accept.dataset.id);
+  accept.addEventListener("click", (event) => {
+    const request_data = request_list
+      .filter((e) => e.requestStatus == 2)
+      .find((react) => react.playerUniqueId === accept.dataset.id);
 
     request_data.requestStatus = 0;
 
-    localStorage.setItem('response_list', JSON.stringify(player_request_list));
+    localStorage.setItem("response_list", JSON.stringify(player_request_list));
 
     location.reload();
   });
