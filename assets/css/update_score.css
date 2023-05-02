@@ -186,7 +186,7 @@ div.score_container .top{
     font-size: 20px;
     color: var(--offwhite);
 }
-.score_head h1{
+.score_head p{
     font-size: 20px;
     color: var(--offwhite);
     text-align: center;

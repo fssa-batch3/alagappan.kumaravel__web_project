@@ -106,7 +106,7 @@ header .top i{
     width: 70%;
     height: 60%;
 }
-.profiledetailsdiv h1{
+.profiledetailsdiv p.name{
     font-size: 22px;
     color: var(--fntwight);
     margin: 0;

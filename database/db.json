@@ -26,6 +26,16 @@
       "id": 1,
       "area": "aminjikarai",
       "distric": "chennai"
+    },
+    {
+      "area": "annanagar",
+      "distric": "chennai",
+      "id": 2
+    },
+    {
+      "area": "guduvancheri",
+      "distric": "chennai",
+      "id": 3
     }
   ],
   "users": [

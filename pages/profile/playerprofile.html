@@ -1,600 +1,595 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Player profile</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="../../assets/css/profileview.css">
-	<link rel="stylesheet" href="../../assets/css/update_score.css">
-	<link rel="stylesheet" href="../../assets/css/roundslider.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Player profile</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="../../assets/css/profileview.css">
+        <link rel="stylesheet" href="../../assets/css/update_score.css">
+        <link rel="stylesheet" href="../../assets/css/roundslider.css">
+    </head>
 
-<body>
+    <body>
 
-	<!-- header start -->
-	<header>
-		<div class="color"></div>
-		<div class="top">
-			<a onclick="previousPage()"><i class="fa-solid fa-arrow-left"></i></a>
-			<div class="topleft">
-				<i class="fa-solid fa-share"></i>
-				<i class="fa-brands fa-whatsapp"></i>
-			</div>
-		</div>
-		<div class="sidebar-profile">
-				<div class="playerimagediv">
-				</div>
-				<div class="profiledetailsdiv">
-					<h1></h1>
-					<div class="">
-						<i class="fa-solid fa-location-dot"></i>
-						<p></p>
-					</div>
-					<div>
-						<i class="fa-regular fa-calendar"></i>
-						<p></p>
-					</div>
-				</div>
-			</div>
-	</header>
-	<!-- header end -->
-	<main>
-		<div class="headerbottom">
-			<button type="button" onclick="stats()">STATS</button>
+        <!-- header start -->
+        <header>
+            <div class="color"></div>
+            <div class="top">
+                <a onclick="previousPage()">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <div class="topleft">
+                    <i class="fa-solid fa-share"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+            </div>
+            <div class="sidebar-profile">
+                <div class="playerimagediv">
+                </div>
+                <div class="profiledetailsdiv">
+                    <h1></h1>
+                    <div class="">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p></p>
+                    </div>
+                    <div>
+                        <i class="fa-regular fa-calendar"></i>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+        <main>
+            <div class="headerbottom">
+                <button type="button" onclick="stats()">STATS</button>
 
-			<button type="button" onclick="profile()">PROFILE</button>
+                <button type="button" onclick="profile()">PROFILE</button>
 
-			<button type="button" onclick="match()">MATCHES</button>
+                <button type="button" onclick="match()">MATCHES</button>
 
-			<button  type="button" onclick="member()">TEAM</button>
-		<div class="button_underline"></div>
-	</div>
+                <button type="button" onclick="member()">TEAM</button>
+                <div class="button_underline"></div>
+            </div>
 
-	<section class="four">
-		<!-- <div class="playermatch">
-			Player not played match.
-		</div> -->
-		<h2>Players MVP stats</h2>
-		<div class="stats_container">
-			<div class="stats_left">
-				<h3>No of matches played</h3>
-				<p>20</p>
-				<h3>MVPs</h3>
-				<p>5</p>
-			</div>
-			<div class="stats_right">
-				<p>MVP Rating</p>
-				<input type="range" class="c-rng" min="0" max="5" step="0.1" value="1.3" data-range="circular" />
-			</div>
-		</div>
+            <section class="four">
+                <!-- <div class="playermatch">
+                    Player not played match.
+                    </div> -->
+                <h2>Players MVP stats</h2>
+                <div class="stats_container">
+                    <div class="stats_left">
+                        <h3>No of matches played</h3>
+                        <p>20</p>
+                        <h3>MVPs</h3>
+                        <p>5</p>
+                    </div>
+                    <div class="stats_right">
+                        <p>MVP Rating</p>
+                        <input type="range" class="c-rng" min="0" max="5" step="0.1" value="1.3" data-range="circular">
+                    </div>
+                </div>
 
-	</section>
+            </section>
 
-	<section class="three">
-		<div class="playermatch">
-			Player currently not in team.
-		</div>
-	</section>
+            <section class="three">
+                <div class="playermatch">
+                    Player currently not in team.
+                </div>
+            </section>
 
-	<section class="second">
-		<div class="completed">
+            <section class="second">
+                <div class="completed">
 
-			<!-- <div class="teams">
-				<div class="teamimagediv">
-					<img class="teamprofile" src="../../assets/images/team profile image/team2profile.jpg" alt="teamprofile">
-				</div>
-				<div class="teamdetaildiv">
-					<div>
-						<div><p>vs</p><h2>Avengers11</h2></div>
-						<div>
-							<i class="fa-regular fa-clock"></i>
-							<p>2-Dec-2022,15:30</p></div>
-					</div>
-					<div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
-						<p>Chennai, Annanagar</p></div>
+                    <!-- <div class="teams">
+                        <div class="teamimagediv">
+                        <img class="teamprofile" src="../../assets/images/team profile image/team2profile.jpg" alt="teamprofile">
+                        </div>
+                        <div class="teamdetaildiv">
+                        <div>
+                        <div><p>vs</p><h2>Avengers11</h2></div>
+                        <div>
+                        <i class="fa-regular fa-clock"></i>
+                        <p>2-Dec-2022,15:30</p></div>
+                        </div>
+                        <div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
+                        <p>Chennai, Annanagar</p></div>
 
-						<div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
-							<p>Betting match, Rubberball match</p></div>	
-				</div>
-			</div>
+                        <div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
+                        <p>Betting match, Rubberball match</p></div>	
+                        </div>
+                        </div>
 
-			<div class="teams">
-				<div class="teamimagediv">
-					<img class="teamprofile" src="../../assets/images/team profile image/team3profile.jpg" alt="teamprofile">
-				</div>
-				<div class="teamdetaildiv">
-					<div>
-						<div><p>vs</p><h2>Warriors</h2></div>
-						<div>
-							<i class="fa-regular fa-clock"></i>
-							<p>2-Dec-2022,08:30</p></div>
-					</div>
-					<div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
-						<p>Chennai, Annanagar</p></div>
+                        <div class="teams">
+                        <div class="teamimagediv">
+                        <img class="teamprofile" src="../../assets/images/team profile image/team3profile.jpg" alt="teamprofile">
+                        </div>
+                        <div class="teamdetaildiv">
+                        <div>
+                        <div><p>vs</p><h2>Warriors</h2></div>
+                        <div>
+                        <i class="fa-regular fa-clock"></i>
+                        <p>2-Dec-2022,08:30</p></div>
+                        </div>
+                        <div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
+                        <p>Chennai, Annanagar</p></div>
 
-						<div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
-							<p>Betting match, Rubberball match</p></div>	
-				</div>
-			</div>
+                        <div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
+                        <p>Betting match, Rubberball match</p></div>	
+                        </div>
+                        </div>
 
-			<div class="teams">
-				<div class="teamimagediv">
-					<img class="teamprofile" src="../../assets/images/team profile image/team4profile.jpg" alt="teamprofile">
-				</div>
-				<div class="teamdetaildiv">
-					<div>
-						<div><p>vs</p><h2>Madmax11</h2></div>
-						<div>
-							<i class="fa-regular fa-clock"></i>
-							<p>1-Dec-2022,15:30</p></div>
-					</div>
-					<div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
-						<p>Chennai, Annanagar</p></div>
+                        <div class="teams">
+                        <div class="teamimagediv">
+                        <img class="teamprofile" src="../../assets/images/team profile image/team4profile.jpg" alt="teamprofile">
+                        </div>
+                        <div class="teamdetaildiv">
+                        <div>
+                        <div><p>vs</p><h2>Madmax11</h2></div>
+                        <div>
+                        <i class="fa-regular fa-clock"></i>
+                        <p>1-Dec-2022,15:30</p></div>
+                        </div>
+                        <div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
+                        <p>Chennai, Annanagar</p></div>
 
-						<div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
-							<p>Friendly match, Rubberball match</p></div>	
-				</div>
-			</div>
+                        <div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
+                        <p>Friendly match, Rubberball match</p></div>	
+                        </div>
+                        </div>
 
-			<div class="teams">
-				<div class="teamimagediv">
-					<img class="teamprofile" src="../../assets/images/team profile image/team5profile.jpg" alt="teamprofile">
-				</div>
-				<div class="teamdetaildiv">
-					<div>
-						<div><p>vs</p><h2>Wonder11</h2></div>
-						<div>
-							<i class="fa-regular fa-clock"></i>
-							<p>24-Nov-2022,15:30</p></div>
-					</div>
-					<div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
-						<p>Chennai, Annanagar</p></div>
+                        <div class="teams">
+                        <div class="teamimagediv">
+                        <img class="teamprofile" src="../../assets/images/team profile image/team5profile.jpg" alt="teamprofile">
+                        </div>
+                        <div class="teamdetaildiv">
+                        <div>
+                        <div><p>vs</p><h2>Wonder11</h2></div>
+                        <div>
+                        <i class="fa-regular fa-clock"></i>
+                        <p>24-Nov-2022,15:30</p></div>
+                        </div>
+                        <div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
+                        <p>Chennai, Annanagar</p></div>
 
-						<div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
-							<p>Betting match, Rubberball match</p></div>	
-				</div>
-			</div>
+                        <div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
+                        <p>Betting match, Rubberball match</p></div>	
+                        </div>
+                        </div>
 
-			<div class="teams">
-				<div class="teamimagediv">
-					<img class="teamprofile" src="../../assets/images/team profile image/team6profile.png" alt="teamprofile">
-				</div>
-				<div class="teamdetaildiv">
-					<div>
-						<div><p>vs</p><h2>Asgard</h2></div>
-						<div>
-							<i class="fa-regular fa-clock"></i>
-							<p>23-Nov-2022,15:30</p></div>
-					</div>
-					<div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
-						<p>Chennai, Annanagar</p></div>
+                        <div class="teams">
+                        <div class="teamimagediv">
+                        <img class="teamprofile" src="../../assets/images/team profile image/team6profile.png" alt="teamprofile">
+                        </div>
+                        <div class="teamdetaildiv">
+                        <div>
+                        <div><p>vs</p><h2>Asgard</h2></div>
+                        <div>
+                        <i class="fa-regular fa-clock"></i>
+                        <p>23-Nov-2022,15:30</p></div>
+                        </div>
+                        <div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
+                        <p>Chennai, Annanagar</p></div>
 
-						<div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
-							<p>Betting match, Rubberball match</p></div>	
-				</div>
-			</div> -->
-
+                        <div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
+                        <p>Betting match, Rubberball match</p></div>	
+                        </div>
+                        </div> -->
 	
-				<!-- popup past result start -->
-	<div class="popup" id="popup_result">
-		<div class="popup-team-content">
-			<div class="score_container">
-				<div class="top">
-					<div class="backgroundimage">
-					<div class="score_head">
-						<button type="button" onclick="ClosePopupResult()">
-							<i class="fa-solid fa-chevron-left"></i></button>
-						<h1>SCORECARD</h1>
-					</div>
-					<div class="team_score">
-						<div class="team_name">
-							<img class="my_team_image" id="past_my_team_img" src="" alt="my team image">
-							<p class="my_team_name" id="past_my_team"></p>
-						</div>
-						<div class="score_value">	
-							<h2>Matches</h2>
-							<div class="score">
-									<div>
-										<p id="past_Won_score"></p>
-										<p class="subname">Won</p>
-									</div>
+                    <!-- popup past result start -->
+                    <div class="popup" id="popup_result">
+                        <div class="popup-team-content">
+                            <div class="score_container">
+                                <div class="top">
+                                    <div class="backgroundimage">
+                                        <div class="score_head">
+                                            <button type="button" onclick="ClosePopupResult()">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </button>
+                                            <h1>SCORECARD</h1>
+                                        </div>
+                                        <div class="team_score">
+                                            <div class="team_name">
+                                                <img class="my_team_image" id="past_my_team_img" src="" alt="my team image">
+                                                <p class="my_team_name" id="past_my_team"></p>
+                                            </div>
+                                            <div class="score_value">	
+                                                <h2>Matches</h2>
+                                                <div class="score">
+                                                    <div>
+                                                        <p id="past_Won_score"></p>
+                                                        <p class="subname">Won</p>
+                                                    </div>
 								
-									<div>
-										<p id="past_draw_score"></p>
-										<p class="subname">Draw</p>
-									</div>
+                                                    <div>
+                                                        <p id="past_draw_score"></p>
+                                                        <p class="subname">Draw</p>
+                                                    </div>
 								
-									<div>
-										<p id="past_loss_score"></p>
-										<p class="subname">Loss</p>
-									</div>
+                                                    <div>
+                                                        <p id="past_loss_score"></p>
+                                                        <p class="subname">Loss</p>
+                                                    </div>
 									
-								</div>
-						</div>
-						<div class="team_name">
-							<img class="opp_team_image" id="past_opp_team_img" src="" alt="opponent image">
-							<p class="opp_team_name" id="past_opp_team"></p>
-						</div>
-					</div>
-				</div>
-				</div>
-				<div class="bottom">
-					<div class="result_nav">
-						<button class="mvpbtn" type="button" onclick="pastMvp()">MVPs</button>
-						<button class="playersbtn" type="button" onclick="pastPlayers()">Players</button>
-						<button class="detailsbtn" type="button" onclick="pastDetails()">Details</button>
-					</div>
-	<!-- match details start -->
-	<div class="past_match_details">
-		<h3>Details</h3>
-		<div class="details">
-			<div>
-				<i class="fa-regular fa-clock"></i>
-				<p id="past_match_time"></p>
-			</div>
-			<div>
-				<i class="fa-solid fa-shield-halved"></i>
-				<p id="past_match_type"></p>
-			</div>
-			<div>
-				<i class="fa-solid fa-location-dot"></i>
-				<p id="past_match_location"></p>
-			</div>
-			<div>
-				<i class="fa-solid fa-circle-info"></i>	
-				<p id="past_match_info"></p>
-			</div>
-		</div>
-	</div>
+                                                </div>
+                                            </div>
+                                            <div class="team_name">
+                                                <img class="opp_team_image" id="past_opp_team_img" src="" alt="opponent image">
+                                                <p class="opp_team_name" id="past_opp_team"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="result_nav">
+                                        <button class="mvpbtn" type="button" onclick="pastMvp()">MVPs</button>
+                                        <button class="playersbtn" type="button" onclick="pastPlayers()">Players</button>
+                                        <button class="detailsbtn" type="button" onclick="pastDetails()">Details</button>
+                                    </div>
+                                    <!-- match details start -->
+                                    <div class="past_match_details">
+                                        <h3>Details</h3>
+                                        <div class="details">
+                                            <div>
+                                                <i class="fa-regular fa-clock"></i>
+                                                <p id="past_match_time"></p>
+                                            </div>
+                                            <div>
+                                                <i class="fa-solid fa-shield-halved"></i>
+                                                <p id="past_match_type"></p>
+                                            </div>
+                                            <div>
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <p id="past_match_location"></p>
+                                            </div>
+                                            <div>
+                                                <i class="fa-solid fa-circle-info"></i>	
+                                                <p id="past_match_info"></p>
+                                            </div>
+                                        </div>
+                                    </div>
 	
-	<!-- match details end -->
+                                    <!-- match details end -->
 	
-	<!-- match players start -->
-					<div class="past_match_players">
-						<h3>Players</h3>
-						<div class="members">
-							<div class="my_team_players">
-								<h4></h4>
-								<div>
+                                    <!-- match players start -->
+                                    <div class="past_match_players">
+                                        <h3>Players</h3>
+                                        <div class="members">
+                                            <div class="my_team_players">
+                                                <h4></h4>
+                                                <div>
 	
-								</div>
-							
+                                                </div>
 	
-							</div>
-							<div class="opp_team_players">
-								<h4></h4>
-								<div>
+                                            </div>
+                                            <div class="opp_team_players">
+                                                <h4></h4>
+                                                <div>
 	
-								</div>
-								<!-- <div class="players">
-									<img src="../../assets/images/Avatar.png" alt="">
-									<p>Madhav</p>
-								</div>
+                                                </div>
+                                                <!-- <div class="players">
+                                                    <img src="../../assets/images/Avatar.png" alt="">
+                                                    <p>Madhav</p>
+                                                    </div>
 	
-								<div class="players">
-									<img src="../../assets/images/Avatar.png" alt="">
-									<p>Madhav</p>
-								</div> -->
+                                                    <div class="players">
+                                                    <img src="../../assets/images/Avatar.png" alt="">
+                                                    <p>Madhav</p>
+                                                    </div> -->
 	
-							</div>
-						</div>
-					</div>
-	<!-- match players end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- match players end -->
 	
-	<!-- match mvps start -->
-					<div class="mvp_det">
-							<table class="past_players_list">
-								<caption>Most Valuble Players</caption>
-								<thead>
-								<tr>
-									<th></th>
-									<th>Players</th>
-									<th>Team</th>
-								  </tr></thead>
-								  <tbody>
+                                    <!-- match mvps start -->
+                                    <div class="mvp_det">
+                                        <table class="past_players_list">
+                                            <caption>Most Valuble Players</caption>
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Players</th>
+                                                    <th>Team</th>
+                                                </tr></thead>
+                                            <tbody>
 	
-								  </tbody>
+                                            </tbody>
 								  
-							  </table>
+                                        </table>
 		
-					</div>
-	<!-- match mvps end -->
+                                    </div>
+                                    <!-- match mvps end -->
 	
-	
-				</div>
+                                </div>
 				
-			</div>	
-		</div>
-	</div>
-		<!-- popup past result end -->
+                            </div>	
+                        </div>
+                    </div>
+                    <!-- popup past result end -->
 	
-		</div>
-	</section>
+                </div>
+            </section>
 
-	<section class="first">
-		<div class="playerprofile">
-			<table class="data">
-				<caption></caption>
-						<thead>
-							<th>
-								<td></td>
-								<td></td>
-								<td></td>
-							</th>
-						</thead>
-			<tbody>
-				<tr>
-					<td>Full name</td>
-					<td class="player_full_name"></td>
+            <section class="first">
+                <div class="playerprofile">
+                    <table class="data">
+                        <caption></caption>
+                        <thead>
+                            <th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Full name</td>
+                                <td class="player_full_name"></td>
+                            </tr>
+                            <tr>
+                                <td>Age</td>
+                                <td class="player_age"></td>
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                                <td class="player_gender"></td>
+                            </tr>
+                            <tr>
+                                <td>Game</td>
+                                <td class="player_game"></td>
+                            </tr>
+                            <td>Teamname</td>
+                            <td class="player_team_name"></td>
 				  </tr>
-				  <tr>
-					<td>Age</td>
-					<td class="player_age"></td>
-				  </tr>
-				  <tr>
-					<td>Gender</td>
-					<td class="player_gender"></td>
-				  </tr>
-				  <tr>
-					<td>Game</td>
-					<td class="player_game"></td>
-				  </tr>
-					<td>Teamname</td>
-					<td class="player_team_name"></td>
-				  </tr>
-				  <tr>
-					<td>Area</td>
-					<td class="player_area"></td>
-				  </tr>
-				  <tr>
-					<td>About</td>
-					<td class="player_about"></td>
-				  </tr>
-			</tbody>
-		  </table>
-		</div>
-	</section>
-	</main>
-	<!-- main end -->
-</body>
+                            <tr>
+                                <td>Area</td>
+                                <td class="player_area"></td>
+                            </tr>
+                            <tr>
+                                <td>About</td>
+                                <td class="player_about"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        <!-- main end -->
+    </body>
 
-<script src="../../assets/js/vendor/lib/moment/moment.min.js"></script>
-<script src="../../assets/js/roundslider.js"></script>
-<script>
-
+    <script src="../../assets/js/vendor/lib/moment/moment.min.js"></script>
+    <script src="../../assets/js/roundslider.js"></script>
+    <script>
 const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
 
-const phonenumber = urlParams.get('unique_id');
+const phonenumber = urlParams.get("unique_id");
 
-let team_list = JSON.parse(localStorage.getItem('team_details_list'));
+const team_list = JSON.parse(localStorage.getItem("team_details_list"));
 
-let players_list = JSON.parse(localStorage.getItem('user_detail'));
+const players_list = JSON.parse(localStorage.getItem("user_detail"));
 
 // function findPlayer(a) {
 // let index = a.teamMembers.indexOf(phonenumber);
-// return a.teamMembers[index] == phonenumber ;
+// return a.teamMembers[index] === phonenumber ;
 // }
 
 // let teamProfile = team_list.find(findPlayer);
 
 // console.log(teamProfile)
-let match_list = JSON.parse(localStorage.getItem('match_list'));
+const match_list = JSON.parse(localStorage.getItem("match_list"));
 
-let request_list = JSON.parse(localStorage.getItem('match_response_list'))
+const request_list = JSON.parse(localStorage.getItem("match_response_list"));
 
-let score_resopnse = JSON.parse(localStorage.getItem('score_card'));
+const score_resopnse = JSON.parse(localStorage.getItem("score_card"));
 
 // upto this common for all section
 
 let completed_match_list;
-let completed_match = []
-if(request_list){
-completed_match_list = request_list.filter(e => e.match_in_status == 1 && e.team_players.find(e => e == phonenumber) == phonenumber)
+const completed_match = [];
+if (request_list) {
+  completed_match_list = request_list.filter(
+    (e) =>
+      e.match_in_status === 1 &&
+      e.team_players.find((e) => e === phonenumber) === phonenumber
+  );
 }
-let unique_id = phonenumber;
+const unique_id = phonenumber;
 
-let all_player_list = JSON.parse(localStorage.getItem('user_detail'));
+const all_player_list = JSON.parse(localStorage.getItem("user_detail"));
 
-
-let playerProfile = all_player_list.find(e => e.phoneNumber == unique_id)// here i find player profile
-console.log(playerProfile)
+const playerProfile = all_player_list.find((e) => e.phoneNumber === unique_id); // here i find player profile
+console.log(playerProfile);
 
 // ------------players team start-----
 
-let teamProfile = ""
+let teamProfile = "";
 // we find players team if he/she in team this condition works (start)
-if(playerProfile["captainStatus"] != 2 ){
+if (playerProfile.captainStatus !== 2) {
+  const team_list = JSON.parse(localStorage.getItem("team_details_list"));
 
-let team_list = JSON.parse(localStorage.getItem('team_details_list')); 
+  function findPlayer(a) {
+    const index = a.teamMembers.indexOf(unique_id);
+    return a.teamMembers[index] === unique_id;
+  }
 
-function findPlayer(a) {
-let index = a.teamMembers.indexOf(unique_id);
-return a.teamMembers[index] == unique_id ;
-}
+  teamProfile = team_list.find(findPlayer); // here i find the team profile
+  console.log(teamProfile);
+  const my_team_id = teamProfile.uniqueId;
 
-teamProfile = team_list.find(findPlayer);// here i find the team profile
-console.log(teamProfile)
-let my_team_id = teamProfile["uniqueId"]
+  document.querySelector("section.three .playermatch").innerHTML =
+    teamCard(teamProfile);
 
-document.querySelector("section.three .playermatch").innerHTML = teamCard(teamProfile);
-    
-
-function teamCard(teamProfile){
-	template =
-	`<div class="playerteam">
+  function teamCard(teamProfile) {
+    template = `<div class="playerteam">
 				<div class="myteam">
 					<div class="teamimagediv">
-						<img class="teamprofile" src="${teamProfile["teamImageUrl"]}" alt="${teamProfile["teamName"]}">
+						<img class="teamprofile" src="${teamProfile.teamImageUrl}" alt="${
+      teamProfile.teamName
+    }">
 					</div>
 					<div class="teamdetaildiv">
 						<div>
-							<div><h2>${teamProfile["teamName"]}</h2></div>
+							<div><h2>${teamProfile.teamName}</h2></div>
 							<div>
 								<i class="fa-regular fa-calendar"></i>
-								<p>Since ${moment(teamProfile["dateOfJoin"]).format("MMM Do YY")}</p></div>
+								<p>Since ${moment(teamProfile.dateOfJoin).format("MMM Do YY")}</p></div>
 						</div>
 						<div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
-							<p>${teamProfile["address"]["area"]}, ${teamProfile["address"]["distric"]}</p></div>
+							<p>${teamProfile.address.area}, ${teamProfile.address.distric}</p></div>
 	
 							<div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
-								<p>${teamProfile["about"]}</p></div>	
+								<p>${teamProfile.about}</p></div>	
 					</div>
 				</div>
 		</div>
-		`
-		return template;
-}
+		`;
+    return template;
+  }
 
-document.querySelector(".playerteam").addEventListener("click", moveTeam)
+  document.querySelector(".playerteam").addEventListener("click", moveTeam);
 
-function moveTeam(){
-	window.location.href= `../profile/teamprofile.html?unique_id=${phonenumber}`
-}
-
+  function moveTeam() {
+    window.location.href = `../profile/teamprofile.html?unique_id=${phonenumber}`;
+  }
 }
 // we find players team if he/she in team this condition works (end)
 
-
 // ------------players team end-----
-
 
 // ----------------- button css animation start
 
-function member(){
-let toggle_button = document.querySelector(".button_underline");
-toggle_button.style.left = "75%";
+function member() {
+  const toggle_button = document.querySelector(".button_underline");
+  toggle_button.style.left = "75%";
 
-let content_1 = document.querySelector("section.first")
-content_1.style.display = "none";
+  const content_1 = document.querySelector("section.first");
+  content_1.style.display = "none";
 
-let content_2 = document.querySelector("section.second")
-content_2.style.display = "none";
+  const content_2 = document.querySelector("section.second");
+  content_2.style.display = "none";
 
-let content_3 = document.querySelector("section.three")
-content_3.style.display = "block";
+  const content_3 = document.querySelector("section.three");
+  content_3.style.display = "block";
 
-let content_4 = document.querySelector("section.four")
-content_4.style.display = "none";
-
+  const content_4 = document.querySelector("section.four");
+  content_4.style.display = "none";
 }
-function match(){
-let toggle_button = document.querySelector(".button_underline");
-toggle_button.style.left = "50%";
+function match() {
+  const toggle_button = document.querySelector(".button_underline");
+  toggle_button.style.left = "50%";
 
-let content_1 = document.querySelector("section.first")
-content_1.style.display = "none";
+  const content_1 = document.querySelector("section.first");
+  content_1.style.display = "none";
 
-let content_2 = document.querySelector("section.second")
-content_2.style.display = "block";
+  const content_2 = document.querySelector("section.second");
+  content_2.style.display = "block";
 
-let content_3 = document.querySelector("section.three")
-content_3.style.display = "none";
+  const content_3 = document.querySelector("section.three");
+  content_3.style.display = "none";
 
-let content_4 = document.querySelector("section.four")
-content_4.style.display = "none";
+  const content_4 = document.querySelector("section.four");
+  content_4.style.display = "none";
 }
-function profile(){
-let toggle_button = document.querySelector(".button_underline");
-toggle_button.style.left = "25%";
+function profile() {
+  const toggle_button = document.querySelector(".button_underline");
+  toggle_button.style.left = "25%";
 
-let content_1 = document.querySelector("section.first")
-content_1.style.display = "block";
+  const content_1 = document.querySelector("section.first");
+  content_1.style.display = "block";
 
-let content_2 = document.querySelector("section.second")
-content_2.style.display = "none";
+  const content_2 = document.querySelector("section.second");
+  content_2.style.display = "none";
 
-let content_3 = document.querySelector("section.three")
-content_3.style.display = "none";
+  const content_3 = document.querySelector("section.three");
+  content_3.style.display = "none";
 
-let content_4 = document.querySelector("section.four")
-content_4.style.display = "none";
-
+  const content_4 = document.querySelector("section.four");
+  content_4.style.display = "none";
 }
 
-function stats(){
-let toggle_button = document.querySelector(".button_underline");
-toggle_button.style.left = "0%";
+function stats() {
+  const toggle_button = document.querySelector(".button_underline");
+  toggle_button.style.left = "0%";
 
-let content_1 = document.querySelector("section.first")
-content_1.style.display = "none";
+  const content_1 = document.querySelector("section.first");
+  content_1.style.display = "none";
 
-let content_2 = document.querySelector("section.second")
-content_2.style.display = "none";
+  const content_2 = document.querySelector("section.second");
+  content_2.style.display = "none";
 
-let content_3 = document.querySelector("section.three")
-content_3.style.display = "none";
+  const content_3 = document.querySelector("section.three");
+  content_3.style.display = "none";
 
-let content_4 = document.querySelector("section.four")
-content_4.style.display = "block";
-
+  const content_4 = document.querySelector("section.four");
+  content_4.style.display = "block";
 }
 
 // ----------------button css animation end
 
-
-// PLAYER PROFILE START 
+// PLAYER PROFILE START
 const player_image = document.createElement("img");
-player_image.setAttribute("src", playerProfile["imageUrl"]);
-player_image.setAttribute("alt", playerProfile["userName"]);
+player_image.setAttribute("src", playerProfile.imageUrl);
+player_image.setAttribute("alt", playerProfile.userName);
 document.querySelector(".playerimagediv").prepend(player_image);
 
 const player_background_image = document.createElement("img");
-player_background_image.setAttribute("class", "bgimg")
-player_background_image.setAttribute("src", playerProfile["imageUrl"]);
-player_background_image.setAttribute("alt", playerProfile["userName"]);
+player_background_image.setAttribute("class", "bgimg");
+player_background_image.setAttribute("src", playerProfile.imageUrl);
+player_background_image.setAttribute("alt", playerProfile.userName);
 document.querySelector("header").prepend(player_background_image);
 
-let playerUserName = playerProfile["userName"]
+const playerUserName = playerProfile.userName;
 document.querySelector(".profiledetailsdiv h1").innerHTML = playerUserName;
 
-let playerLocation = playerProfile["area"]
-document.querySelector(".profiledetailsdiv div:nth-child(2) p").innerHTML = playerLocation;
+const playerLocation = playerProfile.area;
+document.querySelector(".profiledetailsdiv div:nth-child(2) p").innerHTML =
+  playerLocation;
 
-let playerSince = moment(playerProfile["dateOfJoin"])
-document.querySelector(".profiledetailsdiv div:nth-child(3) p").innerHTML = "Since" + "  " +playerSince.format("MMM Do YY");
+const playerSince = moment(playerProfile.dateOfJoin);
+document.querySelector(".profiledetailsdiv div:nth-child(3) p").innerHTML =
+  `Since` + `  ${playerSince.format("MMM Do YY")}`;
 
-let playerFullName = playerProfile["firstName"] + " " + playerProfile["lastName"]
-document.querySelector(".player_full_name").innerHTML = playerFullName ;
+const playerFullName = `${playerProfile.firstName} ${playerProfile.lastName}`;
+document.querySelector(".player_full_name").innerHTML = playerFullName;
 
-let playerAge = playerProfile["dateOFBirth"]
-let dob = new Date(playerAge);
-        let today = new Date();
-        let age = today.getTime() - dob.getTime();
-        age = Math.floor(age / (1000 * 60 * 60 * 24 * 365.25));
-document.querySelector(".player_age").innerHTML = age ;
+const playerAge = playerProfile.dateOFBirth;
+const dob = new Date(playerAge);
+const today = new Date();
+let age = today.getTime() - dob.getTime();
+age = Math.floor(age / (1000 * 60 * 60 * 24 * 365.25));
+document.querySelector(".player_age").innerHTML = age;
 
-let playerGender = playerProfile["gender"]
-document.querySelector(".player_gender").innerHTML = playerGender ;
+const playerGender = playerProfile.gender;
+document.querySelector(".player_gender").innerHTML = playerGender;
 
-let playerGame = playerProfile["game"]
-document.querySelector(".player_game").innerHTML = playerGame ;
+const playerGame = playerProfile.game;
+document.querySelector(".player_game").innerHTML = playerGame;
 
-let playerTeamName = "--"
-if(playerProfile["captainStatus"] != 2 ){
-	playerTeamName = teamProfile["teamName"];
+let playerTeamName = "--";
+if (playerProfile.captainStatus !== 2) {
+  playerTeamName = teamProfile.teamName;
 }
-document.querySelector(".player_team_name").innerHTML = playerTeamName ;
+document.querySelector(".player_team_name").innerHTML = playerTeamName;
 
-let playerArea = playerProfile["area"] + ", " + playerProfile["distric"]
-document.querySelector(".player_area").innerHTML = playerArea ;
+const playerArea = `${playerProfile.area}, ${playerProfile.distric}`;
+document.querySelector(".player_area").innerHTML = playerArea;
 
-let playerAbout = playerProfile["about"]
-document.querySelector(".player_about").innerHTML = playerAbout ;
+const playerAbout = playerProfile.about;
+document.querySelector(".player_about").innerHTML = playerAbout;
 
 // PLAYER PROFILE END
 
-function previousPage(){
-	window.history.go(-1)
+function previousPage() {
+  window.history.go(-1);
 }
-
 </script>
-<script src="../../assets/js/past_match.js"></script>
-
+    <script src="../../assets/js/past_match.js"></script>
 
 </html>
