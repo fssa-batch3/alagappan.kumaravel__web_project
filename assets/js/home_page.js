@@ -6,6 +6,14 @@ const phonenumber = urlParams.get("unique_id");
 
 const { origin } = window.location;
 
+const user_api_id = JSON.parse(localStorage.getItem("user_id"));
+
+window.onload = homepageCondition();
+
+// (async function () {
+//   teamdetails = await getTeamid(user_api_id);
+// })();
+
 function responsebtn() {
   window.location.href = `${origin}/pages/nonteamplayer/response.html?unique_id=${phonenumber}`;
 }
@@ -20,8 +28,14 @@ function matchInvitationBtn() {
   window.location.href = `${origin}/pages/teamplayer captain/match invitation.html?unique_id=${phonenumber}`;
 }
 
-function myTeam() {
-  window.location.href = `${origin}/pages/profile/teamprofile.html?unique_id=${phonenumber}`;
+async function myTeam() {
+  const team_ids = await getTeamid(user_api_id);
+
+  const filter_teamin_data = team_ids.find(
+    (e) => e.activeStatus === 2 || e.activeStatus === 1
+  );
+
+  window.location.href = `${origin}/pages/profile/teamprofile.html?team_id=${filter_teamin_data.teamId}`;
 }
 function teamResponse() {
   window.location.href = `${origin}/pages/teamplayer captain/team response.html?unique_id=${phonenumber}`;
@@ -35,50 +49,97 @@ function playerRequest() {
 }
 
 function profilepage() {
-  window.location.href = `${origin}/pages/profile/myprofile.html?unique_id=${phonenumber}`;
+  window.location.href = `${origin}/pages/profile/myprofile.html`;
 }
 function myMatch() {
   window.location.href = `${origin}/pages/search and notification/calendar.html?unique_id=${phonenumber}`;
 }
 
+async function getPersonData(endpoint, user_api_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`);
+
+  const result = await data;
+
+  return result.data;
+}
+
+async function getTeamid(value) {
+  const res = new Promise((resolve, reject) => {
+    axios
+      .get(`http://localhost:3000/player_team_relation`, {
+        params: {
+          playerId: value,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        resolve(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        reject(err);
+      });
+  });
+
+  const objData = await res;
+
+  return objData.data;
+}
+
+async function getarea(areaUniqueId) {
+  const resp = await axios.get(
+    `http://localhost:3000/area_list/${areaUniqueId}`
+  );
+
+  const objData = resp;
+
+  console.log(objData);
+
+  const area_data = objData.data;
+
+  return area_data;
+}
 // upto above links for home page
 
 // options depending upon player team status (start)--------------------------
 const unique_id = phonenumber;
 
-// let user_detail = JSON.parse(localStorage.getItem('user_detail'))
-
 // here i get data from mockapi start
-const endpoint = "users/";
-
-const user_api_id = JSON.parse(localStorage.getItem("user_id"));
-
-axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`).then((res) => {
-  const person_data = res.data;
-
-  homepageCondition(person_data);
-});
 
 // here i get data from mockapi end
 
-function homepageCondition(person_data) {
-  if (person_data.captainStatus !== 2) {
+async function homepageCondition() {
+  const endpoint = "users/";
+
+  const person_data = await getPersonData(endpoint, user_api_id);
+
+  const team_ids = await getTeamid(user_api_id);
+
+  const area_data = await getarea(person_data.areaUniqueId);
+
+  const filter_teamcap_data = team_ids.find((e) => e.activeStatus === 1);
+
+  const filter_teamin_data = team_ids.find(
+    (e) => e.activeStatus === 2 || e.activeStatus === 1
+  );
+
+  if (filter_teamin_data) {
     const all = document.querySelectorAll(".not_in_team");
 
     all.forEach((e) => (e.style.display = "none"));
 
-    if (person_data.captainStatus !== 1) {
+    if (!filter_teamcap_data) {
       const all = document.querySelectorAll(".captain");
 
       all.forEach((e) => (e.style.display = "none"));
     }
   }
 
-  if (person_data.captainStatus === 2) {
+  if (!filter_teamin_data) {
     const all = document.querySelectorAll(".in_team");
 
     all.forEach((e) => (e.style.display = "none"));
-    if (person_data.captainStatus !== 1) {
+    if (!filter_teamcap_data) {
       const all = document.querySelectorAll(".captain");
 
       all.forEach((e) => (e.style.display = "none"));
@@ -108,8 +169,8 @@ function homepageCondition(person_data) {
   const dateofbirth = person_data.dateOFBirth;
   const { gender } = person_data;
   const { game } = person_data;
-  const { area } = person_data;
-  const { distric } = person_data;
+  const { area } = area_data;
+  const { distric } = area_data;
   const { about } = person_data;
   const image = person_data.imageUrl;
 
@@ -147,11 +208,11 @@ function homepageCondition(person_data) {
   document.querySelector(".range-label").innerHTML = `${Math.round(
     range_value
   )}%`;
-
-  function createMatchBtn() {
-    window.location.href = `/pages/teamplayer captain/creatematch.html?unique_id=${phonenumber}&my_name=${person_data.userName}&opponent_url=0&opponent_name=0&captain=0&type=0&opponent_id=0`;
-  }
 }
+
+// function createMatchBtn() {
+//   window.location.href = `/pages/teamplayer captain/creatematch.html?unique_id=${phonenumber}&my_name=${person_data.userName}&opponent_url=0&opponent_name=0&captain=0&type=0&opponent_id=0`;
+// }
 // sidebar js work end ---------------------------------------------------
 
 document

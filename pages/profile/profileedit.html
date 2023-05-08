@@ -54,13 +54,11 @@
 				   
                 <label>Game</label> 
                 <select id="user_game" required>
-                    <option>Cricket</option>
-                    <option>Football</option>
-                    <option>Kabadi</option>
-                    <option>Tennis</option>
-                    <option>Badmitton</option>
-                    <option>Basketball</option>
-                    <option>Volleyball</option>
+                    <option value="1">Cricket</option>
+                    <option value="2">Football</option>
+                    <option value="3">Kabadi</option>
+                    <option value="4">Basketball</option>
+                    <option value="5">Volleyball</option>
                 </select> 
 				   
                 <label>Area</label> 
@@ -100,15 +98,33 @@ axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`).then((res) => {
 
   showInEdit(person_data);
 });
-function showInEdit(person_data) {
+
+async function getarea(areaUniqueId) {
+  const resp = await axios.get(
+    `http://localhost:3000/area_list/${areaUniqueId}`
+  );
+
+  const objData = resp;
+
+  console.log(objData);
+
+  const area_data = objData.data;
+
+  return area_data;
+}
+
+async function showInEdit(person_data) {
   document.getElementById("user_username").value = person_data.userName;
   document.getElementById("user_first_name").value = person_data.firstName;
   document.getElementById("user_last_name").value = person_data.lastName;
   document.getElementById("user_date_of_birth").value = person_data.dateOFBirth;
   document.getElementById("user_gender").value = person_data.gender;
   document.getElementById("user_game").value = person_data.game;
-  document.getElementById("user_area").value = person_data.area;
-  document.getElementById("user_distric").value = person_data.distric;
+
+  const area_data = await getarea(person_data.areaUniqueId);
+
+  document.getElementById("user_area").value = area_data.area;
+  document.getElementById("user_distric").value = area_data.distric;
   document.getElementById("user_about").value = person_data.about;
   document.getElementById("user_image").value = person_data.imageUrl;
 

@@ -1,3 +1,5 @@
+const { origin } = window.location;
+
 const image_element = document.getElementById("team_image_show");
 image_element.setAttribute("src", "https://iili.io/HWEqLtp.webp");
 
@@ -7,7 +9,121 @@ const urlParams = new URLSearchParams(queryString);
 
 const phonenumber = urlParams.get("unique_id");
 
-function createTeam(e) {
+async function playerTeamRelation(teamId) {
+  const playerId = JSON.parse(localStorage.getItem("user_id"));
+
+  const create_date = moment();
+
+  const object = {
+    teamId,
+    playerId,
+    dateOfJoin: create_date,
+    activeStatus: 1,
+  };
+
+  console.log(object);
+  await axios
+    .post(`http://localhost:3000/player_team_relation`, object, {
+      "Content-Type": "application/json",
+    })
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+async function setData(endpoint, data) {
+  console.log(data);
+
+  // axios.post(url, data, headerOptions)
+
+  await axios
+    .post(`http://localhost:3000/${endpoint}`, data, {
+      "Content-Type": "application/json",
+    })
+
+    .then(async (result) => {
+      console.log(result);
+
+      const team_object = result.data;
+
+      await playerTeamRelation(team_object.id);
+
+      window.location.href = `${origin}/pages/homepage/hpexist.html`;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+async function setArea(inset) {
+  let new_id = "";
+
+  await axios
+    .post(`http://localhost:3000/area_list`, inset, {
+      "Content-Type": "application/json",
+    })
+    .then((data) => {
+      console.log(data);
+      new_id = data.data.id;
+    });
+
+  return new_id;
+}
+
+async function findarea(area, distric) {
+  let result = "";
+
+  console.log("ww");
+
+  // const resp = await axios.get(`http://localhost:3000/area_list`);
+
+  const resp = new Promise((resolve, reject) => {
+    axios
+      .get(`http://localhost:3000/area_list`)
+      .then((res) => {
+        console.log(res);
+        resolve(res);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+
+  const objData = await resp;
+  // console.log(objData);
+  // console.log("done");
+
+  const area_data = objData.data;
+
+  const find_area = area_data.find(
+    (e) => e.area === area && e.distric === distric
+  );
+
+  console.log(find_area);
+
+  if (find_area !== undefined) {
+    result = find_area.id;
+    return result;
+  }
+
+  if (find_area === undefined) {
+    result = area_data.length + 1;
+    const inset = {
+      area,
+      distric,
+    };
+    console.log(inset);
+
+    const new_id = await setArea(inset);
+
+    return new_id;
+  }
+}
+
+async function createTeam(e) {
   e.preventDefault();
 
   // hear i collect value from signUp form
@@ -23,99 +139,93 @@ function createTeam(e) {
   console.log(player_description);
   console.log(create_date);
 
-  const team_details_list =
-    JSON.parse(localStorage.getItem("team_details_list")) || [];
+  // const team_details_list = JSON.parse(localStorage.getItem("team_details_list")) || [];
 
-  const area_list = JSON.parse(localStorage.getItem("area_list")) || [];
+  // const area_list = JSON.parse(localStorage.getItem("area_list")) || [];
 
-  const same_user_name = team_details_list.some(
-    (data) => data.teamName === team_name
-  );
+  // const same_user_name = team_details_list.some(
+  //   (data) => data.teamName === team_name
+  // );
 
-  if (same_user_name) {
-    a = document.querySelector(".wrong_password").innerHTML =
-      "Team name not available.";
-    return a;
-  } else {
-    const team_unique_id = uuidv4();
+  // if (same_user_name) {
+  //   a = document.querySelector(".wrong_password").innerHTML = "Team name not available.";
+  //   return a;
+  // } else {
 
-    const queryString = window.location.search;
+  const address_id = await findarea(area, distric);
 
-    const urlParams = new URLSearchParams(queryString);
+  const urlParams = new URLSearchParams(queryString);
 
-    const phonenumber = urlParams.get("unique_id");
+  const phonenumber = urlParams.get("unique_id");
 
-    const unique_id = phonenumber;
+  const unique_id = phonenumber;
 
-    const user_detail = JSON.parse(localStorage.getItem("user_detail"));
+  // const user_detail = JSON.parse(localStorage.getItem("user_detail"));
 
-    function findPlayer(a) {
-      return a.phoneNumber === unique_id;
-    }
+  // function findPlayer(a) {
+  //   return a.phoneNumber === unique_id;
+  // }
 
-    person_data = user_detail.find(findPlayer);
+  // person_data = user_detail.find(findPlayer);
 
-    person_data.captainStatus = 1;
+  // person_data.captainStatus = 1;
 
-    localStorage.setItem("user_detail", JSON.stringify(user_detail));
+  // localStorage.setItem("user_detail", JSON.stringify(user_detail));
 
-    const team_details = {
-      teamImageUrl: team_image_url,
-      teamName: team_name,
-      address: {
-        area,
-        distric,
-      },
-      dateOfJoin: create_date,
-      uniqueId: team_unique_id,
-      about,
-      openForPlayers: {
-        status: true,
-        description: player_description,
-      },
-      teamMembers: [person_data.phoneNumber],
-    };
-    const team_details_list =
-      JSON.parse(localStorage.getItem("team_details_list")) || [];
+  const team_details = {
+    teamImageUrl: team_image_url,
+    teamName: team_name,
+    dateOfJoin: create_date,
+    address_id,
+    about,
+    openForPlayersStatus: true,
+    openForPlayersDescription: player_description,
+  };
 
-    team_details_list.push(team_details);
+  const endpoint = "team_details_list";
 
-    // here i push data for area list
+  await setData(endpoint, team_details);
 
-    area_name_same = area_list.some(
-      (e) => e.area === area && e.distric === distric
-    );
+  // const team_details_list =
+  //   JSON.parse(localStorage.getItem("team_details_list")) || [];
 
-    if (!area_name_same) {
-      const area_object = {
-        area,
-        distric,
-        count: 1,
-      };
+  // team_details_list.push(team_details);
 
-      area_list.push(area_object);
+  // // here i push data for area list
 
-      localStorage.setItem("area_list", JSON.stringify(area_list));
-    }
-    if (area_name_same) {
-      const find = area_list.find(
-        (e) => e.area === area && e.distric === distric
-      );
+  // area_name_same = area_list.some(
+  //   (e) => e.area === area && e.distric === distric
+  // );
 
-      find.count += 1;
+  // if (!area_name_same) {
+  //   const area_object = {
+  //     area,
+  //     distric,
+  //     count: 1,
+  //   };
 
-      localStorage.setItem("area_list", JSON.stringify(area_list));
-    }
+  //   area_list.push(area_object);
 
-    localStorage.setItem(
-      "team_details_list",
-      JSON.stringify(team_details_list)
-    );
+  //   localStorage.setItem("area_list", JSON.stringify(area_list));
+  // }
+  // if (area_name_same) {
+  //   const find = area_list.find(
+  //     (e) => e.area === area && e.distric === distric
+  //   );
 
-    document.querySelector("form").reset();
+  //   find.count += 1;
 
-    window.location.href = `../homepage/hpexist.html?unique_id=${phonenumber}`;
-  }
+  //   localStorage.setItem("area_list", JSON.stringify(area_list));
+  // }
+
+  // localStorage.setItem(
+  //   "team_details_list",
+  //   JSON.stringify(team_details_list)
+  // );
+
+  // document.querySelector("form").reset();
+
+  // }
 }
 
 function myFunction() {

@@ -84,11 +84,12 @@ class RangeSlider {
       const svg = `
 				<svg class="${this.settings.clsRangeTicks}" width="100%" height="100%">
 				${ticks
-          .map((index) => {
-            return `<rect x="${
-              (100 / this.ticks) * index
-            }%" y="5" width="1" height="100%"></rect>`;
-          })
+          .map(
+            (index) =>
+              `<rect x="${
+                (100 / this.ticks) * index
+              }%" y="5" width="1" height="100%"></rect>`
+          )
           .join("")}
 				<rect x="100%" y="5" width="1" height="100%"></rect>
 			</svg>`;
@@ -98,9 +99,8 @@ class RangeSlider {
     /* circular */
     if (circular) {
       range.hidden = true;
-      const pointerMove = (event) => {
-        return this.updateCircle(this.rotate(event.pageX, event.pageY));
-      };
+      const pointerMove = (event) =>
+        this.updateCircle(this.rotate(event.pageX, event.pageY));
       this.setCenter();
       this.output.setAttribute("tabindex", 0);
       this.output.addEventListener("keydown", (event) => {
@@ -121,18 +121,16 @@ class RangeSlider {
             break;
         }
       });
-      this.output.addEventListener("pointerdown", () => {
-        return this.output.addEventListener("pointermove", pointerMove);
-      });
-      this.output.addEventListener("pointerup", () => {
-        return this.output.removeEventListener("pointermove", pointerMove);
-      });
+      this.output.addEventListener("pointerdown", () =>
+        this.output.addEventListener("pointermove", pointerMove)
+      );
+      this.output.addEventListener("pointerup", () =>
+        this.output.removeEventListener("pointermove", pointerMove)
+      );
 
       this.updateCircle();
     } else {
-      range.addEventListener("input", () => {
-        return this.updateRange();
-      });
+      range.addEventListener("input", () => this.updateRange());
     }
 
     /* TODO: Send init event ? */
@@ -234,12 +232,12 @@ function stringToType(obj) {
 }
 
 function uuid() {
-  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) => {
-    return (
+  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+    (
       c ^
       (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-    ).toString(16);
-  });
+    ).toString(16)
+  );
 }
 
 /* Demo: Run it */

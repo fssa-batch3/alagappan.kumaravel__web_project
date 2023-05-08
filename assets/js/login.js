@@ -108,26 +108,20 @@ function mytest() {
   }
 }
 
-function setData(endpoint, data) {
+async function setData(endpoint, data) {
   console.log(data);
 
   // axios.post(url, data, headerOptions)
 
-  axios
+  await axios
     .post(`http://localhost:3000/${endpoint}`, data, {
       "Content-Type": "application/json",
     })
 
     .then((data) => {
-      console.log(data);
+      localStorage.setItem("user_id", data.data.id);
 
-      const queryString = window.location.search;
-
-      const urlParams = new URLSearchParams(queryString);
-
-      const phonenumber = urlParams.get("unique_id");
-
-      window.location.href = `${origin}/pages/homepage/hpexist.html?unique_id=${phonenumber}`;
+      window.location.href = `${origin}/pages/homepage/hpexist.html`;
     })
     .catch((error) => {
       console.log(error);
@@ -153,6 +147,9 @@ async function findarea(area, distric) {
   let result = "";
 
   console.log("ww");
+
+  // const resp = await axios.get(`http://localhost:3000/area_list`);
+
   const resp = new Promise((resolve, reject) => {
     axios
       .get(`http://localhost:3000/area_list`)
@@ -166,7 +163,9 @@ async function findarea(area, distric) {
   });
 
   const objData = await resp;
-  console.log(objData);
+  // console.log(objData);
+  // console.log("done");
+
   const area_data = objData.data;
 
   const find_area = area_data.find(
@@ -195,6 +194,7 @@ async function findarea(area, distric) {
 }
 
 async function signUp_2(e) {
+  e.preventDefault();
   console.log("work");
   // here i collect value from signUp form
   const date_of_birth = document.getElementById("date_of_birth").value;
@@ -204,50 +204,32 @@ async function signUp_2(e) {
   const distric = document.getElementById("distric").value;
   const create_date = moment();
 
-  // here i give var name for local storage data (initially there is no data so we mentioned or (||) symbol to get empty array)
-  // let user_detail = JSON.parse(localStorage.getItem('user_detail')) || [];
-
-  //     user_detail.push(user_data);
-
-  //     localStorage.setItem('user_detail', JSON.stringify(user_detail));
-
   // create user id for new person start
 
-  const data = await findarea(area, distric);
+  const area_data = await findarea(area, distric);
 
-  console.log(data);
+  const user_data = JSON.parse(localStorage.getItem("user_data"));
 
-  // const area_id = JSON.parse(localStorage.getItem("area_id"));
-
-  // const user_data = JSON.parse(localStorage.getItem("user_data"));
-
-  // user_data.dateOFBirth = date_of_birth;
-  // user_data.gender = gender;
-  // user_data.game = game;
-  // user_data.areaUniqueId = 1;
-  // user_data.createDate = create_date;
-  // user_data.firstName = "";
-  // user_data.lastName = "";
-  // user_data.about = "";
-  // (user_data.imageUrl = "https://iili.io/HWhKUrB.webp"),
-  //   (user_data.captainStatus = 2);
-
-  // // let person_unique_id = uuidv4();
+  user_data.dateOFBirth = date_of_birth;
+  user_data.gender = gender;
+  user_data.game = game;
+  user_data.areaUniqueId = area_data;
+  user_data.createDate = create_date;
+  user_data.firstName = "";
+  user_data.lastName = "";
+  user_data.about = "";
+  user_data.imageUrl = "https://iili.io/HWhKUrB.webp";
 
   // user_data.id = id + 1;
 
-  // // create user id for new person end
+  console.log(user_data);
+  // here i push data to mockapi start
 
-  // console.log(user_data);
-  // // here i push data to mockapi start
+  const endpoint = "users";
+  await setData(endpoint, user_data);
+  // here i push data to mockapi end
 
-  // const endpoint = "users";
-  // setData(endpoint, user_data);
-  // // here i push data to mockapi end
-
-  // document.querySelector("form").reset();
-
-  // e.preventDefault();
+  document.querySelector("form").reset();
 }
 
 // for sign in()
@@ -311,19 +293,18 @@ function myFunction() {
 }
 
 function updateData(endpoint, data) {
-  console.log(data);
 
   // axios.post(url, data, headerOptions)
 
   axios
-    .put(`http://localhost:3000/${endpoint}`, data, {
+    .patch(`http://localhost:3000/${endpoint}`, data, {
       "Content-Type": "application/json",
     })
 
     .then((data) => {
       console.log(data);
 
-      localStorage.setItem("user_id", JSON.stringify(data.data.id));
+      // localStorage.setItem("user_id", JSON.stringify(data.data.id));
 
       const queryString = window.location.search;
 
@@ -337,108 +318,99 @@ function updateData(endpoint, data) {
       console.log(error);
     });
 }
+// same user name function not done now -------------------
+// function sameUserName(user_detail) {
+//   const user_name = document.getElementById("user_username").value;
 
-function sameUserName(user_detail) {
-  const user_name = document.getElementById("user_username").value;
+//   const same_user_name = user_detail.some(
+//     (data) => data.userName === user_name
+//   );
 
-  const same_user_name = user_detail.some(
-    (data) => data.userName === user_name
-  );
+//   if (same_user_name) {
+//     return false;
+//   }
+//   true;
+// }
 
-  if (same_user_name) {
-    return false;
-  }
-  true;
-}
-
-function update(e) {
+async function update(e) {
   e.preventDefault();
 
   const person_data = {};
 
-  // for unique user name start
-  person_data.userName = "";
+  // const same_user_name = sameUserName(person_data);
 
-  axios.get(`http://localhost:3000/users/`).then((res) => {
-    const person_data = res.data;
+  // if (same_user_name) {
+  //   b = document.querySelector(".wrong_password").innerHTML =
+  //     "User name not available.  ";
+  //   return b;
+  // }
 
-    console.log(person_data);
+  // for unique user name end
 
-    const same_user_name = sameUserName(person_data);
+  const first_name = document.getElementById("user_first_name").value;
+  const last_name = document.getElementById("user_last_name").value;
+  const date_of_birth = document.getElementById("user_date_of_birth").value;
+  const gender = document.getElementById("user_gender").value;
+  const game = document.getElementById("user_game").value;
+  const area = document.getElementById("user_area").value;
+  const distric = document.getElementById("user_distric").value;
+  const about = document.getElementById("user_about").value;
 
-    if (same_user_name) {
-      b = document.querySelector(".wrong_password").innerHTML =
-        "User name not available.  ";
-      return b;
-    }
+  const area_data = await findarea(area, distric);
 
-    if (!same_user_name) {
-      // for unique user name end
+  let image = document.getElementById("user_image").value;
+  const user_name = document.getElementById("user_username").value;
 
-      const first_name = document.getElementById("user_first_name").value;
-      const last_name = document.getElementById("user_last_name").value;
-      const date_of_birth = document.getElementById("user_date_of_birth").value;
-      const gender = document.getElementById("user_gender").value;
-      const game = document.getElementById("user_game").value;
-      const area = document.getElementById("user_area").value;
-      const distric = document.getElementById("user_distric").value;
-      const about = document.getElementById("user_about").value;
-      let image = document.getElementById("user_image").value;
-      const user_name = document.getElementById("user_username").value;
-
-      person_data.userName = user_name;
-      person_data.firstName = first_name;
-      person_data.lastName = last_name;
-      person_data.dateOFBirth = date_of_birth;
-      person_data.gender = gender;
-      person_data.game = game;
-      person_data.area = area;
-      person_data.distric = distric;
-      person_data.about = about;
-      if (image === "") {
-        image = "https://iili.io/HWhKUrB.webp";
-      }
-      person_data.imageUrl = image;
-
-      // localStorage.setItem('user_detail', JSON.stringify(user_detail));
-
-      const user_api_id = JSON.parse(localStorage.getItem("user_id"));
-
-      const endpoint = `users/${user_api_id}`;
-      updateData(endpoint, person_data);
-    }
-  });
-}
-
-// delete profile start
-
-function del() {
-  if (confirm("Are you sure to delete this Account ?")) {
-    const queryString = window.location.search;
-
-    const urlParams = new URLSearchParams(queryString);
-
-    const phonenumber = urlParams.get("unique_id");
-
-    const unique_id = phonenumber;
-
-    const user_detail = JSON.parse(localStorage.getItem("user_detail"));
-
-    function findPlayer(a) {
-      return a.phoneNumber === unique_id;
-    }
-
-    const person_data = user_detail.find(findPlayer);
-
-    const indexOfUser = user_detail.indexOf(person_data);
-
-    user_detail.splice(indexOfUser, 1);
-
-    localStorage.setItem("user_detail", JSON.stringify(user_detail));
-
-    window.location.href = `${origin}/index.html`;
+  person_data.userName = user_name;
+  person_data.firstName = first_name;
+  person_data.lastName = last_name;
+  person_data.dateOFBirth = date_of_birth;
+  person_data.gender = gender;
+  person_data.game = game;
+  person_data.areaUniqueId = area_data;
+  person_data.about = about;
+  if (image === "") {
+    image = "https://iili.io/HWhKUrB.webp";
   }
+  person_data.imageUrl = image;
+
+  // localStorage.setItem('user_detail', JSON.stringify(user_detail));
+
+  const user_api_id = JSON.parse(localStorage.getItem("user_id"));
+
+  const endpoint = `users/${user_api_id}`;
+  updateData(endpoint, person_data);
 }
+
+// delete profile start // not worked for database
+
+// function del() {
+//   if (confirm("Are you sure to delete this Account ?")) {
+//     const queryString = window.location.search;
+
+//     const urlParams = new URLSearchParams(queryString);
+
+//     const phonenumber = urlParams.get("unique_id");
+
+//     const unique_id = phonenumber;
+
+//     const user_detail = JSON.parse(localStorage.getItem("user_detail"));
+
+//     function findPlayer(a) {
+//       return a.phoneNumber === unique_id;
+//     }
+
+//     const person_data = user_detail.find(findPlayer);
+
+//     const indexOfUser = user_detail.indexOf(person_data);
+
+//     user_detail.splice(indexOfUser, 1);
+
+//     localStorage.setItem("user_detail", JSON.stringify(user_detail));
+
+//     window.location.href = `${origin}/index.html`;
+//   }
+// }
 
 function logOut() {
   localStorage.setItem("user_id", null);

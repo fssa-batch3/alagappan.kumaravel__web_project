@@ -102,7 +102,7 @@
                 <!-- My profile end -->
                 <div class="logout">
                     <button type="button" onclick="logOut()">LOG OUT</button>
-                    <button type="button" onclick="del()">DELETE</button>
+                    <!-- <button type="button" onclick="del()">DELETE</button> -->
                 </div>
 
             </main>
@@ -162,7 +162,21 @@ if (user_api_id !== null) {
   });
 }
 
-function myProfile(person_data) {
+async function getarea(areaUniqueId) {
+  const resp = await axios.get(
+    `http://localhost:3000/area_list/${areaUniqueId}`
+  );
+
+  const objData = resp;
+
+  console.log(objData);
+
+  const area_data = objData.data;
+
+  return area_data;
+}
+
+async function myProfile(person_data) {
   document.getElementById("user_username").innerText = person_data.userName;
   const a = moment(person_data.createDate);
   document.getElementById("create_date").innerText =
@@ -173,9 +187,12 @@ function myProfile(person_data) {
   document.getElementById("user_date_of_birth").innerText =
     person_data.dateOFBirth;
   document.getElementById("user_gender").innerText = person_data.gender;
-  document.getElementById("user_area").innerText = person_data.area;
-  document.getElementById("user_distric").innerText = person_data.distric;
-  document.getElementById("user_area_header").innerText = person_data.area;
+
+  const area_data = await getarea(person_data.areaUniqueId);
+
+  document.getElementById("user_area").innerText = area_data.area;
+  document.getElementById("user_distric").innerText = area_data.distric;
+  document.getElementById("user_area_header").innerText = area_data.area;
   document.getElementById("user_phone_number").innerText =
     person_data.phoneNumber;
   document.getElementById("user_about").innerText = person_data.about;
@@ -198,8 +215,8 @@ function myProfile(person_data) {
   const dateofbirth = person_data.dateOFBirth;
   const { gender } = person_data;
   const { game } = person_data;
-  const { area } = person_data;
-  const { distric } = person_data;
+  const { area } = area_data;
+  const { distric } = area_data;
   const { about } = person_data;
   const image = person_data.imageUrl;
 

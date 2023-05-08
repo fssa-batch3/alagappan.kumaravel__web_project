@@ -36,6 +36,16 @@
       "area": "guduvancheri",
       "distric": "chennai",
       "id": 3
+    },
+    {
+      "area": "shennoinagar",
+      "distric": "chennai",
+      "id": 4
+    },
+    {
+      "area": "gunidy",
+      "distric": "chennai",
+      "id": 5
     }
   ],
   "users": [
@@ -56,422 +66,92 @@
       "id": 1
     },
     {
-      "phoneNumber": "9344655212",
-      "userName": "Raina",
+      "phoneNumber": "9344655200",
+      "userName": "Akash",
       "password": "Aa!1aaaa",
-      "dateOFBirth": "2001-06-08",
+      "confirmPassword": "Aa!1aaaa",
+      "dateOFBirth": "2001-02-04",
       "gender": "Male",
-      "game": 1,
-      "areaUniqueId": 1,
-      "createDate": "2023-03-08T13:11:43.346Z",
+      "game": "1",
+      "areaUniqueId": 2,
+      "createDate": "2023-05-04T16:45:47.498Z",
       "firstName": "",
       "lastName": "",
       "about": "",
       "imageUrl": "https://iili.io/HWhKUrB.webp",
-      "captainStatus": 1,
       "id": 2
     },
     {
-      "phoneNumber": "9344655200",
-      "userName": "Alagu",
-      "password": "Aa!1aaaa",
-      "confirmPassword": "Aa!1aaaa",
-      "dateOFBirth": "2023-04-01",
-      "gender": "Male",
-      "game": 1,
-      "areaUniqueId": 1,
-      "createDate": "2023-04-24T14:02:22.089Z",
-      "firstName": "",
-      "lastName": "",
-      "about": "",
-      "imageUrl": "https://iili.io/HWhKUrB.webp",
-      "captainStatus": 2,
-      "id": 3
-    },
-    {
       "phoneNumber": "9344655201",
-      "userName": "asdfghj",
+      "userName": "Firefox",
       "password": "Aa!1aaaa",
       "confirmPassword": "Aa!1aaaa",
-      "dateOFBirth": "2023-04-14",
+      "dateOFBirth": "2001-05-05",
       "gender": "Male",
       "game": "1",
-      "areaUniqueId": 1,
-      "createDate": "2023-04-24T17:17:54.750Z",
+      "areaUniqueId": 2,
+      "createDate": "2023-05-06T08:16:13.911Z",
       "firstName": "",
       "lastName": "",
       "about": "",
       "imageUrl": "https://iili.io/HWhKUrB.webp",
-      "captainStatus": 2,
-      "id": 4
+      "id": 3
     }
   ],
-  "match_list": [
-    {
-      "matchUniqueId": "238efc2a-7893-407d-912a-930a5a435772",
-      "opponentArea": {
-        "area": "",
-        "distric": ""
-      },
-      "friendType": "1",
-      "typeOfMatch": "Betting match",
-      "time": "2023-04-05T10:33",
-      "members": "19",
-      "membersAge": {
-        "from": "19",
-        "to": "22"
-      },
-      "location": "cresent ground",
-      "information": "Rubber ball match",
-      "createdTime": "2023-04-06T03:03:53.374Z",
-      "activeStatus": false
-    },
-    {
-      "matchUniqueId": "9f113eb0-23dc-429c-841c-7c344c4e6d25",
-      "opponentArea": {
-        "area": "",
-        "distric": ""
-      },
-      "friendType": "1",
-      "typeOfMatch": "Betting match",
-      "time": "2023-04-05T08:50",
-      "members": "11",
-      "membersAge": {
-        "from": "19",
-        "to": "22"
-      },
-      "location": "Metha nagar ",
-      "information": "Rubber ball match",
-      "createdTime": "2023-04-06T03:10:24.777Z",
-      "activeStatus": false
-    },
-    {
-      "matchUniqueId": "bc4e2064-9715-4542-86e8-d70ba11a9201",
-      "opponentArea": {
-        "area": "",
-        "distric": ""
-      },
-      "friendType": "1",
-      "typeOfMatch": "Betting match",
-      "time": "2023-04-06T16:30",
-      "members": "11",
-      "membersAge": {
-        "from": "20",
-        "to": "22"
-      },
-      "location": "Cresent Ground ",
-      "information": "Rubber ball match",
-      "createdTime": "2023-04-06T13:03:33.247Z",
-      "activeStatus": false
-    },
-    {
-      "matchUniqueId": "6cfc28f8-42f9-44eb-9dfc-8b2b8ce9baf1",
-      "opponentArea": {
-        "area": "aminjikarai",
-        "distric": "chennai"
-      },
-      "friendType": "2",
-      "typeOfMatch": "Betting match",
-      "time": "2023-04-10T16:51",
-      "members": "11",
-      "membersAge": {
-        "from": "19",
-        "to": "22"
-      },
-      "location": "cresent ground",
-      "information": "rubber ball match",
-      "createdTime": "2023-04-10T12:21:57.620Z",
-      "activeStatus": false
-    },
-    {
-      "matchUniqueId": "735690f9-9a37-4648-9ac8-64b7db5582ba",
-      "opponentArea": {
-        "area": "",
-        "distric": ""
-      },
-      "friendType": "1",
-      "typeOfMatch": "Betting match",
-      "time": "2023-04-18T17:15",
-      "members": "11",
-      "membersAge": {
-        "from": "11",
-        "to": "22"
-      },
-      "location": "asdfg",
-      "information": "sdf",
-      "createdTime": "2023-04-18T11:45:08.028Z",
-      "activeStatus": false
-    },
-    {
-      "matchUniqueId": "b15c1f00-d0e8-404f-b2c8-d21812ada865",
-      "opponentArea": {
-        "area": "",
-        "distric": ""
-      },
-      "friendType": "1",
-      "typeOfMatch": "Betting match",
-      "time": "2023-04-21T15:40",
-      "members": "12",
-      "membersAge": {
-        "from": "19",
-        "to": "22"
-      },
-      "location": "ground",
-      "information": "summa",
-      "createdTime": "2023-04-20T10:11:09.300Z",
-      "activeStatus": false
-    }
-  ],
+  "match_list": [],
   "response_list": [
     {
-      "responseUniqueId": "32d48754-d9db-4567-ada7-3c48bae8c110",
-      "playerUniqueId": "9344655219",
-      "teamUniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
-      "createdTime": "2023-03-17T09:43:47.542Z",
-      "requestStatus": 1
+      "playerId": 3,
+      "teamId": 1,
+      "createdTime": "2023-05-07T14:09:46.406Z",
+      "requestStatus": 2,
+      "id": 1
     },
     {
-      "responseUniqueId": "3b00527e-1f13-45b7-9abc-3e7e77d7b851",
-      "playerUniqueId": "9344655222",
-      "teamUniqueId": "ea73eb8e-ff5a-46e4-9e9d-646de4567734",
-      "createdTime": "2023-03-20T11:05:15.997Z",
-      "requestStatus": 0
-    },
-    {
-      "responseUniqueId": "22e2ae6a-7413-40d8-9c20-cf9f4a0c8ccd",
-      "playerUniqueId": "9344655222",
-      "teamUniqueId": "ea73eb8e-ff5a-46e4-9e9d-646de4567734",
-      "createdTime": "2023-03-20T11:05:57.057Z",
-      "requestStatus": 1
-    },
-    {
-      "responseUniqueId": "2af1205e-ce4b-4d5f-afa4-4155c8c054f8",
-      "playerUniqueId": "9344655232",
-      "teamUniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
-      "createdTime": "2023-03-21T12:04:09.216Z",
-      "requestStatus": 1
-    },
-    {
-      "responseUniqueId": "ba5ad8d0-8e4e-43a4-9b8b-ca8039680644",
-      "playerUniqueId": "9344655232",
-      "teamUniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
-      "createdTime": "2023-03-21T12:05:30.892Z",
-      "requestStatus": 1
-    },
-    {
-      "responseUniqueId": "2f1ff16a-1359-4a9c-867b-195667a87e48",
-      "playerUniqueId": "9344655250",
-      "teamUniqueId": "f7b05118-3c2f-4929-9f20-9cdf953c76f0",
-      "createdTime": "2023-03-27T17:33:15.641Z",
-      "requestStatus": 2
-    },
-    {
-      "responseUniqueId": "1a998f26-969c-4b41-a91b-bc854359c0d3",
-      "playerUniqueId": "9344612345",
-      "teamUniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
-      "createdTime": "2023-04-12T16:24:08.875Z",
-      "requestStatus": 1
+      "playerId": 3,
+      "teamId": 2,
+      "createdTime": "2023-05-08T09:46:21.702Z",
+      "requestStatus": 2,
+      "id": 2
     }
   ],
   "team_details_list": [
     {
       "teamImageUrl": "https://iili.io/HNNQShx.jpg",
       "teamName": "Chennai Super Kings",
-      "address": {
-        "area": "aminjikarai",
-        "distric": "chennai"
-      },
+      "address_id": 1,
       "dateOfJoin": "2023-03-08T13:09:13.829Z",
-      "uniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
+      "id": 1,
       "about": "Hi team",
-      "openForPlayers": {
-        "status": true,
-        "description": "we need some good bolwers"
-      },
-      "teamMembers": [
-        "9344655211",
-        "9344655219",
-        "9344612345"
-      ]
-    },
-    {
-      "teamImageUrl": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
-      "teamName": "Indians",
-      "address": {
-        "area": "aminjikarai",
-        "distric": "chennai"
-      },
-      "dateOfJoin": "2023-03-08T13:13:33.890Z",
-      "uniqueId": "ea73eb8e-ff5a-46e4-9e9d-646de4567734",
-      "about": "hi",
-      "openForPlayers": {
-        "status": true,
-        "description": "hi"
-      },
-      "teamMembers": [
-        "9344655212"
-      ]
+      "openForPlayersStatus": true,
+      "openForPlayersDescription": "we need some good bolwers"
     },
     {
       "teamImageUrl": "https://iili.io/HWEqLtp.webp",
       "teamName": "attackers",
-      "address": {
-        "area": "annanagar",
-        "distric": "chennai"
-      },
-      "dateOfJoin": "2023-03-08T15:10:01.050Z",
-      "uniqueId": "f7b05118-3c2f-4929-9f20-9cdf953c76f0",
-      "about": "hi",
-      "openForPlayers": {
-        "status": true,
-        "description": "Summa oru team"
-      },
-      "teamMembers": [
-        "9344655213"
-      ]
-    },
-    {
-      "teamImageUrl": "https://iili.io/HWEqLtp.webp",
-      "teamName": "Deleted team",
-      "address": {
-        "area": "aminjikarai",
-        "distric": "chennai"
-      },
-      "dateOfJoin": "2023-03-16T10:35:41.382Z",
-      "uniqueId": "0f4bda79-480c-4f5d-866e-0e9b895fb4d1",
+      "dateOfJoin": "2023-05-04T16:46:09.472Z",
+      "address_id": 1,
       "about": "summa",
-      "openForPlayers": {
-        "status": false,
-        "description": "all rounders"
-      },
-      "teamMembers": []
-    },
-    {
-      "teamImageUrl": "https://iili.io/HWEqLtp.webp",
-      "teamName": "Rajasthan royals",
-      "address": {
-        "area": "aminjikarai",
-        "distric": "chennai"
-      },
-      "dateOfJoin": "2023-03-16T10:36:06.606Z",
-      "uniqueId": "12b8e249-116b-429b-b899-156cb6431bad",
-      "about": "rahane",
-      "openForPlayers": {
-        "status": true,
-        "description": "summa"
-      },
-      "teamMembers": [
-        "9344655216"
-      ]
-    },
-    {
-      "teamImageUrl": "https://iili.io/HWEqLtp.webp",
-      "teamName": "Maharastras",
-      "address": {
-        "area": "annanagar",
-        "distric": "chennai"
-      },
-      "dateOfJoin": "2023-03-27T18:09:13.140Z",
-      "uniqueId": "ee19130c-11b3-44f6-88e1-a1bf3a759391",
-      "about": "Ganguly fans",
-      "openForPlayers": {
-        "status": true,
-        "description": "We need some players"
-      },
-      "teamMembers": [
-        "9344655250"
-      ]
+      "openForPlayersStatus": true,
+      "openForPlayersDescription": "need players",
+      "id": 2
     }
   ],
-  "score_card": [
+  "player_team_relation": [
     {
-      "score_card_id": "2bf3bc9d-c1d5-4893-887c-56ec560140a1",
-      "matchUniqueId": "238efc2a-7893-407d-912a-930a5a435772",
-      "teamUniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
-      "score": {
-        "win": "1",
-        "draw": "0",
-        "loss": "2"
-      },
-      "mvps": [
-        "9344655219"
-      ]
+      "teamId": 1,
+      "playerId": 1,
+      "dateOfJoin": "2023-03-08T13:09:13.829Z",
+      "activeStatus": 1,
+      "id": 1
     },
     {
-      "score_card_id": "c12a835d-9ae9-4616-8532-996381bff01e",
-      "matchUniqueId": "238efc2a-7893-407d-912a-930a5a435772",
-      "teamUniqueId": "ea73eb8e-ff5a-46e4-9e9d-646de4567734",
-      "score": {
-        "win": "2",
-        "draw": "0",
-        "loss": "1"
-      },
-      "mvps": [
-        "9344655212"
-      ]
-    },
-    {
-      "score_card_id": "81ab8197-4078-4ec0-ba57-a530ea056864",
-      "matchUniqueId": "9f113eb0-23dc-429c-841c-7c344c4e6d25",
-      "teamUniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
-      "score": {
-        "win": "1",
-        "draw": "0",
-        "loss": "1"
-      },
-      "mvps": [
-        "9344655211"
-      ]
-    },
-    {
-      "score_card_id": "e9d3a798-e0c6-465a-9cdf-5760bc7f9dd6",
-      "matchUniqueId": "9f113eb0-23dc-429c-841c-7c344c4e6d25",
-      "teamUniqueId": "f7b05118-3c2f-4929-9f20-9cdf953c76f0",
-      "score": {
-        "win": "1",
-        "draw": "0",
-        "loss": "1"
-      },
-      "mvps": [
-        "9344655213"
-      ]
-    },
-    {
-      "score_card_id": "b188c942-86c1-42fd-aa47-9cf91e5cffd6",
-      "matchUniqueId": "6cfc28f8-42f9-44eb-9dfc-8b2b8ce9baf1",
-      "teamUniqueId": "ea73eb8e-ff5a-46e4-9e9d-646de4567734",
-      "score": {
-        "win": "1",
-        "draw": "0",
-        "loss": "2"
-      },
-      "mvps": [
-        "9344655212"
-      ]
-    },
-    {
-      "score_card_id": "6f2b236e-8dcf-453f-b735-ee1b1e529f75",
-      "matchUniqueId": "6cfc28f8-42f9-44eb-9dfc-8b2b8ce9baf1",
-      "teamUniqueId": "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
-      "score": {
-        "win": "2",
-        "draw": "0",
-        "loss": "1"
-      },
-      "mvps": [
-        "9344655219"
-      ]
-    },
-    {
-      "score_card_id": "45944988-5256-4608-8b66-df925a997c92",
-      "matchUniqueId": "735690f9-9a37-4648-9ac8-64b7db5582ba",
-      "teamUniqueId": "ea73eb8e-ff5a-46e4-9e9d-646de4567734",
-      "score": {
-        "win": "0",
-        "draw": "0",
-        "loss": "0"
-      },
-      "mvps": []
+      "teamId": 2,
+      "playerId": 2,
+      "dateOfJoin": "2023-05-04T16:46:09.553Z",
+      "activeStatus": 1,
+      "id": 2
     }
-  ]
+  ],
+  "score_card": []
 }

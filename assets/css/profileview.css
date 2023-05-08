@@ -108,6 +108,7 @@ header .top i{
 }
 .profiledetailsdiv p.name{
     font-size: 22px;
+    font-weight: 600;
     color: var(--fntwight);
     margin: 0;
 }
@@ -309,7 +310,7 @@ main{
     font-size: 14px;
     margin-left: .5rem;
     color: var(--icncolor);
-    width: 90%;
+    /* width: 90%; */
     white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis;

@@ -7,7 +7,7 @@ if (request_list !== undefined) {
 
     // let match_in = check.find(phonenumber)
 
-    const find = match_list.find(function (e) {
+    const find = match_list.find((e) => {
       const today = new Date(e.time);
       const tomorrow = new Date(today);
       tomorrow.setDate(tomorrow.getDate() + 1);
