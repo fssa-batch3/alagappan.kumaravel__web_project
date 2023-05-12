@@ -2,7 +2,9 @@ const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
 
-const my_team_id = urlParams.get("team_id");
+const my_team_id = JSON.parse(urlParams.get("team_id"));
+
+const my_id = JSON.parse(localStorage.getItem("user_id"));
 
 // const unique_id = phonenumber;
 
@@ -17,25 +19,41 @@ const my_team_id = urlParams.get("team_id");
 // const request_list = JSON.parse(localStorage.getItem("match_response_list"));
 
 // const score_resopnse = JSON.parse(localStorage.getItem("score_card"));
+async function updateData(endpoint, data) {
 
-function exit() {
+    await axios.patch(`http://localhost:3000/${endpoint}`, data, {
+        "Content-Type": "application/json",
+      }).then(() => {
+        window.location.href = `../homepage/hpexist.html`;
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Something Went Wrong in update relation");
+      });
+}
+async function getRelationDataByPlayer(endpoint, user_api_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}`, {
+      params: {
+      playerId: user_api_id,
+      },
+  });
+  const response = await data;
+  
+  const team_players_id = response.data;
+  
+  return team_players_id;
+  }
+async function exit() {
+  const teamProfile = await getTeamDet("team_details_list", my_team_id);
   if (confirm(`Do you want to Exit from ${teamProfile.teamName} team ?`)) {
-    const my_profile_exit = all_player_list.find(
-      (e) => e.phoneNumber === phonenumber
-    );
 
-    my_profile_exit.captainStatus = 2;
+    const change_person_rel = await getRelationDataByPlayer("player_team_relation", my_id) 
+    const find_rel_id = change_person_rel.find(e => e.activeStatus === 2 && e.teamId === my_team_id)
+    const value = {
+      "activeStatus": 0,
+    }
+    updateData(`player_team_relation/${find_rel_id["id"]}`, value)
 
-    const indexOfUser = teamProfile.teamMembers.indexOf(
-      my_profile_exit.phoneNumber
-    );
-
-    teamProfile.teamMembers.splice(indexOfUser, 1);
-
-    localStorage.setItem("user_detail", JSON.stringify(all_player_list));
-    localStorage.setItem("team_details_list", JSON.stringify(team_list));
-
-    window.location.href = `../homepage/hpexist.html?unique_id=${phonenumber}`;
   }
 }
 function profile() {
@@ -105,7 +123,7 @@ function stats() {
 }
 
 function teamEdit() {
-  window.location.href = `../my team/myteamedit.html?unique_id=${phonenumber}&team_id=${team_id}`;
+  window.location.href = `../my team/myteamedit.html?team_id=${my_team_id}`;
 }
 
 function renderPlayer(player, captain, whatsapp, me, age) {
@@ -130,7 +148,6 @@ function renderPlayer(player, captain, whatsapp, me, age) {
   return template1;
 }
 
-window.onload = teamPageLoad();
 
 // upto this common for all section
 async function getTeamDet(endpoint, user_api_id) {
@@ -145,7 +162,7 @@ async function getTeamPlayersObject(team_players_id) {
 
   for (let i = 0; i < team_players_id.length; i++) {
     const player_id = team_players_id[i].playerId;
-    result.push(await getTeamDet("users", player_id));
+    result.push(await getTeamDet("users", player_id)); // should clarify this bug
   }
 
   return result;
@@ -168,10 +185,12 @@ async function getMyTeamPlayersId(endpoint, user_api_id) {
 async function teamPageLoad() {
   const teamProfile = await getTeamDet("team_details_list", my_team_id);
 
-  const team_players_relation_list = await getMyTeamPlayersId(
+  const team_players_relation_all_list = await getMyTeamPlayersId(
     "player_team_relation",
     my_team_id
   );
+
+  const team_players_relation_list = team_players_relation_all_list.filter(e => e.activeStatus !== 0)
 
   const team_players_list = await getTeamPlayersObject(
     team_players_relation_list
@@ -319,3 +338,4 @@ async function teamPageLoad() {
 function previousPage() {
   window.history.go(-1);
 }
+window.onload = teamPageLoad();

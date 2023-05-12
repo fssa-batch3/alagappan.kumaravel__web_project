@@ -8,8 +8,6 @@ const { origin } = window.location;
 
 const user_api_id = JSON.parse(localStorage.getItem("user_id"));
 
-window.onload = homepageCondition();
-
 // (async function () {
 //   teamdetails = await getTeamid(user_api_id);
 // })();
@@ -209,10 +207,18 @@ async function homepageCondition() {
     range_value
   )}%`;
 }
+async function getplayerDet(endpoint, user_api_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`);
 
-// function createMatchBtn() {
-//   window.location.href = `/pages/teamplayer captain/creatematch.html?unique_id=${phonenumber}&my_name=${person_data.userName}&opponent_url=0&opponent_name=0&captain=0&type=0&opponent_id=0`;
-// }
+  const result = await data;
+
+  return result.data;
+}
+async function createMatchBtn() {
+  const player_profile = await getplayerDet("users", user_api_id)
+
+  window.location.href = `/pages/teamplayer captain/creatematch.html?my_name=${player_profile.userName}&opponent_url=null&opponent_name=null&captain=null&type=null&opponent_id=null`;
+}
 // sidebar js work end ---------------------------------------------------
 
 document
@@ -225,3 +231,5 @@ document
 function previousPage() {
   window.history.go(-1);
 }
+
+window.onload = homepageCondition();

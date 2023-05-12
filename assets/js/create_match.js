@@ -1,3 +1,50 @@
+
+const queryString = window.location.search;
+
+const urlParams = new URLSearchParams(queryString);
+
+const player_id = JSON.parse(localStorage.getItem("user_id"));
+if(!player_id){
+  window.location.href = "../../index.html" ;
+}
+const opponent_id = urlParams.get("opponent_id");
+
+const opponent_url = urlParams.get("opponent_url");
+
+const opponent_name = urlParams.get("opponent_name");
+
+const opponent_cap_name = urlParams.get("captain");
+
+const opponent_type = JSON.parse(urlParams.get("type"));
+
+const cap_name = urlParams.get("my_name");
+
+// const team_list = JSON.parse(localStorage.getItem("team_details_list"));
+
+// const all_player_list = JSON.parse(localStorage.getItem("user_detail"));
+
+async function getRelationDataByPlayer(endpoint, user_api_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}`, {
+    params: {
+      playerId: user_api_id,
+      activeStatus: 1
+    },
+  });
+  const response = await data;
+
+  const team_players_id = response.data;
+
+  return team_players_id;
+}
+async function getDataById(endpoint, user_api_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`);
+
+  const result = await data;
+
+  return result.data;
+}
+async function createTeamPage(){
+
 const date_of_match = document.querySelector("#date_and_time");
 
 const today = new Date();
@@ -10,34 +57,16 @@ if (date_of_match) {
   date_of_match.setAttribute("min", max_value);
 }
 
-const queryString = window.location.search;
+console.log(player_id);
+const team_player_rel = await getRelationDataByPlayer("player_team_relation", player_id)
+console.log(team_player_rel);
+const find_rel = team_player_rel.find(e => e.activeStatus === 1 || e.activeStatus === 2)
 
-const urlParams = new URLSearchParams(queryString);
-
-const phonenumber = urlParams.get("unique_id");
-
-const opponent_id = urlParams.get("opponent_id");
-
-const opponent_url = urlParams.get("opponent_url");
-
-const opponent_name = urlParams.get("opponent_name");
-
-const opponent_cap_name = urlParams.get("captain");
-
-const opponent_type = urlParams.get("type");
-
-const cap_name = urlParams.get("my_name");
-
-const team_list = JSON.parse(localStorage.getItem("team_details_list"));
-
-const all_player_list = JSON.parse(localStorage.getItem("user_detail"));
-
-function findPlayer(a) {
-  const index = a.teamMembers.indexOf(phonenumber);
-  return a.teamMembers[index] === phonenumber;
+if(!find_rel){
+  window.location.href = "../homepage/hpexist.html" ;
 }
 
-const teamProfile = team_list.find(findPlayer);
+const teamProfile = await getDataById("team_details_list", find_rel["teamId"]);
 
 console.log(teamProfile);
 
@@ -55,19 +84,19 @@ my_name.innerHTML = cap_name;
 
 // here i show opponent details
 
-if (opponent_url === 0) {
+if (opponent_url === "null") {
   const opp_image = document.querySelector(".opponent_image");
   opp_image.style.visibility = "hidden";
 }
 
-if (opponent_name === 0) {
+if (opponent_name === "null") {
   document.querySelector(".opponent_name").innerHTML = "Choose Opponent";
 }
-if (opponent_name !== 0) {
+if (opponent_name !== "null") {
   document.querySelector(".opponent_name").innerHTML = opponent_name;
 }
 
-if (opponent_name !== 0) {
+if (opponent_name !== "null") {
   document.querySelector(".opp_captain").innerHTML = opponent_cap_name;
 }
 if (opponent_type === 2) {
@@ -79,7 +108,7 @@ if (opponent_type === 1) {
   a.setAttribute("class", "fa-regular fa-copyright");
 }
 
-if (opponent_name !== 0) {
+if (opponent_name !== "null") {
   const opp_image = document.querySelector(".opponent_image");
   opp_image.setAttribute("src", opponent_url);
   opp_image.setAttribute("alt", opponent_name);
@@ -96,14 +125,17 @@ if (opponent_type === 2) {
   btn_color_2.style.color = "#000";
 
   const select_team = document.querySelector(".select_opponent_div");
-  select_team.addEventListener("click", selectTeam);
+  select_team.removeEventListener("click", selectTeam);
+  select_team.addEventListener("click", selectArea);
 
-  function selectTeam() {
-    window.location.href = `./area-select.html?unique_id=${phonenumber}&my_name=${cap_name}&team_id=${teamProfile.uniqueId}`;
-  }
 }
-
+if (opponent_type === null || opponent_type === 1) {
 console.log("hi hello");
+const select_team = document.querySelector(".select_opponent_div");
+select_team.removeEventListener("click", selectArea);
+select_team.addEventListener("click", selectTeam);
+}
+}
 
 function matchCreate(e) {
   e.preventDefault();
@@ -155,7 +187,7 @@ function matchCreate(e) {
     const match_response = {
       request_id: uuidv4(),
       matchUniqueId: match_unique_id,
-      team_id: teamProfile.uniqueId,
+      team_id: teamProfile.id,
       team_players: teamProfile.teamMembers,
       match_in_status: 1,
     };
@@ -182,7 +214,7 @@ function matchCreate(e) {
       match_response_list.push(team_2_details);
     }
     const area_list = team_list.filter(
-      (e) => e.address.area === area && e.uniqueId !== teamProfile.uniqueId
+      (e) => e.address.area === area && e.uniqueId !== teamProfile.id
     );
     if (opp_type === 2) {
       for (let i = 0; i < area_list.length; i++) {
@@ -201,19 +233,26 @@ function matchCreate(e) {
       JSON.stringify(match_response_list)
     );
 
-    window.location.href = `./team response.html?unique_id=${phonenumber}`;
+    window.location.href = `./team response.html?`;
   }
 }
+async function selectArea() {
+  const team_player_rel = await getRelationDataByPlayer("player_team_relation", player_id)
 
-// function submit(e){
+const find_rel = team_player_rel.find(e => e.activeStatus === 1 || e.activeStatus === 2)
 
-// }
+const teamProfile = await getDataById("team_details_list", find_rel["teamId"]);
 
-const select_team = document.querySelector(".select_opponent_div");
-select_team.addEventListener("click", selectTeam);
+  window.location.href = `./area-select.html?my_name=${cap_name}&team_id=${teamProfile.id}`;
+}
+async function selectTeam() {
+  const team_player_rel = await getRelationDataByPlayer("player_team_relation", player_id)
 
-function selectTeam() {
-  window.location.href = `./team-select.html?unique_id=${phonenumber}&my_name=${cap_name}&team_id=${teamProfile.uniqueId}`;
+  const find_rel = team_player_rel.find(e => e.activeStatus === 1 || e.activeStatus === 2)
+  
+  const teamProfile = await getDataById("team_details_list", find_rel["teamId"]);
+  
+  window.location.href = `./team-select.html?my_name=${cap_name}&team_id=${teamProfile.id}`;
 }
 
 function leftbtn() {
@@ -238,11 +277,9 @@ function leftbtn() {
   btn_color_2.style.color = "#f7f7f7";
 
   const select_team = document.querySelector(".select_opponent_div");
+  select_team.removeEventListener("click", selectArea);
   select_team.addEventListener("click", selectTeam);
 
-  function selectTeam() {
-    window.location.href = `./team-select.html?unique_id=${phonenumber}&my_name=${cap_name}&team_id=${teamProfile.uniqueId}`;
-  }
 }
 
 function rightbtn() {
@@ -267,17 +304,17 @@ function rightbtn() {
   btn_color_2.style.color = "#000";
 
   const select_team = document.querySelector(".select_opponent_div");
-  select_team.addEventListener("click", selectTeam);
+  select_team.removeEventListener("click", selectTeam)
+  select_team.addEventListener("click", selectArea);
 
-  function selectTeam() {
-    window.location.href = `./area-select.html?unique_id=${phonenumber}&my_name=${cap_name}&team_id=${teamProfile.uniqueId}`;
-  }
 }
 
 function backBtn() {
-  window.location.href = `../homepage/hpexist.html?unique_id=${phonenumber}`;
+  window.location.href = `../homepage/hpexist.html?`;
 }
 
 function previousPage() {
   window.history.go(-1);
 }
+
+window.onload = createTeamPage();

@@ -391,7 +391,7 @@
       completed_match_list = request_list.filter(
         (e) =>
           e.match_in_status === 1 &&
-          e.team_players.find((e) => e === phonenumber) === phonenumber
+          e.team_players.find((f) => f === phonenumber) === phonenumber
       );
     }
 

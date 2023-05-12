@@ -293,7 +293,6 @@ function myFunction() {
 }
 
 function updateData(endpoint, data) {
-
   // axios.post(url, data, headerOptions)
 
   axios
@@ -379,7 +378,7 @@ async function update(e) {
   const user_api_id = JSON.parse(localStorage.getItem("user_id"));
 
   const endpoint = `users/${user_api_id}`;
-  updateData(endpoint, person_data);
+  await updateData(endpoint, person_data);
 }
 
 // delete profile start // not worked for database
