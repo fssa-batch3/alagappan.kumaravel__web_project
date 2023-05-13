@@ -392,13 +392,17 @@ let teamProfile = "";
 // we find players team if he/she in team this condition works (start)
 if (playerProfile.captainStatus != 2) {
   const team_list = JSON.parse(localStorage.getItem("team_details_list"));
+console.log(team_list)
 
   function findPlayer(a) {
+    console.log(unique_id)
     const index = a.teamMembers.indexOf(unique_id);
     return a.teamMembers[index] == unique_id;
   }
 
-  teamProfile = team_list.find(findPlayer); // here i find the team profile
+  teamProfile = team_list.find(findPlayer);
+  
+  // here i find the team profile
   console.log(teamProfile);
   const my_team_id = teamProfile.uniqueId;
 
