@@ -66,7 +66,7 @@
         <main>
             <form onsubmit="matchCreate(event)">
                 <label>Members</label>
-                <input id="members" type="number" min="1" max="14" required>
+                <input id="members" value="11" type="number" min="1" max="14" required>
 	
                 <label>Type of match</label>
                 <select id="type_of_match" required>
@@ -77,18 +77,18 @@
                 <label>Players Age</label>
                 <div class="age">
                     <label >From</label>
-                    <input id="players_from_age" min="3" max="70" class="age1" type="number" required>
+                    <input id="players_from_age" min="3" max="70" value="19" class="age1" type="number" required>
                     <label>To</label>
-                    <input id="players_to_age" min="3" max="70" class="age1" type="number" required>
+                    <input id="players_to_age" min="3" max="70" value="22" class="age1" type="number" required>
                 </div>
                 <label>Time</label>
                 <input id="date_and_time" type="datetime-local" required>
 	
                 <label>Address (Ground name)</label>
-                <textarea id="address_details"></textarea>
+                <textarea id="address_details">fgfdgdfg</textarea>
 	
                 <label>Additional Details</label>
-                <textarea id="add_info"></textarea>
+                <textarea id="add_info">dfgdfgdfgd</textarea>
                 <p class="alert_msg"></p>
                 <div class="updatediv">
                     <button type="submit">CREATE</button>

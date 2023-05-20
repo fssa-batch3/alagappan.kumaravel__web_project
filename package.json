@@ -7,7 +7,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "dev": "http-server ./",
-    "dev:server": "json-server --watch database/db.json"
+    "dev:server": "json-server --watch database/db.json --no-watch"
   },
   "repository": {
     "type": "git",

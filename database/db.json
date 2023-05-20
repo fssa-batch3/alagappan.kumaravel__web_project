@@ -96,9 +96,56 @@
       "about": "",
       "imageUrl": "https://iili.io/HWhKUrB.webp",
       "id": 3
+    },
+    {
+      "phoneNumber": "9344655202",
+      "userName": "Kalash",
+      "password": "Aa!1aaaa",
+      "confirmPassword": "Aa!1aaaa",
+      "dateOFBirth": "2001-05-04",
+      "gender": "Male",
+      "game": "1",
+      "areaUniqueId": 1,
+      "createDate": "2023-05-15T10:01:13.902Z",
+      "firstName": "",
+      "lastName": "",
+      "about": "",
+      "imageUrl": "https://iili.io/HWhKUrB.webp",
+      "id": 4
+    },
+    {
+      "phoneNumber": "9344655205",
+      "userName": "Alfa",
+      "password": "Aa!1aaaa",
+      "confirmPassword": "Aa!1aaaa",
+      "dateOFBirth": "2023-05-12",
+      "gender": "Male",
+      "game": "1",
+      "areaUniqueId": 1,
+      "createDate": "2023-05-16T14:09:28.564Z",
+      "firstName": "",
+      "lastName": "",
+      "about": "",
+      "imageUrl": "https://iili.io/HWhKUrB.webp",
+      "id": 5
+    },
+    {
+      "phoneNumber": "9344655210",
+      "userName": "Sesslyn",
+      "password": "Aa!1aaaa",
+      "confirmPassword": "Aa!1aaaa",
+      "dateOFBirth": "2003-05-11",
+      "gender": "Male",
+      "game": "1",
+      "areaUniqueId": 1,
+      "createDate": "2023-05-18T07:37:24.138Z",
+      "firstName": "",
+      "lastName": "",
+      "about": "",
+      "imageUrl": "https://iili.io/HWhKUrB.webp",
+      "id": 6
     }
   ],
-  "match_list": [],
   "response_list": [
     {
       "playerId": 3,
@@ -155,6 +202,27 @@
       "createdTime": "2023-05-10T11:40:22.416Z",
       "requestStatus": 1,
       "id": 8
+    },
+    {
+      "playerId": 3,
+      "teamId": 2,
+      "createdTime": "2023-05-15T10:00:09.501Z",
+      "requestStatus": 1,
+      "id": 9
+    },
+    {
+      "playerId": 5,
+      "teamId": 2,
+      "createdTime": "2023-05-16T14:10:00.425Z",
+      "requestStatus": 1,
+      "id": 10
+    },
+    {
+      "playerId": 6,
+      "teamId": 1,
+      "createdTime": "2023-05-18T07:38:59.070Z",
+      "requestStatus": 2,
+      "id": 11
     }
   ],
   "team_details_list": [
@@ -165,7 +233,7 @@
       "dateOfJoin": "2023-03-08T13:09:13.829Z",
       "id": 1,
       "about": "Hi team",
-      "openForPlayersStatus": false,
+      "openForPlayersStatus": true,
       "openForPlayersDescription": "we need some good bolwers"
     },
     {
@@ -177,6 +245,16 @@
       "openForPlayersStatus": true,
       "openForPlayersDescription": "need players",
       "id": 2
+    },
+    {
+      "teamImageUrl": "https://iili.io/HWEqLtp.webp",
+      "teamName": "Royal Challengers Bangaloru",
+      "dateOfJoin": "2023-05-15T11:43:06.404Z",
+      "address_id": 1,
+      "about": "new bee",
+      "openForPlayersStatus": true,
+      "openForPlayersDescription": "we need good allrounders",
+      "id": 3
     }
   ],
   "player_team_relation": [
@@ -200,7 +278,126 @@
       "dateOfJoin": "2023-05-09T12:32:36.764Z",
       "activeStatus": 0,
       "id": 3
+    },
+    {
+      "teamId": 2,
+      "playerId": 3,
+      "dateOfJoin": "2023-05-15T10:00:36.590Z",
+      "activeStatus": 2,
+      "id": 4
+    },
+    {
+      "teamId": 3,
+      "playerId": 4,
+      "dateOfJoin": "2023-05-15T11:43:06.465Z",
+      "activeStatus": 1,
+      "id": 5
+    },
+    {
+      "teamId": 2,
+      "playerId": 5,
+      "dateOfJoin": "2023-05-16T14:10:18.017Z",
+      "activeStatus": 2,
+      "id": 6
     }
   ],
-  "score_card": []
+  "match_list": [
+    {
+      "address_id": "",
+      "friendType": 1,
+      "typeOfMatch": "Betting match",
+      "time": "2023-05-18T21:46",
+      "members": "11",
+      "membersAgeFrom": "19",
+      "membersAgeTo": "22",
+      "location": "fgfdgdfg",
+      "information": "dfgdfgdfgd",
+      "createdTime": "2023-05-16T16:17:15.248Z",
+      "activeStatus": true,
+      "createdTeam": 2,
+      "createdBy": 2,
+      "id": 1
+    },
+    {
+      "address_id": "1",
+      "friendType": 2,
+      "typeOfMatch": "Betting match",
+      "time": "2023-05-16T23:48",
+      "members": "11",
+      "membersAgeFrom": "19",
+      "membersAgeTo": "22",
+      "location": "fgfdgdfg",
+      "information": "dfgdfgdfgd",
+      "createdTime": "2023-05-16T16:18:17.401Z",
+      "activeStatus": true,
+      "createdTeam": 2,
+      "createdBy": 2,
+      "id": 2
+    }
+  ],
+  "score_card": [],
+  "match_response_list": [
+    {
+      "matchUniqueId": 1,
+      "team_id": 2,
+      "match_in_status": 1,
+      "id": 1
+    },
+    {
+      "matchUniqueId": 1,
+      "team_id": 1,
+      "match_in_status": 2,
+      "id": 2
+    },
+    {
+      "matchUniqueId": 2,
+      "team_id": 2,
+      "match_in_status": 1,
+      "id": 3
+    },
+    {
+      "matchUniqueId": 2,
+      "team_id": 1,
+      "match_in_status": 2,
+      "id": 4
+    },
+    {
+      "matchUniqueId": 2,
+      "team_id": 3,
+      "match_in_status": 2,
+      "id": 5
+    }
+  ],
+  "match_team_members": [
+    {
+      "matchRequestId": 1,
+      "player_id": 2,
+      "id": 1
+    },
+    {
+      "matchRequestId": 1,
+      "player_id": 3,
+      "id": 2
+    },
+    {
+      "matchRequestId": 1,
+      "player_id": 5,
+      "id": 3
+    },
+    {
+      "matchRequestId": 3,
+      "player_id": 2,
+      "id": 4
+    },
+    {
+      "matchRequestId": 3,
+      "player_id": 3,
+      "id": 5
+    },
+    {
+      "matchRequestId": 3,
+      "player_id": 5,
+      "id": 6
+    }
+  ]
 }

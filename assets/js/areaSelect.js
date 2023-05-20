@@ -2,33 +2,18 @@ const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
 
-const phonenumber = urlParams.get("unique_id");
+const team_id = urlParams.get("team_id");
 
 const my_name = urlParams.get("my_name");
 
-const team_list = JSON.parse(localStorage.getItem("team_details_list"));
+async function getDataById(endpoint, user_api_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`);
 
-const area_list = [];
-for (let i = 0; i < team_list.length; i++) {
-  const { area } = team_list[i].address;
-  const { distric } = team_list[i].address;
+  const result = await data;
 
-  const object = {
-    area,
-    distric,
-    count: 1,
-  };
-  const same = area_list.find((e) => e.area === area && e.distric === distric);
-  if (!same) {
-    area_list.push(object);
-  }
-  if (same) {
-    same.count += 1;
-  }
+  return result.data;
 }
-console.log(area_list);
-
-function renderTeam(team, i) {
+function renderTeam(team) {
   const template = `
         <div class="area-content">
     <i class="fa-solid fa-location-dot"></i>
@@ -39,16 +24,51 @@ function renderTeam(team, i) {
             <p>${team.distric}</p>
         </div>
     </div>
-    <a class="area-link" data-id="${i}">SELECT</a>
+    <a class="area-link" data-id="${team.id}">SELECT</a>
 </div>
         `;
   return template;
 }
+async function areaSelectPage(){
+
+const all_teams_axios = await axios.get(`http://localhost:3000/team_details_list`)
+let all_teams = all_teams_axios.data
+
+const my_team = await getDataById("team_details_list", team_id)
+
+let jointeam = all_teams.filter(e => e.id !== my_team["id"])
+
+console.log(jointeam);
+
+const area_axios = await axios.get(`http://localhost:3000/area_list`)
+let area = area_axios.data
+
+
+const area_list = [];
+
+for (let i = 0; i < jointeam.length; i++) {
+  const area_id = jointeam[i]["address_id"]
+
+  const find_id = area.find(e => e.id === area_id)
+
+  const find_in_arealist = area_list.find(e => e.id === area_id)
+
+  if(find_in_arealist){
+    find_in_arealist["count"] += 1
+  }else{
+    find_id["count"] = 1
+    area_list.push(find_id)
+  }
+
+}
+console.log(area_list);
+
+
 
 for (let index = 0; index < area_list.length; index++) {
   const team = area_list[index];
   const i = index;
-  const template = renderTeam(team, i);
+  const template = renderTeam(team);
 
   document
     .querySelector(".area-background-color")
@@ -58,12 +78,19 @@ for (let index = 0; index < area_list.length; index++) {
 const selectbtn = document.querySelectorAll(".area-link");
 selectbtn.forEach((each) => {
   each.addEventListener("click", () => {
-    const index_value = each.dataset.id;
+    const id_area = JSON.parse(each.dataset.id);
 
-    window.location.href = `../teamplayer captain/creatematch.html?unique_id=${phonenumber}&my_name=${my_name}&opponent_url=https://iili.io/HXFAu87.png&opponent_name=${area_list[index_value].area}&captain=${area_list[index_value].distric}&type=2&opponent_id=0`;
+    const find_in_list = area_list.find(e => e.id === id_area)
+
+    window.location.href = `../teamplayer captain/creatematch.html?my_name=${my_name}&opponent_url=https://iili.io/HXFAu87.png&opponent_name=${find_in_list["area"]}&captain=${find_in_list["distric"]}&type=2&opponent_id=${find_in_list["id"]}`;
   });
 });
+
+
+}
 
 function previousPage() {
   window.history.go(-1);
 }
+
+window.onload = areaSelectPage();
