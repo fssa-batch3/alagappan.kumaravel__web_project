@@ -210,6 +210,12 @@ main{
     align-items: center;
     justify-content: center; */
 }
+.empty_content{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--drakgray);
+    text-align: center;
+}
 
 /* team detail start */
 .teams{

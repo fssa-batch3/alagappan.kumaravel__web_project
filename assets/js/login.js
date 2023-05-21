@@ -93,10 +93,10 @@ function signUp_2(e) {
   user_data.area = area;
   user_data.distric = distric;
   user_data.createDate = create_date;
-  user_data.firstName = "";
-  user_data.lastName = "";
-  user_data.about = "";
-  (user_data.imageUrl = "https://iili.io/HWhKUrB.webp"),
+  user_data.firstName = "Alagappan";
+  user_data.lastName = "K";
+  user_data.about = "I am a good batsman, I played district level match also";
+  (user_data.imageUrl = "https://iili.io/HgGI3cg.jpg"),
     (user_data.captainStatus = 2);
 
   const person_unique_id = uuidv4();

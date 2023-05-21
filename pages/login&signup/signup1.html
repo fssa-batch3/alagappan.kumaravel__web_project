@@ -29,13 +29,13 @@
                     <p>Sportshub helps you connect and play with people</p>
                     <form onsubmit="signUp_1(event);">
                         <!-- <div> -->
-                        <input id="phonenumber" pattern="[6-9]{1}[0-9]{9}" type="tel" title="Please enter a valid 10 digit mobile number." placeholder="Phone number" required>
+                        <input id="phonenumber" value="9344656000" pattern="[6-9]{1}[0-9]{9}" type="tel" title="Please enter a valid 10 digit mobile number." placeholder="Phone number" required>
 
-                        <input id="username" type="text" placeholder="Username" title="Use firstletter between (A-Z) and min 15 character" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,15}$" required>
+                        <input id="username" value="Alagu" type="text" placeholder="Username" title="Use firstletter between (A-Z) and min 15 character" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,15}$" required>
                         <!-- </div>
                             <div> -->
                         <div class="password_outer_div">
-                            <input onkeyup="mytest()" id="password" type="password" title="Use (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)" placeholder="Password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                            <input onkeyup="mytest()" id="password" value="Aa!1aaaa" type="password" title="Use (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)" placeholder="Password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                             <i id="togglePassword" class="fa-solid fa-eye"></i>
                         </div>
                         <div class="password_error_not_ok">
@@ -49,7 +49,7 @@
                             <p>Strong</p>
                         </div>
                         <div class="password_outer_div">
-                            <input id="confirm_password" type="password" placeholder="Confrim Password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                            <input id="confirm_password" value="Aa!1aaaa" type="password" placeholder="Confrim Password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                             <i id="togglePassword_con" class="fa-solid fa-eye"></i>
                         </div>
                         <p class="wrong_password"></p>

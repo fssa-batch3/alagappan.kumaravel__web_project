@@ -1,5 +1,5 @@
 const image_element = document.getElementById("team_image_show");
-image_element.setAttribute("src", "https://iili.io/HWEqLtp.webp");
+image_element.setAttribute("src", "https://iili.io/HgXhh8X.jpg");
 
 const queryString = window.location.search;
 
