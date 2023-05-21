@@ -94,7 +94,7 @@
 							
                             </div>
                             <div class="invitation-update-scorecard">
-                                <!-- <button onclick="updateScore()" class="update-scorecard" type="button">Update Score</button> -->
+                                <button onclick="updateScore()" class="update-scorecard" type="button">Update Score</button>
                             </div>
                         </div>
 				
@@ -612,10 +612,10 @@ if (matchInvitaton != 0) {
 }
 // this loop is for upcoming match end ----------------
 // this loop is for live match start ----------------
-function resultdiv(data, score_id) {
+function resultdiv(data, score_id, style) {
   const temp = `<div class="update_score_div">
 <div class="invitation-update-score">
-<button class="update-score" data-id="${data.matchUniqueId}" data-name="${score_id}" type="button">Update Score</button>
+<button class="update-score" data-id="${data.matchUniqueId}" data-name="${score_id}" type="button" style="display:${style};">Update Score</button>
 </div>
 </div>
 `;
@@ -860,13 +860,19 @@ if (live_match.length != 0) {
     if (!score_card_object) {
       score_id = 0;
     }
+    let style = "none"
+    if(player_object["captainStatus"] == 1){
+      style = "block"
+      console.log(player_object["captainStatus"] )
+    }
 
-    const score = resultdiv(live_match[i], score_id);
+    const score = resultdiv(live_match[i], score_id, style);
 
     div_class_invitation.insertAdjacentHTML("beforeend", score);
 
     document.querySelector(".live").append(div_class_invitation);
 
+  
     if (score_card_object) {
       const score_data = scoreCardTemp(won_value, loss_value, draw_value);
       const div = document.querySelectorAll(".update_score_div");
@@ -1114,16 +1120,6 @@ function updateScore() {
   }
 }
 
-function updateScoreBtn(){
-const temp = 
-`<button onclick="updateScore()" class="update-scorecard" type="button">Update Score</button>`
-
-return temp
-}
-
-if(player_object["captainStatus"] == 1){
-document.querySelector(".invitation-update-scorecard").append(updateScoreBtn)
-}
 
 function ClosePopup() {
   const popup = document.getElementById("popup");
