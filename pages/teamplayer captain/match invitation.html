@@ -94,6 +94,8 @@ const team_list = JSON.parse(localStorage.getItem("team_details_list"));
 
 const players_list = JSON.parse(localStorage.getItem("user_detail"));
 
+const player_object = players_list.find(e => e.phoneNumber == phonenumber)
+
 function findPlayer(a) {
   const index = a.teamMembers.indexOf(phonenumber);
   return a.teamMembers[index] == phonenumber;
@@ -312,7 +314,7 @@ for (i = 0; i < matchInvitaton.length; i++) {
   div_class_invitation_three_subdiv4.append(div_class_invitation_three_para4);
 
   // accept reject btn
-
+if(player_object["captainStatus"] == 1){
   const div_accept_reject = document.createElement("div");
   div_accept_reject.setAttribute("class", "accept-reject");
   div_class_invitation.append(div_accept_reject);
@@ -330,7 +332,7 @@ for (i = 0; i < matchInvitaton.length; i++) {
   div_accept_button.setAttribute("class", "accept-btn");
   div_accept_button.setAttribute("data-id", matchInvitaton[i].matchUniqueId);
   div_accept_reject.append(div_accept_button);
-
+}
   // div four
 
   const div_class_invitation_four = document.createElement("div");

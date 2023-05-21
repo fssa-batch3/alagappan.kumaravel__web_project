@@ -1,7 +1,7 @@
 if (request_list != undefined) {
   // for loop for completed match
 
-  // console.log(completed_match_list);
+  console.log(completed_match_list);
   for (let i = 0; i < completed_match_list.length; i++) {
     const check = completed_match_list[i].matchUniqueId;
 
@@ -26,6 +26,7 @@ if (request_list != undefined) {
 
   // console.log(completed_match);
 }
+console.log(phonenumber);
 
 // this loop is for completed match start ----------------
 
@@ -83,10 +84,11 @@ if (completed_match.length == 0) {
 for (let i = 0; i < completed_match.length; i++) {
   const match_data = completed_match[i];
   console.log(match_data);
+  console.log(request_list);
   const my_team_response = request_list.find(
     (e) =>
       e.matchUniqueId == match_data.matchUniqueId &&
-      e.team_players.find((e) => e == phonenumber) == phonenumber
+      e.team_players.find(e => e == phonenumber) == phonenumber
   ); // some error is there
   console.log(my_team_response);
   const my_team_score = score_resopnse.find(

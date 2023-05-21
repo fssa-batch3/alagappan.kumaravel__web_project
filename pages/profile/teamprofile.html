@@ -273,11 +273,15 @@ const teamProfile = team_list.find(findPlayer);
 const team_id = teamProfile.uniqueId;
 let completed_match_list;
 const completed_match = [];
+
 if (request_list != undefined) {
   completed_match_list = request_list.filter(
     (e) => e.match_in_status == 1 && e.team_id == team_id
   );
 }
+console.log(completed_match_list)
+
+
 
 const unique_player = teamProfile.teamMembers;
 
