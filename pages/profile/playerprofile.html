@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
         <link rel="stylesheet" href="../../assets/css/profileview.css">
         <link rel="stylesheet" href="../../assets/css/update_score.css">
+        <link rel="stylesheet" href="../../assets/css/roundslider.css">
     </head>
 
     <body>
@@ -18,7 +19,7 @@
         <header>
             <div class="color"></div>
             <div class="top">
-                <a onclick="previousPage()">
+                <a class="backtohome">
                     <i class="fa-solid fa-arrow-left"></i>
                 </a>
                 <div class="topleft">
@@ -30,7 +31,7 @@
                 <div class="playerimagediv">
                 </div>
                 <div class="profiledetailsdiv">
-                    <h1></h1>
+                    <p class="name"></p>
                     <div class="">
                         <i class="fa-solid fa-location-dot"></i>
                         <p></p>
@@ -45,17 +46,39 @@
         <!-- header end -->
         <main>
             <div class="headerbottom">
-                <button type="button" onclick="profile()">PROFILE</button>
+                <button type="button" class="statsbtn">STATS</button>
 
-                <button type="button" onclick="match()">MATCHES</button>
+                <button type="button" class="profilebtn">PROFILE</button>
 
-                <button type="button" onclick="member()">TEAM</button>
+                <button type="button" class="matchbtn">MATCHES</button>
+
+                <button type="button" class="memberbtn">TEAM</button>
                 <div class="button_underline"></div>
             </div>
 
+            <section class="four">
+                <!-- <div class="playermatch">
+                    Player not played match.
+                    </div> -->
+                <h2>Players MVP stats</h2>
+                <div class="stats_container">
+                    <div class="stats_left">
+                        <h3>No of matches played</h3>
+                        <p>20</p>
+                        <h3>MVPs</h3>
+                        <p>5</p>
+                    </div>
+                    <div class="stats_right">
+                        <p>MVP Rating</p>
+                        <input type="range" class="c-rng" min="0" max="5" step="0.1" value="1.3" data-range="circular">
+                    </div>
+                </div>
+
+            </section>
+
             <section class="three">
                 <div class="playermatch">
-                    <p class="empty_content">Player currently not in team.</p>
+                    Player currently not in team.
                 </div>
             </section>
 
@@ -164,10 +187,10 @@
                                 <div class="top">
                                     <div class="backgroundimage">
                                         <div class="score_head">
-                                            <button type="button" onclick="ClosePopupResult()">
+                                            <button type="button" class="closepopupresult">
                                                 <i class="fa-solid fa-chevron-left"></i>
                                             </button>
-                                            <h1>SCORECARD</h1>
+                                            <p>MATCH RESULT</p>
                                         </div>
                                         <div class="team_score">
                                             <div class="team_name">
@@ -203,9 +226,9 @@
                                 </div>
                                 <div class="bottom">
                                     <div class="result_nav">
-                                        <button class="mvpbtn" type="button" onclick="pastMvp()">MVPs</button>
-                                        <button class="playersbtn" type="button" onclick="pastPlayers()">Players</button>
-                                        <button class="detailsbtn" type="button" onclick="pastDetails()">Details</button>
+                                        <button class="mvpbtn" type="button" >MVPs</button>
+                                        <button class="playersbtn" type="button" >Players</button>
+                                        <button class="detailsbtn" type="button">Details</button>
                                     </div>
                                     <!-- match details start -->
                                     <div class="past_match_details">
@@ -338,215 +361,9 @@
         </main>
         <!-- main end -->
     </body>
-
-    <script src="../../assets/js/vendor/lib/moment/moment.min.js">
-
-</script>
-
-    <script>
-const queryString = window.location.search;
-
-const urlParams = new URLSearchParams(queryString);
-
-const phonenumber = urlParams.get("unique_id");
-
-const team_list = JSON.parse(localStorage.getItem("team_details_list"));
-
-const players_list = JSON.parse(localStorage.getItem("user_detail"));
-
-// function findPlayer(a) {
-// let index = a.teamMembers.indexOf(phonenumber);
-// return a.teamMembers[index] == phonenumber ;
-// }
-
-// let teamProfile = team_list.find(findPlayer);
-
-// console.log(teamProfile)
-const match_list = JSON.parse(localStorage.getItem("match_list"));
-
-const request_list = JSON.parse(localStorage.getItem("match_response_list"));
-
-const score_resopnse = JSON.parse(localStorage.getItem("score_card"));
-
-// upto this common for all section
-
-let completed_match_list;
-const completed_match = [];
-if (request_list) {
-  completed_match_list = request_list.filter(
-    (e) =>
-      e.match_in_status == 1 &&
-      e.team_players.find((e) => e == phonenumber) == phonenumber
-  );
-}
-const unique_id = phonenumber;
-
-const all_player_list = JSON.parse(localStorage.getItem("user_detail"));
-
-const playerProfile = all_player_list.find((e) => e.phoneNumber == unique_id); // here i find player profile
-console.log(playerProfile);
-
-// ------------players team start-----
-
-let teamProfile = "";
-// we find players team if he/she in team this condition works (start)
-if (playerProfile.captainStatus != 2) {
-  const team_list = JSON.parse(localStorage.getItem("team_details_list"));
-console.log(team_list)
-
-  function findPlayer(a) {
-    console.log(unique_id)
-    const index = a.teamMembers.indexOf(unique_id);
-    return a.teamMembers[index] == unique_id;
-  }
-
-  teamProfile = team_list.find(findPlayer);
-  
-  // here i find the team profile
-  console.log(teamProfile);
-  const my_team_id = teamProfile.uniqueId;
-
-  document.querySelector("section.three .playermatch").innerHTML =
-    teamCard(teamProfile);
-
-  function teamCard(teamProfile) {
-    template = `<div class="playerteam">
-				<div class="myteam">
-					<div class="teamimagediv">
-						<img class="teamprofile" src="${teamProfile.teamImageUrl}" alt="${
-      teamProfile.teamName
-    }">
-					</div>
-					<div class="teamdetaildiv">
-						<div>
-							<div><h2>${teamProfile.teamName}</h2></div>
-							<div>
-								<i class="fa-regular fa-calendar"></i>
-								<p>Since ${moment(teamProfile.dateOfJoin).format("MMM Do YY")}</p></div>
-						</div>
-						<div class="matchdetails"><i class="fa-solid fa-location-dot"></i>
-							<p>${teamProfile.address.area}, ${teamProfile.address.distric}</p></div>
-	
-							<div class="matchdetails"><i class="fa-solid fa-circle-info"></i>
-								<p>${teamProfile.about}</p></div>	
-					</div>
-				</div>
-		</div>
-		`;
-    return template;
-  }
-
-  document.querySelector(".playerteam").addEventListener("click", moveTeam);
-
-  function moveTeam() {
-    window.location.href = `../profile/teamprofile.html?unique_id=${phonenumber}`;
-  }
-}
-// we find players team if he/she in team this condition works (end)
-
-// ------------players team end-----
-
-// ----------------- button css animation start
-
-function member() {
-  const toggle_button = document.querySelector(".button_underline");
-  toggle_button.style.left = "66.6%";
-
-  const content_1 = document.querySelector("section.first");
-  content_1.style.display = "none";
-
-  const content_2 = document.querySelector("section.second");
-  content_2.style.display = "none";
-
-  const content_3 = document.querySelector("section.three");
-  content_3.style.display = "block";
-}
-function match() {
-  const toggle_button = document.querySelector(".button_underline");
-  toggle_button.style.left = "33.3%";
-
-  const content_1 = document.querySelector("section.first");
-  content_1.style.display = "none";
-
-  const content_2 = document.querySelector("section.second");
-  content_2.style.display = "block";
-
-  const content_3 = document.querySelector("section.three");
-  content_3.style.display = "none";
-}
-function profile() {
-  const toggle_button = document.querySelector(".button_underline");
-  toggle_button.style.left = "0%";
-
-  const content_1 = document.querySelector("section.first");
-  content_1.style.display = "block";
-
-  const content_2 = document.querySelector("section.second");
-  content_2.style.display = "none";
-
-  const content_3 = document.querySelector("section.three");
-  content_3.style.display = "none";
-}
-
-// ----------------button css animation end
-
-// PLAYER PROFILE START
-const player_image = document.createElement("img");
-player_image.setAttribute("src", playerProfile.imageUrl);
-player_image.setAttribute("alt", playerProfile.userName);
-document.querySelector(".playerimagediv").prepend(player_image);
-
-const player_background_image = document.createElement("img");
-player_background_image.setAttribute("class", "bgimg");
-player_background_image.setAttribute("src", playerProfile.imageUrl);
-player_background_image.setAttribute("alt", playerProfile.userName);
-document.querySelector("header").prepend(player_background_image);
-
-const playerUserName = playerProfile.userName;
-document.querySelector(".profiledetailsdiv h1").innerHTML = playerUserName;
-
-const playerLocation = playerProfile.area;
-document.querySelector(".profiledetailsdiv div:nth-child(2) p").innerHTML =
-  playerLocation;
-
-const playerSince = moment(playerProfile.dateOfJoin);
-document.querySelector(".profiledetailsdiv div:nth-child(3) p").innerHTML =
-  `Since` + `  ${playerSince.format("MMM Do YY")}`;
-
-const playerFullName = `${playerProfile.firstName} ${playerProfile.lastName}`;
-document.querySelector(".player_full_name").innerHTML = playerFullName;
-
-const playerAge = playerProfile.dateOFBirth;
-const dob = new Date(playerAge);
-const today = new Date();
-let age = today.getTime() - dob.getTime();
-age = Math.floor(age / (1000 * 60 * 60 * 24 * 365.25));
-document.querySelector(".player_age").innerHTML = age;
-
-const playerGender = playerProfile.gender;
-document.querySelector(".player_gender").innerHTML = playerGender;
-
-const playerGame = playerProfile.game;
-document.querySelector(".player_game").innerHTML = playerGame;
-
-let playerTeamName = "--";
-if (playerProfile.captainStatus != 2) {
-  playerTeamName = teamProfile.teamName;
-}
-document.querySelector(".player_team_name").innerHTML = playerTeamName;
-
-const playerArea = `${playerProfile.area}, ${playerProfile.distric}`;
-document.querySelector(".player_area").innerHTML = playerArea;
-
-const playerAbout = playerProfile.about;
-document.querySelector(".player_about").innerHTML = playerAbout;
-
-// PLAYER PROFILE END
-
-function previousPage() {
-  window.history.go(-1);
-}
-</script>
-    <script src="../../assets/js/past_match.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../assets/js/vendor/lib/moment/moment.min.js"></script>
+    <script src="../../assets/js/roundslider.js"></script>
+    <script type="module" src="../../assets/js/playerProfile.js"></script>
 
 </html>

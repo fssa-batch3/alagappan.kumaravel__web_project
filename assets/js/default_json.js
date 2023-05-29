@@ -1,50 +1,176 @@
-const teamData = [{"teamImageUrl":"https://iili.io/HNNQShx.jpg","teamName":"Chennai Super Kings","address":{"area":"aminjikarai","distric":"chennai"},"dateOfJoin":"2023-03-08T13:09:13.829Z","uniqueId":"22c81ffd-0a9e-404a-b9a6-55abea873ae2","about":"Hi team","openForPlayers":{"status":true,"description":"we need some good bolwers"},"teamMembers":["9344655211","9344655219","9344612345","9344655000","9344655001","9344655002","9344655004","9344655005"]},
-{"teamImageUrl":"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg","teamName":"Indians","address":{"area":"aminjikarai","distric":"chennai"},"dateOfJoin":"2023-03-08T13:13:33.890Z","uniqueId":"ea73eb8e-ff5a-46e4-9e9d-646de4567734","about":"hi","openForPlayers":{"status":true,"description":"we need allrounder"},"teamMembers":["9344655212","9344655012","9344655011","9344655006"]},
-{"teamImageUrl":"https://iili.io/HghAgwX.jpg","teamName":"Attackers","address":{"area":"annanagar","distric":"chennai"},"dateOfJoin":"2023-03-08T15:10:01.050Z","uniqueId":"f7b05118-3c2f-4929-9f20-9cdf953c76f0","about":"hi","openForPlayers":{"status":true,"description":"we need 1 player for tomorrow match"},"teamMembers":["9344655213"]},
-{"teamImageUrl":"https://iili.io/HghRqAP.jpg","teamName":"Blue Sky","address":{"area":"aminjikarai","distric":"chennai"},"dateOfJoin":"2023-03-16T10:35:41.382Z","uniqueId":"0f4bda79-480c-4f5d-866e-0e9b895fb4d1","about":"summa","openForPlayers":{"status":false,"description":"all rounders needed"},"teamMembers":[]},
-{"teamImageUrl":"https://iili.io/HghRYNt.jpg","teamName":"Paltans","address":{"area":"aminjikarai","distric":"chennai"},"dateOfJoin":"2023-03-16T10:36:06.606Z","uniqueId":"12b8e249-116b-429b-b899-156cb6431bad","about":"rahane","openForPlayers":{"status":true,"description":"we need 2 players for regular play matches"},"teamMembers":["9344655216"]},
-{"teamImageUrl":"https://iili.io/HghRqAP.jpg","teamName":"Sharks","address":{"area":"annanagar","distric":"chennai"},"dateOfJoin":"2023-03-27T18:09:13.140Z","uniqueId":"ee19130c-11b3-44f6-88e1-a1bf3a759391","about":"Ganguly fans","openForPlayers":{"status":true,"description":"We need some good bowlers players"},"teamMembers":["9344655250"]}];
+const teamData = [
+  {
+    teamImageUrl: "https://iili.io/HNNQShx.jpg",
+    teamName: "Chennai Super Kings",
+    address: { area: "aminjikarai", distric: "chennai" },
+    dateOfJoin: "2023-03-08T13:09:13.829Z",
+    uniqueId: "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
+    about: "Hi team",
+    openForPlayers: { status: true, description: "we need some good bolwers" },
+    teamMembers: ["9344655211", "9344655219", "9344655220", "9344655221"],
+  },
+  {
+    teamImageUrl:
+      "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+    teamName: "Indians",
+    address: { area: "aminjikarai", distric: "chennai" },
+    dateOfJoin: "2023-03-08T13:13:33.890Z",
+    uniqueId: "ea73eb8e-ff5a-46e4-9e9d-646de4567734",
+    about: "hi",
+    openForPlayers: { status: true, description: "hi" },
+    teamMembers: ["9344655212"],
+  },
+  {
+    teamImageUrl: "https://iili.io/HWEqLtp.webp",
+    teamName: "attackers",
+    address: { area: "annanagar", distric: "chennai" },
+    dateOfJoin: "2023-03-08T15:10:01.050Z",
+    uniqueId: "f7b05118-3c2f-4929-9f20-9cdf953c76f0",
+    about: "hi",
+    openForPlayers: { status: true, description: "Summa oru team" },
+    teamMembers: ["9344655213"],
+  },
+];
 
-const request = [{"responseUniqueId":"3a05227d-fe6f-463a-bb02-aa90bdceb26e","playerUniqueId":"9344655012","teamUniqueId":"ea73eb8e-ff5a-46e4-9e9d-646de4567734","createdTime":"2023-05-12T10:19:02.416Z","requestStatus":1},
-{"responseUniqueId":"95330a07-a039-48b9-948f-35db6923ea27","playerUniqueId":"9344655006","teamUniqueId":"ea73eb8e-ff5a-46e4-9e9d-646de4567734","createdTime":"2023-05-12T10:20:48.524Z","requestStatus":1},
-{"responseUniqueId":"b8a90d2d-2a20-4e03-921e-db378d899187","playerUniqueId":"9344655011","teamUniqueId":"ea73eb8e-ff5a-46e4-9e9d-646de4567734","createdTime":"2023-05-12T10:21:48.360Z","requestStatus":1},
-{"responseUniqueId":"8047b383-59be-4130-80cc-63e0e421d93f","playerUniqueId":"9344655006","teamUniqueId":"ea73eb8e-ff5a-46e4-9e9d-646de4567734","createdTime":"2023-05-12T10:38:29.623Z","requestStatus":1}];
+const request = [
+  {
+    responseUniqueId: "32d48754-d9db-4567-ada7-3c48bae8c110",
+    playerUniqueId: "9344655219",
+    teamUniqueId: "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
+    createdTime: "2023-03-17T09:43:47.542Z",
+    requestStatus: 1,
+  },
+  {
+    responseUniqueId: "51a48754-c9db-6567-eda7-3c48bae8c110",
+    playerUniqueId: "9344655220",
+    teamUniqueId: "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
+    createdTime: "2023-03-18T09:43:47.542Z",
+    requestStatus: 1,
+  },
+  {
+    responseUniqueId: "45c18754-fqdb-2167-eda7-3c48bae8c110",
+    playerUniqueId: "9344655221",
+    teamUniqueId: "22c81ffd-0a9e-404a-b9a6-55abea873ae2",
+    createdTime: "2023-03-19T09:43:47.542Z",
+    requestStatus: 1,
+  },
+];
 
-const area = [{"area":"aminjikarai","distric":"chennai","count":4},{"area":"annanagar","distric":"chennai","count":2}];
+const area = [
+  { area: "aminjikarai", distric: "chennai", count: 2 },
+  { area: "annanagar", distric: "chennai", count: 1 },
+];
 
-const players = [{"phoneNumber":"9344655211","userName":"Dhoni","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2001-02-08","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-03-08T13:07:49.971Z","firstName":"MahendraSingh","lastName":"dhoni","about":"Ennam pol valkkai","imageUrl":"https://iili.io/HUBRqOv.jpg","captainStatus":1,"uniqueId":"233255ef-241a-43ac-9e4d-d7b39184bca4"},
-{"phoneNumber":"9344655212","userName":"Raina","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2001-06-08","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-03-08T13:11:43.346Z","firstName":"","lastName":"","about":"","imageUrl":"https://iili.io/HgXgG3J.jpg","captainStatus":1,"uniqueId":"c0df5b41-65c1-4ca8-827a-c7a92a3024a8"},
-{"phoneNumber":"9344655213","userName":"Gambir","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2001-02-08","gender":"Male","game":"Cricket","area":"annanagar","distric":"chennai","createDate":"2023-03-08T15:09:21.979Z","firstName":"","lastName":"","about":"","imageUrl":"https://iili.io/HWhKUrB.webp","captainStatus":1,"uniqueId":"3df48411-09b5-48e8-97eb-ccfd2dab7f7e"},
-{"phoneNumber":"9344655214","userName":"praveen","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2003-03-02","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-03-10T08:47:43.995Z","firstName":"","lastName":"","about":"","imageUrl":"https://iili.io/HWhKUrB.webp","captainStatus":2,"uniqueId":"80748187-0e73-483b-ab0d-97808e90e7be"},
-{"phoneNumber":"9344655215","userName":"Kishore","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2003-03-12","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-03-12T13:32:05.450Z","firstName":"","lastName":"","about":"","imageUrl":"https://iili.io/HWhKUrB.webp","captainStatus":2,"uniqueId":"9658656e-0624-4482-8853-405d9500e0d0"},
-{"phoneNumber":"9344655216","userName":"madhan","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2019-02-16","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-03-16T10:34:29.813Z","firstName":"","lastName":"","about":"","imageUrl":"https://iili.io/HWhKUrB.webp","captainStatus":1,"uniqueId":"c7758771-9196-4524-9984-5dcb1d382bdc"},
-{"phoneNumber":"9344655217","userName":"Karthik","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2016-02-16","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-03-16T10:35:05.097Z","firstName":"","lastName":"","about":"","imageUrl":"https://iili.io/HgXUQ7R.jpg","captainStatus":2,"uniqueId":"d8869f75-53bb-47bf-b0e4-cbc40cd0db76"},
-{"phoneNumber":"9344655219","userName":"Thamim","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2003-03-07","gender":"Male","game":"Cricket","area":"annanagar","distric":"chennai","createDate":"2023-03-17T09:43:40.153Z","firstName":"Thamim","lastName":"","about":"I am a right hand batsman","imageUrl":"https://iili.io/HgwB4Gp.jpg","captainStatus":0,"uniqueId":"83fc7a2d-099f-47ec-b4f4-8e27708be5ae"},
-{"phoneNumber":"9344655250","userName":"Anbu","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2003-06-04","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-03-27T16:57:40.112Z","firstName":"Alagappan","lastName":"Kumaravel","about":"I am a good batsman","imageUrl":"https://iili.io/HNOmKYB.jpg","captainStatus":1,"uniqueId":"d83ad9b3-1779-43b3-921c-9f5ce3f7efb9"},
-{"phoneNumber":"9344612345","userName":"kagana","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2001-03-31","gender":"Male","game":"Cricket","area":"annanagar","distric":"chennai","createDate":"2023-04-12T16:24:00.323Z","firstName":"","lastName":"","about":"","imageUrl":"https://iili.io/HWhKUrB.webp","captainStatus":0,"uniqueId":"63bccc68-911f-470a-8ce1-73a6cf3ff559"},
-{"phoneNumber":"9344655000","userName":"Kamalesh","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2001-05-05","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-05-12T09:34:18.266Z","firstName":"","lastName":"","about":"","imageUrl":"https://iili.io/HgXUk5Q.jpg","captainStatus":0,"uniqueId":"d200d3a8-4901-4f21-b2f5-bc3546e0a1f9"},
-{"phoneNumber":"9344655001","userName":"Nandhakumar","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2000-05-04","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-05-12T09:35:41.725Z","firstName":"","lastName":"","about":"","imageUrl":"https://iili.io/HgXUEe2.jpg","captainStatus":0,"uniqueId":"d422143e-e37e-4873-bc97-dc94a9394545"},
-{"phoneNumber":"9344655002","userName":"InbaLokesh","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2001-05-06","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-05-12T09:36:33.478Z","firstName":"","lastName":"","about":"","imageUrl":"https://iili.io/HWhKUrB.webp","captainStatus":0,"uniqueId":"b33d5a82-d9d9-4ec8-a84f-7e43d0006273"},
-{"phoneNumber":"9344655004","userName":"Dhanush","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2003-05-05","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-05-12T09:37:15.368Z","firstName":"","lastName":"","about":"","imageUrl":"https://iili.io/HgXUKWF.jpg","captainStatus":0,"uniqueId":"a6144d84-4265-4bce-bb9a-73474e658b14"},
-{"phoneNumber":"9344655005","userName":"Vicky","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2002-05-04","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-05-12T09:38:12.400Z","firstName":"","lastName":"","about":"","imageUrl":"https://iili.io/HWhKUrB.webp","captainStatus":0,"uniqueId":"bdf6d77c-56b4-4d4c-9640-e8ef08de8f91"},
-{"phoneNumber":"9344655011","userName":"Irfan","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2000-05-05","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-05-12T10:15:45.417Z","firstName":"Irfan","lastName":"","about":"","imageUrl":"https://iili.io/HUbCrhv.jpg","captainStatus":0,"uniqueId":"ff2a3c77-d80e-480d-aa96-dd8f2841a614"},
-{"phoneNumber":"9344655012","userName":"Ajun","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2001-05-04","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-05-12T10:18:46.106Z","firstName":"Arul","lastName":"Ajun","about":"","imageUrl":"https://iili.io/HgXShSR.jpg","captainStatus":0,"uniqueId":"a00144ac-b077-43ee-9f3b-ba4de3efa66c"},
-{"phoneNumber":"9344655006","userName":"Ramkumar","password":"Aa!1aaaa","confirmPassword":"Aa!1aaaa","dateOFBirth":"2003-05-05","gender":"Male","game":"Cricket","area":"aminjikarai","distric":"chennai","createDate":"2023-05-12T10:20:44.592Z","firstName":"","lastName":"","about":"","imageUrl":"https://iili.io/HWhKUrB.webp","captainStatus":0,"uniqueId":"e79960ab-def5-4716-a0aa-3510165e7bf6"}];
-
-
-const match_response_list = [{"request_id":"8c457210-7d92-4278-8dca-f3da64b67849","matchUniqueId":"238efc2a-7893-407d-912a-930a5a435772","team_id":"22c81ffd-0a9e-404a-b9a6-55abea873ae2","team_players":["9344655211","9344655219"],"match_in_status":1},
-{"request_id":"a2d79276-df01-4ffc-a6ee-f180398ceaba","matchUniqueId":"238efc2a-7893-407d-912a-930a5a435772","team_id":"ea73eb8e-ff5a-46e4-9e9d-646de4567734","match_in_status":1,"team_players":["9344655212"]},
-{"request_id":"f0df9162-b997-4b46-be1f-dd63d34f7882","matchUniqueId":"9f113eb0-23dc-429c-841c-7c344c4e6d25","team_id":"f7b05118-3c2f-4929-9f20-9cdf953c76f0","team_players":["9344655213"],"match_in_status":1},
-{"request_id":"38201669-e062-4c03-95e6-1217f7e96944","matchUniqueId":"9f113eb0-23dc-429c-841c-7c344c4e6d25","team_id":"22c81ffd-0a9e-404a-b9a6-55abea873ae2","match_in_status":1,"team_players":["9344655211","9344655219"]},{"request_id":"2f1ee64b-fdd6-4fe7-99fa-b43a98b55ac5","matchUniqueId":"bc4e2064-9715-4542-86e8-d70ba11a9201","team_id":"22c81ffd-0a9e-404a-b9a6-55abea873ae2","team_players":["9344655211","9344655219"],"match_in_status":1},{"request_id":"cd5dbd78-69d6-42dd-81e3-f47f864c66de","matchUniqueId":"bc4e2064-9715-4542-86e8-d70ba11a9201","team_id":"f7b05118-3c2f-4929-9f20-9cdf953c76f0","match_in_status":1,"team_players":["9344655213"]},{"request_id":"ffeacad1-fb96-4390-b74b-ff0adcdb900a","matchUniqueId":"6cfc28f8-42f9-44eb-9dfc-8b2b8ce9baf1","team_id":"22c81ffd-0a9e-404a-b9a6-55abea873ae2","team_players":["9344655211","9344655219"],"match_in_status":1},{"request_id":"bb3657ba-089a-428e-919d-2893a20d6790","matchUniqueId":"6cfc28f8-42f9-44eb-9dfc-8b2b8ce9baf1","team_id":"ea73eb8e-ff5a-46e4-9e9d-646de4567734","match_in_status":1,"team_players":["9344655212"]},
-{"request_id":"c3283c10-3689-430c-976e-057957c1a08c","matchUniqueId":"6cfc28f8-42f9-44eb-9dfc-8b2b8ce9baf1","team_id":"0f4bda79-480c-4f5d-866e-0e9b895fb4d1","match_in_status":2},
-{"request_id":"4ba366e3-7b88-4d4c-b085-c419dc2f9b12","matchUniqueId":"6cfc28f8-42f9-44eb-9dfc-8b2b8ce9baf1","team_id":"12b8e249-116b-429b-b899-156cb6431bad","match_in_status":2},
-{"request_id":"f16537ff-5588-4afc-b810-879d130d65c8","matchUniqueId":"735690f9-9a37-4648-9ac8-64b7db5582ba","team_id":"22c81ffd-0a9e-404a-b9a6-55abea873ae2","team_players":["9344655211","9344655219","9344612345"],"match_in_status":1},{"request_id":"89e20068-e9b9-4449-8114-0c5a31808d60","matchUniqueId":"735690f9-9a37-4648-9ac8-64b7db5582ba","team_id":"ea73eb8e-ff5a-46e4-9e9d-646de4567734","match_in_status":1,"team_players":["9344655212"]},{"request_id":"e39d7782-873c-4254-bda2-6a6606240924","matchUniqueId":"b15c1f00-d0e8-404f-b2c8-d21812ada865","team_id":"22c81ffd-0a9e-404a-b9a6-55abea873ae2","team_players":["9344655211","9344655219","9344612345"],"match_in_status":1},{"request_id":"06f7329b-ef91-43cb-98d2-36f47b64831b","matchUniqueId":"b15c1f00-d0e8-404f-b2c8-d21812ada865","team_id":"ea73eb8e-ff5a-46e4-9e9d-646de4567734","match_in_status":1,"team_players":["9344655212"]}]
-
-
-const score_card = [{"score_card_id":"2bf3bc9d-c1d5-4893-887c-56ec560140a1","matchUniqueId":"238efc2a-7893-407d-912a-930a5a435772","teamUniqueId":"22c81ffd-0a9e-404a-b9a6-55abea873ae2","score":{"win":"1","draw":"0","loss":"2"},"mvps":["9344655219"]},{"score_card_id":"c12a835d-9ae9-4616-8532-996381bff01e","matchUniqueId":"238efc2a-7893-407d-912a-930a5a435772","teamUniqueId":"ea73eb8e-ff5a-46e4-9e9d-646de4567734","score":{"win":"2","draw":"0","loss":"1"},"mvps":["9344655212"]},{"score_card_id":"81ab8197-4078-4ec0-ba57-a530ea056864","matchUniqueId":"9f113eb0-23dc-429c-841c-7c344c4e6d25","teamUniqueId":"22c81ffd-0a9e-404a-b9a6-55abea873ae2","score":{"win":"1","draw":"0","loss":"1"},"mvps":["9344655211"]},{"score_card_id":"e9d3a798-e0c6-465a-9cdf-5760bc7f9dd6","matchUniqueId":"9f113eb0-23dc-429c-841c-7c344c4e6d25","teamUniqueId":"f7b05118-3c2f-4929-9f20-9cdf953c76f0","score":{"win":"1","draw":"0","loss":"1"},"mvps":["9344655213"]},{"score_card_id":"b188c942-86c1-42fd-aa47-9cf91e5cffd6","matchUniqueId":"6cfc28f8-42f9-44eb-9dfc-8b2b8ce9baf1","teamUniqueId":"ea73eb8e-ff5a-46e4-9e9d-646de4567734","score":{"win":"1","draw":"0","loss":"2"},"mvps":["9344655212"]},{"score_card_id":"6f2b236e-8dcf-453f-b735-ee1b1e529f75","matchUniqueId":"6cfc28f8-42f9-44eb-9dfc-8b2b8ce9baf1","teamUniqueId":"22c81ffd-0a9e-404a-b9a6-55abea873ae2","score":{"win":"2","draw":"0","loss":"1"},"mvps":["9344655219"]},{"score_card_id":"45944988-5256-4608-8b66-df925a997c92","matchUniqueId":"735690f9-9a37-4648-9ac8-64b7db5582ba","teamUniqueId":"ea73eb8e-ff5a-46e4-9e9d-646de4567734","score":{"win":"0","draw":"0","loss":"0"},"mvps":[]}]
-
-const match_list = [{"matchUniqueId":"238efc2a-7893-407d-912a-930a5a435772","opponentArea":{"area":"","distric":""},"friendType":"1","typeOfMatch":"Betting match","time":"2023-04-05T10:33","members":"19","membersAge":{"from":"19","to":"22"},"location":"cresent ground","information":"Rubber ball match","createdTime":"2023-04-06T03:03:53.374Z","activeStatus":false},{"matchUniqueId":"9f113eb0-23dc-429c-841c-7c344c4e6d25","opponentArea":{"area":"","distric":""},"friendType":"1","typeOfMatch":"Betting match","time":"2023-04-05T08:50","members":"11","membersAge":{"from":"19","to":"22"},"location":"Metha nagar ","information":"Rubber ball match","createdTime":"2023-04-06T03:10:24.777Z","activeStatus":false},{"matchUniqueId":"bc4e2064-9715-4542-86e8-d70ba11a9201","opponentArea":{"area":"","distric":""},"friendType":"1","typeOfMatch":"Betting match","time":"2023-04-06T16:30","members":"11","membersAge":{"from":"20","to":"22"},"location":"Cresent Ground ","information":"Rubber ball match","createdTime":"2023-04-06T13:03:33.247Z","activeStatus":false},{"matchUniqueId":"6cfc28f8-42f9-44eb-9dfc-8b2b8ce9baf1","opponentArea":{"area":"aminjikarai","distric":"chennai"},"friendType":"2","typeOfMatch":"Betting match","time":"2023-04-10T16:51","members":"11","membersAge":{"from":"19","to":"22"},"location":"cresent ground","information":"rubber ball match","createdTime":"2023-04-10T12:21:57.620Z","activeStatus":false},{"matchUniqueId":"735690f9-9a37-4648-9ac8-64b7db5582ba","opponentArea":{"area":"","distric":""},"friendType":"1","typeOfMatch":"Betting match","time":"2023-04-18T17:15","members":"11","membersAge":{"from":"11","to":"22"},"location":"asdfg","information":"sdf","createdTime":"2023-04-18T11:45:08.028Z","activeStatus":false},{"matchUniqueId":"b15c1f00-d0e8-404f-b2c8-d21812ada865","opponentArea":{"area":"","distric":""},"friendType":"1","typeOfMatch":"Betting match","time":"2023-04-21T15:40","members":"12","membersAge":{"from":"19","to":"22"},"location":"ground","information":"summa","createdTime":"2023-04-20T10:11:09.300Z","activeStatus":false}]
-
+const players = [
+  {
+    phoneNumber: "9344655211",
+    userName: "Dhoni",
+    password: "Aa!1aaaa",
+    confirmPassword: "Aa!1aaaa",
+    dateOFBirth: "2001-02-08",
+    gender: "Male",
+    game: "Cricket",
+    area: "aminjikarai",
+    distric: "chennai",
+    createDate: "2023-03-08T13:07:49.971Z",
+    firstName: "MahendraSingh",
+    lastName: "Dhoni",
+    about: "Ennam pol valkkai",
+    imageUrl: "https://iili.io/HWhKUrB.webp",
+    captainStatus: 1,
+    uniqueId: "233255ef-241a-43ac-9e4d-d7b39184bca4",
+  },
+  {
+    phoneNumber: "9344655212",
+    userName: "Raina",
+    password: "Aa!1aaaa",
+    confirmPassword: "Aa!1aaaa",
+    dateOFBirth: "2001-06-08",
+    gender: "Male",
+    game: "Cricket",
+    area: "aminjikarai",
+    distric: "chennai",
+    createDate: "2023-03-08T13:11:43.346Z",
+    firstName: "Suresh",
+    lastName: "Raina",
+    about: "",
+    imageUrl: "https://iili.io/HWhKUrB.webp",
+    captainStatus: 1,
+    uniqueId: "c0df5b41-65c1-4ca8-827a-c7a92a3024a8",
+  },
+  {
+    phoneNumber: "9344655213",
+    userName: "Gambir",
+    password: "Aa!1aaaa",
+    confirmPassword: "Aa!1aaaa",
+    dateOFBirth: "2001-02-08",
+    gender: "Male",
+    game: "Cricket",
+    area: "annanagar",
+    distric: "chennai",
+    createDate: "2023-03-08T15:09:21.979Z",
+    firstName: "",
+    lastName: "",
+    about: "",
+    imageUrl: "https://iili.io/HWhKUrB.webp",
+    captainStatus: 1,
+    uniqueId: "3df48411-09b5-48e8-97eb-ccfd2dab7f7e",
+  },
+  {
+    phoneNumber: "9344655219",
+    userName: "kalasnikkal",
+    password: "Aa!1aaaa",
+    confirmPassword: "Aa!1aaaa",
+    dateOFBirth: "2003-03-07",
+    gender: "Male",
+    game: "Cricket",
+    area: "annanagar",
+    distric: "chennai",
+    createDate: "2023-03-17T09:43:40.153Z",
+    firstName: "kamesh",
+    lastName: "waran",
+    about: "KGF",
+    imageUrl: "https://iili.io/Ho1PN8Q.jpg",
+    captainStatus: 0,
+    uniqueId: "83fc7a2d-099f-47ec-b4f4-8e27708be5ae",
+  },
+  {
+    phoneNumber: "9344655220",
+    userName: "Vicky",
+    password: "Aa!1aaaa",
+    confirmPassword: "Aa!1aaaa",
+    dateOFBirth: "2003-05-01",
+    gender: "Male",
+    game: "Cricket",
+    area: "annanagar",
+    distric: "chennai",
+    createDate: "2023-03-18T09:43:40.153Z",
+    firstName: "Vignesh",
+    lastName: "waran",
+    about: "KGF",
+    imageUrl: "https://iili.io/HWhKUrB.webp",
+    captainStatus: 0,
+    uniqueId: "75d17a2d-099f-17ec-a4f4-8e27708be5ae",
+  },
+  {
+    phoneNumber: "9344655221",
+    userName: "Gopi",
+    password: "Aa!1aaaa",
+    confirmPassword: "Aa!1aaaa",
+    dateOFBirth: "2001-03-01",
+    gender: "Male",
+    game: "Cricket",
+    area: "annanagar",
+    distric: "chennai",
+    createDate: "2023-03-19T09:43:40.153Z",
+    firstName: "Gopi",
+    lastName: "Krishnan",
+    about: "KGF",
+    imageUrl: "https://iili.io/Ho1PN8Q.jpg",
+    captainStatus: 0,
+    uniqueId: "26r57a2d-099f-37ec-f4f4-8e27708be5ae",
+  },
+];
 
 const local_team = localStorage.getItem("team_details_list");
 
@@ -68,22 +194,4 @@ const local_players = localStorage.getItem("user_detail");
 
 if (!local_players) {
   localStorage.setItem("user_detail", JSON.stringify(players));
-}
-
-const match_response = localStorage.getItem("match_response_list");
-
-if (!match_response) {
-  localStorage.setItem("match_response_list", JSON.stringify(match_response_list));
-}
-
-const scoreCard = localStorage.getItem("score_card");
-
-if (!scoreCard) {
-  localStorage.setItem("score_card", JSON.stringify(score_card));
-}
-
-const matchList = localStorage.getItem("match_list");
-
-if (!matchList) {
-  localStorage.setItem("match_list", JSON.stringify(match_list));
 }

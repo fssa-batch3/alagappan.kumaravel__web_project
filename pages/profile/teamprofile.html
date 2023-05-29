@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
         <link rel="stylesheet" href="../../assets/css/profileview.css">
         <link rel="stylesheet" href="../../assets/css/update_score.css">
+        <link rel="stylesheet" href="../../assets/css/roundslider.css">
+
     </head>
 
     <body>
@@ -19,12 +21,12 @@
             <!-- <img class="bgimg" src="../../assets/images/team1profile.jpg" alt="backgroundimage"> -->
             <div class="color"></div>
             <div class="top">
-                <a onclick="previousPage()">
+                <a class="backtohome">
                     <i class="fa-solid fa-arrow-left"></i>
                 </a>
                 <div class="topleft">
                     <i class="fa-solid fa-share"></i>
-                    <a onclick="teamEdit()" class="edit_team">
+                    <a class="edit_team">
                         <i class="fa-solid fa-pen"></i>
                     </a>
                     <i class="fa-brands fa-whatsapp"></i>
@@ -35,7 +37,7 @@
                     <!-- <img src="../../assets/images/team1profile.jpg" alt="teamprofile"> -->
                 </div>
                 <div class="profiledetailsdiv">
-                    <h1></h1>
+                    <p class="name"></p>
                     <div>
                         <i class="fa-solid fa-location-dot"></i>
                         <p></p>
@@ -51,14 +53,40 @@
         <!-- main start -->
         <main>
             <div class="headerbottom">
+                <button type="button" class="statsbtn">STATS</button>
 
-                <button type="button" onclick="member()">MEMBER</button>
+                <button type="button" class="memberbtn">MEMBER</button>
 
-                <button type="button" onclick="match()">MATCHES</button>
+                <button type="button" class="matchbtn">MATCHES</button>
 
-                <button type="button" onclick="profile()">PROFILE</button>
+                <button type="button" class="profilebtn">PROFILE</button>
                 <div class="button_underline"></div>
             </div>
+
+            <section class="four">
+                <!-- <div class="playermatch">
+                    Player not played match.
+                    </div> -->
+                <h2>Team stats</h2>
+                <div class="stats_container">
+                    <div class="stats_left">
+                        <h3>No of matches played</h3>
+                        <p>20</p>
+                        <h3>Won</h3>
+                        <p>15</p>
+                        <h3>Draw</h3>
+                        <p>1</p>
+                        <h3>Loss</h3>
+                        <p>4</p>
+                    </div>
+                    <div class="stats_right">
+                        <p>Win Rating</p>
+                        <input type="range" class="c-rng" min="0" max="5" step="0.1" value="1.3" data-range="circular">
+                    </div>
+                </div>
+	
+            </section>
+
             <section class="first">
                 <div class="playermatch">
                 </div>
@@ -73,10 +101,10 @@
                                 <div class="top">
                                     <div class="backgroundimage">
                                         <div class="score_head">
-                                            <button type="button" onclick="ClosePopupResult()">
+                                            <button type="button" class="closepopupresult">
                                                 <i class="fa-solid fa-chevron-left"></i>
                                             </button>
-                                            <h1>SCORECARD</h1>
+                                            <p>SCORECARD</p>
                                         </div>
                                         <div class="team_score">
                                             <div class="team_name">
@@ -112,9 +140,9 @@
                                 </div>
                                 <div class="bottom">
                                     <div class="result_nav">
-                                        <button class="mvpbtn" type="button" onclick="pastMvp()">MVPs</button>
-                                        <button class="playersbtn" type="button" onclick="pastPlayers()">Players</button>
-                                        <button class="detailsbtn" type="button" onclick="pastDetails()">Details</button>
+                                        <button class="mvpbtn" type="button" >MVPs</button>
+                                        <button class="playersbtn" type="button" >Players</button>
+                                        <button class="detailsbtn" type="button" >Details</button>
                                     </div>
                                     <!-- match details start -->
                                     <div class="past_match_details">
@@ -238,252 +266,9 @@
             </section>
         </main>
         <!-- main end -->
-
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="../../assets/js/vendor/lib/moment/moment.min.js"></script>
-
-        <script>
-const queryString = window.location.search;
-
-const urlParams = new URLSearchParams(queryString);
-
-const phonenumber = urlParams.get("unique_id");
-
-const unique_id = phonenumber;
-
-const team_list = JSON.parse(localStorage.getItem("team_details_list"));
-
-const all_player_list = JSON.parse(localStorage.getItem("user_detail"));
-const players_list = JSON.parse(localStorage.getItem("user_detail"));
-
-const match_list = JSON.parse(localStorage.getItem("match_list"));
-
-const request_list = JSON.parse(localStorage.getItem("match_response_list"));
-
-const score_resopnse = JSON.parse(localStorage.getItem("score_card"));
-
-// upto this common for all section
-
-function findPlayer(a) {
-  const index = a.teamMembers.indexOf(unique_id);
-  return a.teamMembers[index] == unique_id;
-}
-
-const teamProfile = team_list.find(findPlayer);
-
-const team_id = teamProfile.uniqueId;
-let completed_match_list;
-const completed_match = [];
-
-if (request_list != undefined) {
-  completed_match_list = request_list.filter(
-    (e) => e.match_in_status == 1 && e.team_id == team_id
-  );
-}
-console.log(completed_match_list)
-
-
-
-const unique_player = teamProfile.teamMembers;
-
-const team_players_list = [];
-
-for (i = 0; i < unique_player.length; i++) {
-  const player_number = unique_player[i];
-
-  function findPlayer(a) {
-    return a.phoneNumber == player_number;
-  }
-
-  const player_object = all_player_list.find(findPlayer);
-
-  team_players_list.push(player_object);
-}
-
-const my_profile = team_players_list.find((e) => e.phoneNumber == unique_id);
-
-console.log(my_profile);
-if (my_profile.captainStatus == 0) {
-  document.querySelector(".edit_team").style.display = "none";
-}
-
-const players_age = [];
-
-console.log(team_players_list);
-
-for (i = 0; i < team_players_list.length; i++) {
-  let captain = "";
-  let whatsapp = "";
-  let me = "";
-
-  if (team_players_list[i].captainStatus == 1) {
-    captain = "captain";
-  }
-  if (
-    team_players_list[i].phoneNumber == phonenumber &&
-    team_players_list[i].captainStatus == 1
-  ) {
-    whatsapp = "";
-    me = "(you)";
-  } else if (team_players_list[i].phoneNumber != phonenumber) {
-    whatsapp = '<i class="fa-brands fa-whatsapp"></i>';
-  } else {
-    whatsapp = '<a class="exit_from_team" onclick="exit()">EXIT</a>';
-    me = "(you)";
-  }
-
-  const playerAge = team_players_list[i].dateOFBirth;
-  const dob = new Date(playerAge);
-  const today = new Date();
-  let age = today.getTime() - dob.getTime();
-  age = Math.floor(age / (1000 * 60 * 60 * 24 * 365.25));
-  players_age.push(age);
-
-  const player = team_players_list[i];
-  const template1 = renderPlayer(player, captain, whatsapp, me, age);
-  document
-    .querySelector(".playermatch")
-    .insertAdjacentHTML("beforeend", template1);
-}
-
-// here i find max and min of players of the age
-
-const max = Math.max(...players_age);
-const min = Math.min(...players_age);
-
-function renderPlayer(player, captain, whatsapp, me, age) {
-  const template1 = `	
-	<div class="teams">
-					<div class="teamimagediv">
-						<img class="teamprofile playerimg" src="${player.imageUrl}" alt="Image of ${player.userName}">
-					</div>
-					<div class="teamdetaildiv playerdet">
-						<div>
-							<div><p class="playername">${player.userName}<b>${me} ${captain}</b></p></div>
-							<div class="whatsapp">
-								${whatsapp}
-								</div>
-						</div>
-						<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
-							<p>${age}</p></div>
-	
-					</div>
-				</div>
-	`;
-  return template1;
-}
-
-function exit() {
-  if (confirm(`Do you want to Exit from ${teamProfile.teamName} team ?`)) {
-    const my_profile = all_player_list.find(
-      (e) => e.phoneNumber == phonenumber
-    );
-
-    my_profile.captainStatus = 2;
-
-    const indexOfUser = teamProfile.teamMembers.indexOf(my_profile.phoneNumber);
-
-    teamProfile.teamMembers.splice(indexOfUser, 1);
-
-    localStorage.setItem("user_detail", JSON.stringify(all_player_list));
-    localStorage.setItem("team_details_list", JSON.stringify(team_list));
-
-    window.location.href = `../homepage/hpexist.html?unique_id=${phonenumber}`;
-  }
-}
-
-function member() {
-  const toggle_button = document.querySelector(".button_underline");
-  toggle_button.style.left = "0%";
-  console.log("hi");
-
-  const content_1 = document.querySelector("section.first");
-  content_1.style.display = "block";
-
-  const content_2 = document.querySelector("section.second");
-  content_2.style.display = "none";
-
-  const content_3 = document.querySelector("section.three");
-  content_3.style.display = "none";
-}
-function match() {
-  const toggle_button = document.querySelector(".button_underline");
-  toggle_button.style.left = "33.3%";
-
-  const content_1 = document.querySelector("section.first");
-  content_1.style.display = "none";
-
-  const content_2 = document.querySelector("section.second");
-  content_2.style.display = "block";
-
-  const content_3 = document.querySelector("section.three");
-  content_3.style.display = "none";
-}
-function profile() {
-  const toggle_button = document.querySelector(".button_underline");
-  toggle_button.style.left = "66.6%";
-
-  const content_1 = document.querySelector("section.first");
-  content_1.style.display = "none";
-
-  const content_2 = document.querySelector("section.second");
-  content_2.style.display = "none";
-
-  const content_3 = document.querySelector("section.three");
-  content_3.style.display = "block";
-}
-
-function teamEdit() {
-  window.location.href = `../my team/myteamedit.html?unique_id=${phonenumber}&team_id=${team_id}`;
-}
-
-const team_image = document.createElement("img");
-team_image.setAttribute("src", teamProfile.teamImageUrl);
-team_image.setAttribute("alt", `logo of ${teamProfile.teamName}`);
-document.querySelector(".playerimagediv").prepend(team_image);
-
-const team_background_image = document.createElement("img");
-team_background_image.setAttribute("class", "bgimg");
-team_background_image.setAttribute("src", teamProfile.teamImageUrl);
-team_background_image.setAttribute("alt", `logo of ${teamProfile.teamName}`);
-document.querySelector("header").prepend(team_background_image);
-
-const teamUserName = teamProfile.teamName;
-document.querySelector(".profiledetailsdiv h1").innerHTML = teamUserName;
-
-const teamLocation = teamProfile.address.area;
-document.querySelector(".profiledetailsdiv div:nth-child(2) p").innerHTML =
-  teamLocation;
-
-const teamSince = moment(teamProfile.dateOfJoin);
-
-document.querySelector(".profiledetailsdiv div:nth-child(3) p").innerHTML =
-  `Since` + `  ${teamSince.format("MMM Do YY")}`;
-
-const teamArea = teamProfile.address.area;
-document.querySelector(".area").innerHTML = teamArea;
-
-const teamAge = `${min} - ${max}`;
-document.querySelector(".age").innerHTML = teamAge;
-
-const teamAbout = teamProfile.about;
-document.querySelector(".about").innerHTML = teamAbout;
-
-if (teamProfile.openForPlayers.status) {
-  const teamOpenForPlayer = teamProfile.openForPlayers.description;
-  document.querySelector(".open_for_player").innerHTML = teamOpenForPlayer;
-} else {
-  const teamOpenForPlayer = teamProfile.openForPlayers.description;
-  document.querySelector(".open_for_player").innerHTML =
-    "They did Not want any players";
-}
-
-const teamMemberCount = teamProfile.teamMembers.length;
-document.querySelector(".member").innerHTML = teamMemberCount;
-
-function previousPage() {
-  window.history.go(-1);
-}
-</script>
-        <script src="../../assets/js/past_match.js"></script>
+        <script src="../../assets/js/roundslider.js"></script>
+        <script type="module" src="../../assets/js/teamprofile.js"></script>
     </body>
 </html>

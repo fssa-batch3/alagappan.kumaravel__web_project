@@ -29,21 +29,21 @@
             </div>
             <form onsubmit="createTeam(event);">
                 <label>Team image</label>
-                <input id="team_image" type="url" value="https://iili.io/HgXhh8X.jpg" onfocusout="myFunction()">
+                <input id="team_image" type="url" value="https://iili.io/HWEqLtp.webp" onfocusout="myFunction()">
                 <label>Team name</label>
-                <input id="teamname" value="Chennai Rocks" title="Use firstletter between (A-Z) and min 15 character" pattern="^[a-zA-Z][a-zA-Z0-9\s]{1,30}$" type="text" required> 
+                <input id="teamname" title="Use firstletter between (A-Z) and min 15 character" pattern="^[a-zA-Z][a-zA-Z0-9\s]{1,30}$" type="text" required> 
                 <p class="wrong_password"></p>
                 <label>Area</label> 
-                <input id="area" value="aminjikarai" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" type="text" required> 
+                <input id="area" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" type="text" required> 
 
                 <label>Distric</label>
-                <input id="distric" value="chennai" type="text" placeholder="Eg: chennai" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" required>
+                <input id="distric" type="text" placeholder="Eg: chennai" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" required>
 
                 <label>About</label>
-                <textarea id="team_about">We are regularly playing cosco ball match at nearby aminjikarai area</textarea>
+                <textarea id="team_about"></textarea>
 
                 <label>Open for players</label>
-                <textarea id="team_player_description" placeholder="Eg: we need one good allrounder " required>We need some bowler for upcommimg match If anyone intrest approach us</textarea>
+                <textarea id="team_player_description" placeholder="Eg: we need one good allrounder " required></textarea>
 		 
                 <div class="updatediv">
                     <button type="submit">Create my team</button>
@@ -53,8 +53,9 @@
         <!-- main end -->
         <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
         <script src="../../assets/js/vendor/lib/moment/moment.min.js">
-
 	</script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
         <script src="../../assets/js/create_team.js">
 
 		</script>

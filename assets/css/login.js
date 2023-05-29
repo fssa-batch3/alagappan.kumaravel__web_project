@@ -12,7 +12,7 @@ function signUp_1(e) {
   // hear we give some condition for signup to restict same unique id
 
   const same_number = user_detail.some(
-    (data) => data.phoneNumber == phonenumber
+    (data) => data.phoneNumber === phonenumber
   );
 
   if (same_number) {
@@ -22,7 +22,7 @@ function signUp_1(e) {
     // document.querySelector('form').reset();
     return a;
   }
-  const same_user_name = user_detail.some((data) => data.userName == username);
+  const same_user_name = user_detail.some((data) => data.userName === username);
 
   if (same_user_name) {
     // alert("User name not available.");
@@ -31,7 +31,7 @@ function signUp_1(e) {
     return a;
   }
 
-  const wrong_password = password != confrim_password;
+  const wrong_password = password !== confrim_password;
 
   if (wrong_password) {
     // alert("Password not match.");
@@ -99,7 +99,7 @@ function signIn(e) {
   const user_detail = JSON.parse(localStorage.getItem("user_detail")) || [];
 
   const exist = user_detail.some(
-    (data) => data.phoneNumber == phonenumber && data.password == password
+    (data) => data.phoneNumber === phonenumber && data.password === password
   );
 
   if (!exist) {
@@ -132,7 +132,7 @@ function update(e) {
   const user_detail = JSON.parse(localStorage.getItem("user_detail"));
 
   function findPlayer(a) {
-    return a.phoneNumber == unique_id;
+    return a.phoneNumber === unique_id;
   }
 
   person_data = user_detail.find(findPlayer);
@@ -142,7 +142,9 @@ function update(e) {
 
   const user_name = document.getElementById("user_username").value;
 
-  const same_user_name = user_detail.some((data) => data.userName == user_name);
+  const same_user_name = user_detail.some(
+    (data) => data.userName === user_name
+  );
   if (same_user_name) {
     b = document.querySelector(".wrong_password").innerHTML =
       "User name not available.  ";
@@ -187,7 +189,7 @@ function del() {
     const user_detail = JSON.parse(localStorage.getItem("user_detail"));
 
     function findPlayer(a) {
-      return a.phoneNumber == unique_id;
+      return a.phoneNumber === unique_id;
     }
 
     const person_data = user_detail.find(findPlayer);
