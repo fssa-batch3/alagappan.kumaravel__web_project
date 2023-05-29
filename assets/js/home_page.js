@@ -2,126 +2,234 @@ const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
 
-const phonenumber = urlParams.get('unique_id')
+const phonenumber = urlParams.get("unique_id");
 
-function responsebtn(){
-window.location.href = `../nonteamplayer/response.html?unique_id=${phonenumber}`;
-}
-function jointeambtn(){
-window.location.href = `../nonteamplayer/jointeam.html?unique_id=${phonenumber}`;
-}
-function createteambtn(){
-window.location.href = `../nonteamplayer/createteam.html?unique_id=${phonenumber}`;
-}
+const { origin } = window.location;
 
-function myTeam(){
-    window.location.href = `../profile/teamprofile.html?unique_id=${phonenumber}`;
-}
-function teamResponse(){
-    window.location.href = `../teamplayer captain/team response.html?unique_id=${phonenumber}`;
-}
+const user_api_id = JSON.parse(localStorage.getItem("user_id"));
 
-function playerRequest(){
-    window.location.href = `../teamplayer captain/playerrequests.html?unique_id=${phonenumber}`;
+// (async function () {
+//   teamdetails = await getTeamid(user_api_id);
+// })();
+
+function responsebtn() {
+  window.location.href = `${origin}/pages/nonteamplayer/response.html?unique_id=${phonenumber}`;
+}
+function jointeambtn() {
+  window.location.href = `${origin}/pages/nonteamplayer/jointeam.html?unique_id=${phonenumber}`;
+}
+function createteambtn() {
+  window.location.href = `${origin}/pages/nonteamplayer/createteam.html?unique_id=${phonenumber}`;
 }
 
-function profilepage(){
-    window.location.href = `../profile/myprofile.html?unique_id=${phonenumber}`;
+function matchInvitationBtn() {
+  window.location.href = `${origin}/pages/teamplayer captain/match invitation.html?unique_id=${phonenumber}`;
 }
 
-// upto above links for home page 
+async function myTeam() {
+  const team_ids = await getTeamid(user_api_id);
+
+  const filter_teamin_data = team_ids.find(
+    (e) => e.activeStatus === 2 || e.activeStatus === 1
+  );
+
+  window.location.href = `${origin}/pages/profile/teamprofile.html?team_id=${filter_teamin_data.teamId}&past_match=1`;
+}
+function teamResponse() {
+  window.location.href = `${origin}/pages/teamplayer captain/team response.html?unique_id=${phonenumber}`;
+}
+function teamResponseNew() {
+  window.location.href = `${origin}/pages/nonteamplayer/response.html?unique_id=${phonenumber}`;
+}
+
+function playerRequest() {
+  window.location.href = `${origin}/pages/teamplayer captain/playerrequests.html?unique_id=${phonenumber}`;
+}
+
+function profilepage() {
+  window.location.href = `${origin}/pages/profile/myprofile.html`;
+}
+function myMatch() {
+  window.location.href = `${origin}/pages/search and notification/calendar.html?past_match=1`;
+}
+
+async function getPersonData(endpoint, user_api_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`);
+
+  const result = await data;
+
+  return result.data;
+}
+
+async function getTeamid(value) {
+  const res = new Promise((resolve, reject) => {
+    axios
+      .get(`http://localhost:3000/player_team_relation`, {
+        params: {
+          playerId: value,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        resolve(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        reject(err);
+      });
+  });
+
+  const objData = await res;
+
+  return objData.data;
+}
+
+async function getarea(areaUniqueId) {
+  const resp = await axios.get(
+    `http://localhost:3000/area_list/${areaUniqueId}`
+  );
+
+  const objData = resp;
+
+  console.log(objData);
+
+  const area_data = objData.data;
+
+  return area_data;
+}
+// upto above links for home page
 
 // options depending upon player team status (start)--------------------------
-let unique_id = phonenumber;
+const unique_id = phonenumber;
 
-let user_detail = JSON.parse(localStorage.getItem('user_detail'))
+// here i get data from mockapi start
 
+// here i get data from mockapi end
 
-function findPlayer(e) {
-  return e.phoneNumber == unique_id ;x``
-}
+async function homepageCondition() {
+  const endpoint = "users/";
 
-person_data = user_detail.find(findPlayer);
+  const person_data = await getPersonData(endpoint, user_api_id);
 
+  const team_ids = await getTeamid(user_api_id);
 
-function createMatchBtn(){
-    window.location.href = `../teamplayer captain/creatematch.html?unique_id=${phonenumber}&my_name=${person_data["userName"]}&opponent_url=0&opponent_name=0&captain=0&type=0&opponent_id=0`;  
-}
+  const area_data = await getarea(person_data.areaUniqueId);
 
+  const filter_teamcap_data = team_ids.find((e) => e.activeStatus === 1);
 
-if(person_data["captainStatus"] != 2){
-    let all = document.querySelectorAll(".not_in_team")
+  const filter_teamin_data = team_ids.find(
+    (e) => e.activeStatus === 2 || e.activeStatus === 1
+  );
 
-    all.forEach(e => e.style.display = "none")  
+  if (filter_teamin_data) {
+    const all = document.querySelectorAll(".not_in_team");
 
-    if(person_data["captainStatus"] != 1){
-        let all = document.querySelectorAll(".captain")
+    all.forEach((e) => (e.style.display = "none"));
 
-        all.forEach(e => e.style.display = "none") 
+    if (!filter_teamcap_data) {
+      const all = document.querySelectorAll(".captain");
+
+      all.forEach((e) => (e.style.display = "none"));
     }
-}
+  }
 
-if(person_data["captainStatus"] == 2){
+  if (!filter_teamin_data) {
+    const all = document.querySelectorAll(".in_team");
 
-    let all = document.querySelectorAll(".in_team")
+    all.forEach((e) => (e.style.display = "none"));
+    if (!filter_teamcap_data) {
+      const all = document.querySelectorAll(".captain");
 
-    all.forEach(e => e.style.display = "none")  
-    if(person_data["captainStatus"] != 1){
-        let all = document.querySelectorAll(".captain")
-
-        all.forEach(e => e.style.display = "none") 
+      all.forEach((e) => (e.style.display = "none"));
     }
-}
+  }
 
-// options depending upon player team status (end)--------------------------
+  // options depending upon player team status (end)--------------------------
 
-// sidebar js work start ---------------------------------------------------
-document.querySelector("#player_name").innerText = person_data["userName"];
-document.querySelector("#player_number").innerText = person_data["phoneNumber"];
+  // sidebar js work start ---------------------------------------------------
+  document.querySelector("#player_name").innerText = person_data.userName;
+  document.querySelector("#player_number").innerText = person_data.phoneNumber;
 
+  const player_image_url = person_data.imageUrl;
+  const player_image = document.querySelector(".player_image");
+  if (player_image_url === "") {
+    player_image.setAttribute(
+      "src",
+      "../../assets/images/defalt_player_image.webp"
+    );
+  } else {
+    player_image.setAttribute("src", player_image_url);
+  }
+  // for range value start
+  const username = person_data.userName;
+  const firstname = person_data.firstName;
+  const lastname = person_data.lastName;
+  const dateofbirth = person_data.dateOFBirth;
+  const { gender } = person_data;
+  const { game } = person_data;
+  const { area } = area_data;
+  const { distric } = area_data;
+  const { about } = person_data;
+  const image = person_data.imageUrl;
 
-let player_image_url = person_data["imageUrl"] ;
-let player_image = document.querySelector(".player_image");
-if(player_image_url == ""){
-player_image.setAttribute("src", "../../assets/images/defalt_player_image.webp");
-}
-else{
-player_image.setAttribute("src", player_image_url);
-}
-// for range value start
-let username = person_data["userName"],  
-firstname =  person_data["firstName"] ,
-lastname = person_data["lastName"] ,
-dateofbirth = person_data["dateOFBirth"],
-gender = person_data["gender"] ,
-game = person_data["game"] ,
-area = person_data["area"] ,
-distric= person_data["distric"],
-about = person_data["about"],
-image = person_data["imageUrl"];
+  const person_data_range = {
+    username,
+    firstname,
+    lastname,
+    dateofbirth,
+    gender,
+    game,
+    area,
+    distric,
+    about,
+    image,
+  };
 
-let person_data_range = { username, firstname, lastname,dateofbirth,gender,game,area,distric,about,image}
+  const emptyValues = new Set(["", null, undefined]);
+  const null_count = Object.values(person_data_range).filter((x) =>
+    emptyValues.has(x)
+  ).length;
+  let key_count = 0;
 
-
-const emptyValues = new Set(["", null, undefined]);
-let null_count = Object.values(person_data_range).filter(x => emptyValues.has(x)).length;
-let key_count = 0;
-
-
-// loop through each key/value
-for(let key in person_data_range) {
-
+  // loop through each key/value
+  for (const key in person_data_range) {
     // increase the count
     ++key_count;
+  }
+  // range calculation
+
+  const range_value = 100 - (null_count / key_count) * 100;
+
+  const range_input = document.querySelector(".range_cover");
+  range_input.style.width = `${range_value}%`;
+
+  document.querySelector(".range-label").innerHTML = `${Math.round(
+    range_value
+  )}%`;
 }
-// range calculation
+async function getplayerDet(endpoint, user_api_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`);
 
-let range_value = 100-((null_count/key_count)*100);
+  const result = await data;
 
-let range_input = document.querySelector(".range_cover");
-range_input.style.width = `${range_value}%`;
+  return result.data;
+}
+async function createMatchBtn() {
+  const player_profile = await getplayerDet("users", user_api_id)
 
-
-document.querySelector(".range-label").innerHTML = Math.round(range_value) + "%";
-
+  window.location.href = `/pages/teamplayer captain/creatematch.html?my_name=${player_profile.userName}&opponent_url=null&opponent_name=null&captain=null&type=null&opponent_id=null`;
+}
 // sidebar js work end ---------------------------------------------------
+
+document
+  .querySelector(".playerdetailsdiv")
+  .addEventListener("click", profilepage);
+document
+  .querySelector(".playerimagediv")
+  .addEventListener("click", profilepage);
+
+function previousPage() {
+  window.history.go(-1);
+}
+
+window.onload = homepageCondition();

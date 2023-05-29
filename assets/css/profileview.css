@@ -29,12 +29,16 @@ display: none;
 }
 section.three{
     display: none;
+}
+section.first{
+    display: none;
     }
 
 /* header start */
 header{
     width: 100%;
     height: 30vh;
+    min-height: 250px;
     position: relative;
     overflow: hidden;
 }
@@ -102,8 +106,9 @@ header .top i{
     width: 70%;
     height: 60%;
 }
-.profiledetailsdiv h1{
+.profiledetailsdiv p.name{
     font-size: 22px;
+    font-weight: 600;
     color: var(--fntwight);
     margin: 0;
 }
@@ -142,7 +147,7 @@ main{
     
 }
 .headerbottom a{
-    flex-grow: 3;
+    flex-grow: 4;
 }
 .headerbottom button{
     width: 100%;
@@ -163,7 +168,7 @@ main{
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 33%;
+    width: 25%;
     height: 3px;
     background-color: var(--logoorange);
     transition: .3s;
@@ -204,11 +209,20 @@ main{
     height: 75vh;
     background-color: var(--offwhite);
     overflow-y: scroll;
-    display: flex;
+    text-align: center;
+    padding-top: 7%;
+    font-size: 18px;
+    /* display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+}
+.empty_content{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--drakgray);
+    text-align: center;
 }
 
 /* team detail start */
@@ -302,7 +316,7 @@ main{
     font-size: 14px;
     margin-left: .5rem;
     color: var(--icncolor);
-    width: 90%;
+    /* width: 90%; */
     white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis;
@@ -325,7 +339,7 @@ main{
 .myteam{
     width: 95%;
     max-width: 500px;
-    height: 25%;
+    height: 100px;
     background-color: var(--white);
     margin-top: 10px;
     border-radius: 5px;
@@ -368,6 +382,57 @@ main{
     display: none;
 }
 
+
+/* stats css start */
+.stats_container{
+    width: 100%;
+    height: 60vh;
+    min-height: 450px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.four h2{
+    color:#000;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 15px 0px 15px 10px;
+}
+.stats_container .stats_left{
+    width: 60%;
+    height: 100%;
+    padding-top: 10%;
+
+}
+.stats_container .stats_right{
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    padding-top: 10%;
+}
+.stats_left h3{
+    color:var(--icncolor);
+    font-weight: 600;
+    font-size: 20px;
+    margin: 15px 0px 15px 10px;
+}
+.stats_left p{
+    color:var(--drakgray);
+    font-weight: 600;
+    font-size: 36px;
+    margin: 15px 0px 15px 20px;
+}
+
+.stats_right p{
+    color:var(--drakgray);
+    font-weight: 600;
+    font-size: 20px;
+    margin: 15px 0px ;
+}
+/* stats css end */
 
 /* main end */
 /* Profile view laptop screen start */
@@ -451,3 +516,25 @@ main{
 
 
 /* Profile view laptop screen end */
+
+.popup{
+    font-family: 'Source Sans Pro', sans-serif;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 111;
+    transform: scale(.1); 
+    visibility: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s; 
+}
+.open-popup{
+    visibility: visible;
+    transform: scale(1); 
+}

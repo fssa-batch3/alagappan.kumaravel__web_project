@@ -87,11 +87,54 @@ input{
     height: 40px;
     margin: 15px;
     border: 1px solid var(--icncolor);
+    /* position: relative; */
 }
 form p.wrong_password{
     font-size: 14px;
     font-weight: 500;
     color: var(--red);
+}
+
+.password_error_not_ok{
+    display: none;
+    width: 300px;
+    margin: 0 auto;
+    /* display: flex; */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+}
+.password_error_not_ok i{
+    font-size: 14px;
+    color: var(--red);
+}
+.password_error_not_ok p{
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: 5px;
+    color: var(--red);
+}
+
+.password_error_ok{
+    display: none;
+    width: 300px;
+    margin: 0 auto;
+    /* display: flex; */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+}
+.password_error_ok i{
+    font-size: 14px;
+    color: var(--ltgreen);
+}
+.password_error_ok p{
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 5px;
+    color: var(--ltgreen);
 }
 div.login a{
     text-decoration: none;
@@ -109,6 +152,45 @@ div.login p{
 div.login{
     padding-top: 20px;
 }
+
+.error_box{
+    width: 300px;
+    /* display: none; */
+    word-wrap: break-word;
+    font-size: 14px;
+    color: #f0f0f0;
+    background-color: var(--drakgray);
+    position: relative;
+    margin: 0 auto;
+    padding-top: 5px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid var(--icncolor);
+}
+.error_box div{
+    width: 15px;
+    height: 15px;
+    border-left: 1px solid var(--icncolor);
+    border-top: 1px solid var(--icncolor);
+    background-color: var(--drakgray);
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    transform: rotate(45deg);
+
+}
+.password_outer_div{
+    position: relative;
+}
+
+#togglePassword_con, #togglePassword{
+    font-size: 16px;
+    margin-left: 5px;
+    color: var(--icncolor);
+    position: absolute;
+    top: 40%;
+    right: 10%;
+}
+
 /* --------main end------- */
 @media only screen and (max-width: 400px){
     #content{

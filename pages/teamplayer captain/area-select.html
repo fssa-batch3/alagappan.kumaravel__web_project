@@ -1,217 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Home page for newmember</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="../../assets/css/overall.css">
-	<link rel="stylesheet" href="../../assets/css/creatematch.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Select area</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="../../assets/css/overall.css">
+        <link rel="stylesheet" href="../../assets/css/creatematch.css">
+    </head>
 
-<body>
-<!-- header start -->
-<div class="area-header">
-	<i class="fa-solid fa-arrow-left"></i>
-	 <h1>Select Area</h1>
-</div>
-<!-- header end -->
-<!-- main start -->
-<section class="area-select-main">
-	<div class="content-subheader searchbardiv">
-		<div class="searchbar"><input type="search"><i class="fa-solid fa-magnifying-glass"></i></div>
-	</div>
-	<div class="area-background-color">
-	<!-- <div class="area-content">
-		<i class="fa-solid fa-location-dot"></i>
-		<div>
-			<h2>Anna nagar</h2>
-			<div class="pin">
-				<i class="fa-solid fa-map-pin"></i>
-				<p>600001</p>
-			</div>
-		</div>
-		<a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
-	</div>
+    <body>
+        <!-- header start -->
+        <div class="area-header">
+            <a onclick="previousPage()">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <h1>Select Area</h1>
+        </div>
+        <!-- header end -->
+        <!-- main start -->
+        <section class="area-select-main">
+            <!-- <div class="content-subheader searchbardiv">
+                <div class="searchbar"><input type="search"><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div> -->
+            <div class="area-background-color">
+                <!-- <div class="area-content">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                    <h2>Anna nagar</h2>
+                    <div class="pin">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <p>600001</p>
+                    </div>
+                    </div>
+                    <a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
+                    </div>
 
-	<div class="area-content">
-		<i class="fa-solid fa-location-dot"></i>
-		<div>
-			<h2>Metha nagar</h2>
-			<div class="pin">
-				<i class="fa-solid fa-map-pin"></i>
-				<p>600016</p>
-			</div>
-		</div>
-		<a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
-	</div>
+                    <div class="area-content">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                    <h2>Metha nagar</h2>
+                    <div class="pin">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <p>600016</p>
+                    </div>
+                    </div>
+                    <a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
+                    </div>
 
-	<div class="area-content">
-		<i class="fa-solid fa-location-dot"></i>
-		<div>
-			<h2>Madhavaram</h2>
-			<div class="pin">
-				<i class="fa-solid fa-map-pin"></i>
-				<p>600013</p>
-			</div>
-		</div>
-		<a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
-	</div>
+                    <div class="area-content">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                    <h2>Madhavaram</h2>
+                    <div class="pin">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <p>600013</p>
+                    </div>
+                    </div>
+                    <a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
+                    </div>
 
-	<div class="area-content">
-		<i class="fa-solid fa-location-dot"></i>
-		<div>
-			<h2>Choolimeddu</h2>
-			<div class="pin">
-				<i class="fa-solid fa-map-pin"></i>
-				<p>600144</p>
-			</div>
-		</div>
-		<a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
-	</div>
+                    <div class="area-content">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                    <h2>Choolimeddu</h2>
+                    <div class="pin">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <p>600144</p>
+                    </div>
+                    </div>
+                    <a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
+                    </div>
 
-	<div class="area-content">
-		<i class="fa-solid fa-location-dot"></i>
-		<div>
-			<h2>Shennoinagar</h2>
-			<div class="pin">
-				<i class="fa-solid fa-map-pin"></i>
-				<p>600015</p>
-			</div>
-		</div>
-		<a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
-	</div>
+                    <div class="area-content">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                    <h2>Shennoinagar</h2>
+                    <div class="pin">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <p>600015</p>
+                    </div>
+                    </div>
+                    <a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
+                    </div>
 
-	<div class="area-content">
-		<i class="fa-solid fa-location-dot"></i>
-		<div>
-			<h2>Velachery</h2>
-			<div class="pin">
-				<i class="fa-solid fa-map-pin"></i>
-				<p>600047</p>
-			</div>
-		</div>
-		<a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
-	</div>
+                    <div class="area-content">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                    <h2>Velachery</h2>
+                    <div class="pin">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <p>600047</p>
+                    </div>
+                    </div>
+                    <a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
+                    </div>
 
-	<div class="area-content">
-		<i class="fa-solid fa-location-dot"></i>
-		<div>
-			<h2>purasaiwakkam</h2>
-			<div class="pin">
-				<i class="fa-solid fa-map-pin"></i>
-				<p>600068</p>
-			</div>
-		</div>
-		<a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
-	</div>
+                    <div class="area-content">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                    <h2>purasaiwakkam</h2>
+                    <div class="pin">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <p>600068</p>
+                    </div>
+                    </div>
+                    <a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
+                    </div>
 
-	<div class="area-content">
-		<i class="fa-solid fa-location-dot"></i>
-		<div>
-			<h2>maduravoil</h2>
-			<div class="pin">
-				<i class="fa-solid fa-map-pin"></i>
-				<p>600022</p>
-			</div>
-		</div>
-		<a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
-	</div>
+                    <div class="area-content">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                    <h2>maduravoil</h2>
+                    <div class="pin">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <p>600022</p>
+                    </div>
+                    </div>
+                    <a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
+                    </div>
 
-	<div class="area-content">
-		<i class="fa-solid fa-location-dot"></i>
-		<div>
-			<h2>Guindy</h2>
-			<div class="pin">
-				<i class="fa-solid fa-map-pin"></i>
-				<p>600011</p>
-			</div>
-		</div>
-		<a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
-	</div>
-  -->
-</div>
+                    <div class="area-content">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                    <h2>Guindy</h2>
+                    <div class="pin">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <p>600011</p>
+                    </div>
+                    </div>
+                    <a class="area-link" href="./creatematch-stranger-after-areaselect.html">SELECT</a>
+                    </div>
+                -->
+            </div>
 
-</section>
-<!-- main end -->
-<script>
+        </section>
+        <!-- main end -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="../../assets/js/areaSelect.js"></script>
+    </body>
 
-
-
-const queryString = window.location.search;
-
-const urlParams = new URLSearchParams(queryString);
-
-const phonenumber = urlParams.get('unique_id')
-
-const my_name = urlParams.get('my_name')
-
-let team_list = JSON.parse(localStorage.getItem('team_details_list'))
-
-let area_list = [];
-for(let i=0;i<team_list.length;i++){
-
-	let area = team_list[i]["address"]["area"]
-	let distric = team_list[i]["address"]["distric"]
-
-	let object = {
-		"area" : area,
-        "distric" : distric,
-        "count" : 1
-	}
-	let same = area_list.find(e => e.area == area && e.distric == distric)
-	if(!same){
-		area_list.push(object)
-	}
-	if(same){
-		same["count"] += 1
-	}
-}
-console.log(area_list)
-
-function renderTeam(team, i) {
-			const template = `
-			<div class="area-content">
-		<i class="fa-solid fa-location-dot"></i>
-		<div>
-			<h2>${team["area"]} (${team["count"]})</h2>
-			<div class="pin">
-				<i class="fa-solid fa-map-pin"></i>
-				<p>${team["distric"]}</p>
-			</div>
-		</div>
-		<a class="area-link" data-id="${i}">SELECT</a>
-	</div>
-			`
-			return template;
-		}
-
-
-for (let index = 0; index < area_list.length; index++) {
-
-	const team = area_list[index];
-	const i = index;
-	const template = renderTeam(team, i);
-
-
-	document.querySelector(".area-background-color").insertAdjacentHTML("beforeend", template)
-
-}
-
-
-let selectbtn = document.querySelectorAll(".area-link");
-	selectbtn.forEach(each => {
-      each.addEventListener("click", (event) => {
-		const index_value = each.dataset.id;
-		
-		window.location.href = `../teamplayer captain/creatematch.html?unique_id=${phonenumber}&my_name=${my_name}&opponent_url=https://iili.io/HXFAu87.png&opponent_name=${area_list[index_value]["area"]}&captain=${area_list[index_value]["distric"]}&type=2&opponent_id=0`;
-	  })
-	})
-
-
-</script>
-</body>
 </html>

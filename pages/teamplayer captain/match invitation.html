@@ -1,303 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Home page for newmember</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="../../assets/css/overall.css">
-	<link rel="stylesheet" href="../../assets/css/commonheader.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Match invitation</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w===" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A===" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="../../assets/css/overall.css">
+        <link rel="stylesheet" href="../../assets/css/commonheader.css">
+    </head>
 
-<body>
-<!-- header start -->
-<header class="match-invitation-header">
-	<i class="fa-solid fa-arrow-left"></i>
-	 <h1>Match Invitation</h1>
-</header>
-<!-- header end -->
-<!-- main start -->
-<section class="match-invitation-main">
-		<!-- <div class="invitation">
-			<div class="invitation-one">
-				<div class="teamimgdiv">
-					<img src="../../assets/images/team profile image/team2profile.jpg" alt="teamprofile">
-				</div>
-				<div class="teamnamediv">
-					<div>
-						<div><h2>Avengers11</h2></div>
-						<div>
-							<p class="frnd">Friend</p></div>
-					</div>
+    <body>
+        <!-- header start -->
+        <header class="match-invitation-header">
+            <a onclick="previousPage()">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <h1>Match Invitation</h1>
+        </header>
+        <!-- header end -->
+        <!-- main start -->
+        <section class="match-invitation-main">
+            <!-- <div class="invitation">
+                <div class="invitation-one">
+                <div class="teamimgdiv">
+                <img src="../../assets/images/team profile image/team2profile.jpg" alt="teamprofile">
+                </div>
+                <div class="teamnamediv">
+                <div>
+                <div><h2>Avengers11</h2></div>
+                <div>
+                <p class="frnd">Friend</p></div>
+                </div>
 					
-				</div>
-			</div>
-			<div class="invitation-two">
-				<div>
-					<p>Type</p>
-					<p>Betting Match</p>
-				</div>
-				<div>
-					<p>Time</p>
-					<p>22-Nov-2022 | 15:00</p>
-				</div>
-			</div>
-			<div class="invitation-three">
+                </div>
+                </div>
+                <div class="invitation-two">
+                <div>
+                <p>Type</p>
+                <p>Betting Match</p>
+                </div>
+                <div>
+                <p>Time</p>
+                <p>22-Nov-2022 | 15:00</p>
+                </div>
+                </div>
+                <div class="invitation-three">
 				
-				<div>
-					<i class="fa-regular fa-copyright"></i>
-					<p>MSD</p>
-				</div>
-				<div>
-					<i class="fa-solid fa-people-group"></i>
-					<p>10 Members (Age : 19 to 22)</p>
-				</div>
-				<div>
-					<i class="fa-solid fa-location-dot"></i>
-					<p>Chennai, Annanagar, Cresent ground</p>
-				</div>
-				<div>
-					<i class="fa-solid fa-circle-info"></i>	
-					<p>Rubber ball match, betting amount per match 100rs</p>
-				</div>
-			</div>
-			<div class="accept-reject">
-				<button>Reject</button>
-				<button>Accept</button>
-			</div>
-			<div class="invitation-four">
-				<div class="timetaken">
-					<i class="fa-regular fa-clock"></i>
-					<p>1 hour ago</p>
-				</div>
-			</div>
-		</div> -->
+                <div>
+                <i class="fa-regular fa-copyright"></i>
+                <p>MSD</p>
+                </div>
+                <div>
+                <i class="fa-solid fa-people-group"></i>
+                <p>10 Members (Age : 19 to 22)</p>
+                </div>
+                <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <p>Chennai, Annanagar, Cresent ground</p>
+                </div>
+                <div>
+                <i class="fa-solid fa-circle-info"></i>	
+                <p>Rubber ball match, betting amount per match 100rs</p>
+                </div>
+                </div>
+                <div class="accept-reject">
+                <button>Reject</button>
+                <button>Accept</button>
+                </div>
+                <div class="invitation-four">
+                <div class="timetaken">
+                <i class="fa-regular fa-clock"></i>
+                <p>1 hour ago</p>
+                </div>
+                </div>
+                </div> -->
 
+        </section>
+        <script src="../../assets/js/vendor/lib/moment/moment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+       <script src="../../assets/js/matchInvitation.js"></script>
 
-</section>
-
-<script>
-let matchInvitaton = [
-
-{
-  "teamName" : "Avengers11",
-  "teamImage" : {
-	"source" : "../../assets/images/team profile image/team2profile.jpg",
-	"alt" : "logo of Avengers 11",
-  },
-  
-  "typeOfMatch" : "Betting match",
-  "typeOfFriend" : "Friend",
-  "matchTime" : "Thu Dec 31 2022 15:30:00",
-  "captainUserName" : "MSD",
-  "teamMember" : {
-	"count" : 10 ,
-    "age" : {
-		"from" : 19 ,
-    	"to" : 22 ,
-	}
-  },
-  "matchLocation" : "Chennai, Methanagar, Methanagar park ground",
-  "additionalInformation" : "Rubber ball match, betting amount per match 100rs",
-  "createdTime" : "Thu Dec 31 2022 15:30:00",
-  "responseStatus" : {
-	"time" : "Thu Jan 01 2022 15:30:00",
-	"result" : "ACCEPTED"
-  }
-
-},
-{
-  "teamName" : "Asgard",
-  "teamImage" : {
-	"source" : "../../assets/images/team profile image/team5profile.jpg",
-	"alt" : "logo of Asgard"
-  },
-  "typeOfMatch" : "Betting match",
-  "typeOfFriend" : "Public",
-  "matchTime" : "Thu Dec 31 2022 15:30:00",
-  "captainUserName" : "Jedaja",
-  "teamMember" : {
-	"count" : 10 ,
-    "age" : {
-		"from" : 19 ,
-    	"to" : 22 ,
-	}
-  },
-  "matchLocation" : "Chennai, Methanagar, Methanagar park ground",
-  "additionalInformation" : "Rubber ball match, betting amount per match 100rs",
-  "createdTime" : "Thu Dec 31 2022 15:30:00",
-  "responseStatus" : {
-	"time" : "Thu Jan 01 2022 15:30:00",
-	"result" : "ACCEPTED"
-  }
-
-}
-
-]
-
-for(i=0;i< matchInvitaton.length ;i++){
-
-
-const div_class_invitation = document.createElement("div");
-div_class_invitation.setAttribute("class", "invitation");
-
-
-// div one
-
-const div_class_invitation_one = document.createElement("div");
-div_class_invitation_one.setAttribute("class", "invitation-one");
-div_class_invitation.prepend(div_class_invitation_one);
-
-const team_img_div = document.createElement("div");
-team_img_div.setAttribute("class", "teamimgdiv");
-div_class_invitation_one.prepend(team_img_div);
-
-const team_image = document.createElement("img");
-team_image.setAttribute("src", matchInvitaton[i]["teamImage"]["source"]);
-team_image.setAttribute("alt", matchInvitaton[i]["teamImage"]["alt"]);
-team_img_div.prepend(team_image);
-
-const team_name_div = document.createElement("div");
-team_name_div.setAttribute("class", "teamnamediv");
-div_class_invitation_one.append(team_name_div);
-
-const team_name_subdiv = document.createElement("div");
-team_name_div.append(team_name_subdiv);
-
-const team_name_subdivnthchild1 = document.createElement("div");
-team_name_subdiv.prepend(team_name_subdivnthchild1);
-
-const team_name_subdiv_header = document.createElement("h2");
-team_name_subdiv_header.innerText = matchInvitaton[i]["teamName"]
-team_name_subdivnthchild1.append(team_name_subdiv_header);
-
-const team_name_subdivnthchild2 = document.createElement("div");
-team_name_subdiv.append(team_name_subdivnthchild2);
-
-const team_name_subdiv_para = document.createElement("p");
-team_name_subdiv_para.setAttribute("class", "frnd");
-team_name_subdiv_para.innerText = matchInvitaton[i]["typeOfFriend"]
-team_name_subdivnthchild2.append(team_name_subdiv_para);
-
-// div two
-
-const div_class_invitation_two = document.createElement("div");
-div_class_invitation_two.setAttribute("class", "invitation-two");
-div_class_invitation.append(div_class_invitation_two);
-
-
-const div_class_invitation_two_subdiv1 = document.createElement("div");
-div_class_invitation_two.prepend(div_class_invitation_two_subdiv1);
-
-const team_name_subdiv_typeheader = document.createElement("p");
-team_name_subdiv_typeheader.innerText = "Type"
-div_class_invitation_two_subdiv1.append(team_name_subdiv_typeheader);
-
-const team_name_subdiv_typevalue = document.createElement("p");
-team_name_subdiv_typevalue.innerText = matchInvitaton[i]["typeOfMatch"]
-div_class_invitation_two_subdiv1.append(team_name_subdiv_typevalue);
-
-const div_class_invitation_two_subdiv2 = document.createElement("div");
-div_class_invitation_two.append(div_class_invitation_two_subdiv2);
-
-const team_name_subdiv_timeheader = document.createElement("p");
-team_name_subdiv_timeheader.innerText = "Time"
-div_class_invitation_two_subdiv2.append(team_name_subdiv_timeheader);
-
-const team_name_subdiv_timevalue = document.createElement("p");
-team_name_subdiv_timevalue.innerText = matchInvitaton[i]["matchTime"]
-div_class_invitation_two_subdiv2.append(team_name_subdiv_timevalue);
-
-// div three
-
-const div_class_invitation_three = document.createElement("div");
-div_class_invitation_three.setAttribute("class", "invitation-three");
-div_class_invitation.append(div_class_invitation_three);
-
-const div_class_invitation_three_subdiv1 = document.createElement("div");
-div_class_invitation_three.append(div_class_invitation_three_subdiv1);
-
-const div_class_invitation_three_icon1 = document.createElement("i");
-div_class_invitation_three_icon1.setAttribute("class", "fa-regular fa-copyright");
-div_class_invitation_three_subdiv1.append(div_class_invitation_three_icon1);
-
-const div_class_invitation_three_para1 = document.createElement("p");
-div_class_invitation_three_para1.innerText = matchInvitaton[i]["captainUserName"]
-div_class_invitation_three_subdiv1.append(div_class_invitation_three_para1);
-
-const div_class_invitation_three_subdiv2 = document.createElement("div");
-div_class_invitation_three.append(div_class_invitation_three_subdiv2);
-
-const div_class_invitation_three_icon2 = document.createElement("i");
-div_class_invitation_three_icon2.setAttribute("class", "fa-solid fa-people-group");
-div_class_invitation_three_subdiv2.append(div_class_invitation_three_icon2);
-
-const div_class_invitation_three_para2 = document.createElement("p");
-div_class_invitation_three_para2.innerText = matchInvitaton[i]["teamMember"]["count"] + "  Members" + " (Age :" + matchInvitaton[i]["teamMember"]["age"]["from"] + " to " + matchInvitaton[i]["teamMember"]["age"]["to"] + ")";
-div_class_invitation_three_subdiv2.append(div_class_invitation_three_para2);
-
-const div_class_invitation_three_subdiv3 = document.createElement("div");
-div_class_invitation_three.append(div_class_invitation_three_subdiv3);
-
-const div_class_invitation_three_icon3 = document.createElement("i");
-div_class_invitation_three_icon3.setAttribute("class", "fa-solid fa-location-dot");
-div_class_invitation_three_subdiv3.append(div_class_invitation_three_icon3);
-
-const div_class_invitation_three_para3 = document.createElement("p");
-div_class_invitation_three_para3.innerText = matchInvitaton[i]["matchLocation"]
-div_class_invitation_three_subdiv3.append(div_class_invitation_three_para3);
-
-const div_class_invitation_three_subdiv4 = document.createElement("div");
-div_class_invitation_three.append(div_class_invitation_three_subdiv4);
-
-const div_class_invitation_three_icon4 = document.createElement("i");
-div_class_invitation_three_icon4.setAttribute("class", "fa-solid fa-circle-info");
-div_class_invitation_three_subdiv4.append(div_class_invitation_three_icon4);
-
-const div_class_invitation_three_para4 = document.createElement("p");
-div_class_invitation_three_para4.innerText = matchInvitaton[i]["additionalInformation"]
-div_class_invitation_three_subdiv4.append(div_class_invitation_three_para4);
-
-// accept reject btn
-
-const div_accept_reject = document.createElement("div");
-div_accept_reject.setAttribute("class", "accept-reject");
-div_class_invitation.append(div_accept_reject);
-
-const div_reject_button = document.createElement("button");
-div_reject_button.innerText = "Reject"
-div_accept_reject.append(div_reject_button);
-
-const div_accept_button = document.createElement("button");
-div_accept_button.innerText = "Accept"
-div_accept_reject.append(div_accept_button);
-
-// div four
-
-const div_class_invitation_four = document.createElement("div");
-div_class_invitation_four.setAttribute("class", "invitation-four");
-div_class_invitation.append(div_class_invitation_four);
-
-const div_class_invitation_four_subdiv = document.createElement("div");
-div_class_invitation_four_subdiv.setAttribute("class", "timetaken");
-div_class_invitation_four.append(div_class_invitation_four_subdiv);
-
-const div_class_invitation_four_i = document.createElement("i");
-div_class_invitation_four_i.setAttribute("class", "fa-regular fa-clock");
-div_class_invitation_four_subdiv.append(div_class_invitation_four_i);
-
-// const div_class_invitation_four_p = document.createElement("p");
-// div_class_invitation_four_p.innerText = matchInvitaton[i]["timeStatus"]["duriation"]+ " " + matchInvitaton[i]["timeStatus"]["type"] + " ago";
-// div_class_invitation_four_subdiv.append(div_class_invitation_four_p);
-
-document.querySelector(".match-invitation-main").append(div_class_invitation)
-
-}
-</script>
-
-<!-- main end -->
-</body>
+        <!-- main end -->
+    </body>
 </html>

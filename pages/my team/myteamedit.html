@@ -1,435 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Home page for newmember</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="../../assets/css/profileedit.css">
-	<link rel="stylesheet" href="../../assets/css/commonheader.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team profile edit</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="../../assets/css/profileedit.css">
+        <link rel="stylesheet" href="../../assets/css/commonheader.css">
+    </head>
 
-<body>
-<!-- header start -->
-<header>
-	<i class="fa-solid fa-arrow-left"></i>
-	 <h1>Edit My Team</h1>
-</header>
-<!-- header end -->
-<!-- main start -->
-<main>
-	<div class="changephoto" >
-	<input class="team_image_show" id="team_image_show" type="image" >
-	<label>Change Photo</label>
-	<input id="team_image" type="url" onfocusout="myFunction()"> 
-	</div>
-	<div class="headerbottom">	
-		<button class="darkbtn" onclick="profileEdit()" type="button">PROFILE</button>
-		<button class="lightbtn" onclick="memberEdit()" type="button">MEMBER</button>
-		<div class="toggle_button"></div>
-	</div>
-<section class="first"> 
-	<form>
-		<label>Team name</label>
-		<input id="teamname" type="text" title="Use firstletter between (A-Z) and min 15 character" pattern="^[a-zA-Z][a-zA-Z0-9\s]{1,30}$" required> 
-		<p class="wrong_password"></p>  
-		<label>Area</label> 
-		<input id="area" type="text" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" required> 
+    <body>
+        <!-- header start -->
+        <header>
+            <a onclick="previousPage()">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <h1>Edit My Team</h1>
+            <a class="deleteTeam" onclick="teamDelete(event)">
+                <i class="fa-solid fa-trash-can"></i>
+            </a>
+        </header>
+        <!-- header end -->
+        <!-- main start -->
+        <main>
+            <div class="changephoto">
+                <input class="team_image_show" alt="team image" id="team_image_show" type="image">
+                <label>Change Photo</label>
+                <input id="team_image" type="url" onfocusout="myFunction()"> 
+            </div>
+            <div class="headerbottom">	
+                <button class="darkbtn" onclick="profileEdit()" type="button">PROFILE</button>
+                <button class="lightbtn" onclick="memberEdit()" type="button">MEMBER</button>
+                <div class="toggle_button"></div>
+            </div>
+            <section class="first"> 
+                <form>
+                    <label>Team name</label>
+                    <input id="teamname" type="text" title="Use firstletter between (A-Z) and min 15 character" pattern="^[a-zA-Z][a-zA-Z0-9\s]{1,30}$" required> 
+                    <p class="wrong_password"></p>  
+                    <label>Area</label> 
+                    <input id="area" type="text" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" required> 
 
-		<label>Distric</label> 
-		<input id="distric" type="text" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" required> 
+                    <label>Distric</label> 
+                    <input id="distric" type="text" title="Use only lowercase(abc...z)" pattern="[a-z]{3,}" required> 
 		
-		<label>About</label>
-		<textarea id="team_about"></textarea>
+                    <label>About</label>
+                    <textarea id="team_about"></textarea>
 		
-		<div>
-			<label class="onoffdiv">Open for players (On/Off)</label>
-			<label class="switch">
-				<input type="checkbox" id="open_for_players">
-				<span class="slider round"></span>
-			  </label>
-			</div>
-
-		<label>Players Description</label>
-		<textarea id="team_player_description"></textarea>
-
-	</form>		 
-	<!-- <div class="updatediv">
-		<button onclick="teamUpdate(event)" type="button">UPDATE</button>
-	</div>  -->
-</section>
-<section class="second">
-
-<div class="popup_content">
-
-	<div class="updatediv">
-		<button type="button" onclick="ClosePopup()" >CANCEL</button>
-	</div>
-</div>
-</section> 
-<div class="updatediv">
-	<button onclick="teamUpdate(event)" type="button">UPDATE</button>
-</div>
-
-<div class="deletediv">
-	<button onclick="teamDelete(event)" type="button">DELETE</button>
-</div>
-
-</main>
-<!-- main end -->
-
-
-<script>
-
-
-const queryString = window.location.search;
-
-const urlParams = new URLSearchParams(queryString);
-
-const captain_id = urlParams.get('unique_id');
-
-const team_id = urlParams.get('team_id');
-
-let team_list = JSON.parse(localStorage.getItem('team_details_list'));
-
-let all_player_list = JSON.parse(localStorage.getItem('user_detail'));
-
-function findPlayer(a) {
-
-return a.uniqueId == team_id ;
-}
-
-let teamProfile = team_list.find(findPlayer);
-
-let unique_player = teamProfile["teamMembers"];
-
-let players_list = []
-
-for(i=0;i<unique_player.length;i++){
-
-	let player_number = unique_player[i];
-
-	function findPlayer(a) {
-	return a.phoneNumber == player_number ;
-	}	
-
-	let player_object = all_player_list.find(findPlayer);
-
-	players_list.push(player_object)
-
-}
-
-
-// here i done function for delete team 
-
-function teamDelete(){
-	if(confirm("Are you sure to DELETE your team ?"+" You can't get '"+ teamProfile["teamName"] + "' same user name after you delete this team")){
-		for(let i=0; i<unique_player.length; i++){
-
-			let player_number = unique_player[i];
-
-			function findPlayer(a) {
-			return a.phoneNumber == player_number ;
-			}	
-
-			let player_object = all_player_list.find(findPlayer);
-
-			player_object["captainStatus"] = 2;
-
-		}
-		localStorage.setItem('user_detail', JSON.stringify(all_player_list));
-
-		teamProfile["teamMembers"] = [];
-
-		teamProfile["openForPlayers"]["status"] = false ;
-
-		localStorage.setItem('team_details_list', JSON.stringify(team_list));
-
-		window.location.href=`../homepage/hpexist.html?unique_id=${captain_id}`
-	}
-}
-
-
-// here i paste the value in input form local storage
-
-document.getElementById("team_image").value = teamProfile["teamImageUrl"];
-document.getElementById("teamname").value = teamProfile["teamName"];
-document.getElementById("area").value = teamProfile["address"]["area"];
-document.getElementById("distric").value = teamProfile["address"]["distric"];
-document.getElementById("team_about").value = teamProfile["about"];
-document.getElementById("open_for_players").checked = teamProfile["openForPlayers"]["status"];
-document.getElementById("team_player_description").value = teamProfile["openForPlayers"]["description"];
-
-let image_element = document.getElementById("team_image_show");
-    image_element.setAttribute("src", teamProfile["teamImageUrl"])
-
-function teamUpdate(e){
-    e.preventDefault();
-
-// for unique user name start
-teamProfile["teamName"] = "";
-
-let team_name = document.getElementById("teamname").value;
-
-let same_team_name = team_list.some(data =>
-    data.teamName == team_name );
-
-if(same_team_name){
-    b = document.querySelector(".wrong_password").innerHTML = "Team name not available.  "
-    return b;
-}
-
-// for unique user name end
-
-let open_player_checkbox = document.getElementById("open_for_players").checked,
-player_description = document.getElementById("team_player_description").value ,
-area = document.getElementById("area").value ,
-distric = document.getElementById("distric").value ,
-about = document.getElementById("team_about").value ,
-image = document.getElementById("team_image").value;
-
-
-teamProfile["teamName"] = team_name;
-teamProfile["address"]["area"] = area;
-teamProfile["address"]["distric"] = distric;
-teamProfile["about"] = about;
-teamProfile["openForPlayers"]["status"] = open_player_checkbox;
-teamProfile["openForPlayers"]["description"]= player_description;
-
-if(image == ""){
-    image = "https://iili.io/HGUnV71.png";
-}
-teamProfile["teamImageUrl"] = image;
-
-
-localStorage.setItem('team_details_list', JSON.stringify(team_list));
-
-// // area update 
-
-// let area_list = JSON.parse(localStorage.getItem('area_list'))
-
-// if()
-
-// area_name_same = area_list.some(e => e.area == area && e.distric == distric)
-
-// if(!area_name_same){
-
-// let area_object = {
-// 	"area" : area,
-// 	"distric" : distric,
-// 	"count" : 1
-// }
-
-// area_list.push(area_object);
-
-// localStorage.setItem('area_list', JSON.stringify(area_list))
-// }
-// if(area_name_same){
-// 	let find = area_list.find(e => e.area == area && e.distric == distric);
-
-// 	find["count"] += 1
-
-// 	localStorage.setItem('area_list', JSON.stringify(area_list))
-// }
-
-
-window.location.href = `../profile/teamprofile.html?unique_id=${captain_id}`;
-
-}
-
-// here i done function for show players details
-
-function playerstemp(player, captain, remove, classes, click) {  
-
-const template1 = `	
-<div class="teams">
-		<div class="teamimagediv">
-			<img class="teamprofile playerimg" src="${player["imageUrl"]}" alt="profile of ${player["userName"]}">
-		</div>
-		<div class="teamdetaildiv playerdet">
-			<div>
-				<div><p class="playername">${player["userName"]}   <b>${captain}</b></p></div>
-				<div class="whatsapp">
-					<a class="${classes}" data-id="${player["phoneNumber"]}" onclick="${click}">${remove}</a>
-					</div>
-			</div>
-			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
-				<p>21</p></div>
-	
-		</div>
-	</div>
-	`
-return template1;
-}
-
-
-for(i=0;i<players_list.length;i++){
-
-let captain = "" ;
-let remove = "";
-let classes = "";
-let click = "";
-if(players_list[i]["captainStatus"] == 1){
-	captain = "captain"
-	remove = "SWITCH CAPTAIN"
-	classes = "switchcap"
-	click = "switchCaptain()"
-}
-else{
-	remove = "REMOVE"
-	classes = "remove_player"
-}
-
-	const player = players_list[i];
-	const template1 = playerstemp(player, captain, remove, classes, click);
-	document.querySelector("section.second").insertAdjacentHTML("beforeend", template1);
-
-}
-
-// here i create popup for switch captain
-function switchCaptain(){
-	let popup = document.querySelector(".popup_content");
-			popup.classList.add("open-popup");// hear we add class for show popup
-			//  hear we work for display team member repeat pattern 
-			
-}
-function ClosePopup() {
-	let popup = document.querySelector(".popup_content");
-	popup.classList.remove("open-popup");
-
-}
-
-function switchCap(player) {  
-
-const template1 = `	
-<div class="teams">
-		<div class="teamimagediv">
-			<img class="teamprofile playerimg" src="${player["imageUrl"]}" alt="profile of ${player["userName"]}">
-		</div>
-		<div class="teamdetaildiv playerdet">
-			<div>
-				<div><p class="playername">${player["userName"]}</p></div>
-				<div class="whatsapp">
-					<a type="button" class="select_cap" data-id="${player['phoneNumber']}">SELECT</a>
-					</div>
-			</div>
-			<div class="matchdetails"><i class="fa-solid fa-calendar-week"></i>
-				<p>21</p></div>
-	
-		</div>
-	</div>
-	`
-return template1;
-}
-
-
-let team_members = players_list.filter(e => e.captainStatus == 0)
-
-for(i=0;i<team_members.length;i++){
-
-	const player = team_members[i];
-	const template1 = switchCap(player);
-	document.querySelector(".popup_content").insertAdjacentHTML("afterbegin", template1);
-
-}
-
-const switchnewcap = document.querySelectorAll(".select_cap")
-switchnewcap.forEach(bookCover => {
-      bookCover.addEventListener("click", (event) => {
-		
-		let new_cap_id = bookCover.dataset.id
-
-	let my_profile = all_player_list.find(e => e.phoneNumber == captain_id)
-
-	my_profile["captainStatus"] = 0;
-
-	let new_cap = all_player_list.find(e => e.phoneNumber == new_cap_id)
-
-	new_cap["captainStatus"] = 1;
-
-	localStorage.setItem('user_detail', JSON.stringify(all_player_list));
-
-	window.location.href=`../profile/teamprofile.html?unique_id=${captain_id}&team_id=${team_id}`
-
-})
-	})
-
-
-
-const bookCovers = document.querySelectorAll(".remove_player");
-    bookCovers.forEach(bookCover => {
-      bookCover.addEventListener("click", (event) => {
-        const person_data = all_player_list.find(book => book["phoneNumber"] === bookCover.dataset.id);
-		if (confirm("Are you confrim to Remove " + person_data["userName"] + " From your team")){
-		
-		person_data["captainStatus"] = 2;
-		
-		let indexOfUser = teamProfile["teamMembers"].indexOf(person_data["phoneNumber"]);
-
-		teamProfile["teamMembers"].splice(indexOfUser, 1);
-		
-		localStorage.setItem('user_detail', JSON.stringify(all_player_list));
-		localStorage.setItem('team_details_list', JSON.stringify(team_list));
-		
-		location.reload();
-		}
-
-
-	})
-    })
-		
-
-function memberEdit(){
-
-	let toggle_button = document.querySelector(".toggle_button");
-	toggle_button.style.left = "50%";
-
-	let btn_color_1 = document.querySelector(".darkbtn");
-	btn_color_1.style.color = "#000";
-
-	let btn_color_2 = document.querySelector(".lightbtn");
-	btn_color_2.style.color = "#fff";
-
-	let content_1 = document.querySelector("section.first")
-	content_1.style.display = "none";
-
-	let content_2 = document.querySelector("section.second")
-	content_2.style.display = "block";
-
-}
-
-function profileEdit(){
-
-let toggle_button = document.querySelector(".toggle_button");
-toggle_button.style.left = "0%";
-
-let btn_color_1 = document.querySelector(".darkbtn");
-btn_color_1.style.color = "#fff";
-
-let btn_color_2 = document.querySelector(".lightbtn");
-btn_color_2.style.color = "#000";
-
-let content_1 = document.querySelector("section.first")
-content_1.style.display = "block";
-
-let content_2 = document.querySelector("section.second")
-content_2.style.display = "none";
-
-}
-
-function myFunction() {
-        let image_input = document.getElementById("team_image").value;
-        let image_element = document.getElementById("team_image_show");
-        image_element.setAttribute("src", image_input)
-        if(image_element.getAttribute("src") == ""){
-            image_element.setAttribute("src", "../../assets/images/defalt_team_image.png")
-        }
-
-}
-
-</script>
-</body>
+                    <div>
+                        <label class="onoffdiv">Open for players (On/Off)</label>
+                        <label class="switch">
+                            <input type="checkbox" id="open_for_players">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+
+                    <label>Players Description</label>
+                    <textarea id="team_player_description"></textarea>
+
+                </form>		 
+                <!-- <div class="updatediv">
+                    <button onclick="teamUpdate(event)" type="button">UPDATE</button>
+                    </div>  -->
+            </section>
+            <section class="second">
+
+                <div class="popup_content">
+
+                    <div class="updatediv">
+                        <button type="button" onclick="ClosePopup()">CANCEL</button>
+                    </div>
+                </div>
+            </section> 
+            <div class="updatediv">
+                <button onclick="teamUpdate(event)" type="button">UPDATE</button>
+            </div>
+
+            <!-- <div class="deletediv">
+                <button onclick="teamDelete(event)" type="button">DELETE</button>
+                </div> -->
+
+        </main>
+        <!-- main end -->
+        <script src="../../assets/js/vendor/lib/moment/moment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="../../assets/js/teamEdit.js"></script>
+    </body>
 </html>

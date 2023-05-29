@@ -1,0 +1,582 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "game": "Cricket"
+    },
+    {
+      "id": 2,
+      "game": "Football"
+    },
+    {
+      "id": 3,
+      "game": "Kabadi"
+    },
+    {
+      "id": 4,
+      "game": "Basketball"
+    },
+    {
+      "id": 5,
+      "game": "Volleyball"
+    }
+  ],
+  "area_list": [
+    {
+      "id": 1,
+      "area": "aminjikarai",
+      "distric": "chennai"
+    },
+    {
+      "area": "annanagar",
+      "distric": "chennai",
+      "id": 2
+    },
+    {
+      "area": "guduvancheri",
+      "distric": "chennai",
+      "id": 3
+    },
+    {
+      "area": "shennoinagar",
+      "distric": "chennai",
+      "id": 4
+    },
+    {
+      "area": "gunidy",
+      "distric": "chennai",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "phoneNumber": "9344655211",
+      "userName": "Dhoni",
+      "password": "Aa!1aaaa",
+      "dateOFBirth": "2001-02-08",
+      "gender": "Male",
+      "game": "1",
+      "areaUniqueId": 1,
+      "createDate": "2023-03-08T13:07:49.971Z",
+      "firstName": "MahendraSingh",
+      "lastName": "dhoni",
+      "about": "Ennam pol valkkai",
+      "imageUrl": "https://iili.io/HUBRqOv.jpg",
+      "captainStatus": 1,
+      "id": 1
+    },
+    {
+      "phoneNumber": "9344655200",
+      "userName": "Akash",
+      "password": "Aa!1aaaa",
+      "confirmPassword": "Aa!1aaaa",
+      "dateOFBirth": "2001-02-04",
+      "gender": "Male",
+      "game": "1",
+      "areaUniqueId": 2,
+      "createDate": "2023-05-04T16:45:47.498Z",
+      "firstName": "",
+      "lastName": "",
+      "about": "",
+      "imageUrl": "https://iili.io/HWhKUrB.webp",
+      "id": 2
+    },
+    {
+      "phoneNumber": "9344655201",
+      "userName": "Firefox",
+      "password": "Aa!1aaaa",
+      "confirmPassword": "Aa!1aaaa",
+      "dateOFBirth": "2001-05-05",
+      "gender": "Male",
+      "game": "1",
+      "areaUniqueId": 2,
+      "createDate": "2023-05-06T08:16:13.911Z",
+      "firstName": "",
+      "lastName": "",
+      "about": "",
+      "imageUrl": "https://iili.io/HWhKUrB.webp",
+      "id": 3
+    },
+    {
+      "phoneNumber": "9344655202",
+      "userName": "Kalash",
+      "password": "Aa!1aaaa",
+      "confirmPassword": "Aa!1aaaa",
+      "dateOFBirth": "2001-05-04",
+      "gender": "Male",
+      "game": "1",
+      "areaUniqueId": 1,
+      "createDate": "2023-05-15T10:01:13.902Z",
+      "firstName": "",
+      "lastName": "",
+      "about": "",
+      "imageUrl": "https://iili.io/HWhKUrB.webp",
+      "id": 4
+    },
+    {
+      "phoneNumber": "9344655205",
+      "userName": "Alfa",
+      "password": "Aa!1aaaa",
+      "confirmPassword": "Aa!1aaaa",
+      "dateOFBirth": "2023-05-12",
+      "gender": "Male",
+      "game": "1",
+      "areaUniqueId": 1,
+      "createDate": "2023-05-16T14:09:28.564Z",
+      "firstName": "",
+      "lastName": "",
+      "about": "",
+      "imageUrl": "https://iili.io/HWhKUrB.webp",
+      "id": 5
+    },
+    {
+      "phoneNumber": "9344655210",
+      "userName": "Sesslyn",
+      "password": "Aa!1aaaa",
+      "confirmPassword": "Aa!1aaaa",
+      "dateOFBirth": "2003-05-11",
+      "gender": "Male",
+      "game": "1",
+      "areaUniqueId": 1,
+      "createDate": "2023-05-18T07:37:24.138Z",
+      "firstName": "",
+      "lastName": "",
+      "about": "",
+      "imageUrl": "https://iili.io/HWhKUrB.webp",
+      "id": 6
+    }
+  ],
+  "response_list": [
+    {
+      "playerId": 3,
+      "teamId": 1,
+      "createdTime": "2023-05-07T14:09:46.406Z",
+      "requestStatus": 3,
+      "id": 1
+    },
+    {
+      "playerId": 3,
+      "teamId": 2,
+      "createdTime": "2023-05-08T09:46:21.702Z",
+      "requestStatus": 3,
+      "id": 2
+    },
+    {
+      "playerId": 3,
+      "teamId": 1,
+      "createdTime": "2023-05-08T13:02:17.444Z",
+      "requestStatus": 3,
+      "id": 3
+    },
+    {
+      "playerId": 3,
+      "teamId": 1,
+      "createdTime": "2023-05-08T17:20:30.932Z",
+      "requestStatus": 3,
+      "id": 4
+    },
+    {
+      "playerId": 3,
+      "teamId": 2,
+      "createdTime": "2023-05-08T17:20:33.554Z",
+      "requestStatus": 3,
+      "id": 5
+    },
+    {
+      "playerId": 3,
+      "teamId": 1,
+      "createdTime": "2023-05-09T08:33:01.298Z",
+      "requestStatus": 1,
+      "id": 6
+    },
+    {
+      "playerId": 3,
+      "teamId": 2,
+      "createdTime": "2023-05-09T08:43:27.074Z",
+      "requestStatus": 3,
+      "id": 7
+    },
+    {
+      "playerId": 3,
+      "teamId": 1,
+      "createdTime": "2023-05-10T11:40:22.416Z",
+      "requestStatus": 1,
+      "id": 8
+    },
+    {
+      "playerId": 3,
+      "teamId": 2,
+      "createdTime": "2023-05-15T10:00:09.501Z",
+      "requestStatus": 1,
+      "id": 9
+    },
+    {
+      "playerId": 5,
+      "teamId": 2,
+      "createdTime": "2023-05-16T14:10:00.425Z",
+      "requestStatus": 1,
+      "id": 10
+    },
+    {
+      "playerId": 6,
+      "teamId": 1,
+      "createdTime": "2023-05-18T07:38:59.070Z",
+      "requestStatus": 2,
+      "id": 11
+    },
+    {
+      "playerId": 3,
+      "teamId": 3,
+      "createdTime": "2023-05-28T06:14:13.173Z",
+      "requestStatus": 1,
+      "id": 12
+    }
+  ],
+  "team_details_list": [
+    {
+      "teamImageUrl": "https://iili.io/HNNQShx.jpg",
+      "teamName": "Chennai Super Kings",
+      "address_id": 1,
+      "dateOfJoin": "2023-03-08T13:09:13.829Z",
+      "id": 1,
+      "about": "Hi team",
+      "openForPlayersStatus": true,
+      "openForPlayersDescription": "we need some good bolwers"
+    },
+    {
+      "teamImageUrl": "https://iili.io/HWEqLtp.webp",
+      "teamName": "attackers",
+      "dateOfJoin": "2023-05-04T16:46:09.472Z",
+      "address_id": 1,
+      "about": "summa",
+      "openForPlayersStatus": true,
+      "openForPlayersDescription": "need players",
+      "id": 2
+    },
+    {
+      "teamImageUrl": "https://iili.io/HWEqLtp.webp",
+      "teamName": "Royal Challengers Bangaloru",
+      "dateOfJoin": "2023-05-15T11:43:06.404Z",
+      "address_id": 1,
+      "about": "new bee",
+      "openForPlayersStatus": true,
+      "openForPlayersDescription": "we need good allrounders",
+      "id": 3
+    }
+  ],
+  "player_team_relation": [
+    {
+      "teamId": 1,
+      "playerId": 1,
+      "dateOfJoin": "2023-03-08T13:09:13.829Z",
+      "activeStatus": 1,
+      "id": 1
+    },
+    {
+      "teamId": 2,
+      "playerId": 2,
+      "dateOfJoin": "2023-05-04T16:46:09.553Z",
+      "activeStatus": 1,
+      "id": 2
+    },
+    {
+      "teamId": 1,
+      "playerId": 3,
+      "dateOfJoin": "2023-05-09T12:32:36.764Z",
+      "activeStatus": 0,
+      "id": 3
+    },
+    {
+      "teamId": 2,
+      "playerId": 3,
+      "dateOfJoin": "2023-05-15T10:00:36.590Z",
+      "activeStatus": 0,
+      "id": 4
+    },
+    {
+      "teamId": 3,
+      "playerId": 4,
+      "dateOfJoin": "2023-05-15T11:43:06.465Z",
+      "activeStatus": 1,
+      "id": 5
+    },
+    {
+      "teamId": 2,
+      "playerId": 5,
+      "dateOfJoin": "2023-05-16T14:10:18.017Z",
+      "activeStatus": 0,
+      "id": 6
+    },
+    {
+      "teamId": 3,
+      "playerId": 3,
+      "dateOfJoin": "2023-05-28T06:15:00.043Z",
+      "activeStatus": 2,
+      "id": 7
+    }
+  ],
+  "match_list": [
+    {
+      "address_id": "",
+      "friendType": 1,
+      "typeOfMatch": "Betting match",
+      "time": "2023-05-25T15:37",
+      "members": "11",
+      "membersAgeFrom": "19",
+      "membersAgeTo": "22",
+      "location": "ground\n",
+      "information": "dfgdfgdfgd",
+      "createdTime": "2023-05-25T10:06:18.400Z",
+      "activeStatus": 0,
+      "createdTeam": 1,
+      "createdBy": 1,
+      "id": 1
+    },
+    {
+      "address_id": "",
+      "friendType": 1,
+      "typeOfMatch": "Betting match",
+      "time": "2023-05-26T13:49",
+      "members": "11",
+      "membersAgeFrom": "19",
+      "membersAgeTo": "22",
+      "location": "fgfdgdfg",
+      "information": "dfgdfgdfgd",
+      "createdTime": "2023-05-26T08:19:43.101Z",
+      "activeStatus": 0,
+      "createdTeam": 1,
+      "createdBy": 1,
+      "id": 2
+    },
+    {
+      "address_id": "1",
+      "friendType": 2,
+      "typeOfMatch": "Betting match",
+      "time": "2023-05-26T14:58",
+      "members": "11",
+      "membersAgeFrom": "19",
+      "membersAgeTo": "22",
+      "location": "fgfdgdfg",
+      "information": "dfgdfgdfgd",
+      "createdTime": "2023-05-26T09:28:31.427Z",
+      "activeStatus": 0,
+      "createdTeam": 1,
+      "createdBy": 1,
+      "id": 3
+    },
+    {
+      "address_id": "",
+      "friendType": 1,
+      "typeOfMatch": "Betting match",
+      "time": "2023-05-29T15:30",
+      "members": "11",
+      "membersAgeFrom": "19",
+      "membersAgeTo": "22",
+      "location": "fgfdgdfg",
+      "information": "dfgdfgdfgd",
+      "createdTime": "2023-05-28T06:15:36.743Z",
+      "activeStatus": 0,
+      "createdTeam": 3,
+      "createdBy": 4,
+      "id": 4
+    }
+  ],
+  "score_card": [
+    {
+      "matchUniqueId": 1,
+      "teamUniqueId": 2,
+      "scoreWin": "1",
+      "scoreDraw": "0",
+      "scoreLoss": "1",
+      "id": 1
+    },
+    {
+      "matchUniqueId": 2,
+      "teamUniqueId": 2,
+      "scoreWin": "1",
+      "scoreDraw": "0",
+      "scoreLoss": "0",
+      "id": 2
+    },
+    {
+      "matchUniqueId": 2,
+      "teamUniqueId": 1,
+      "scoreWin": "1",
+      "scoreDraw": "4",
+      "scoreLoss": "0",
+      "id": 3
+    },
+    {
+      "matchUniqueId": 1,
+      "teamUniqueId": 1,
+      "scoreWin": "0",
+      "scoreDraw": "2",
+      "scoreLoss": "0",
+      "id": 4
+    },
+    {
+      "matchUniqueId": 3,
+      "teamUniqueId": 2,
+      "scoreWin": "1",
+      "scoreDraw": "1",
+      "scoreLoss": "1",
+      "id": 5
+    },
+    {
+      "matchUniqueId": 3,
+      "teamUniqueId": 1,
+      "scoreWin": "1",
+      "scoreDraw": "1",
+      "scoreLoss": "1",
+      "id": 6
+    }
+  ],
+  "match_response_list": [
+    {
+      "matchUniqueId": 1,
+      "team_id": 1,
+      "match_in_status": 1,
+      "id": 1
+    },
+    {
+      "matchUniqueId": 1,
+      "team_id": 2,
+      "match_in_status": 1,
+      "id": 2
+    },
+    {
+      "matchUniqueId": 2,
+      "team_id": 1,
+      "match_in_status": 1,
+      "id": 3
+    },
+    {
+      "matchUniqueId": 2,
+      "team_id": 2,
+      "match_in_status": 1,
+      "id": 4
+    },
+    {
+      "matchUniqueId": 3,
+      "team_id": 1,
+      "match_in_status": 1,
+      "id": 5
+    },
+    {
+      "matchUniqueId": 3,
+      "team_id": 2,
+      "match_in_status": 1,
+      "id": 6
+    },
+    {
+      "matchUniqueId": 3,
+      "team_id": 3,
+      "match_in_status": 2,
+      "id": 7
+    },
+    {
+      "matchUniqueId": 4,
+      "team_id": 3,
+      "match_in_status": 1,
+      "id": 8
+    },
+    {
+      "matchUniqueId": 4,
+      "team_id": 1,
+      "match_in_status": 1,
+      "id": 9
+    }
+  ],
+  "match_team_members": [
+    {
+      "matchRequestId": 1,
+      "player_id": 1,
+      "mvpStatus": 1,
+      "id": 1
+    },
+    {
+      "matchRequestId": 2,
+      "player_id": 2,
+      "mvpStatus": 1,
+      "id": 2
+    },
+    {
+      "matchRequestId": 2,
+      "player_id": 3,
+      "mvpStatus": 1,
+      "id": 3
+    },
+    {
+      "matchRequestId": 2,
+      "player_id": 5,
+      "mvpStatus": 0,
+      "id": 4
+    },
+    {
+      "matchRequestId": 3,
+      "player_id": 1,
+      "mvpStatus": 1,
+      "id": 5
+    },
+    {
+      "matchRequestId": 4,
+      "player_id": 2,
+      "mvpStatus": 1,
+      "id": 6
+    },
+    {
+      "matchRequestId": 4,
+      "player_id": 3,
+      "mvpStatus": 0,
+      "id": 7
+    },
+    {
+      "matchRequestId": 4,
+      "player_id": 5,
+      "mvpStatus": 0,
+      "id": 8
+    },
+    {
+      "matchRequestId": 5,
+      "player_id": 1,
+      "mvpStatus": 1,
+      "id": 9
+    },
+    {
+      "matchRequestId": 6,
+      "player_id": 2,
+      "mvpStatus": 0,
+      "id": 10
+    },
+    {
+      "matchRequestId": 6,
+      "player_id": 3,
+      "mvpStatus": 1,
+      "id": 11
+    },
+    {
+      "matchRequestId": 6,
+      "player_id": 5,
+      "mvpStatus": 0,
+      "id": 12
+    },
+    {
+      "matchRequestId": 8,
+      "player_id": 4,
+      "mvpStatus": 0,
+      "id": 13
+    },
+    {
+      "matchRequestId": 8,
+      "player_id": 3,
+      "mvpStatus": 0,
+      "id": 14
+    },
+    {
+      "matchRequestId": 9,
+      "player_id": 1,
+      "mvpStatus": 0,
+      "id": 15
+    }
+  ]
+}
