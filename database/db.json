@@ -223,6 +223,13 @@
       "createdTime": "2023-05-18T07:38:59.070Z",
       "requestStatus": 2,
       "id": 11
+    },
+    {
+      "playerId": 3,
+      "teamId": 3,
+      "createdTime": "2023-05-28T06:14:13.173Z",
+      "requestStatus": 1,
+      "id": 12
     }
   ],
   "team_details_list": [
@@ -283,7 +290,7 @@
       "teamId": 2,
       "playerId": 3,
       "dateOfJoin": "2023-05-15T10:00:36.590Z",
-      "activeStatus": 2,
+      "activeStatus": 0,
       "id": 4
     },
     {
@@ -297,8 +304,15 @@
       "teamId": 2,
       "playerId": 5,
       "dateOfJoin": "2023-05-16T14:10:18.017Z",
-      "activeStatus": 2,
+      "activeStatus": 0,
       "id": 6
+    },
+    {
+      "teamId": 3,
+      "playerId": 3,
+      "dateOfJoin": "2023-05-28T06:15:00.043Z",
+      "activeStatus": 2,
+      "id": 7
     }
   ],
   "match_list": [
@@ -306,98 +320,263 @@
       "address_id": "",
       "friendType": 1,
       "typeOfMatch": "Betting match",
-      "time": "2023-05-18T21:46",
+      "time": "2023-05-25T15:37",
+      "members": "11",
+      "membersAgeFrom": "19",
+      "membersAgeTo": "22",
+      "location": "ground\n",
+      "information": "dfgdfgdfgd",
+      "createdTime": "2023-05-25T10:06:18.400Z",
+      "activeStatus": 0,
+      "createdTeam": 1,
+      "createdBy": 1,
+      "id": 1
+    },
+    {
+      "address_id": "",
+      "friendType": 1,
+      "typeOfMatch": "Betting match",
+      "time": "2023-05-26T13:49",
       "members": "11",
       "membersAgeFrom": "19",
       "membersAgeTo": "22",
       "location": "fgfdgdfg",
       "information": "dfgdfgdfgd",
-      "createdTime": "2023-05-16T16:17:15.248Z",
-      "activeStatus": true,
-      "createdTeam": 2,
-      "createdBy": 2,
-      "id": 1
+      "createdTime": "2023-05-26T08:19:43.101Z",
+      "activeStatus": 0,
+      "createdTeam": 1,
+      "createdBy": 1,
+      "id": 2
     },
     {
       "address_id": "1",
       "friendType": 2,
       "typeOfMatch": "Betting match",
-      "time": "2023-05-16T23:48",
+      "time": "2023-05-26T14:58",
       "members": "11",
       "membersAgeFrom": "19",
       "membersAgeTo": "22",
       "location": "fgfdgdfg",
       "information": "dfgdfgdfgd",
-      "createdTime": "2023-05-16T16:18:17.401Z",
-      "activeStatus": true,
-      "createdTeam": 2,
-      "createdBy": 2,
-      "id": 2
+      "createdTime": "2023-05-26T09:28:31.427Z",
+      "activeStatus": 0,
+      "createdTeam": 1,
+      "createdBy": 1,
+      "id": 3
+    },
+    {
+      "address_id": "",
+      "friendType": 1,
+      "typeOfMatch": "Betting match",
+      "time": "2023-05-29T15:30",
+      "members": "11",
+      "membersAgeFrom": "19",
+      "membersAgeTo": "22",
+      "location": "fgfdgdfg",
+      "information": "dfgdfgdfgd",
+      "createdTime": "2023-05-28T06:15:36.743Z",
+      "activeStatus": 0,
+      "createdTeam": 3,
+      "createdBy": 4,
+      "id": 4
     }
   ],
-  "score_card": [],
+  "score_card": [
+    {
+      "matchUniqueId": 1,
+      "teamUniqueId": 2,
+      "scoreWin": "1",
+      "scoreDraw": "0",
+      "scoreLoss": "1",
+      "id": 1
+    },
+    {
+      "matchUniqueId": 2,
+      "teamUniqueId": 2,
+      "scoreWin": "1",
+      "scoreDraw": "0",
+      "scoreLoss": "0",
+      "id": 2
+    },
+    {
+      "matchUniqueId": 2,
+      "teamUniqueId": 1,
+      "scoreWin": "1",
+      "scoreDraw": "4",
+      "scoreLoss": "0",
+      "id": 3
+    },
+    {
+      "matchUniqueId": 1,
+      "teamUniqueId": 1,
+      "scoreWin": "0",
+      "scoreDraw": "2",
+      "scoreLoss": "0",
+      "id": 4
+    },
+    {
+      "matchUniqueId": 3,
+      "teamUniqueId": 2,
+      "scoreWin": "1",
+      "scoreDraw": "1",
+      "scoreLoss": "1",
+      "id": 5
+    },
+    {
+      "matchUniqueId": 3,
+      "teamUniqueId": 1,
+      "scoreWin": "1",
+      "scoreDraw": "1",
+      "scoreLoss": "1",
+      "id": 6
+    }
+  ],
   "match_response_list": [
     {
       "matchUniqueId": 1,
-      "team_id": 2,
+      "team_id": 1,
       "match_in_status": 1,
       "id": 1
     },
     {
       "matchUniqueId": 1,
-      "team_id": 1,
-      "match_in_status": 2,
+      "team_id": 2,
+      "match_in_status": 1,
       "id": 2
     },
     {
       "matchUniqueId": 2,
-      "team_id": 2,
+      "team_id": 1,
       "match_in_status": 1,
       "id": 3
     },
     {
       "matchUniqueId": 2,
-      "team_id": 1,
-      "match_in_status": 2,
+      "team_id": 2,
+      "match_in_status": 1,
       "id": 4
     },
     {
-      "matchUniqueId": 2,
+      "matchUniqueId": 3,
+      "team_id": 1,
+      "match_in_status": 1,
+      "id": 5
+    },
+    {
+      "matchUniqueId": 3,
+      "team_id": 2,
+      "match_in_status": 1,
+      "id": 6
+    },
+    {
+      "matchUniqueId": 3,
       "team_id": 3,
       "match_in_status": 2,
-      "id": 5
+      "id": 7
+    },
+    {
+      "matchUniqueId": 4,
+      "team_id": 3,
+      "match_in_status": 1,
+      "id": 8
+    },
+    {
+      "matchUniqueId": 4,
+      "team_id": 1,
+      "match_in_status": 1,
+      "id": 9
     }
   ],
   "match_team_members": [
     {
       "matchRequestId": 1,
-      "player_id": 2,
+      "player_id": 1,
+      "mvpStatus": 1,
       "id": 1
     },
     {
-      "matchRequestId": 1,
-      "player_id": 3,
+      "matchRequestId": 2,
+      "player_id": 2,
+      "mvpStatus": 1,
       "id": 2
     },
     {
-      "matchRequestId": 1,
-      "player_id": 5,
+      "matchRequestId": 2,
+      "player_id": 3,
+      "mvpStatus": 1,
       "id": 3
     },
     {
-      "matchRequestId": 3,
-      "player_id": 2,
+      "matchRequestId": 2,
+      "player_id": 5,
+      "mvpStatus": 0,
       "id": 4
     },
     {
       "matchRequestId": 3,
-      "player_id": 3,
+      "player_id": 1,
+      "mvpStatus": 1,
       "id": 5
     },
     {
-      "matchRequestId": 3,
-      "player_id": 5,
+      "matchRequestId": 4,
+      "player_id": 2,
+      "mvpStatus": 1,
       "id": 6
+    },
+    {
+      "matchRequestId": 4,
+      "player_id": 3,
+      "mvpStatus": 0,
+      "id": 7
+    },
+    {
+      "matchRequestId": 4,
+      "player_id": 5,
+      "mvpStatus": 0,
+      "id": 8
+    },
+    {
+      "matchRequestId": 5,
+      "player_id": 1,
+      "mvpStatus": 1,
+      "id": 9
+    },
+    {
+      "matchRequestId": 6,
+      "player_id": 2,
+      "mvpStatus": 0,
+      "id": 10
+    },
+    {
+      "matchRequestId": 6,
+      "player_id": 3,
+      "mvpStatus": 1,
+      "id": 11
+    },
+    {
+      "matchRequestId": 6,
+      "player_id": 5,
+      "mvpStatus": 0,
+      "id": 12
+    },
+    {
+      "matchRequestId": 8,
+      "player_id": 4,
+      "mvpStatus": 0,
+      "id": 13
+    },
+    {
+      "matchRequestId": 8,
+      "player_id": 3,
+      "mvpStatus": 0,
+      "id": 14
+    },
+    {
+      "matchRequestId": 9,
+      "player_id": 1,
+      "mvpStatus": 0,
+      "id": 15
     }
   ]
 }

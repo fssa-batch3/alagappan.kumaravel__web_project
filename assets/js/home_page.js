@@ -33,7 +33,7 @@ async function myTeam() {
     (e) => e.activeStatus === 2 || e.activeStatus === 1
   );
 
-  window.location.href = `${origin}/pages/profile/teamprofile.html?team_id=${filter_teamin_data.teamId}`;
+  window.location.href = `${origin}/pages/profile/teamprofile.html?team_id=${filter_teamin_data.teamId}&past_match=1`;
 }
 function teamResponse() {
   window.location.href = `${origin}/pages/teamplayer captain/team response.html?unique_id=${phonenumber}`;
@@ -50,7 +50,7 @@ function profilepage() {
   window.location.href = `${origin}/pages/profile/myprofile.html`;
 }
 function myMatch() {
-  window.location.href = `${origin}/pages/search and notification/calendar.html?unique_id=${phonenumber}`;
+  window.location.href = `${origin}/pages/search and notification/calendar.html?past_match=1`;
 }
 
 async function getPersonData(endpoint, user_api_id) {

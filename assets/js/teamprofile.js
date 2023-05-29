@@ -1,3 +1,5 @@
+import {pastMatchData} from './past_match.js';
+
 const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
@@ -5,20 +7,26 @@ const urlParams = new URLSearchParams(queryString);
 const my_team_id = JSON.parse(urlParams.get("team_id"));
 
 const my_id = JSON.parse(localStorage.getItem("user_id"));
+async function getTeamMatchResponse(endpoint, team_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}`, {
+      params: {
+          team_id: team_id,
+          match_in_status: 1,
+      },
+  });
+  const response = await data;
+  
+  const team_players_id = response.data;
+  
+  return team_players_id;
+}
+async function getDataById(endpoint, user_api_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`);
 
-// const unique_id = phonenumber;
+  const result = await data;
 
-// const team_list = JSON.parse(localStorage.getItem("team_details_list"));
-
-// const all_player_list = JSON.parse(localStorage.getItem("user_detail"));
-
-// const players_list = JSON.parse(localStorage.getItem("user_detail"));
-
-// const match_list = JSON.parse(localStorage.getItem("match_list"));
-
-// const request_list = JSON.parse(localStorage.getItem("match_response_list"));
-
-// const score_resopnse = JSON.parse(localStorage.getItem("score_card"));
+  return result.data;
+}
 async function updateData(endpoint, data) {
 
     await axios.patch(`http://localhost:3000/${endpoint}`, data, {
@@ -42,7 +50,7 @@ async function getRelationDataByPlayer(endpoint, user_api_id) {
   const team_players_id = response.data;
   
   return team_players_id;
-  }
+}
 async function exit() {
   const teamProfile = await getTeamDet("team_details_list", my_team_id);
   if (confirm(`Do you want to Exit from ${teamProfile.teamName} team ?`)) {
@@ -125,7 +133,12 @@ function stats() {
 function teamEdit() {
   window.location.href = `../my team/myteamedit.html?team_id=${my_team_id}`;
 }
-
+document.querySelector(".edit_team").addEventListener("click", teamEdit);
+document.querySelector(".profilebtn").addEventListener("click", profile);
+document.querySelector(".matchbtn").addEventListener("click", match)
+document.querySelector(".memberbtn").addEventListener("click", member)
+document.querySelector(".statsbtn").addEventListener("click", stats)
+document.querySelector(".backtohome").addEventListener("click", previousPage)
 function renderPlayer(player, captain, whatsapp, me, age) {
   const template1 = `	
       <div class="teams">
@@ -198,39 +211,35 @@ async function teamPageLoad() {
 
   const my_id = JSON.parse(localStorage.getItem("user_id"));
 
-  // function findPlayer(a) {
-  //   const index = a.teamMembers.indexOf(unique_id);
-  //   return a.teamMembers[index] === unique_id;
-  // }
+  const request_list = await getTeamMatchResponse("match_response_list", my_team_id)
+  let completed_match_list =[]
+  let match_request_list = []
+  let matchInvitaton = []
 
-  // const teamProfile = team_list.find(findPlayer);
+  for(let i = 0; i < request_list.length; i++){
+    const get_match_data = await getDataById("match_list", request_list[i]["matchUniqueId"])
+    match_request_list.push(get_match_data)
+}
 
-  // const team_id = teamProfile.id;
+matchInvitaton = match_request_list.filter(
+  e =>
+  e.activeStatus === 0 &&
+  new Date(e.time) > new Date()
+);
+  completed_match_list = match_request_list.filter(
+  e =>{
+          const today = new Date(e.time);
+          const tomorrow = new Date(today);
+          tomorrow.setDate(tomorrow.getDate() + 1);
 
-  // let completed_match_list;
-  // const completed_match = [];
+          const ans =
+          e.activeStatus === 0 &&
+          tomorrow < new Date();
 
-  // if (request_list !== undefined) {
-  //   completed_match_list = request_list.filter(
-  //     (e) => e.match_in_status === 1 && e.team_id === team_id
-  //   );
-  // }
+          return ans;
+      })
 
-  // const unique_player = teamProfile.teamMembers;
-
-  // const team_players_list = [];
-
-  // for (let i = 0; i < unique_player.length; i++) {
-  //   const player_number = unique_player[i];
-
-  //   function findPlayer(a) {
-  //     return a.phoneNumber === player_number;
-  //   }
-
-  //   const player_object = all_player_list.find(findPlayer);
-
-  //   team_players_list.push(player_object);
-  // }
+  pastMatchData(completed_match_list)
 
   const my_profile_id = team_players_relation_list.find(
     (e) => e.playerId === my_id
@@ -263,7 +272,7 @@ async function teamPageLoad() {
     } else if (team_players_list[i].id !== my_id) {
       whatsapp = '<i class="fa-brands fa-whatsapp"></i>';
     } else {
-      whatsapp = '<a class="exit_from_team" onclick="exit()">EXIT</a>';
+      whatsapp = '<a class="exit_from_team">EXIT</a>';
       me = "(you)";
     }
 
@@ -281,9 +290,21 @@ async function teamPageLoad() {
       .insertAdjacentHTML("beforeend", template1);
   }
 
+  const exit_team = document.querySelector(".exit_from_team");
+  if(exit_team){
+    exit_team.addEventListener("click", () =>{
+      if(matchInvitaton.length !== 0){
+        alert("Only you can exit this team once all of your matches are over.")
+      }
+      if(matchInvitaton.length === 0){
+        exit()
+      }
+    })
+  }
+
   // here i find max and min of players of the age
 
-  const max = Math.max(...players_age);
+  const max = Math.max(...players_age); 
   const min = Math.min(...players_age);
   const team_area_object = await getTeamDet(
     "area_list",

@@ -340,7 +340,7 @@ async function matchCreate(e) {
       "location": address,
       "information": add_info,
       "createdTime": created_time,
-      "activeStatus": true,
+      "activeStatus": 1,
       "createdTeam" : my_team_id,
       "createdBy" : player_id
     };
@@ -363,7 +363,8 @@ async function matchCreate(e) {
           const a = my_team_members[i]["playerId"]
           const obj = {
             "matchRequestId": set_my_team_req["id"],
-            "player_id": a
+            "player_id": a,
+            "mvpStatus" : 0,
           }
          const team_in_data = await setData("match_team_members", obj)
         //  await new Promise(r => setTimeout(r, 200));

@@ -6,83 +6,141 @@ const urlParams = new URLSearchParams(queryString);
 
 const phonenumber = urlParams.get("unique_id");
 
-const team_list = JSON.parse(localStorage.getItem("team_details_list"));
+const my_id = JSON.parse(localStorage.getItem("user_id"));
 
-const players_list = JSON.parse(localStorage.getItem("user_detail"));
+async function getRelationDataByPlayer(endpoint, user_api_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}`, {
+    params: {
+      playerId: user_api_id,
+    },
+  });
+  const response = await data;
 
-function findPlayer(a) {
-  const index = a.teamMembers.indexOf(phonenumber);
-  return a.teamMembers[index] === phonenumber;
+  const team_players_id = response.data;
+
+  return team_players_id;
 }
 
-const teamProfile = team_list.find(findPlayer);
+async function getTeamMatchLsit(endpoint, team_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}`, {
+    params: {
+      createdTeam: team_id,
 
-const my_team_id = teamProfile.uniqueId;
+    },
+  });
+  const response = await data;
 
-// console.log(my_team_id)
-const match_list = JSON.parse(localStorage.getItem("match_list"));
+  const team_players_id = response.data;
 
-const request_list = JSON.parse(localStorage.getItem("match_response_list"));
+  return team_players_id;
+}
 
-const match_request_list = request_list.filter(
-  (e) => e.team_id === my_team_id && e.match_in_status === 1
+async function getMatchResList(endpoint, team_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}`, {
+    params: {
+      matchUniqueId: team_id,
+    },
+  });
+  const response = await data;
+
+  const team_players_id = response.data;
+
+  return team_players_id;
+}
+
+async function getDataById(endpoint, user_api_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`);
+
+  const result = await data;
+
+  return result.data;
+}
+
+async function teamResponsePage() {
+
+const relation_object = await getRelationDataByPlayer(
+  "player_team_relation",
+  my_id
 );
+const find_team_id = relation_object.find((e) => e.activeStatus !== 0);
 
-const matchInvitaton = [];
+const team_unique_id = find_team_id.teamId;
 
-for (let i = 0; i < match_request_list.length; i++) {
-  const check = match_request_list[i].matchUniqueId;
-  const find = match_list.find((e) => e.matchUniqueId === check);
-  matchInvitaton.push(find);
-}
+const teamProfile = await getDataById("team_details_list", team_unique_id)
 
-console.log(matchInvitaton);
+const my_team_id = teamProfile.id;
+
+const match_all_invitation = await getTeamMatchLsit("match_list", my_team_id)
+
+const matchInvitaton = match_all_invitation.filter(e => e.activeStatus !== 2)
+
+console.log(matchInvitaton)
+
+
 // match request card start
+let count = 0;
+let result_data = "";
 
 for (let i = 0; i < matchInvitaton.length; i++) {
   let opponent_team_object = "";
 
   if (matchInvitaton[i].friendType === 1) {
-    const opponent_team_id = request_list.find(
-      (e) =>
-        e.matchUniqueId === matchInvitaton[i].matchUniqueId &&
-        e.team_id !== my_team_id
-    );
 
-    opponent_team_object = team_list.find(
-      (e) => e.uniqueId === opponent_team_id.team_id
-    );
+    const opponent_teams = await getMatchResList("match_response_list", matchInvitaton[i]["id"])
+
+    const opponent_team_id = opponent_teams.find(e => e.team_id !== my_team_id)
+
+    result_data = opponent_team_id["match_in_status"]
+    opponent_team_object = await getDataById("team_details_list", opponent_team_id["team_id"])
   }
 
   if (matchInvitaton[i].friendType === 2) {
-    const area_result_filter = request_list.filter(
-      (e) =>
-        e.matchUniqueId === matchInvitaton[i].matchUniqueId &&
-        e.team_id !== my_team_id
-    );
+
+    const opponent_teams = await getMatchResList("match_response_list", matchInvitaton[i]["id"])
+
+    const area_result_filter = opponent_teams.filter(e => e.team_id !== my_team_id)
+
+    console.log(area_result_filter)
     let opp_id = "";
     for (let j = 0; j < area_result_filter.length; j++) {
       const check = area_result_filter[j].match_in_status;
       if (check === 1) {
         opp_id = area_result_filter[j].team_id;
+        opponent_team_object = await getDataById("team_details_list", opp_id)
+        result_data = check;
         break;
       }
+    if (check === 0) {
+      count += 1;
+      console.log("hi")
     }
+    if (count > 0) {
+      result_data = 0;
+    }
+    if (count === 0) {
+      result_data = 2;
+    }
+    }
+    
 
-    opponent_team_object = team_list.find((e) => e.uniqueId === opp_id);
   }
 
-  let captain = "";
+  const captain_id = matchInvitaton[i]["createdBy"]
 
-  for (let j = 0; j < teamProfile.teamMembers.length; j++) {
-    const a = teamProfile.teamMembers[j];
+  const captain_obj = await getDataById("users", captain_id)
 
-    const find = players_list.find((e) => e.phoneNumber === a);
+  const captain = captain_obj["userName"]
+  // let captain = "";
 
-    if (find.captainStatus === 1) {
-      captain = find.userName;
-    }
-  }
+  // for (let j = 0; j < teamProfile.teamMembers.length; j++) {
+  //   const a = teamProfile.teamMembers[j];
+
+  //   const find = players_list.find((e) => e.phoneNumber === a);
+
+  //   if (find.captainStatus === 1) {
+  //     captain = find.userName;
+  //   }
+  // }
 
   const div_class_invitation = document.createElement("div");
   div_class_invitation.setAttribute("class", "invitation");
@@ -104,7 +162,8 @@ for (let i = 0; i < matchInvitaton.length; i++) {
   }
   if (!opponent_team_object) {
     opp_team_url = "https://iili.io/HXFAu87.png";
-    opp_team_name = matchInvitaton[i].opponentArea.area;
+    opp_area_obj = await getDataById("area_list", matchInvitaton[i].address_id)
+    opp_team_name = opp_area_obj["area"];
   }
 
   const team_image = document.createElement("img");
@@ -213,7 +272,7 @@ for (let i = 0; i < matchInvitaton.length; i++) {
   const div_class_invitation_three_para2 = document.createElement("p");
   div_class_invitation_three_para2.innerText =
     `${matchInvitaton[i].members}  Members` +
-    ` (Age :${matchInvitaton[i].membersAge.from} to ${matchInvitaton[i].membersAge.to})`;
+    ` (Age :${matchInvitaton[i].membersAgeFrom} to ${matchInvitaton[i].membersAgeTo})`;
   div_class_invitation_three_subdiv2.append(div_class_invitation_three_para2);
 
   const div_class_invitation_three_subdiv3 = document.createElement("div");
@@ -256,33 +315,6 @@ for (let i = 0; i < matchInvitaton.length; i++) {
     .fromNow();
   div_class_invitation_four.append(div_class_invitation_four_p);
 
-  const result_filter = request_list.filter(
-    (e) =>
-      e.matchUniqueId === matchInvitaton[i].matchUniqueId &&
-      e.team_id !== my_team_id
-  );
-
-  let count = 0;
-  let result_data = "";
-
-  for (let k = 0; k < result_filter.length; k++) {
-    const check = result_filter[k].match_in_status;
-    if (check === 0) {
-      count += 1;
-    }
-
-    if (check === 1) {
-      result_data = check;
-      break;
-    }
-    if (count > 0) {
-      result_data = 0;
-    }
-    if (count === 0) {
-      result_data = 2;
-    }
-  }
-
   let result_value = "";
 
   const status_para_bold = document.createElement("b");
@@ -311,7 +343,7 @@ for (let i = 0; i < matchInvitaton.length; i++) {
   );
   div_class_invitation_four_trash_icon.setAttribute(
     "data-id",
-    matchInvitaton[i].matchUniqueId
+    matchInvitaton[i].id
   );
   div_class_invitation_four.append(div_class_invitation_four_trash_icon);
 
@@ -330,34 +362,49 @@ for (let i = 0; i < matchInvitaton.length; i++) {
 // delete match request start
 const switchnewcap = document.querySelectorAll(".fa-trash-can");
 switchnewcap.forEach((bookCover) => {
-  bookCover.addEventListener("click", () => {
-    const request_data = match_list.find(
-      (e) => e.matchUniqueId === bookCover.dataset.id
-    );
+  bookCover.addEventListener("click", async () => {
 
-    const filter_response_list = request_list.filter(
-      (e) => e.matchUniqueId === bookCover.dataset.id
-    );
-
-    for (let i = 0; i < filter_response_list.length; i++) {
-      const value = filter_response_list[i];
-      const request_index = request_list.indexOf(value);
-      request_list.splice(request_index, 1);
+    const match_id = JSON.parse(bookCover.dataset.id)
+    const data = {
+      "activeStatus": 2,
     }
+    const reset_match_data = await updateData(`match_list/${match_id}`, data)
 
-    localStorage.setItem("match_response_list", JSON.stringify(request_list));
+    const filter_response_list = await getMatchResList("match_response_list", match_id)
 
-    const match_index = match_list.indexOf(request_data);
-
-    match_list.splice(match_index, 1);
-
-    localStorage.setItem("match_list", JSON.stringify(match_list));
-
+    if(reset_match_data !== 1){
+    for (let i = 0; i < filter_response_list.length; i++) {
+      const change = {
+        "match_in_status": 3,
+      }
+     await updateData(`match_response_list/${filter_response_list[i]["id"]}`, change)
+    }
+  }
     location.reload();
   });
 });
 // delete match request end
 
+}
+async function updateData(endpoint, data) {
+let value = 1;
+  await axios.patch(`http://localhost:3000/${endpoint}`, data, {
+      "Content-Type": "application/json",
+    }).then((d) => {
+      console.log(d);
+      value = d.data
+    })
+    .catch((error) => {
+      console.log(error);
+      alert("Something Went Wrong in update relation");
+    });
+
+console.log(value)
+    return value
+}
+
 function backBtn() {
   window.location.href = `../homepage/hpexist.html?unique_id=${phonenumber}`;
 }
+
+window.onload = teamResponsePage();

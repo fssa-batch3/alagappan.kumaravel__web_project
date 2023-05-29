@@ -21,12 +21,12 @@
             <!-- <img class="bgimg" src="../../assets/images/team1profile.jpg" alt="backgroundimage"> -->
             <div class="color"></div>
             <div class="top">
-                <a onclick="previousPage()">
+                <a class="backtohome">
                     <i class="fa-solid fa-arrow-left"></i>
                 </a>
                 <div class="topleft">
                     <i class="fa-solid fa-share"></i>
-                    <a onclick="teamEdit()" class="edit_team">
+                    <a class="edit_team">
                         <i class="fa-solid fa-pen"></i>
                     </a>
                     <i class="fa-brands fa-whatsapp"></i>
@@ -53,13 +53,13 @@
         <!-- main start -->
         <main>
             <div class="headerbottom">
-                <button type="button" onclick="stats()">STATS</button>
+                <button type="button" class="statsbtn">STATS</button>
 
-                <button type="button" onclick="member()">MEMBER</button>
+                <button type="button" class="memberbtn">MEMBER</button>
 
-                <button type="button" onclick="match()">MATCHES</button>
+                <button type="button" class="matchbtn">MATCHES</button>
 
-                <button type="button" onclick="profile()">PROFILE</button>
+                <button type="button" class="profilebtn">PROFILE</button>
                 <div class="button_underline"></div>
             </div>
 
@@ -101,7 +101,7 @@
                                 <div class="top">
                                     <div class="backgroundimage">
                                         <div class="score_head">
-                                            <button type="button" onclick="ClosePopupResult()">
+                                            <button type="button" class="closepopupresult">
                                                 <i class="fa-solid fa-chevron-left"></i>
                                             </button>
                                             <p>SCORECARD</p>
@@ -140,9 +140,9 @@
                                 </div>
                                 <div class="bottom">
                                     <div class="result_nav">
-                                        <button class="mvpbtn" type="button" onclick="pastMvp()">MVPs</button>
-                                        <button class="playersbtn" type="button" onclick="pastPlayers()">Players</button>
-                                        <button class="detailsbtn" type="button" onclick="pastDetails()">Details</button>
+                                        <button class="mvpbtn" type="button" >MVPs</button>
+                                        <button class="playersbtn" type="button" >Players</button>
+                                        <button class="detailsbtn" type="button" >Details</button>
                                     </div>
                                     <!-- match details start -->
                                     <div class="past_match_details">
@@ -269,7 +269,6 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="../../assets/js/vendor/lib/moment/moment.min.js"></script>
         <script src="../../assets/js/roundslider.js"></script>
-        <script src="../../assets/js/teamprofile.js"></script>
-        <script src="../../assets/js/past_match.js"></script>
+        <script type="module" src="../../assets/js/teamprofile.js"></script>
     </body>
 </html>

@@ -1,3 +1,5 @@
+import {pastMatchData} from './past_match.js';
+
 const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
@@ -73,9 +75,31 @@ function member() {
     const content_4 = document.querySelector("section.four");
     content_4.style.display = "block";
   }
-  
+document.querySelector(".profilebtn").addEventListener("click", profile);
+document.querySelector(".matchbtn").addEventListener("click", match)
+document.querySelector(".memberbtn").addEventListener("click", member)
+document.querySelector(".statsbtn").addEventListener("click", stats)
+document.querySelector(".backtohome").addEventListener("click", previousPage)
   // ----------------button css animation end
-  
+async function getMyMatchesReq(player_id) {
+    const data = axios.get(`http://localhost:3000/match_team_members`, {
+        params: {
+            player_id : player_id,
+        },
+    });
+    const response = await data;
+    
+    const team_players_id = response.data;
+    
+    return team_players_id;
+}
+async function getDataById(endpoint, user_api_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`);
+
+  const result = await data;
+
+  return result.data;
+}
 function teamCard(teamProfile) {
 const template = `<div class="playerteam">
                 <div class="myteam">
@@ -103,33 +127,6 @@ const template = `<div class="playerteam">
     return template;
 }
 
-// const team_list = JSON.parse(localStorage.getItem("team_details_list"));
-
-// const players_list = JSON.parse(localStorage.getItem("user_detail"));
-
-
-// console.log(teamProfile)
-// const match_list = JSON.parse(localStorage.getItem("match_list"));
-
-// const request_list = JSON.parse(localStorage.getItem("match_response_list"));
-
-// const score_resopnse = JSON.parse(localStorage.getItem("score_card"));
-
-// upto this common for all section
-
-// let completed_match_list;
-// const completed_match = [];
-// if (request_list) {
-//   completed_match_list = request_list.filter(
-//     (e) =>
-//       e.match_in_status === 1 &&
-//       e.team_players.find((f) => f === phonenumber) === phonenumber
-//   );
-// }
-
-// const unique_id = phonenumber;
-
-// const all_player_list = JSON.parse(localStorage.getItem("user_detail"));
 async function getplayerDet(endpoint, user_api_id) {
     const data = axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`);
   
@@ -238,6 +235,25 @@ const playerAbout = playerProfile.about;
 document.querySelector(".player_about").innerHTML = playerAbout;
 
 // PLAYER PROFILE END
+// here For player past match
+
+let completed_match_list =[]
+
+const completete_match_req_id = await getMyMatchesReq(url_id);
+for(let i=0; i<completete_match_req_id.length; i++){
+    const data = completete_match_req_id[i]["matchRequestId"]
+    const my_match_req_id = await getDataById("match_response_list", data)
+    if(my_match_req_id["match_in_status"] === 1){
+        const get_match_obj = await getDataById("match_list", my_match_req_id["matchUniqueId"]);
+        const today = new Date(get_match_obj["time"]);
+        const tomorrow = new Date(today);
+        if(get_match_obj["activeStatus"] === 0 && tomorrow < new Date()){
+            completed_match_list.push(get_match_obj)
+        }
+    }
+}
+pastMatchData(completed_match_list)
+
 }
 function previousPage() {
   window.history.go(-1);

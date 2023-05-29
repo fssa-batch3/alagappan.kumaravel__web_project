@@ -1,37 +1,65 @@
-if (request_list !== undefined) {
-  // for loop for completed match
-
-  // console.log(completed_match_list);
-  for (let i = 0; i < completed_match_list.length; i++) {
-    const check = completed_match_list[i].matchUniqueId;
-
-    // let match_in = check.find(phonenumber)
-
-    const find = match_list.find((e) => {
-      const today = new Date(e.time);
-      const tomorrow = new Date(today);
-      tomorrow.setDate(tomorrow.getDate() + 1);
-
-      const ans =
-        e.matchUniqueId === check &&
-        e.activeStatus === false &&
-        tomorrow < new Date();
-
-      return ans;
-    });
-    if (find) {
-      completed_match.push(find);
-    }
-  }
-
-  // console.log(completed_match);
+async function getMatchInTeam(match_id) {
+  const data = axios.get(`http://localhost:3000/match_response_list`, {
+      params: {
+      matchUniqueId: match_id,
+      match_in_status: 1,
+      },
+  });
+  const response = await data;
+  
+  const team_players_id = response.data;
+  
+  return team_players_id;
 }
+async function getScoreData(team_id, match_id) {
+  const data = axios.get(`http://localhost:3000/score_card`, {
+      params: {
+      teamUniqueId: team_id,
+      matchUniqueId: match_id,
+      },
+  });
+  const response = await data;
+  
+  const team_players_id = response.data;
+  
+  return team_players_id;
+}
+async function getDataById(endpoint, user_api_id) {
+  const data = axios.get(`http://localhost:3000/${endpoint}/${user_api_id}`);
+
+  const result = await data;
+
+  return result.data;
+}
+
+async function getMatchTeamMember(req_id) {
+  const data = axios.get(`http://localhost:3000/match_team_members`, {
+      params: {
+      matchRequestId : req_id,
+      },
+  });
+  const response = await data;
+  
+  const team_players_id = response.data;
+  
+  return team_players_id;
+}
+async function forloopTeamObj(match_in_member){
+const answer = []
+for(let i=0;i<match_in_member.length;i++){
+  const value = match_in_member[i]["player_id"]
+  const get_object = await getDataById("users", value)
+  answer.push(get_object)
+}
+return answer
+}
+async function pastMatchData(completed_match){
 
 // this loop is for completed match start ----------------
 
 function completedMatchTemp(match_data, my_team, opp_team, won, loss, draw) {
   const temp = `<div class="past_result_container" data-id="${
-    match_data.matchUniqueId
+    match_data.id
   }">
 <div class="match_time">
 	<p>${moment(match_data.time).add(0, "days").calendar()}</p>
@@ -68,7 +96,7 @@ function completedMatchTemp(match_data, my_team, opp_team, won, loss, draw) {
 
   return temp;
 }
-console.log(completed_match.length);
+console.log(completed_match);
 
 if (completed_match.length === 0) {
   const div_name = document.createElement("div");
@@ -81,40 +109,24 @@ if (completed_match.length === 0) {
 }
 
 for (let i = 0; i < completed_match.length; i++) {
+
   const match_data = completed_match[i];
-  console.log(match_data);
-  const my_team_response = request_list.find(
-    (e) =>
-      e.matchUniqueId === match_data.matchUniqueId &&
-      e.team_players.find((e) => e === phonenumber) === phonenumber
-  ); // some error is there
+  const match_team_data = await getMatchInTeam(match_data["id"])
+  console.log(match_team_data)
+  
+  const my_team_response = match_team_data[0]
   console.log(my_team_response);
-  const my_team_score = score_resopnse.find(
-    (e) =>
-      e.matchUniqueId === match_data.matchUniqueId &&
-      e.teamUniqueId === my_team_response.team_id
-  );
+  const my_team_score = (await getScoreData(my_team_response["team_id"], match_data["id"]))[0]
 
-  const my_team_obj = team_list.find(
-    (e) => e.uniqueId === my_team_response.team_id
-  );
-  // console.log(my_team_score)
+  console.log(my_team_score)
 
-  const opp_team_response = request_list.find(
-    (e) =>
-      e.matchUniqueId === match_data.matchUniqueId &&
-      e.team_id !== my_team_response.team_id
-  );
+  const opp_team_response = match_team_data[1]
 
-  const opp_team_score = score_resopnse.find(
-    (e) =>
-      e.matchUniqueId === match_data.matchUniqueId &&
-      e.teamUniqueId === opp_team_response.team_id
-  );
+  const opp_team_score = (await getScoreData(opp_team_response["team_id"], match_data["id"]))[0]
 
-  const opp_team_obj = team_list.find(
-    (e) => e.uniqueId === opp_team_response.team_id
-  );
+  const my_team_obj = await getDataById("team_details_list", my_team_response["team_id"])
+
+  const opp_team_obj = await getDataById("team_details_list", opp_team_response["team_id"])
   // console.log(opp_team_score)
   let won = 0;
   let loss = 0;
@@ -128,18 +140,18 @@ for (let i = 0; i < completed_match.length; i++) {
   let opp_won;
 
   if (my_team_score) {
-    my_won = my_team_score.score.win;
+    my_won = my_team_score.scoreWin;
 
-    my_loss = my_team_score.score.loss;
+    my_loss = my_team_score.scoreLoss;
 
-    my_draw = my_team_score.score.draw;
+    my_draw = my_team_score.scoreDraw;
   }
   if (opp_team_score) {
-    opp_won = opp_team_score.score.win;
+    opp_won = opp_team_score.scoreWin;
 
-    opp_loss = opp_team_score.score.loss;
+    opp_loss = opp_team_score.scoreLoss;
 
-    opp_draw = opp_team_score.score.draw;
+    opp_draw = opp_team_score.scoreDraw;
   }
 
   if (
@@ -258,6 +270,9 @@ function pastDetails() {
   content_3.style.display = "block";
 }
 
+document.querySelector(".mvpbtn").addEventListener("click", pastMvp);
+document.querySelector(".playersbtn").addEventListener("click", pastPlayers);
+document.querySelector(".detailsbtn").addEventListener("click", pastDetails);
 // past match popup content end
 
 // here i made a function for show the past match full result via popup --------
@@ -284,45 +299,38 @@ function pastplayersTemp(player) {
 
 const pastdetails = document.querySelectorAll(".past_result_container");
 pastdetails.forEach((bookCover) => {
-  bookCover.addEventListener("click", (event) => {
-    const person_data = bookCover.dataset.id;
+  bookCover.addEventListener("click", async (event) => {
+    const person_data = JSON.parse(bookCover.dataset.id);
     const popup_result = document.getElementById("popup_result");
     popup_result.classList.add("open-popup");
 
     // here i get all data for show in popup card start -------------------------
-    const match_data = match_list.find((e) => e.matchUniqueId === person_data);
+    const match_data_popup = completed_match.find((e) => e.id === person_data);
+    const match_team_data = await getMatchInTeam(match_data_popup["id"])
+    console.log(match_team_data)
+    
+    const my_team_response = match_team_data[0]
+    console.log(my_team_response);
+    const my_team_score = (await getScoreData(my_team_response["team_id"], match_data_popup["id"]))[0]
+  
+    console.log(my_team_score)
+  
+    const opp_team_response = match_team_data[1]
+  
+    const opp_team_score = (await getScoreData(opp_team_response["team_id"], match_data_popup["id"]))[0]
+  
+    const my_team_obj = await getDataById("team_details_list", my_team_response["team_id"])
+  
+    const opp_team_obj = await getDataById("team_details_list", opp_team_response["team_id"])
 
-    const my_team_response = request_list.find(
-      (e) =>
-        e.matchUniqueId === person_data &&
-        e.team_players.find((e) => e === phonenumber) === phonenumber
-    );
+    const my_match_team_member = await getMatchTeamMember(my_team_obj["id"]);
 
-    const my_team_score = score_resopnse.find(
-      (e) =>
-        e.matchUniqueId === person_data &&
-        e.teamUniqueId === my_team_response.team_id
-    );
+    const my_mvp_players_list = my_match_team_member.filter(e => e.mvpStatus === 1);
 
-    const my_team_obj = team_list.find(
-      (e) => e.uniqueId === my_team_response.team_id
-    );
+    const opp_match_team_member = await getMatchTeamMember(opp_team_obj["id"]);
 
-    const opp_team_response = request_list.find(
-      (e) =>
-        e.matchUniqueId === person_data &&
-        e.team_id !== my_team_response.team_id
-    );
+    const opp_mvp_players_list = opp_match_team_member.filter(e => e.mvpStatus === 1);
 
-    const opp_team_score = score_resopnse.find(
-      (e) =>
-        e.matchUniqueId === person_data &&
-        e.teamUniqueId === opp_team_response.team_id
-    );
-
-    const opp_team_obj = team_list.find(
-      (e) => e.uniqueId === opp_team_response.team_id
-    );
 
     let won = 0;
     let loss = 0;
@@ -336,18 +344,18 @@ pastdetails.forEach((bookCover) => {
     let opp_won;
 
     if (my_team_score) {
-      my_won = my_team_score.score.win;
-
-      my_loss = my_team_score.score.loss;
-
-      my_draw = my_team_score.score.draw;
+      my_won = my_team_score.scoreWin;
+  
+      my_loss = my_team_score.scoreLoss;
+  
+      my_draw = my_team_score.scoreDraw;
     }
     if (opp_team_score) {
-      opp_won = opp_team_score.score.win;
-
-      opp_loss = opp_team_score.score.loss;
-
-      opp_draw = opp_team_score.score.draw;
+      opp_won = opp_team_score.scoreWin;
+  
+      opp_loss = opp_team_score.scoreLoss;
+  
+      opp_draw = opp_team_score.scoreDraw;
     }
 
     if (
@@ -379,26 +387,29 @@ pastdetails.forEach((bookCover) => {
       .setAttribute("src", opp_team_obj.teamImageUrl);
 
     document.querySelector("#past_match_time").innerHTML = moment(
-      match_data.time
+      match_data_popup.time
     )
       .add(0, "days")
       .calendar();
     document.querySelector("#past_match_type").innerHTML =
-      match_data.typeOfMatch;
+    match_data_popup.typeOfMatch;
     document.querySelector("#past_match_location").innerHTML =
-      match_data.location;
+    match_data_popup.location;
     document.querySelector("#past_match_info").innerHTML =
-      match_data.information;
+    match_data_popup.information;
 
     document.querySelector(".my_team_players h4").innerHTML =
       my_team_obj.teamName.slice(0, 3).toUpperCase();
     document.querySelector(".opp_team_players h4").innerHTML =
       opp_team_obj.teamName.slice(0, 3).toUpperCase();
     // console.log((my_team_score["mvps"]).length)
-    if (my_team_score) {
-      for (let i = 0; i < my_team_score.mvps.length; i++) {
-        const find_player = players_list.find(
-          (e) => e.phoneNumber === my_team_score.mvps[i]
+
+    const my_match_team_member_obj = await forloopTeamObj(my_match_team_member)
+    const opp_match_team_member_obj = await forloopTeamObj(opp_match_team_member)
+
+      for (let i = 0; i < my_mvp_players_list.length; i++) {
+        const find_player = my_match_team_member_obj.find(
+          (e) => e.id === my_mvp_players_list[i]["player_id"]
         );
 
         const func = pastMvpTemp(find_player, my_team_obj);
@@ -406,11 +417,11 @@ pastdetails.forEach((bookCover) => {
           .querySelector("table.past_players_list tbody")
           .insertAdjacentHTML("beforeend", func);
       }
-    }
-    if (opp_team_score) {
-      for (let i = 0; i < opp_team_score.mvps.length; i++) {
-        const find_player = players_list.find(
-          (e) => e.phoneNumber === opp_team_score.mvps[i]
+    
+
+      for (let i = 0; i < opp_mvp_players_list.length; i++) {
+        const find_player = opp_match_team_member_obj.find(
+          (e) => e.id === opp_mvp_players_list[i]["player_id"]
         );
 
         const func = pastMvpTemp(find_player, opp_team_obj);
@@ -418,40 +429,37 @@ pastdetails.forEach((bookCover) => {
           .querySelector("table.past_players_list tbody")
           .insertAdjacentHTML("beforeend", func);
       }
-    }
-    for (let i = 0; i < my_team_response.team_players.length; i++) {
-      const find_player = players_list.find(
-        (e) => e.phoneNumber === my_team_response.team_players[i]
-      );
+
+      for (let i = 0; i < my_match_team_member_obj.length; i++) {
+      const find_player = my_match_team_member_obj[i]
 
       const func = pastplayersTemp(find_player);
       document
         .querySelector(".my_team_players div")
         .insertAdjacentHTML("beforeend", func);
     }
-    for (let i = 0; i < opp_team_response.team_players.length; i++) {
-      const find_player = players_list.find(
-        (e) => e.phoneNumber === opp_team_response.team_players[i]
-      );
+    for (let i = 0; i < opp_match_team_member_obj.length; i++) {
+      const find_player = opp_match_team_member_obj[i]
       const func = pastplayersTemp(find_player);
       document
         .querySelector(".opp_team_players div")
         .insertAdjacentHTML("beforeend", func);
     }
-
+    document.querySelector(".closepopupresult").addEventListener("click", ClosePopupResult);
     // here i insert the standard value in html from above data end ---------------
   });
 });
+
+}
 
 function ClosePopupResult() {
   document.querySelector("table.past_players_list tbody").innerHTML = "";
   document.querySelector(".my_team_players div").innerHTML = "";
   document.querySelector(".opp_team_players div").innerHTML = "";
-
+  
   const popup = document.getElementById("popup_result");
   popup.classList.remove("open-popup");
-}
+  }
 
-function previousPage() {
-  window.history.go(-1);
-}
+
+export {pastMatchData};
